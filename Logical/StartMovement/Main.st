@@ -56,6 +56,7 @@ PROGRAM _CYCLIC
 		ADD_SHUTTLE:
 			IF (MC_BR_SecAddShuttle_AcpTrak_0.Done) THEN
 				CntShuttle := CntShuttle + 1;
+				
 			ELSIF (CntShuttle <= NUM_SIM_SHUTTLES) THEN
 				MC_BR_SecAddShuttle_AcpTrak_0.Sector   := ADR(SectorTrackA);
 				MC_BR_SecAddShuttle_AcpTrak_0.Execute  := TRUE;

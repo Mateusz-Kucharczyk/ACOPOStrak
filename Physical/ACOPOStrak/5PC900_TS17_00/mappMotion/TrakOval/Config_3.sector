@@ -37,4 +37,14 @@
       </Group>
     </Selector>
   </Element>
+  <Element ID="SectorPouring_1" Type="sector">
+    <Selector ID="Type" Value="Subsector">
+      <Property ID="SectorRef" Value="SectorTrackA" />
+      <Group ID="Start">
+        <Property ID="Position" Value="0.33" />
+      </Group>
+      <Property ID="Length" Value="0.1" />
+      <Property ID="Direction" Value="Positive" />
+    </Selector>
+  </Element>
 </Configuration>
