@@ -1,15 +1,20 @@
 VAR CONSTANT      
-   P1 : McPointType := (Pos:=(X:=0, Y:=0, Z:=-650));
-   P2 : McPointType := (Pos:=(X:=-50, Y:=-20, Z:=-600));
-   P0 : McPointType := (Pos:=(X:=0, Y:=0, Z:=-560));
+   P1 : McPointType := (Pos:=(X:=-100, Y:=0, Z:=-600));
+   P2 : McPointType := (Pos:=(X:=-100, Y:=0, Z:=-900));
+   P3 : McPointType := (Pos:=(X:=100, Y:=0, Z:=-600));
+   P4 : McPointType := (Pos:=(X:=100, Y:=0, Z:=-900));
 END_VAR
 
 PROGRAM _MAIN          
- Feedrate(5000);   //move with reduced speed
+ Feedrate(60000);   //move with reduced speed
+ PathAcceleration(600000);
  MoveJ(P1);        //move system to point P1
 MoveJ(P2);        //move system to point P2
 
- WaitTime(3);        //wait for 3 seconds
-
- MoveJ(P0);        //move back to origin position
+ WaitTime(1);        //wait for 1 second
+MoveJ(P1);
+ MoveJ(P3);        //move back to origin position
+ MoveJ(P4);
+ WaitTime(1);
+ MoveJ(P3);
 END_PROGRAM
