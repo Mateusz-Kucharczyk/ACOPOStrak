@@ -29,8 +29,10 @@
     <Parameter ID="Cyclic1Duration" Value="2000" />
     <Parameter ID="Cyclic1Tolerance" Value="0" />
     <Group ID="FileDevice1" />
-    <Parameter ID="FileDeviceName1" Value="CNC_ProgDir" />
-    <Parameter ID="FileDevicePath1" Value="C:\projects\Trak\ACOPOStrak\sim" />
+    <Parameter ID="FileDeviceName1" Value="CNC_PrgDir" />
+    <Parameter ID="FileDevicePath1" Value="C:\Robotic" />
+    <Parameter ID="ActivateOpcUa" Value="1" />
+    <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
   </Module>
   <Module Name="5PC910.SX02-00" Type="5PC910.SX02-00" Version="2.0.3.0">
     <Connector Name="IF1">
