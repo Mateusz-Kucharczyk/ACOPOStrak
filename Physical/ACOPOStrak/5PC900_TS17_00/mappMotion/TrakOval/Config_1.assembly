@@ -18,6 +18,19 @@
           <Property ID="SegmentRef[11]" Value="::Seg_A_11" />
           <Property ID="SegmentRef[12]" Value="::Seg_A_12" />
           <Property ID="SegmentRef[13]" Value="::Seg_A_13" />
+          <Property ID="SegmentRef[14]" Value="::Seg_A_14" />
+          <Property ID="SegmentRef[15]" Value="::Seg_A_15" />
+          <Property ID="SegmentRef[16]" Value="::Seg_A_16" />
+          <Property ID="SegmentRef[17]" Value="::Seg_A_17" />
+          <Property ID="SegmentRef[18]" Value="::Seg_A_18" />
+          <Property ID="SegmentRef[19]" Value="::Seg_A_19" />
+          <Property ID="SegmentRef[20]" Value="::Seg_A_20" />
+          <Property ID="SegmentRef[21]" Value="::Seg_A_21" />
+          <Property ID="SegmentRef[22]" Value="::Seg_A_22" />
+          <Property ID="SegmentRef[23]" Value="::Seg_A_23" />
+          <Property ID="SegmentRef[24]" Value="::Seg_A_24" />
+          <Property ID="SegmentRef[25]" Value="::Seg_A_25" />
+          <Property ID="SegmentRef[26]" Value="::Seg_A_26" />
         </Group>
         <Selector ID="Position" Value="Absolute">
           <Property ID="SegmentRef" Value="::Seg_A_1" />
@@ -31,98 +44,6 @@
             <Property ID="Angle1" Value="0.0" />
             <Property ID="Angle2" Value="0.0" />
             <Property ID="Angle3" Value="180" />
-          </Group>
-        </Selector>
-      </Group>
-      <Group ID="Track[2]">
-        <Group ID="Segments">
-          <Property ID="SegmentRef[1]" Value="::Seg_A_14" />
-          <Property ID="SegmentRef[2]" Value="::Seg_A_15" />
-          <Property ID="SegmentRef[3]" Value="::Seg_A_16" />
-          <Property ID="SegmentRef[4]" Value="::Seg_A_17" />
-          <Property ID="SegmentRef[5]" Value="::Seg_A_18" />
-          <Property ID="SegmentRef[6]" Value="::Seg_A_19" />
-          <Property ID="SegmentRef[7]" Value="::Seg_A_20" />
-          <Property ID="SegmentRef[8]" Value="::Seg_A_21" />
-          <Property ID="SegmentRef[9]" Value="::Seg_A_22" />
-          <Property ID="SegmentRef[10]" Value="::Seg_A_23" />
-          <Property ID="SegmentRef[11]" Value="::Seg_A_24" />
-          <Property ID="SegmentRef[12]" Value="::Seg_A_25" />
-          <Property ID="SegmentRef[13]" Value="::Seg_A_26" />
-        </Group>
-        <Selector ID="Position" Value="Absolute">
-          <Property ID="SegmentRef" Value="::Seg_A_14" />
-          <Property ID="SegmentCountDirection" Value="RightToLeft" />
-          <Group ID="Translation">
-            <Property ID="X" Value="0.0" />
-            <Property ID="Y" Value="0.0" />
-            <Property ID="Z" Value="0.0" />
-          </Group>
-          <Group ID="Orientation">
-            <Property ID="Angle1" Value="0.0" />
-            <Property ID="Angle2" Value="0.0" />
-            <Property ID="Angle3" Value="0.0" />
-          </Group>
-        </Selector>
-      </Group>
-      <Group ID="Track[3]">
-        <Group ID="Segments">
-          <Property ID="SegmentRef[1]" Value="::Seg_B_1" />
-          <Property ID="SegmentRef[2]" Value=":Seg_B_2" />
-        </Group>
-        <Selector ID="Position" Value="Absolute">
-          <Property ID="SegmentRef" Value=":Seg_B_1" />
-          <Property ID="SegmentCountDirection" Value="RightToLeft" />
-          <Group ID="Translation">
-            <Property ID="X" Value="0.0" />
-            <Property ID="Y" Value="0.0" />
-            <Property ID="Z" Value="0.0" />
-          </Group>
-          <Group ID="Orientation">
-            <Property ID="Angle1" Value="0.0" />
-            <Property ID="Angle2" Value="0.0" />
-            <Property ID="Angle3" Value="0.0" />
-          </Group>
-        </Selector>
-      </Group>
-      <Group ID="Track[4]">
-        <Group ID="Segments">
-          <Property ID="SegmentRef[1]" Value=":Seg_B_3" />
-          <Property ID="SegmentRef[2]" Value=":Seg_B_4" />
-          <Property ID="SegmentRef[3]" Value=":Seg_B_5" />
-        </Group>
-        <Selector ID="Position" Value="Absolute">
-          <Property ID="SegmentRef" Value=":Seg_B_3" />
-          <Property ID="SegmentCountDirection" Value="RightToLeft" />
-          <Group ID="Translation">
-            <Property ID="X" Value="0.0" />
-            <Property ID="Y" Value="0.0" />
-            <Property ID="Z" Value="0.0" />
-          </Group>
-          <Group ID="Orientation">
-            <Property ID="Angle1" Value="0.0" />
-            <Property ID="Angle2" Value="0.0" />
-            <Property ID="Angle3" Value="0.0" />
-          </Group>
-        </Selector>
-      </Group>
-      <Group ID="Track[5]">
-        <Group ID="Segments">
-          <Property ID="SegmentRef[1]" Value=":Seg_B_6" />
-          <Property ID="SegmentRef[2]" Value=":Seg_B_7" />
-        </Group>
-        <Selector ID="Position" Value="Absolute">
-          <Property ID="SegmentRef" Value=":Seg_B_6" />
-          <Property ID="SegmentCountDirection" Value="RightToLeft" />
-          <Group ID="Translation">
-            <Property ID="X" Value="0.0" />
-            <Property ID="Y" Value="0.0" />
-            <Property ID="Z" Value="0.0" />
-          </Group>
-          <Group ID="Orientation">
-            <Property ID="Angle1" Value="0.0" />
-            <Property ID="Angle2" Value="0.0" />
-            <Property ID="Angle3" Value="0.0" />
           </Group>
         </Selector>
       </Group>

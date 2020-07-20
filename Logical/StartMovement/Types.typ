@@ -1,0 +1,13 @@
+TYPE 
+	StepEnum :  
+		( 
+		POWER_OFF, 
+		POWER_ON, 
+		ADD_SHUTTLE, 
+		GET_SHUTTLE, 
+		READY, 
+		PROCESS, 
+		STOPPING,
+		RESET 
+	); 
+END_TYPE

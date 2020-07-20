@@ -20,9 +20,19 @@
         <Property ID="SegmentRef[12]" Value="::Seg_A_13" />
         <Property ID="SegmentRef[13]" Value="::Seg_A_14" />
         <Property ID="SegmentRef[14]" Value="::Seg_A_15" />
+        <Property ID="SegmentRef[15]" Value="::Seg_A_16" />
+        <Property ID="SegmentRef[16]" Value="::Seg_A_17" />
+        <Property ID="SegmentRef[17]" Value="::Seg_A_18" />
+        <Property ID="SegmentRef[18]" Value="::Seg_A_19" />
+        <Property ID="SegmentRef[19]" Value="::Seg_A_20" />
+        <Property ID="SegmentRef[20]" Value="::Seg_A_21" />
+        <Property ID="SegmentRef[21]" Value="::Seg_A_22" />
+        <Property ID="SegmentRef[22]" Value="::Seg_A_23" />
+        <Property ID="SegmentRef[23]" Value="::Seg_A_24" />
+        <Property ID="SegmentRef[24]" Value="::Seg_A_25" />
       </Group>
       <Group ID="EndSegment">
-        <Property ID="SegmentRef" Value="::Seg_A_16" />
+        <Property ID="SegmentRef" Value="::Seg_A_26" />
         <Property ID="PositionRelativeTo" Value="FromEnd" />
       </Group>
     </Selector>

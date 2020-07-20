@@ -1,8 +1,13 @@
-
-VAR
-
+(*Assembly interface*) 
+VAR 
+	gTrakAsm : TrakAsm_type; 
+END_VAR
+(*shuttle-UserData structure*) 
+VAR 
+	gShuttleUserData : ShuttleUserData_typ; 
 END_VAR
 
-VAR CONSTANT
-
-END_VAR
+(*shuttle monitor structure for Vis*) 
+VAR 
+	gShuttleMon : McAcpTrakAssemblyMonData; 
+END_VAR 
