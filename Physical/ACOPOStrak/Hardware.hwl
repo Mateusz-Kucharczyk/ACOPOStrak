@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <BR.AS.HardwareTopology Version="0.0.0.1">
   <TimeStamps>
-    <TimeStamp LogicalPath="ACOPOStrak.Hardware.hw" LastWriteTime="07/21/2020 09:07:58" />
+    <TimeStamp LogicalPath="ACOPOStrak.Hardware.hw" LastWriteTime="07/21/2020 09:22:01" />
   </TimeStamps>
   <Modules>
     <Module Name="8F1I01.AA66.xxxx-1" Type="8F1I01.AA66.xxxx-1" X="181" Y="337" RotationAngle="180" />
@@ -48,9 +48,9 @@
     <Module Name="8F1I01.AB2B.xxxx-1d" Type="8F1I01.AB2B.xxxx-1" X="1189" Y="20" RotationAngle="180" />
     <Module Name="8F1I01.BA2B.xxxx-1e" Type="8F1I01.BA2B.xxxx-1" X="1338" Y="24" RotationAngle="225" />
     <Module Name="8F1I01.BA2B.xxxx-1b" Type="8F1I01.BA2B.xxxx-1" X="1563" Y="167" RotationAngle="45" />
-    <Module Name="8F1I01.AB2B.xxxx-1e" Type="8F1I01.AB2B.xxxx-1" X="1702.6" Y="281" />
+    <Module Name="8F1I01.AB2B.xxxx-1e" Type="8F1I01.AB2B.xxxx-1" X="1702" Y="281" />
     <Module Name="8F1I01.AA66.xxxx-1e" Type="8F1I01.AA66.xxxx-1" X="520" Y="-18" RotationAngle="315" />
-    <Module Name="8F1I01.AA66.xxxx-1h" Type="8F1I01.AA66.xxxx-1" X="1381.8" Y="-12" RotationAngle="45" />
+    <Module Name="8F1I01.AA66.xxxx-1h" Type="8F1I01.AA66.xxxx-1" X="1381" Y="-12" RotationAngle="45" />
   </Modules>
   <Links>
     <Link From="5LS182.6-2" To="X20BC8083" FromPort="IF1" ToPort="PLK1" IsRoutedByUser="False">
@@ -126,6 +126,15 @@
       <Point X="1241" Y="63" />
       <Point X="1241" Y="63" />
     </Link>
+    <Link From="8F1I01.AA66.xxxx-1e" To="8F1I01.AB2B.xxxx-1" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="486.5" Y="207.5" />
+      <Point X="486.5" Y="207.5" />
+      <Point X="486.5" Y="161.5" />
+      <Point X="486.5" Y="99" />
+      <Point X="519" Y="99" />
+      <Point X="597" Y="99" />
+      <Point X="597" Y="99" />
+    </Link>
     <Link From="8F1I01.AA66.xxxx-1f" To="8F1I01.AA66.xxxx-1g" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
       <Point X="1393.5" Y="377" />
       <Point X="1393.5" Y="377" />
@@ -145,6 +154,25 @@
       <Point X="1656.5" Y="384" />
       <Point X="1656.5" Y="377" />
       <Point X="1656.5" Y="377" />
+    </Link>
+    <Link From="8F1I01.AA66.xxxx-1h" To="8F1I01.BA2B.xxxx-1b" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
+      <Point X="1630.5" Y="212.5" />
+      <Point X="1630.5" Y="212.5" />
+      <Point X="1630.5" Y="166.5" />
+      <Point X="1630.5" Y="105" />
+      <Point X="1600.8" Y="105" />
+      <Point X="1523.8" Y="105" />
+      <Point X="1523.8" Y="105" />
+    </Link>
+    <Link From="8F1I01.AA66.xxxx-1h" To="X20HB2880a" FromPort="PLK3" ToPort="ETH1" IsRoutedByUser="False">
+      <Point X="1502.8" Y="85" />
+      <Point X="1502.8" Y="85" />
+      <Point X="1502.8" Y="-13" />
+      <Point X="1502.8" Y="-32" />
+      <Point X="927.75" Y="-32" />
+      <Point X="927.75" Y="-46" />
+      <Point X="927.75" Y="-71" />
+      <Point X="936" Y="-71" />
     </Link>
     <Link From="8F1I01.AA66.xxxx-1i" To="8F1I01.AA66.xxxx-1j" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
       <Point X="2124.6" Y="377" />
@@ -391,34 +419,6 @@
       <Point X="896" Y="-55" />
       <Point X="911" Y="-55" />
       <Point X="911" Y="-55" />
-    </Link>
-    <Link From="8F1I01.BA2B.xxxx-1b" To="8F1I01.AA66.xxxx-1h" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="1630.5" Y="212.5" />
-      <Point X="1630.5" Y="212.5" />
-      <Point X="1630.5" Y="166.5" />
-      <Point X="1630.5" Y="105" />
-      <Point X="1600.8" Y="105" />
-      <Point X="1523.8" Y="105" />
-      <Point X="1523.8" Y="105" />
-    </Link>
-    <Link From="8F1I01.AA66.xxxx-1h" To="X20HB2880a" FromPort="PLK3" ToPort="ETH1" IsRoutedByUser="False">
-      <Point X="1502.8" Y="85" />
-      <Point X="1502.8" Y="85" />
-      <Point X="1502.8" Y="-13" />
-      <Point X="1502.8" Y="-32" />
-      <Point X="927.75" Y="-32" />
-      <Point X="927.75" Y="-46" />
-      <Point X="927.75" Y="-71" />
-      <Point X="936" Y="-71" />
-    </Link>
-    <Link From="8F1I01.AB2B.xxxx-1" To="8F1I01.AA66.xxxx-1e" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
-      <Point X="486.5" Y="207.5" />
-      <Point X="486.5" Y="207.5" />
-      <Point X="486.5" Y="161.5" />
-      <Point X="486.5" Y="99" />
-      <Point X="519" Y="99" />
-      <Point X="597" Y="99" />
-      <Point X="597" Y="99" />
     </Link>
   </Links>
   <InfoElements />

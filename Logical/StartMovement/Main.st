@@ -58,7 +58,7 @@ PROGRAM _CYCLIC
 				CntShuttle := CntShuttle + 1;
 				
 			ELSIF (CntShuttle <= NUM_SIM_SHUTTLES) THEN
-				MC_BR_SecAddShuttle_AcpTrak_0.Sector   := ADR(SectorTrackA);
+				MC_BR_SecAddShuttle_AcpTrak_0.Sector   := ADR(SectorBottleInput);
 				MC_BR_SecAddShuttle_AcpTrak_0.Execute  := TRUE;
 				MC_BR_SecAddShuttle_AcpTrak_0.Position := SimShuttlePosition[CntShuttle];
 				MC_BR_SecAddShuttle_AcpTrak_0.AdvancedParameters.Velocity := 0.0;
@@ -95,6 +95,7 @@ PROGRAM _CYCLIC
 			ELSIF (gTrakAsm.Command.ShuttleStart) THEN   (*Waiting for Movement command*)
 				gTrakAsm.Command.ShuttleStart := FALSE;
 				CntShuttle := 1;
+				
 				Step := PROCESS;
 			END_IF
     
@@ -109,12 +110,17 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveVel_AcpTrak_0.Axis          := ADR(ShuttleAxis[CntShuttle]);
 					MC_BR_RoutedMoveVel_AcpTrak_0.Execute       := TRUE;
 					IF zmienna=0 THEN
-						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorTrackA);	
+						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorBottleInput);	
 					ELSIF zmienna=1 THEN
 						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorPouring_A);
 					ELSIF zmienna=2 THEN
 						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorPouring_B);
+					ELSIF zmienna=3 THEN
+						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorCapping);
+					ELSIF zmienna =4 THEN
+						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorBottleOutput);
 					END_IF;
+					
 					
 					MC_BR_RoutedMoveVel_AcpTrak_0.Position      := SimShuttlePosition[NUM_SIM_SHUTTLES] + 0.15;
 					MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
