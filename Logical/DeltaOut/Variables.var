@@ -1,5 +1,5 @@
 VAR
-	GroupPosition : MC_GroupReadActualPosition_15;
 	DeltaParameters : MpDelta3AxisParType;
 	MpDelta3Axis_0 : MpDelta3Axis;
+	GroupPosition : MC_GroupReadActualPosition_15;
 END_VAR
