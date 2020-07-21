@@ -7,5 +7,6 @@
     <Object Type="Package" Description="Global libraries">Libraries</Object>
     <Object Type="Program" Language="IEC">StartMovement</Object>
     <Object Type="Program" Language="IEC">Vis</Object>
+    <Object Type="Program" Language="IEC">TrakMovement</Object>
   </Objects>
 </Package>
