@@ -1,3 +1,6 @@
+VAR
+	StepSector : StepSector;
+END_VAR
 VAR CONSTANT
 	NUM_SIM_SHUTTLES : USINT := 1; (*Maximum Shuttles Added in the Simulation*)
 	MAX_NUM_SHUTTLES : USINT := 25; (*Maximum Shuttles Handled by the Trak*)
@@ -25,4 +28,6 @@ VAR
 	MC_BR_AsmReset_AcpTrak_0 : MC_BR_AsmReset_AcpTrak;
 	Shuttles_exist : BOOL;
 	zmienna : INT := 0;
+	zatrzymanie : BOOL;
+	MC_BR_RoutedMoveAbs_AcpTrak_0 : MC_BR_RoutedMoveAbs_AcpTrak;
 END_VAR

@@ -73,6 +73,7 @@ PROGRAM _CYCLIC
         
 			(*        Get all available on the assembly (physically available on the real hardware or the added ones in the simulation)        *)
 		GET_SHUTTLE:
+			
 			MC_BR_AsmGetShuttle_AcpTrak_0.Enable := TRUE;
             
 			IF (MC_BR_AsmGetShuttle_AcpTrak_0.Valid) THEN
@@ -107,49 +108,135 @@ PROGRAM _CYCLIC
 			(*             Accelerate all shuttles in assembly via the same target position to the same velocity            *)
 			(* Used for startup, to accelerate all shuttles to an initial velocity in order to pass the first process-point *)
 		PROCESS:
+			CntShuttle := 1;
+			
+			CASE StepSector OF
+				Bottle_Input:
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[CntShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
+					
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.302;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+					
+					
+				Pouring_A:
+				
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[CntShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
+					
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.302;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+					
+				Pouring_B:
+					
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[CntShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
+					
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.302;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+					
+				Capping:
+					
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[CntShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
+				
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.302;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+					
+				Bottle_Output:
+				
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[CntShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
+					
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.302;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
 
-				MC_BR_RoutedMoveVel_AcpTrak_0.Execute := FALSE;
+			END_CASE;
+				//MC_BR_RoutedMoveAbs_AcpTrak_0.Execute := FALSE;
 			IF (CntShuttle > 0) THEN
-				IF (ShuttleAxis[CntShuttle].controlif <> 0) THEN 
-					MC_BR_RoutedMoveVel_AcpTrak_0.Axis          := ADR(ShuttleAxis[CntShuttle]);
-					MC_BR_RoutedMoveVel_AcpTrak_0.Execute       := TRUE;
+				IF (ShuttleAxis[CntShuttle].controlif <> 0)  THEN
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[CntShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 					IF zmienna=0 THEN
-						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorBottleInput);	
+						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorBottleInput);	
 					ELSIF zmienna=1 THEN
-						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorPouring_A);
+						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorPouring_A);
 					ELSIF zmienna=2 THEN
-						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorPouring_B);
+						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorPouring_B);
 					ELSIF zmienna=3 THEN
-						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorCapping);
+						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorCapping);
 					ELSIF zmienna =4 THEN
-						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorBottleOutput);
+						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorBottleOutput);
 					END_IF;
 					
 					
-					MC_BR_RoutedMoveVel_AcpTrak_0.Position      := SimShuttlePosition[NUM_SIM_SHUTTLES] + 0.15;
-					MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
-					MC_BR_RoutedMoveVel_AcpTrak_0.RouteVelocity := gTrakAsm.Parameter.Velocity;
-					MC_BR_RoutedMoveVel_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-					MC_BR_RoutedMoveVel_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-					MC_BR_RoutedMoveVel_AcpTrak_0.Jerk          := 0.0;
-					MC_BR_RoutedMoveVel_AcpTrak_0.BufferMode    := mcABORTING;
-					MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
-					MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
-					MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.302;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
 				END_IF
 			END_IF
 				
-
-			IF(MC_BR_RoutedMoveVel_AcpTrak_0.PositionReached=TRUE) THEN
-				IF (ShuttleAxis[CntShuttle].controlif <> 0) AND NOT (MC_Stop_0.Busy) THEN
-									MC_Stop_0.Execute := FALSE;
+			IF MC_BR_RoutedMoveAbs_AcpTrak_0.Done=TRUE THEN
+			(*	IF (ShuttleAxis[CntShuttle].controlif <> 0) AND NOT (MC_Stop_0.Busy) THEN
+					MC_Stop_0.Execute      := FALSE;
 					MC_Stop_0.Axis         := ADR(ShuttleAxis[CntShuttle]);
 					MC_Stop_0.Execute      := TRUE;
-					MC_Stop_0.Deceleration := 20;
+					MC_Stop_0.Deceleration := 1000.0;
 					MC_Stop_0.Jerk         := 0.0;
 					MC_BR_RoutedMoveVel_AcpTrak_0.Execute := FALSE;
+				END_IF*)
+				MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := FALSE;
+				IF zmienna=4 THEN
+					zmienna:=0;
+				ELSE
+				zmienna:=zmienna+1;
 				END_IF
-			END_IF
+			END_IF;
+			IF EDGEPOS(MC_Stop_0.Done)=TRUE THEN
+			//	MC_Stop_0.Execute:=FALSE;
+			END_IF;
+			
 			IF(gTrakAsm.Command.ShuttleStop) AND (CntShuttle > NUM_SIM_SHUTTLES) THEN   (*Waiting for Stop command*)
 				CntShuttle := 1;
 				Step := STOPPING;
@@ -210,6 +297,7 @@ PROGRAM _CYCLIC
 	MC_Stop_0();
 	MC_BR_AsmReadStatus_AcpTrak_0();
 	MC_BR_AsmReset_AcpTrak_0();
+	MC_BR_RoutedMoveAbs_AcpTrak_0();
 	
 	
 END_PROGRAM
