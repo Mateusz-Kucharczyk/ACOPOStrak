@@ -68,4 +68,18 @@
       </Group>
     </Selector>
   </Element>
+  <Element ID="SectorWaitPour" Type="sector">
+    <Selector ID="Type" Value="Composed">
+      <Group ID="StartSegment">
+        <Property ID="SegmentRef" Value="::Seg_A_24" />
+      </Group>
+      <Group ID="IntermediateSegments">
+        <Property ID="SegmentRef[1]" Value="::Seg_A_25" />
+      </Group>
+      <Group ID="EndSegment">
+        <Property ID="SegmentRef" Value="::Seg_A_26" />
+        <Property ID="PositionRelativeTo" Value="FromEnd" />
+      </Group>
+    </Selector>
+  </Element>
 </Configuration>

@@ -17,6 +17,7 @@ TYPE
 		Pouring_A,
 		Pouring_B,
 		Capping,
-		Bottle_Output
+		Bottle_Output,
+		WaitPour
 		);
 END_TYPE
