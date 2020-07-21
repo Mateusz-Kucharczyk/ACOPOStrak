@@ -11,6 +11,6 @@
 
     <Object Type="Program" Language="IEC">Program</Object>
     <Object Type="Program" Language="IEC">Program1</Object>
-
+    <Object Type="Program" Language="IEC">TrakMovement</Object>
   </Objects>
 </Package>

@@ -4,7 +4,6 @@ PROGRAM _INIT
 	SizeofVis := SIZEOF(Vis);
 	// max number of displayed shuttles  
 	NumVisShuttle := SIZEOF(Vis.Shuttle) / SIZEOF(Vis.Shuttle[0]);  
-    
 END_PROGRAM
 
 PROGRAM _CYCLIC 

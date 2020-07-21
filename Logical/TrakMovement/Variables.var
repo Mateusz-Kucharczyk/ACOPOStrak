@@ -1,9 +1,7 @@
-(*constants*)
 VAR CONSTANT
 	NUM_SIM_SHUTTLES : USINT := 1; (*Maximum Shuttles Added in the Simulation*)
 	MAX_NUM_SHUTTLES : USINT := 25; (*Maximum Shuttles Handled by the Trak*)
 END_VAR
-(*add shuttles for simulation*)
 VAR
 	SimShuttlePosition : ARRAY[1..MAX_NUM_SHUTTLES] OF LREAL;
 END_VAR

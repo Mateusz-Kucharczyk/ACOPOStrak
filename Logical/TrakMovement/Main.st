@@ -1,17 +1,19 @@
+
 PROGRAM _INIT
-    (* Set Shuttlepositions for Simulation (Starting at Position 0 on specified Sector) *)
+	(* Insert code here *)
 	FOR i := 1 TO NUM_SIM_SHUTTLES DO
 		SimShuttlePosition[i] := 0.15 * (i - 1);
 	END_FOR
-    
-	(* Init Parameters for Shuttle movements *)
+	
+	//   Trak speed
 	gTrakAsm.Parameter.Velocity := 2.0;
 	gTrakAsm.Parameter.Acceleration := 20;
 	gTrakAsm.Parameter.Deceleration := 20;
-    
+	//  Trak speed end
+	
 	(* Write this value into the Size of Userdata in the Shuttle Stereotype configuration *)
 	SizeofUserdata := SIZEOF(gShuttleUserData);
-
+	
 	(* Assembly reference for FUB's *)
 	MC_BR_AsmPowerOn_AcpTrak_0.Assembly     := ADR(gAssembly_1);
 	MC_BR_AsmGetShuttle_AcpTrak_0.Assembly  := ADR(gAssembly_1);
@@ -22,14 +24,15 @@ PROGRAM _INIT
 	(* Enable reading of current status of the assembly *)
 	MC_BR_AsmReadStatus_AcpTrak_0.Enable := TRUE;
     
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
-
 	CASE Step OF
     
 		(*        Assemply power off and waiting for power on command        *)
 		POWER_OFF:
+			
 			IF EDGEPOS(MC_BR_AsmPowerOff_AcpTrak_0.Done) THEN    (* When power off is done, delete the shuttle reference *)
 				MC_BR_AsmPowerOff_AcpTrak_0.Execute := FALSE;
 				brsmemset(ADR(ShuttleAxis), 0, SIZEOF(ShuttleAxis));
@@ -41,6 +44,7 @@ PROGRAM _CYCLIC
 
 			(*        Assembly power ON        *)
 		POWER_ON:
+			
 			MC_BR_AsmPowerOn_AcpTrak_0.Execute := TRUE;
             
 			IF EDGEPOS(MC_BR_AsmPowerOn_AcpTrak_0.Done)THEN
@@ -90,6 +94,7 @@ PROGRAM _CYCLIC
         
 			(*        Assembly Active and ready for movement        *)
 		READY:
+			
 			IF (gTrakAsm.Command.Power = FALSE) THEN     (*Power Off Command*)
 				Step := POWER_OFF;
 			ELSIF (gTrakAsm.Command.ShuttleStart) THEN   (*Waiting for Movement command*)
@@ -102,10 +107,9 @@ PROGRAM _CYCLIC
 			(*             Accelerate all shuttles in assembly via the same target position to the same velocity            *)
 			(* Used for startup, to accelerate all shuttles to an initial velocity in order to pass the first process-point *)
 		PROCESS:
-			IF EDGEPOS(MC_BR_RoutedMoveVel_AcpTrak_0.Active) THEN
-				CntShuttle := CntShuttle + 1;
+
 				MC_BR_RoutedMoveVel_AcpTrak_0.Execute := FALSE;
-			ELSIF (CntShuttle > 0) THEN
+			IF (CntShuttle > 0) THEN
 				IF (ShuttleAxis[CntShuttle].controlif <> 0) THEN 
 					MC_BR_RoutedMoveVel_AcpTrak_0.Axis          := ADR(ShuttleAxis[CntShuttle]);
 					MC_BR_RoutedMoveVel_AcpTrak_0.Execute       := TRUE;
@@ -121,6 +125,7 @@ PROGRAM _CYCLIC
 						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorBottleOutput);
 					END_IF;
 					
+					
 					MC_BR_RoutedMoveVel_AcpTrak_0.Position      := SimShuttlePosition[NUM_SIM_SHUTTLES] + 0.15;
 					MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
 					MC_BR_RoutedMoveVel_AcpTrak_0.RouteVelocity := gTrakAsm.Parameter.Velocity;
@@ -133,7 +138,18 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
 				END_IF
 			END_IF
-            
+				
+
+			IF(MC_BR_RoutedMoveVel_AcpTrak_0.PositionReached=TRUE) THEN
+				IF (ShuttleAxis[CntShuttle].controlif <> 0) AND NOT (MC_Stop_0.Busy) THEN
+									MC_Stop_0.Execute := FALSE;
+					MC_Stop_0.Axis         := ADR(ShuttleAxis[CntShuttle]);
+					MC_Stop_0.Execute      := TRUE;
+					MC_Stop_0.Deceleration := 20;
+					MC_Stop_0.Jerk         := 0.0;
+					MC_BR_RoutedMoveVel_AcpTrak_0.Execute := FALSE;
+				END_IF
+			END_IF
 			IF(gTrakAsm.Command.ShuttleStop) AND (CntShuttle > NUM_SIM_SHUTTLES) THEN   (*Waiting for Stop command*)
 				CntShuttle := 1;
 				Step := STOPPING;
@@ -194,5 +210,12 @@ PROGRAM _CYCLIC
 	MC_Stop_0();
 	MC_BR_AsmReadStatus_AcpTrak_0();
 	MC_BR_AsmReset_AcpTrak_0();
-    
+	
+	
 END_PROGRAM
+
+PROGRAM _EXIT
+	(* Insert code here *)
+	 
+END_PROGRAM
+
