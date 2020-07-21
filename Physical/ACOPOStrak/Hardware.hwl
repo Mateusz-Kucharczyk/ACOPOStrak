@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <BR.AS.HardwareTopology Version="0.0.0.1">
   <TimeStamps>
-    <TimeStamp LogicalPath="ACOPOStrak.Hardware.hw" LastWriteTime="07/20/2020 09:19:44" />
+    <TimeStamp LogicalPath="ACOPOStrak.Hardware.hw" LastWriteTime="07/21/2020 10:40:08" />
   </TimeStamps>
   <Modules>
     <Module Name="8F1I01.AA66.xxxx-1" Type="8F1I01.AA66.xxxx-1" X="181" Y="337" RotationAngle="180" />
@@ -44,21 +44,36 @@
     <Module Name="X20TB12a" Type="X20TB12" X="972" Y="-119" />
     <Module Name="X20BC8083" Type="X20BC8083" X="947" Y="-146" />
     <Module Name="5PC910.SX02-00" Type="5PC910.SX02-00" X="100" Y="100" />
-    <Module Name="5AC901.BX02-00" Type="5AC901.BX02-00" X="159" Y="133" />
-    <Module Name="5LS182.6-2" Type="5LS182.6-2" X="164" Y="146" />
+    <Module Name="5AC901.BX02-02" Type="5AC901.BX02-02" X="159" Y="133" />
+    <Module Name="5LS182.8a" Type="5LS182.8" X="164" Y="175" />
+    <Module Name="5LS182.8" Type="5LS182.8" X="164" Y="146" />
     <Module Name="5PC900_TS17_00" Type="5PC900.TS17-00" X="159" Y="110" />
+    <Module Name="8EI4X5MCT10.xxxx-1" Type="8EI4X5MCT10.xxxx-1" X="319" Y="-146" />
+    <Module Name="8EAC0122.001-1" Type="8EAC0122.001-1" X="321.8" Y="-107.5" />
+    <Module Name="8EI4X5MCT10.xxxx-1a" Type="8EI4X5MCT10.xxxx-1" X="236" Y="-117" />
+    <Module Name="8EAC0122.001-1a" Type="8EAC0122.001-1" X="238.8" Y="-78.5" />
   </Modules>
   <Links>
-    <Link From="5LS182.6-2" To="X20BC8083" FromPort="IF1" ToPort="PLK1" IsRoutedByUser="False">
-      <Point X="205.5" Y="154" />
-      <Point X="205.5" Y="154" />
-      <Point X="215.5" Y="154" />
+    <Link From="5LS182.8" To="X20BC8083" FromPort="IF1" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="205" Y="154" />
+      <Point X="205" Y="154" />
+      <Point X="215" Y="154" />
       <Point X="929" Y="154" />
       <Point X="929" Y="148" />
       <Point X="952.75" Y="148" />
       <Point X="952.75" Y="-46" />
       <Point X="952.75" Y="-71" />
       <Point X="961" Y="-71" />
+    </Link>
+    <Link From="5LS182.8a" To="8EI4X5MCT10.xxxx-1a" FromPort="IF1" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="205" Y="183" />
+      <Point X="205" Y="183" />
+      <Point X="215" Y="183" />
+      <Point X="225" Y="183" />
+      <Point X="225" Y="-106.5" />
+      <Point X="235.7" Y="-106.5" />
+      <Point X="243.7" Y="-106.5" />
+      <Point X="243.7" Y="-106.5" />
     </Link>
     <Link From="8F1I01.AA66.xxxx-1" To="8F1I01.AA66.xxxx-1a" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
       <Point X="341.5" Y="377" />
@@ -384,6 +399,15 @@
       <Point X="896" Y="-55" />
       <Point X="911" Y="-55" />
       <Point X="911" Y="-55" />
+    </Link>
+    <Link From="8EI4X5MCT10.xxxx-1" To="8EI4X5MCT10.xxxx-1a" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
+      <Point X="326.7" Y="-135.5" />
+      <Point X="326.7" Y="-135.5" />
+      <Point X="318.7" Y="-135.5" />
+      <Point X="252.1" Y="-135.5" />
+      <Point X="252.1" Y="-117.5" />
+      <Point X="252.1" Y="-106.5" />
+      <Point X="252.1" Y="-106.5" />
     </Link>
   </Links>
   <InfoElements />

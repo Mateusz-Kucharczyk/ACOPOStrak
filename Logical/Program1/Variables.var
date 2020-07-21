@@ -1,0 +1,8 @@
+VAR
+	s : STRING[80];
+	MpRecipeXML_0 : MpRecipeXml;
+	Coffee : CoffeeType;
+	MpRecipeRegPar_0 : MpRecipeRegPar;
+	CF : STRING[80];
+	MyFile : STRING[80];
+END_VAR

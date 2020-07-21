@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource FileVersion="7" ArVersion="C4.72">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView>
+    <Module Name="&lt;Default&gt;">
+      <Task Name="Program">
+        <Variable Name="DeltaParameters">
+          <Variable Name="Position" EnableArrayElements="True" />
+        </Variable>
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="X" />
+          <Variable Name="Y" />
+          <Variable Name="Z" />
+        </Variable>
+        <Variable Name="GroupPosition">
+          <Variable Name="Position" EnableArrayElements="True" />
+        </Variable>
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>
