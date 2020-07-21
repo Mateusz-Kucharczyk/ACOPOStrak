@@ -37,14 +37,28 @@
       </Group>
     </Selector>
   </Element>
-  <Element ID="SectorPouring_1" Type="sector">
-    <Selector ID="Type" Value="Subsector">
-      <Property ID="SectorRef" Value="SectorTrackA" />
-      <Group ID="Start">
-        <Property ID="Position" Value="0.33" />
+  <Element ID="SectorPouring_A" Type="sector">
+    <Selector ID="Type" Value="Composed">
+      <Group ID="StartSegment">
+        <Property ID="SegmentRef" Value="::Seg_A_4" />
       </Group>
-      <Property ID="Length" Value="0.1" />
-      <Property ID="Direction" Value="Positive" />
+      <Group ID="EndSegment">
+        <Property ID="SegmentRef" Value="::Seg_A_4" />
+        <Property ID="PositionRelativeTo" Value="FromEnd" />
+      </Group>
+    </Selector>
+  </Element>
+  <Element ID="SectorPouring_B" Type="sector">
+    <Selector ID="Type" Value="Composed">
+      <Group ID="StartSegment">
+        <Property ID="SegmentRef" Value="::Seg_B_6" />
+        <Property ID="Position" Value="0.1" />
+      </Group>
+      <Group ID="EndSegment">
+        <Property ID="SegmentRef" Value="::Seg_B_6" />
+        <Property ID="Position" Value="0.1" />
+        <Property ID="PositionRelativeTo" Value="FromEnd" />
+      </Group>
     </Selector>
   </Element>
 </Configuration>

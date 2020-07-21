@@ -90,7 +90,7 @@
     </Connection>
     <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
     <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="STRAIGHT660" />
-    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_5" />
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_6" />
     <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
     <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
   </Module>
@@ -104,6 +104,16 @@
     <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
     <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="STRAIGHT660" />
     <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_A_3" />
+    <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
+    <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
+  </Module>
+  <Module Name="8F1I01.AA66.xxxx-1e" Type="8F1I01.AA66.xxxx-1" Version="1.0.0.1">
+    <Connection Connector="PLK2" TargetModule="8F1I01.AB2B.xxxx-1" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
+    <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="STRAIGHT660" />
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_3" />
     <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
     <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
   </Module>
@@ -130,6 +140,19 @@
     <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
     <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="STRAIGHT660" />
     <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_A_6" />
+    <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
+    <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
+  </Module>
+  <Module Name="8F1I01.AA66.xxxx-1h" Type="8F1I01.AA66.xxxx-1" Version="1.0.0.1">
+    <Connection Connector="PLK1" TargetModule="8F1I01.BA2B.xxxx-1b" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="PLK3" TargetModule="X20HB2880a" TargetConnector="ETH1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
+    <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="STRAIGHT660" />
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_9" />
     <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
     <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
   </Module>
@@ -261,6 +284,9 @@
     <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
   </Module>
   <Module Name="8F1I01.AB2B.xxxx-1" Type="8F1I01.AB2B.xxxx-1" Version="1.0.0.1">
+    <Connection Connector="PLK1" TargetModule="8F1I01.AA66.xxxx-1e" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
     <Connection Connector="PLK2" TargetModule="8F1I01.BA2B.xxxx-1d" TargetConnector="PLK1">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
     </Connection>
@@ -276,7 +302,7 @@
     </Connection>
     <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
     <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="STRAIGHT105_TO_CIRCULAR" />
-    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_3" />
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_4" />
     <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
     <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
   </Module>
@@ -315,7 +341,7 @@
     </Connection>
     <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
     <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="STRAIGHT105_TO_CIRCULAR" />
-    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_6" />
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_7" />
     <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
     <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
   </Module>
@@ -325,7 +351,7 @@
     </Connection>
     <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
     <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="STRAIGHT105_TO_CIRCULAR" />
-    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_9" />
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_11" />
     <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
     <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
   </Module>
@@ -350,7 +376,7 @@
     </Connection>
     <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
     <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="CIRCULAR_TO_STRAIGHT105" />
-    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_4" />
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_5" />
     <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
     <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
   </Module>
@@ -358,12 +384,12 @@
     <Connection Connector="PLK1" TargetModule="8F1I01.AB2B.xxxx-1e" TargetConnector="PLK2">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
     </Connection>
-    <Connection Connector="PLK3" TargetModule="X20HB2880a" TargetConnector="ETH1">
+    <Connection Connector="PLK2" TargetModule="8F1I01.AA66.xxxx-1h" TargetConnector="PLK1">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
     </Connection>
     <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
     <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="CIRCULAR_TO_STRAIGHT105" />
-    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_8" />
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_10" />
     <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
     <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
   </Module>
@@ -399,7 +425,7 @@
     </Connection>
     <Parameter ID="McTypeID" Location="DriveConfiguration" Value="LLMConfig" />
     <Parameter ID="Shape" Location="DriveConfiguration/Segment" Value="CIRCULAR_TO_STRAIGHT105" />
-    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_7" />
+    <Parameter ID="SegmentReference" Location="DriveConfiguration/Segment" Value="Seg_B_8" />
     <Parameter ID="StopReaction" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
     <Parameter ID="SpeedFilter" Location="DriveConfiguration/Segment" Value="UseAssemblySetting" />
   </Module>
@@ -507,7 +533,7 @@
     <Connection Connector="SS" TargetModule="X20BB82a" TargetConnector="SS2" />
   </Module>
   <Module Name="X20HB2880a" Type="X20HB2880" Version="1.1.0.0">
-    <Connection Connector="ETH1" TargetModule="8F1I01.BA2B.xxxx-1b" TargetConnector="PLK3">
+    <Connection Connector="ETH1" TargetModule="8F1I01.AA66.xxxx-1h" TargetConnector="PLK3">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
     </Connection>
     <Connection Connector="ETH2" TargetModule="8F1I01.BA2B.xxxx-1e" TargetConnector="PLK3">

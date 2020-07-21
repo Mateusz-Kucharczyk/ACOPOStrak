@@ -49,8 +49,9 @@
       </Group>
       <Group ID="Track[2]">
         <Group ID="Segments">
-          <Property ID="SegmentRef[1]" Value="::Seg_B_2" />
-          <Property ID="SegmentRef[2]" Value="::Seg_B_1" />
+          <Property ID="SegmentRef[1]" Value="::Seg_B_3" />
+          <Property ID="SegmentRef[2]" Value="::Seg_B_2" />
+          <Property ID="SegmentRef[3]" Value="::Seg_B_1" />
         </Group>
         <Selector ID="Position" Value="RelativeToOne">
           <Group ID="TrackSegmentPosition">
@@ -66,35 +67,36 @@
       </Group>
       <Group ID="Track[3]">
         <Group ID="Segments">
-          <Property ID="SegmentRef[1]" Value="::Seg_B_3" />
-          <Property ID="SegmentRef[2]" Value="::Seg_B_4" />
-          <Property ID="SegmentRef[3]" Value="::Seg_B_5" />
-          <Property ID="SegmentRef[4]" Value="::Seg_B_6" />
-          <Property ID="SegmentRef[5]" Value="::Seg_B_7" />
+          <Property ID="SegmentRef[1]" Value="::Seg_B_4" />
+          <Property ID="SegmentRef[2]" Value="::Seg_B_5" />
+          <Property ID="SegmentRef[3]" Value="::Seg_B_6" />
+          <Property ID="SegmentRef[4]" Value="::Seg_B_7" />
+          <Property ID="SegmentRef[5]" Value="::Seg_B_8" />
         </Group>
         <Selector ID="Position" Value="RelativeToOne">
           <Group ID="TrackSegmentPosition">
-            <Property ID="SegmentRef" Value="::Seg_B_3" />
+            <Property ID="SegmentRef" Value="::Seg_B_4" />
           </Group>
           <Group ID="Base">
-            <Property ID="SegmentRef" Value="::Seg_B_2" />
-            <Property ID="Position" Value="0.15" />
+            <Property ID="SegmentRef" Value="::Seg_B_3" />
+            <Property ID="Position" Value="0.33" />
           </Group>
         </Selector>
       </Group>
       <Group ID="Track[4]">
         <Group ID="Segments">
-          <Property ID="SegmentRef[1]" Value="::Seg_B_9" />
-          <Property ID="SegmentRef[2]" Value="::Seg_B_8" />
+          <Property ID="SegmentRef[1]" Value="::Seg_B_11" />
+          <Property ID="SegmentRef[2]" Value="::Seg_B_10" />
+          <Property ID="SegmentRef[3]" Value="::Seg_B_9" />
         </Group>
         <Selector ID="Position" Value="RelativeToTwo">
           <Group ID="AlignmentToFirst">
-            <Property ID="SegmentRefNewFirst" Value="::Seg_B_9" />
-            <Property ID="SegmentRefBaseFirst" Value="::Seg_A_6" />
+            <Property ID="SegmentRefNewFirst" Value="::Seg_B_11" />
+            <Property ID="SegmentRefBaseFirst" Value="::Seg_A_7" />
           </Group>
           <Group ID="AlignmentToSecond">
-            <Property ID="SegmentRefNewSecond" Value="::Seg_B_8" />
-            <Property ID="SegmentRefBaseSecond" Value="::Seg_B_7" />
+            <Property ID="SegmentRefNewSecond" Value="::Seg_B_9" />
+            <Property ID="SegmentRefBaseSecond" Value="::Seg_B_8" />
           </Group>
         </Selector>
       </Group>

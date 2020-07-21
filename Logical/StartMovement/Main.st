@@ -108,8 +108,14 @@ PROGRAM _CYCLIC
 				IF (ShuttleAxis[CntShuttle].controlif <> 0) THEN 
 					MC_BR_RoutedMoveVel_AcpTrak_0.Axis          := ADR(ShuttleAxis[CntShuttle]);
 					MC_BR_RoutedMoveVel_AcpTrak_0.Execute       := TRUE;
-                    
-					MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorTrackA);
+					IF zmienna=0 THEN
+						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorTrackA);	
+					ELSIF zmienna=1 THEN
+						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorPouring_A);
+					ELSIF zmienna=2 THEN
+						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorPouring_B);
+					END_IF;
+					
 					MC_BR_RoutedMoveVel_AcpTrak_0.Position      := SimShuttlePosition[NUM_SIM_SHUTTLES] + 0.15;
 					MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
 					MC_BR_RoutedMoveVel_AcpTrak_0.RouteVelocity := gTrakAsm.Parameter.Velocity;
