@@ -5,7 +5,7 @@ PROGRAM _INIT
 	MpDelta3Axis_0.Parameters := ADR(DeltaParameters); 
 
 	MpDelta3Axis_0.Override := 100.0; 
-	DeltaParameters.ProgramName := 'Robotic1.st';    //File stored on FileDevice
+	DeltaParameters.ProgramName := 'RoboticOut.st';    //File stored on FileDevice
 	GroupPosition.AxesGroup := ADR(g3AxDeltaA_1);
 	GroupPosition.Enable := TRUE;
 	GroupPosition.CoordSystem := 0;
