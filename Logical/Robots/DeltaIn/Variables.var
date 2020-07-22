@@ -4,4 +4,6 @@ VAR
 	Step : StepType;
 	diStop : BOOL;
 	diStart : BOOL;
+	diInterrupt : BOOL;
+	diContionue : BOOL;
 END_VAR
