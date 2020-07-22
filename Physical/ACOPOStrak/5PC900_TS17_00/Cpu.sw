@@ -5,11 +5,15 @@
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
+
     <Task Name="Vis" Source="Vis.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="StartMovem" Source="StartMovement.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="Robotics" Source="Robotics.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Recipe" Source="Recipe.prg" Memory="UserROM" Language="IEC" Debugging="true" />
 	<Task Name="svgTransfo" Source="svgTransform.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+
+    <Task Name="DeltaIn" Source="Robots.DeltaIn.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="DeltaOut" Source="Robots.DeltaOut.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />
@@ -67,11 +71,14 @@
     <LibraryObject Name="astime" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="powerlnk" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+<<<<<<< HEAD
     <LibraryObject Name="asarprof" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asarlog" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asmem" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="brsystem" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="standard" Source="Libraries.standard.lby" Memory="UserROM" Language="binary" Debugging="true" />
+=======
+>>>>>>> roboty2
   </Libraries>
 </SwConfiguration>

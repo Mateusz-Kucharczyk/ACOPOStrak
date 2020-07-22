@@ -8,9 +8,25 @@
   </Aliases>
   <DefaultView>
     <Module Name="&lt;Default&gt;">
+
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
         <Variable Name="svgBlocksToColor" EnableArrayElements="True" />
+
+      <Task Name="DeltaOut">
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
+      </Task>
+      <Task Name="DeltaIn">
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
+
       </Task>
     </Module>
   </DefaultView>

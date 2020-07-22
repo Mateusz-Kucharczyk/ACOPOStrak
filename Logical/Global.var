@@ -10,5 +10,7 @@ END_VAR
 (*shuttle monitor structure for Vis*)
 VAR
 	gShuttleMon : McAcpTrakAssemblyMonData;
+	ShuttleOutInPosition : BOOL;
+	ShutteInInPosition : BOOL;
 END_VAR
 

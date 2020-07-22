@@ -1,0 +1,10 @@
+VAR
+	DeltaParameters : MpDelta3AxisParType;
+	MpDelta3Axis_0 : MpDelta3Axis;
+	Step : StepType;
+	diStop : BOOL;
+	diStart : BOOL;
+	diInterrupt : BOOL;
+	diContionue : BOOL;
+	diErrorReset : BOOL;
+END_VAR

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Configuration>
-  <Element ID="gAxisQ1" Type="axis">
+  <Element ID="gAxisQ1Out" Type="axis">
     <Property ID="BaseTypeIsReadOnly" Value="0" />
     <Selector ID="BaseType" Value="RotaryBounded">
       <Property ID="MeasurementUnitIsReadOnly" Value="0" />
@@ -36,7 +36,7 @@
     </Selector>
     <Selector ID="Alarms" Value="None" />
   </Element>
-  <Element ID="gAxisQ2" Type="axis">
+  <Element ID="gAxisQ2Out" Type="axis">
     <Property ID="BaseTypeIsReadOnly" Value="0" />
     <Selector ID="BaseType" Value="RotaryBounded">
       <Property ID="MeasurementUnitIsReadOnly" Value="0" />
@@ -72,7 +72,7 @@
     </Selector>
     <Selector ID="Alarms" Value="None" />
   </Element>
-  <Element ID="gAxisQ3" Type="axis">
+  <Element ID="gAxisQ3Out" Type="axis">
     <Property ID="BaseTypeIsReadOnly" Value="0" />
     <Selector ID="BaseType" Value="RotaryBounded">
       <Property ID="MeasurementUnitIsReadOnly" Value="0" />
