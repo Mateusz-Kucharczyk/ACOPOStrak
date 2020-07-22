@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <BR.AS.HardwareTopology Version="0.0.0.1">
   <TimeStamps>
-    <TimeStamp LogicalPath="ACOPOStrak.Hardware.hw" LastWriteTime="07/17/2020 09:47:47" />
+    <TimeStamp LogicalPath="ACOPOStrak.Hardware.hw" LastWriteTime="07/21/2020 14:55:03" />
   </TimeStamps>
   <Modules>
-    <Module Name="5PC910.SX01-00" Type="5PC910.SX01-00" X="68.2999954" Y="90" />
-    <Module Name="5AC901.BX01-00" Type="5AC901.BX01-00" X="100" Y="123" />
-    <Module Name="5PC900_TS17_00" Type="5PC900.TS17-00" X="100" Y="100" />
+    <Module Name="5PC910.SX01-00" Type="5PC910.SX01-00" X="68" Y="90" />
+    <Module Name="5AC901.BX01-00" Type="5AC901.BX01-00" X="99.7" Y="123" />
+    <Module Name="5PC900_TS17_00" Type="5PC900.TS17-00" X="99.7" Y="100" />
   </Modules>
   <Links />
   <InfoElements />

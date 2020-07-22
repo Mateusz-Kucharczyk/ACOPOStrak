@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="bindingTopContent" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+  <Binding mode="twoWay">
+<Source xsi:type="session" refId="btnLoginHide" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTop" widgetRefId="buttonOpenDialog" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="btnLogoutHide" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTop" widgetRefId="LogoutButton1" attribute="visible" />
+</Binding>
+
+  </Bindings>
+
+
+</BindingsSet>

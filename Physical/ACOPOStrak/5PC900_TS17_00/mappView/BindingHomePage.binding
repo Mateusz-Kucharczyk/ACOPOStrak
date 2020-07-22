@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="bindingHomePage" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::svgTransfo:tranformation" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Paper1" attribute="transform" />
+		</Binding>
+	<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch2" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch3" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch4" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch5" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch7" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch6" attribute="enable" />
+</Binding>
+</Bindings>
+</BindingsSet>

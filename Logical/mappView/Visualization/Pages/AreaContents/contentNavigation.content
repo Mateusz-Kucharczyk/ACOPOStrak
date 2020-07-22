@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="contentNavigation" height="700" width="100" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.NavigationBar" id="NavigationBar1" top="60" left="0" width="100" height="380" zIndex="0">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.NavigationButton" id="navBtnSettings" top="100" left="0" height="60" zIndex="0" image="Media/SymbolLib/Symbols/Settings.svg" imageAlign="top" pageId="pageSettings" text="$IAT/navBtnSettings" />
+        <Widget xsi:type="widgets.brease.NavigationButton" id="navBtnAlarms" top="180" left="0" height="60" zIndex="1" image="Media/SymbolLib/Alarm/Alarm.svg" imageAlign="top" pageId="pageAlarms" text="$IAT/navBtnAlarm" />
+        <Widget xsi:type="widgets.brease.NavigationButton" id="navBtnHome" top="20" left="0" height="60" zIndex="2" image="Media/SymbolLib/Symbols/Home.svg" imageAlign="top" pageId="pageHome" text="$IAT/navBtnHome" />
+        <Widget xsi:type="widgets.brease.NavigationButton" id="navBtnOrders" top="260" left="0" height="60" zIndex="3" image="Media/SymbolLib/Edit/Edit.svg" imageAlign="top" pageId="pageOrders" text="$IAT/navBtnOrders" />
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>
