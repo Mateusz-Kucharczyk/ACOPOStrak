@@ -7,9 +7,8 @@
     <Object Type="Package" Description="Global libraries">Libraries</Object>
     <Object Type="Program" Language="IEC">StartMovement</Object>
     <Object Type="Program" Language="IEC">Vis</Object>
-    <Object Type="Program" Language="IEC">DeltaIn</Object>
-    <Object Type="Program" Language="IEC">DeltaOut</Object>
     <Object Type="Program" Language="IEC">Program1</Object>
     <Object Type="Program" Language="IEC">TrakMovement</Object>
+    <Object Type="Package">Robots</Object>
   </Objects>
 </Package>

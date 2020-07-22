@@ -5,11 +5,11 @@
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
-    <Task Name="DeltaIn" Source="DeltaIn.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="DeltaIn" Source="Robots.DeltaIn.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Program1" Source="Program1.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Vis" Source="Vis.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="StartMovem" Source="StartMovement.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="DeltaOut" Source="DeltaOut.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="DeltaOut" Source="Robots.DeltaOut.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />

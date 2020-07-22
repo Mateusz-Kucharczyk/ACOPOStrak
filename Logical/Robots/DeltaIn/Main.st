@@ -15,7 +15,7 @@ PROGRAM _CYCLIC
     
 	MpDelta3Axis_0();
 	IF diStop THEN
-		Step:=Stop;
+		Step := Stop;
 	END_IF;
 	
 	CASE Step OF
@@ -26,7 +26,7 @@ PROGRAM _CYCLIC
 		Power:
 			MpDelta3Axis_0.Power := TRUE;
 			IF MpDelta3Axis_0.PowerOn THEN
-	  			Step:= Home;
+	  			Step := Home;
 			END_IF;
 		Home:
 			MpDelta3Axis_0.Home := TRUE;
@@ -45,7 +45,6 @@ PROGRAM _CYCLIC
 END_PROGRAM
 
 PROGRAM _EXIT
-
 
 	MpDelta3Axis_0.Power  := FALSE;
 	MpDelta3Axis_0.Home   := FALSE;
