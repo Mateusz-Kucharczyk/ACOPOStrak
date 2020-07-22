@@ -1,0 +1,24 @@
+(*FB's*)
+VAR
+	MpRecipeXML_0 : MpRecipeXml;
+	MpRecipeRegPar_0 : MpRecipeRegPar;
+END_VAR
+(*Structures*)
+VAR
+	ClientOrder : Order_type; (*Currently loaded recipe*)
+END_VAR
+(*Enums*)
+VAR
+	Step : RecipeState_type;
+END_VAR
+(*IO's*)
+VAR
+	diSave : BOOL;
+	diLoad : BOOL;
+	diErrorReset : BOOL;
+END_VAR
+(*Other*)
+VAR
+	ErrorMessage : STRING[256];
+	Filename : STRING[80];
+END_VAR
