@@ -29,11 +29,14 @@
     <Parameter ID="Cyclic1Duration" Value="2000" />
     <Parameter ID="Cyclic1Tolerance" Value="0" />
     <Group ID="FileDevice1" />
-    <Parameter ID="FileDeviceName1" Value="CNC_PrgDir" />
-    <Parameter ID="FileDevicePath1" Value="C:\projects\Trak\ACOPOStrak\sim" />
+    <Parameter ID="FileDeviceName1" Value="SvgData" Description="Trak" />
+    <Parameter ID="FileDevicePath1" Value="C:\ACOPOStrak\Trak" />
     <Group ID="FileDevice2" />
-    <Parameter ID="FileDeviceName2" Value="CF" />
-    <Parameter ID="FileDevicePath2" Value="C:\projects" />
+    <Parameter ID="FileDeviceName2" Value="CNC_PrgDir" Description="Robotics" />
+    <Parameter ID="FileDevicePath2" Value="C:\ACOPOStrak\Robotics" />
+    <Group ID="FileDevice3" />
+    <Parameter ID="FileDeviceName3" Value="CF" Description="Recipe" />
+    <Parameter ID="FileDevicePath3" Value="C:\ACOPOStrak\Recipe" />
     <Parameter ID="ActivateOpcUa" Value="1" />
     <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
   </Module>
