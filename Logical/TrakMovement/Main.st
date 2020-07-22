@@ -37,7 +37,8 @@ PROGRAM _CYCLIC
 	
 	MC_BR_ShReadInfo_AcpTrak_0.Enable:=FALSE;
 	MC_BR_ShReadInfo_AcpTrak_0();
-	
+	MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := FALSE;
+	MC_BR_RoutedMoveAbs_AcpTrak_0();
 	
 	CASE Step OF
     
@@ -130,36 +131,86 @@ PROGRAM _CYCLIC
 			MC_BR_ShReadInfo_AcpTrak_1.Axis:= ADR(ShuttleAxis[2]);
 			MC_BR_ShReadInfo_AcpTrak_1.Enable:=TRUE;
 			MC_BR_ShReadInfo_AcpTrak_1();
-			MC_BR_ShReadInfo_AcpTrak_2.Axis:= ADR(ShuttleAxis[1]);
+			MC_BR_ShReadInfo_AcpTrak_2.Axis:= ADR(ShuttleAxis[3]);
 			MC_BR_ShReadInfo_AcpTrak_2.Enable:=TRUE;
 			MC_BR_ShReadInfo_AcpTrak_2();
 			
+			// States of running shuttles
+			
 			IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorBottleInput' THEN
 				Step_Sector:=Bottle_Input;
-				IF EDGEPOS(Odebrane)=TRUE THEN
-					Odebrane:=FALSE;
+				IF Odebrane=TRUE THEN
+				//	Odebrane:=FALSE;
 					Step_Sector:=WaitPour;
 				END_IF;
-			END_IF;
-			IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorWaitPour'
+				
+			ELSIF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorBottleInput' THEN
+				Step_Sector:=Bottle_Input;
+				
+			ELSIF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorWaitPour'
 				OR MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorWaitPour'
 				THEN
 				Step_Sector:=WaitPour;
-			END_IF;
-			IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_A' THEN
+				
+				// Pouring arrive
+				IF Pouring_A_Comming=FALSE AND Step_Sector=WaitPour THEN // AND  PouringShuttles < 2
+					Step_Sector:=Pouring_A;
+				END_IF;
+				IF Pouring_A_Comming=TRUE AND Step_Sector=WaitPour AND Pouring_B_Comming=FALSE  THEN //AND  PouringShuttles < 2
+					Step_Sector:=Pouring_B;
+				END_IF;
+			
+
+			
+			ELSIF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_A'
+				OR MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorPouring_A'
+				THEN
 				Step_Sector:=Pouring_A;
-			END_IF;
-			IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_B' THEN
+				IF   TON_Pouring_A.Q=TRUE   THEN
+					Pouring_A_Busy:=FALSE;
+					Pouring_A_Comming:=FALSE;
+					Step_Sector:=WaitCap;
+					TON_Pouring_A.IN:=FALSE;
+				END_IF
+
+			ELSIF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_B'
+				OR MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorPouring_B'
+				THEN
 				Step_Sector:=Pouring_B;
-			END_IF;
-			IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorWaitCapping' THEN
+				IF   TON_Pouring_B.Q=TRUE   THEN
+					Pouring_B_Busy:=FALSE;
+					Pouring_B_Comming:=FALSE;
+					Step_Sector:=WaitCap;
+					TON_Pouring_B.IN:=FALSE;
+				END_IF
+
+			ELSIF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorWaitCapping'
+				OR MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorWaitCapping'
+				THEN
 				Step_Sector:=WaitCap;
-			END_IF;
-			IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorCapping' THEN
+				IF Step_Sector=WaitCap AND Capping_Comming=FALSE THEN
+					Step_Sector:=Capping;
+				END_IF;
+
+			ELSIF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorCapping'
+				OR MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorCapping'
+				THEN
 				Step_Sector:=Capping;
-			END_IF;
-			IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorBottleOutput' THEN
+				IF   TON_Capping.Q=TRUE   THEN
+					Capping_Busy:=FALSE;
+					Step_Sector:=Bottle_Output;
+					TON_Capping.IN:=FALSE;
+					Capping_Comming:=FALSE;
+				END_IF
+
+			ELSIF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorBottleOutput' 
+				OR MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorBottleOutput'
+				THEN
 				Step_Sector:=Bottle_Output;
+				IF Oddane=TRUE THEN
+				//	Oddane:=FALSE;
+					Step_Sector:=Bottle_Input;
+				END_IF;
 			END_IF;
 
 			
@@ -176,50 +227,31 @@ PROGRAM _CYCLIC
 			END_IF;
 			// TON end
 			
-			// Pouring arrive
-			IF Pouring_A_Comming=FALSE AND Step_Sector=WaitPour AND  PouringShuttles < 2 THEN
-				Step_Sector:=Pouring_A;
-			END_IF;
-			IF Pouring_A_Busy=TRUE AND Step_Sector=WaitPour AND Pouring_B_Comming=FALSE AND  PouringShuttles < 2 THEN
-				Step_Sector:=Pouring_B;
-			END_IF;
+
+			// Pouring quit and capping arrive
 			
-			IF Step_Sector=WaitCap AND Capping_Busy=FALSE THEN
-				Step_Sector:=Capping;
-			END_IF;
+
 			
+			(*
 			
 			IF	EDGEPOS(MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName='SectorPouring_A')
 				OR EDGEPOS(MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName='SectorPouring_B') THEN
 				PouringShuttles:=PouringShuttles+1;
 				
 			END_IF
+			*)
 			
 			
+			// TON handling
 			
-			
-			
-			IF   TON_Pouring_A.Q=TRUE   THEN
-				Pouring_A_Busy:=FALSE;
-				Pouring_A_Comming:=FALSE;
-				Step_Sector:=WaitCap;
-				TON_Pouring_A.IN:=FALSE;
-			END_IF
-			IF   TON_Pouring_B.Q=TRUE   THEN
-				Pouring_B_Busy:=FALSE;
-				Pouring_B_Comming:=FALSE;
-				Step_Sector:=WaitCap;
-				TON_Pouring_B.IN:=FALSE;
-			END_IF
-			IF   TON_Capping.Q=TRUE   THEN
-				Capping_Busy:=FALSE;
-				Step_Sector:=Bottle_Output;
-				TON_Capping.IN:=FALSE;
-			END_IF
 
+
+
+			// TON end
+			
 			
 		//	IF EDGEPOS(ruch) THEN
-				
+			//	ruch:=FALSE;
 				CASE Step_Sector OF
 				Bottle_Input:
 					IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorBottleInput' THEN
@@ -241,7 +273,7 @@ PROGRAM _CYCLIC
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorWaitPour);	
-						MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.5;
+						MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.6;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
@@ -253,7 +285,7 @@ PROGRAM _CYCLIC
 					
 				Pouring_A:
 					Pouring_A_Comming:=TRUE;
-					MC_BR_SecGetShuttle_AcpTrak_A.Enable:=TRUE;
+				//	MC_BR_SecGetShuttle_AcpTrak_A.Enable:=TRUE;
 					IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_A' THEN
 						Pouring_A_Busy:=TRUE;
 					END_IF;
@@ -269,9 +301,11 @@ PROGRAM _CYCLIC
 						MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+					
+					
 				Pouring_B:
 					Pouring_B_Comming:=TRUE;
-					MC_BR_SecGetShuttle_AcpTrak_B.Enable:=TRUE;
+				//	MC_BR_SecGetShuttle_AcpTrak_B.Enable:=TRUE;
 					IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_B' THEN
 						Pouring_B_Busy:=TRUE;
 					END_IF;
@@ -292,7 +326,7 @@ PROGRAM _CYCLIC
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorWaitCapping);
-						MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
+						MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.5;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
@@ -306,7 +340,8 @@ PROGRAM _CYCLIC
 						
 						
 				Capping:
-					MC_BR_SecGetShuttle_AcpTrak_Cap.Enable:=TRUE;
+					Capping_Comming:=TRUE;
+				//	MC_BR_SecGetShuttle_AcpTrak_Cap.Enable:=TRUE;
 					IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorCapping' THEN
 						Capping_Busy:=TRUE;
 					END_IF;
@@ -407,8 +442,7 @@ PROGRAM _CYCLIC
 	
 	
 	MC_BR_RoutedMoveAbs_AcpTrak_0();
-	MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := FALSE;
-	MC_BR_RoutedMoveAbs_AcpTrak_0();
+
 	
 	
 	MC_BR_SecGetShuttle_AcpTrak_B();

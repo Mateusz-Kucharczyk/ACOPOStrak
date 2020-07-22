@@ -1,5 +1,5 @@
 VAR CONSTANT
-	NUM_SIM_SHUTTLES : USINT := 3; (*Maximum Shuttles Added in the Simulation*)
+	NUM_SIM_SHUTTLES : USINT := 10; (*Maximum Shuttles Added in the Simulation*)
 	MAX_NUM_SHUTTLES : USINT := 25; (*Maximum Shuttles Handled by the Trak*)
 END_VAR
 VAR
@@ -38,6 +38,7 @@ VAR
 	MC_BR_ShReadInfo_AcpTrak_0 : MC_BR_ShReadInfo_AcpTrak;
 	ruch : BOOL := FALSE;
 	ActiveShuttle : INT := NUM_SIM_SHUTTLES;
+	Oddane : BOOL := FALSE;
 	zmienna : INT := 1;
 END_VAR
 (*Timers*)
@@ -49,4 +50,5 @@ VAR
 	IDShuttle : INT;
 	Pouring_A_Comming : BOOL := FALSE;
 	Pouring_B_Comming : BOOL := FALSE;
+	Capping_Comming : BOOL := FALSE;
 END_VAR
