@@ -4,9 +4,9 @@
 	<ParID parid="81" val="60"/>
 	<ParID parid="82" val="1"/>
 	<ParID parid="90" val="0"/>
-	<ParID parid="100" val="2364.73"/>
-	<ParID parid="101" val="-3495.99"/>
-	<ParID parid="102" val="2388.88"/>
+	<ParID parid="100" val="4697.08"/>
+	<ParID parid="101" val="-2568.96"/>
+	<ParID parid="102" val="825.789"/>
 	<ParID parid="103" val="-0.521817"/>
 	<ParID parid="104" val="0.796101"/>
 	<ParID parid="105" val="-0.306481"/>
@@ -34,10 +34,10 @@
 		<ParID parid="140" val="1,1,1"/>
 		<ParID parid="150" val="FALSE"/>
 	</Object>
-	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="#210*::Program:DeltaParameters.Position[0]#211*::Program:DeltaParameters.Position[1]#212*::Program:DeltaParameters.Position[2]" jointoparent="0">
-		<ParID parid="100" val="-104.896"/>
-		<ParID parid="101" val="0"/>
-		<ParID parid="102" val="1113.19"/>
+	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="#210*::DeltaOut:GroupPosition.Position[0]#211*::DeltaOut:GroupPosition.Position[1]#212*::DeltaOut:GroupPosition.Position[2]" jointoparent="0">
+		<ParID parid="100" val="3300"/>
+		<ParID parid="101" val="-630"/>
+		<ParID parid="102" val="100"/>
 		<ParID parid="103" val="0"/>
 		<ParID parid="104" val="0"/>
 		<ParID parid="105" val="0"/>
@@ -73,14 +73,14 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="8.11948e-05"/>
-		<ParID parid="211" val="8.11948e-05"/>
-		<ParID parid="212" val="8.11948e-05"/>
-		<ParID parid="220" val="-4.16334e-14"/>
-		<ParID parid="221" val="-4.16334e-14"/>
-		<ParID parid="222" val="-430.562"/>
+		<ParID parid="210" val="-12.897"/>
+		<ParID parid="211" val="12.3559"/>
+		<ParID parid="212" val="12.3559"/>
+		<ParID parid="220" val="62.1972"/>
+		<ParID parid="221" val="-1.4474e-13"/>
+		<ParID parid="222" val="-446.025"/>
 	</Object>
-	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="" jointoparent="0">
+	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="#210*::DeltaIn:GroupPosition.Position[0]#211*::DeltaIn:GroupPosition.Position[1]#212*::DeltaIn:GroupPosition.Position[2]" jointoparent="0">
 		<ParID parid="100" val="1320"/>
 		<ParID parid="101" val="-630"/>
 		<ParID parid="102" val="100"/>
@@ -119,12 +119,12 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="8.11948e-05"/>
-		<ParID parid="211" val="8.11948e-05"/>
-		<ParID parid="212" val="8.11948e-05"/>
-		<ParID parid="220" val="0"/>
-		<ParID parid="221" val="0"/>
-		<ParID parid="222" val="-430.562"/>
+		<ParID parid="210" val="-12.897"/>
+		<ParID parid="211" val="12.3559"/>
+		<ParID parid="212" val="12.3559"/>
+		<ParID parid="220" val="62.1972"/>
+		<ParID parid="221" val="-1.4474e-13"/>
+		<ParID parid="222" val="-446.025"/>
 	</Object>
 </Object>
 <Materials>
