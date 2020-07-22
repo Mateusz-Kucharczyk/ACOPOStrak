@@ -8,13 +8,39 @@ PROGRAM _INIT
 	DeltaParameters.ProgramName := 'RoboticIn.st';    //File stored on FileDevice
 	DeltaParameters.Velocity := 5.0;
 	DeltaParameters.Acceleration := 50.0;
-
+	Step := Init;
 END_PROGRAM
 
 PROGRAM _CYCLIC
     
 	MpDelta3Axis_0();
+	IF diStop THEN
+		Step:=Stop;
+	END_IF;
+	
+	CASE Step OF
+		Init:
+			IF diStart THEN
+	  			Step := Power;
+			END_IF;
+		Power:
+			MpDelta3Axis_0.Power := TRUE;
+			IF MpDelta3Axis_0.PowerOn THEN
+	  			Step:= Home;
+			END_IF;
+		Home:
+			MpDelta3Axis_0.Home := TRUE;
+			IF MpDelta3Axis_0.IsHomed THEN
+	  			Step := Choose;
+			END_IF;
+		Choose:
+		WaitShuttle:
+		MovePrg:
+		Interrupt:
+		Stop:
+		
 
+	END_CASE;
      
 END_PROGRAM
 
