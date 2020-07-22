@@ -9,6 +9,7 @@
     <Task Name="StartMovem" Source="StartMovement.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Robotics" Source="Robotics.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Recipe" Source="Recipe.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+	<Task Name="svgTransfo" Source="svgTransform.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />
@@ -71,5 +72,6 @@
     <LibraryObject Name="asmem" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="brsystem" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="standard" Source="Libraries.standard.lby" Memory="UserROM" Language="binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>

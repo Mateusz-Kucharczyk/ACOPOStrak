@@ -7,6 +7,11 @@
     <EngineeringUnitAliases />
   </Aliases>
   <DefaultView>
-    <Module Name="&lt;Default&gt;" />
+    <Module Name="&lt;Default&gt;">
+      <Task Name="svgTransfo">
+        <Variable Name="tranformation" />
+        <Variable Name="svgBlocksToColor" />
+      </Task>
+    </Module>
   </DefaultView>
 </OpcUaSource>
