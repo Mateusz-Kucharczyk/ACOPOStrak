@@ -1,12 +1,14 @@
 PROGRAM _INIT
 
-	MpDelta3Axis_0.MpLink := ADR(g3AxDeltaA_1); 
+	MpDelta3Axis_0.MpLink := ADR(g3AxDeltaAOut); 
 	MpDelta3Axis_0.Enable := TRUE; 
 	MpDelta3Axis_0.Parameters := ADR(DeltaParameters); 
 
 	MpDelta3Axis_0.Override := 100.0; 
-	DeltaParameters.ProgramName := 'RoboticOut.st';    //File stored on FileDevice
-	GroupPosition.AxesGroup := ADR(g3AxDeltaA_1);
+
+	DeltaParameters.ProgramName := 'Robotic1.st';    //File stored on FileDevice
+	GroupPosition.AxesGroup := ADR(g3AxDeltaAOut);
+
 	GroupPosition.Enable := TRUE;
 	GroupPosition.CoordSystem := 0;
 	DeltaParameters.Velocity := 5.0;
