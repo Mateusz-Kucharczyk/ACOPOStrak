@@ -14,10 +14,11 @@ TYPE
 	StepSector : 
 		(
 		Bottle_Input,
+		WaitPour,
 		Pouring_A,
 		Pouring_B,
+		WaitCap,
 		Capping,
-		Bottle_Output,
-		WaitPour
+		Bottle_Output
 		);
 END_TYPE

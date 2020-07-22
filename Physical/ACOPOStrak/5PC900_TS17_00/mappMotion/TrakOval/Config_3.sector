@@ -51,7 +51,6 @@
       </Group>
       <Group ID="EndSegment">
         <Property ID="SegmentRef" Value="::Seg_B_6" />
-        <Property ID="Position" Value="0.302" />
         <Property ID="PositionRelativeTo" Value="FromEnd" />
       </Group>
     </Selector>
@@ -78,6 +77,17 @@
       </Group>
       <Group ID="EndSegment">
         <Property ID="SegmentRef" Value="::Seg_A_26" />
+        <Property ID="PositionRelativeTo" Value="FromEnd" />
+      </Group>
+    </Selector>
+  </Element>
+  <Element ID="SectorWaitCapping" Type="sector">
+    <Selector ID="Type" Value="Composed">
+      <Group ID="StartSegment">
+        <Property ID="SegmentRef" Value="Seg_A_7" />
+      </Group>
+      <Group ID="EndSegment">
+        <Property ID="SegmentRef" Value="Seg_A_7" />
         <Property ID="PositionRelativeTo" Value="FromEnd" />
       </Group>
     </Selector>
