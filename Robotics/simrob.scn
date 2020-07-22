@@ -49,36 +49,36 @@
 		<ParID parid="141" val="0"/>
 		<ParID parid="142" val="0"/>
 		<ParID parid="143" val="0"/>
-		<ParID parid="144" val="200"/>
+		<ParID parid="144" val="250"/>
 		<ParID parid="145" val="0"/>
 		<ParID parid="146" val="120"/>
-		<ParID parid="147" val="200"/>
+		<ParID parid="147" val="250"/>
 		<ParID parid="148" val="0"/>
 		<ParID parid="149" val="240"/>
-		<ParID parid="150" val="200"/>
+		<ParID parid="150" val="250"/>
 		<ParID parid="151" val="0"/>
-		<ParID parid="152" val="260"/>
-		<ParID parid="153" val="260"/>
-		<ParID parid="154" val="260"/>
-		<ParID parid="155" val="540"/>
-		<ParID parid="156" val="540"/>
-		<ParID parid="157" val="540"/>
-		<ParID parid="158" val="33"/>
+		<ParID parid="152" val="600"/>
+		<ParID parid="153" val="600"/>
+		<ParID parid="154" val="600"/>
+		<ParID parid="155" val="900"/>
+		<ParID parid="156" val="900"/>
+		<ParID parid="157" val="900"/>
+		<ParID parid="158" val="50"/>
 		<ParID parid="159" val="0"/>
-		<ParID parid="160" val="33"/>
+		<ParID parid="160" val="50"/>
 		<ParID parid="161" val="0"/>
-		<ParID parid="162" val="33"/>
+		<ParID parid="162" val="50"/>
 		<ParID parid="163" val="0"/>
 		<ParID parid="164" val="0"/>
 		<ParID parid="165" val="0"/>
-		<ParID parid="166" val="-100"/>
+		<ParID parid="166" val="-150"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="0"/>
-		<ParID parid="211" val="0"/>
-		<ParID parid="212" val="0"/>
-		<ParID parid="220" val="-4.16334e-14"/>
-		<ParID parid="221" val="-4.16334e-14"/>
-		<ParID parid="222" val="-430.562"/>
+		<ParID parid="210" val="8.11948e-05"/>
+		<ParID parid="211" val="8.11948e-05"/>
+		<ParID parid="212" val="8.11948e-05"/>
+		<ParID parid="220" val="-3.60402e-14"/>
+		<ParID parid="221" val="-1.07041e-13"/>
+		<ParID parid="222" val="-562.311"/>
 	</Object>
 	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="#210*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="660"/>
@@ -95,36 +95,36 @@
 		<ParID parid="141" val="0"/>
 		<ParID parid="142" val="0"/>
 		<ParID parid="143" val="0"/>
-		<ParID parid="144" val="200"/>
+		<ParID parid="144" val="250"/>
 		<ParID parid="145" val="0"/>
 		<ParID parid="146" val="120"/>
-		<ParID parid="147" val="200"/>
+		<ParID parid="147" val="250"/>
 		<ParID parid="148" val="0"/>
 		<ParID parid="149" val="240"/>
-		<ParID parid="150" val="200"/>
+		<ParID parid="150" val="250"/>
 		<ParID parid="151" val="0"/>
-		<ParID parid="152" val="260"/>
-		<ParID parid="153" val="260"/>
-		<ParID parid="154" val="260"/>
-		<ParID parid="155" val="540"/>
-		<ParID parid="156" val="540"/>
-		<ParID parid="157" val="540"/>
-		<ParID parid="158" val="33"/>
+		<ParID parid="152" val="600"/>
+		<ParID parid="153" val="600"/>
+		<ParID parid="154" val="600"/>
+		<ParID parid="155" val="900"/>
+		<ParID parid="156" val="900"/>
+		<ParID parid="157" val="900"/>
+		<ParID parid="158" val="50"/>
 		<ParID parid="159" val="0"/>
-		<ParID parid="160" val="33"/>
+		<ParID parid="160" val="50"/>
 		<ParID parid="161" val="0"/>
-		<ParID parid="162" val="33"/>
+		<ParID parid="162" val="50"/>
 		<ParID parid="163" val="0"/>
 		<ParID parid="164" val="0"/>
 		<ParID parid="165" val="0"/>
-		<ParID parid="166" val="-100"/>
+		<ParID parid="166" val="-150"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="0"/>
-		<ParID parid="211" val="0"/>
-		<ParID parid="212" val="0"/>
-		<ParID parid="220" val="-4.16334e-14"/>
-		<ParID parid="221" val="-4.16334e-14"/>
-		<ParID parid="222" val="-430.562"/>
+		<ParID parid="210" val="8.11948e-05"/>
+		<ParID parid="211" val="8.11948e-05"/>
+		<ParID parid="212" val="8.11948e-05"/>
+		<ParID parid="220" val="-3.60402e-14"/>
+		<ParID parid="221" val="-1.07041e-13"/>
+		<ParID parid="222" val="-562.311"/>
 	</Object>
 </Object>
 <Materials>
