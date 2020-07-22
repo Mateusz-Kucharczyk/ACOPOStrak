@@ -6,4 +6,5 @@ VAR
 	diStart : BOOL;
 	diInterrupt : BOOL;
 	diContionue : BOOL;
+	diErrorReset : BOOL;
 END_VAR

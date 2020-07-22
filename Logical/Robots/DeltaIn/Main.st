@@ -14,8 +14,14 @@ END_PROGRAM
 PROGRAM _CYCLIC
     
 	MpDelta3Axis_0();
+	
 	IF diStop THEN
 		Step:=STOP;
+	END_IF;
+	
+	MpDelta3Axis_0.ErrorReset := diErrorReset;
+	IF EDGEPOS(MpDelta3Axis_0.Error) THEN
+		Step := ERROR;
 	END_IF;
 	
 	CASE Step OF
@@ -66,6 +72,11 @@ PROGRAM _CYCLIC
 				MpDelta3Axis_0.Stop := FALSE;
 				
 	  			Step := INIT;
+			END_IF;
+		ERROR:
+			
+			IF NOT(MpDelta3Axis_0.Error) THEN
+				Step := INIT;
 			END_IF;
 
 
