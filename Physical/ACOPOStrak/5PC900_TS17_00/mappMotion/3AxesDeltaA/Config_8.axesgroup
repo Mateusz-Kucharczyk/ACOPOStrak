@@ -8,15 +8,15 @@
         <Group ID="JointAxes">
           <Group ID="JointAxis[1]">
             <Property ID="Name" Value="Q1" />
-            <Property ID="AxisRef" Value="gAxisQ1" />
+            <Property ID="AxisRef" Value="gAxisQ1_1" />
           </Group>
           <Group ID="JointAxis[2]">
             <Property ID="Name" Value="Q2" />
-            <Property ID="AxisRef" Value="gAxisQ2" />
+            <Property ID="AxisRef" Value="gAxisQ2_1" />
           </Group>
           <Group ID="JointAxis[3]">
             <Property ID="Name" Value="Q3" />
-            <Property ID="AxisRef" Value="gAxisQ3" />
+            <Property ID="AxisRef" Value="gAxisQ3_1" />
           </Group>
         </Group>
       </Group>

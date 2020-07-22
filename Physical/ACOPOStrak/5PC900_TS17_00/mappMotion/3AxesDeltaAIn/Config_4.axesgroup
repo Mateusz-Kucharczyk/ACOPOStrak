@@ -8,20 +8,20 @@
         <Group ID="JointAxes">
           <Group ID="JointAxis[1]">
             <Property ID="Name" Value="Q1" />
-            <Property ID="AxisRef" Value="gAxisQ1" />
+            <Property ID="AxisRef" Value="gAxisQ1In" />
           </Group>
           <Group ID="JointAxis[2]">
             <Property ID="Name" Value="Q2" />
-            <Property ID="AxisRef" Value="gAxisQ2" />
+            <Property ID="AxisRef" Value="gAxisQ2In" />
           </Group>
           <Group ID="JointAxis[3]">
             <Property ID="Name" Value="Q3" />
-            <Property ID="AxisRef" Value="gAxisQ3" />
+            <Property ID="AxisRef" Value="gAxisQ3In" />
           </Group>
         </Group>
       </Group>
       <Group ID="MechanicalSystem">
-        <Property ID="MechSysRef" Value="MechSys_3AxDeltaA" />
+        <Property ID="MechSysRef" Value="MechSys_3AxDeltaAIn" />
       </Group>
       <Group ID="BasicSettings">
         <Selector ID="ModalDataBehaviour" Value="ResetToDefault" />
