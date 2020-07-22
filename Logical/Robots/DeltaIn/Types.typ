@@ -1,3 +1,4 @@
 
 TYPE
+	
 END_TYPE

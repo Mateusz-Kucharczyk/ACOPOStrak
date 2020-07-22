@@ -1,4 +1,18 @@
+(*FB's*)
 VAR
 	DeltaParameters : MpDelta3AxisParType;
 	MpDelta3Axis_0 : MpDelta3Axis;
+END_VAR
+(*IO's*)
+VAR
+	diStart : BOOL;
+	diInterrupt : BOOL;
+	diResume : BOOL;
+	diStop : {REDUND_UNREPLICABLE} BOOL;
+	diErrorReset : BOOL;
+	ShuttleReady : BOOL;
+END_VAR
+(*Other*)
+VAR
+	Step : StepType;
 END_VAR
