@@ -22,6 +22,7 @@
     <Parameter ID="TaskClassIdleTime" Value="2000" />
     <Parameter ID="Cyclic1Duration" Value="2000" />
     <Parameter ID="Cyclic1Tolerance" Value="0" />
+    <Parameter ID="Cyclic1Stack" Value="2000" />
     <Group ID="FileDevice1" />
     <Parameter ID="FileDeviceName1" Value="SvgData" />
     <Parameter ID="FileDevicePath1" Value="C:\ACOPOStrak\Trak" />

@@ -9,9 +9,6 @@
   <DefaultView>
     <Module Name="&lt;Default&gt;">
       <Task Name="DeltaOut">
-        <Variable Name="GroupPosition">
-          <Variable Name="Position" EnableArrayElements="True" />
-        </Variable>
         <Variable Name="MpDelta3Axis_0">
           <Variable Name="Info">
             <Variable Name="JointAxisPosition" EnableArrayElements="True" />
@@ -19,8 +16,10 @@
         </Variable>
       </Task>
       <Task Name="DeltaIn">
-        <Variable Name="GroupPosition">
-          <Variable Name="Position" EnableArrayElements="True" />
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
         </Variable>
       </Task>
     </Module>
