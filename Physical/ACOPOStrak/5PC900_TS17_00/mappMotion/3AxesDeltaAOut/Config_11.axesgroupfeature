@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Configuration>
-  <Element ID="Feature_Programs_1" Type="axesgroupfeature">
+  <Element ID="Feature_Programs_Delta_Out" Type="axesgroupfeature">
     <Selector ID="Type" Value="Program">
       <Selector ID="ModalDataBehaviour" Value="UseAxesGroupSettings" />
       <Group ID="InitialSettings">
@@ -25,7 +25,7 @@
       </Selector>
     </Selector>
   </Element>
-  <Element ID="Feature_Jogging_1" Type="axesgroupfeature">
+  <Element ID="Feature_Jogging_Delta_Out" Type="axesgroupfeature">
     <Selector ID="Type" Value="Jogging" />
   </Element>
 </Configuration>

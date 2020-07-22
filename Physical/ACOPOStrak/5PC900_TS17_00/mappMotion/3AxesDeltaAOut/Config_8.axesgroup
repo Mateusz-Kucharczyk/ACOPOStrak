@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Configuration>
-  <Element ID="g3AxDeltaA_1" Type="axesgroup">
+  <Element ID="g3AxDeltaAOut" Type="axesgroup">
     <Selector ID="Type" Value="PathGenAxesGroup">
       <Property ID="ProcessingTaskClass" Value="1" />
       <Property ID="License" Value="1" />
@@ -8,20 +8,20 @@
         <Group ID="JointAxes">
           <Group ID="JointAxis[1]">
             <Property ID="Name" Value="Q1" />
-            <Property ID="AxisRef" Value="gAxisQ1_1" />
+            <Property ID="AxisRef" Value="gAxisQ1Out" />
           </Group>
           <Group ID="JointAxis[2]">
             <Property ID="Name" Value="Q2" />
-            <Property ID="AxisRef" Value="gAxisQ2_1" />
+            <Property ID="AxisRef" Value="gAxisQ2Out" />
           </Group>
           <Group ID="JointAxis[3]">
             <Property ID="Name" Value="Q3" />
-            <Property ID="AxisRef" Value="gAxisQ3_1" />
+            <Property ID="AxisRef" Value="gAxisQ3Out" />
           </Group>
         </Group>
       </Group>
       <Group ID="MechanicalSystem">
-        <Property ID="MechSysRef" Value="MechSys_3AxDeltaA" />
+        <Property ID="MechSysRef" Value="MechSys_3AxDeltaAOut" />
       </Group>
       <Group ID="BasicSettings">
         <Selector ID="ModalDataBehaviour" Value="ResetToDefault" />
@@ -42,8 +42,8 @@
         </Selector>
       </Group>
       <Group ID="AxesGroupFeatures">
-        <Property ID="FeatureRef[1]" Value="Feature_Programs" />
-        <Property ID="FeatureRef[2]" Value="Feature_Jogging" />
+        <Property ID="FeatureRef[1]" Value="Feature_Programs_Delta_Out" />
+        <Property ID="FeatureRef[2]" Value="Feature_Jogging_Delta_Out" />
       </Group>
     </Selector>
     <Selector ID="Alarms" Value="None" />

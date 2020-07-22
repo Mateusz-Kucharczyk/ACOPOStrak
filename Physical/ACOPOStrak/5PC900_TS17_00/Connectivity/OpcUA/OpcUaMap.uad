@@ -12,6 +12,11 @@
         <Variable Name="GroupPosition">
           <Variable Name="Position" EnableArrayElements="True" />
         </Variable>
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
       </Task>
       <Task Name="DeltaIn">
         <Variable Name="GroupPosition">

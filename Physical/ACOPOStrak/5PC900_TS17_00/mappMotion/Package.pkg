@@ -5,6 +5,6 @@
     <Object Type="Package">TrakOval</Object>
     <Object Type="File">Hierarchy.objecthierarchy</Object>
     <Object Type="Package">3AxesDeltaAIn</Object>
-    <Object Type="Package">3AxesDeltaA</Object>
+    <Object Type="Package">3AxesDeltaAOut</Object>
   </Objects>
 </Package>
