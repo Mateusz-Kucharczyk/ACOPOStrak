@@ -9,13 +9,9 @@ END_VAR
 VAR
 	Step : StepEnum;
 	Step_Sector : StepSector;
-	CntShuttle : UINT;
 	ShuttleAxis : ARRAY[1..MAX_NUM_SHUTTLES] OF McAxisType;
+	CntShuttle : UINT;
 	i : INT;
-	Pouring_A_Busy : BOOL := FALSE;
-	Pouring_B_Busy : BOOL := FALSE;
-	Capping_Busy : BOOL := FALSE;
-	PouringShuttles : USINT := 0;
 END_VAR
 (*FUB*)
 VAR
@@ -24,31 +20,37 @@ VAR
 	MC_BR_SecAddShuttle_AcpTrak_0 : MC_BR_SecAddShuttle_AcpTrak;
 	MC_BR_AsmGetShuttle_AcpTrak_0 : MC_BR_AsmGetShuttle_AcpTrak;
 	MC_BR_RoutedMoveVel_AcpTrak_0 : MC_BR_RoutedMoveVel_AcpTrak;
-	MC_Stop_0 : MC_Stop;
 	MC_BR_AsmReadStatus_AcpTrak_0 : MC_BR_AsmReadStatus_AcpTrak;
-	SizeofUserdata : UDINT;
 	MC_BR_AsmReset_AcpTrak_0 : MC_BR_AsmReset_AcpTrak;
-	Shuttles_exist : BOOL;
 	MC_BR_RoutedMoveAbs_AcpTrak_0 : MC_BR_RoutedMoveAbs_AcpTrak;
-	MC_BR_SecGetShuttle_AcpTrak_B : MC_BR_SecGetShuttle_AcpTrak;
-	MC_BR_SecGetShuttle_AcpTrak_A : MC_BR_SecGetShuttle_AcpTrak;
-	MC_BR_SecGetShuttle_AcpTrak_Cap : MC_BR_SecGetShuttle_AcpTrak;
-	MC_BR_ShReadInfo_AcpTrak_1 : MC_BR_ShReadInfo_AcpTrak;
-	MC_BR_ShReadInfo_AcpTrak_2 : MC_BR_ShReadInfo_AcpTrak;
 	MC_BR_ShReadInfo_AcpTrak_0 : MC_BR_ShReadInfo_AcpTrak;
-	ruch : BOOL := FALSE;
+	MC_Stop_0 : MC_Stop;
+	SizeofUserdata : UDINT;
+	Shuttles_exist : BOOL;
 	ActiveShuttle : INT := NUM_SIM_SHUTTLES;
-	Oddane : BOOL := FALSE;
-	zmienna : INT := 1;
 END_VAR
 (*Timers*)
 VAR
 	TON_Pouring_A : TON;
 	TON_Capping : TON;
 	TON_Pouring_B : TON;
-	Odebrane : BOOL;
-	IDShuttle : INT;
+END_VAR
+(*Pouring and Capping*)
+VAR
+	Pouring_A_Busy : BOOL := FALSE;
 	Pouring_A_Comming : BOOL := FALSE;
+	Pouring_A_Broken : BOOL;
+	Pouring_B_Busy : BOOL := FALSE;
 	Pouring_B_Comming : BOOL := FALSE;
+	Pouring_B_Broken : BOOL;
+	Capping_Busy : BOOL := FALSE;
 	Capping_Comming : BOOL := FALSE;
+	Capping_Broken : BOOL;
+END_VAR
+(*Bottle input and output*)
+VAR
+	BottleInPlace_Input : BOOL;
+	BottleInPlace_Output : BOOL := FALSE;
+	ShuttleInPlace_Input : BOOL;
+	ShuttleInPlace_Output : BOOL;
 END_VAR
