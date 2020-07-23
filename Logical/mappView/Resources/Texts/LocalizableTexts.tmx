@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">IAT</prop>
+  </header>
+  <body>
+    <tu tuid="Samples.HELLO_WORLD">
+      <tuv xml:lang="pl-PL">
+        <seg>Witaj świecie!</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Hello world!</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="navBtnHome">
+      <tuv xml:lang="pl-PL">
+        <seg>Strona główna</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Home</seg>
+      </tuv>
+    </tu>
+    <tu tuid="navBtnAlarm">
+      <tuv xml:lang="pl-PL">
+        <seg>Alarmy</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Alarms</seg>
+      </tuv>
+    </tu>
+    <tu tuid="navBtnOrders">
+      <tuv xml:lang="pl-PL">
+        <seg>Zamówienia</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Orders</seg>
+      </tuv>
+    </tu>
+    <tu tuid="navBtnSettings">
+      <tuv xml:lang="pl-PL">
+        <seg>Ustawienia</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Settings</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnBtnLogin">
+      <tuv xml:lang="pl-PL">
+        <seg>Zaloguj się</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Login</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnBtnLogout">
+      <tuv xml:lang="pl-PL">
+        <seg>Wyloguj się </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Logout</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnLabelLoggedAs">
+      <tuv xml:lang="pl-PL">
+        <seg>Zalogowano jako:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Logged as:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetUsername">
+      <tuv xml:lang="pl-PL">
+        <seg>Nazwa użytkownika</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Username</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetPassword">
+      <tuv xml:lang="pl-PL">
+        <seg>Hasło</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Password</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetSuccess">
+      <tuv xml:lang="pl-PL">
+        <seg>Zalogowano pomyślnie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Login successful</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetChange">
+      <tuv xml:lang="pl-PL">
+        <seg>Zmienono użytkowanika na:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User changed to: </seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetAuth">
+      <tuv xml:lang="pl-PL">
+        <seg>Nie udało się zalogować</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Authorisation failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetFail">
+      <tuv xml:lang="pl-PL">
+        <seg>Ustawienie użytkownika się nie powiodło</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Set user failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="switchBtnTextOff">
+      <tuv xml:lang="pl-PL">
+        <seg>Wył.</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Off</seg>
+      </tuv>
+    </tu>
+    <tu tuid="switchBtnTextOn">
+      <tuv xml:lang="pl-PL">
+        <seg>Wł</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>On</seg>
+      </tuv>
+    </tu>
+    <tu tuid="statusLabelWorking">
+      <tuv xml:lang="pl-PL">
+        <seg>Pracuje</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Working</seg>
+      </tuv>
+    </tu>
+    <tu tuid="statusLabelError">
+      <tuv xml:lang="pl-PL">
+        <seg>Błąd. Sprawdź alarmy</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error. Check alarms</seg>
+      </tuv>
+    </tu>
+    <tu tuid="statusLabelOff">
+      <tuv xml:lang="pl-PL">
+        <seg>Wyłączony</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Power off</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

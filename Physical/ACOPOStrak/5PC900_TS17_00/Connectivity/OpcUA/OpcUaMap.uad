@@ -8,18 +8,25 @@
   </Aliases>
   <DefaultView>
     <Module Name="&lt;Default&gt;">
-      <Task Name="Program">
-        <Variable Name="DeltaParameters">
-          <Variable Name="Position" EnableArrayElements="True" />
-        </Variable>
+      <Task Name="svgTransfo">
+        <Variable Name="tranformation" />
+        <Variable Name="svgBlocksToColor" EnableArrayElements="True" />
+      </Task>
+      
+      <Task Name="DeltaOut">
         <Variable Name="MpDelta3Axis_0">
-          <Variable Name="X" />
-          <Variable Name="Y" />
-          <Variable Name="Z" />
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
         </Variable>
-        <Variable Name="GroupPosition">
-          <Variable Name="Position" EnableArrayElements="True" />
+      </Task>
+      <Task Name="DeltaIn">
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
         </Variable>
+
       </Task>
     </Module>
   </DefaultView>
