@@ -15,8 +15,8 @@ TYPE
 		(
 		Bottle_Input,
 		WaitPour,
-		Pouring_A,
-		Pouring_B,
+		Pouring_Down,
+		Pouring_Top,
 		WaitCap,
 		Capping,
 		Bottle_Output
