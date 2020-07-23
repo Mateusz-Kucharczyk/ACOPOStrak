@@ -293,7 +293,7 @@
     </tu>
     <tu tuid="btnAcknowledge">
       <tuv xml:lang="pl-PL">
-        <seg>Potwierdź</seg>
+        <seg>Zatwierdź</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Acknowledge</seg>
@@ -301,7 +301,7 @@
     </tu>
     <tu tuid="btnAcknowledgeAll">
       <tuv xml:lang="pl-PL">
-        <seg>Potwierdź wszystkie</seg>
+        <seg>Zatwierdź wszystkie</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Acknowledge All</seg>
@@ -344,7 +344,7 @@
         <seg>Kategoria</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Categoty</seg>
+        <seg>Category</seg>
       </tuv>
     </tu>
     <tu tuid="alarmListOldStage">
@@ -384,7 +384,55 @@
         <seg>Nie masz wystarczających uprawnień</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>you don't have permission </seg>
+        <seg>You don't have permission </seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingLanguage">
+      <tuv xml:lang="pl-PL">
+        <seg>Język</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Language</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingNozzleTime">
+      <tuv xml:lang="pl-PL">
+        <seg>Czas nalewania</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Pouring time</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingTwistTime">
+      <tuv xml:lang="pl-PL">
+        <seg>Czas zakręcania</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Bottle capping time</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingTrakVelocity">
+      <tuv xml:lang="pl-PL">
+        <seg>Prękdkość traka</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Trak velocity </seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingTrakAcceleration">
+      <tuv xml:lang="pl-PL">
+        <seg>Przyśpieszenie traka</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Trak acceleration</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingMeasurmentUnit">
+      <tuv xml:lang="pl-PL">
+        <seg>Jednostki</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Units</seg>
       </tuv>
     </tu>
   </body>

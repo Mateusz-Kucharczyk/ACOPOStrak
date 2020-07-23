@@ -57,6 +57,6 @@
         </Widget>
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.Paper" id="Paper1" top="170" left="500" width="680" height="360" zIndex="1" svgFilePath="Media/svg.svg" borderStyle="dotted" enable="false" />
+    <Widget xsi:type="widgets.brease.Paper" id="Paper1" top="170" left="500" width="680" height="360" zIndex="1" colorList="#339900,#339900,#cc3300,#ffcc00" svgFilePath="Media/svg.svg" borderStyle="dotted" enable="false" />
   </Widgets>
 </Content>

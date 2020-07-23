@@ -14,8 +14,8 @@ PROGRAM _INIT
 	
 	MpRecipeUI_0.MpLink := ADR(gRecipeXml);
 	MpRecipeUI_0.Enable := TRUE;
-	MpRecipeUI_0.UISetup := UISetup;
 	UISetup.RecipeListSize:= 3;
+	MpRecipeUI_0.UISetup := UISetup;
 	MpRecipeUI_0.UIConnect := ADR(UIConnect);
 END_PROGRAM
 

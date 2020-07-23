@@ -50,6 +50,14 @@
 <Source xsi:type="mapp" refId="gAlarmXHistory" attribute="link" />
 <Target xsi:type="brease" contentRefId="contentAlarms" widgetRefId="AlarmHistory1" attribute="mpLink" />
 </Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.Names" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="dataProvider" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.SelectedIndex" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedIndex" />
+</Binding>
 </Bindings>
 
 
