@@ -9,5 +9,6 @@
     <Object Type="File">BindingTopContent.binding</Object>
     <Object Type="File">contentHome.eventbinding</Object>
     <Object Type="File">BindingHomePage.binding</Object>
+    <Object Type="File">contentAlarms.eventbinding</Object>
   </Objects>
 </Package>

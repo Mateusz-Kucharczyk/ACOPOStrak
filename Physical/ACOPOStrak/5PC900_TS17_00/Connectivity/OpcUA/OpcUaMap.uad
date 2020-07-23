@@ -12,6 +12,19 @@
         <Variable Name="tranformation" />
         <Variable Name="svgBlocksToColor" EnableArrayElements="True" />
       </Task>
+      <Task Name="Recipe">
+        <Variable Name="UIConnect">
+          <Variable Name="Recipe">
+            <Variable Name="List">
+              <Variable Name="Names" />
+              <Variable Name="StepUp" />
+              <Variable Name="StepDown" />
+              <Variable Name="SelectedIndex" />
+              <Variable Name="MaxSelection" />
+            </Variable>
+          </Variable>
+        </Variable>
+      </Task>
     </Module>
   </DefaultView>
 </OpcUaSource>

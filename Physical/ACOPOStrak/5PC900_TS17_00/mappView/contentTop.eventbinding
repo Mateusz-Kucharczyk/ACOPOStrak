@@ -27,6 +27,13 @@
 					</Target>
 				</Action>
 			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.Navigate" pageId="pageHome" />
+					</Target>
+				</Action>
+			</EventHandler>
 		</EventBinding>
 	</Bindings>
 </EventBindingSet>

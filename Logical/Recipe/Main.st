@@ -11,11 +11,18 @@ PROGRAM _INIT
 	MpRecipeRegPar_0.MpLink := ADR(gRecipeXml);
 	MpRecipeRegPar_0.PVName := ADR('Recipe:ClientOrder');
 	MpRecipeRegPar_0.Enable := TRUE;
+	
+	MpRecipeUI_0.MpLink := ADR(gRecipeXml);
+	MpRecipeUI_0.Enable := TRUE;
+	MpRecipeUI_0.UISetup := UISetup;
+	UISetup.RecipeListSize:= 3;
+	MpRecipeUI_0.UIConnect := ADR(UIConnect);
 END_PROGRAM
 
 PROGRAM _CYCLIC
 	MpRecipeXML_0();
 	MpRecipeRegPar_0();
+	MpRecipeUI_0();
 	
 	MpRecipeXML_0.ErrorReset := diErrorReset;
 	
@@ -70,5 +77,8 @@ PROGRAM _EXIT
 
 	MpRecipeRegPar_0.Enable := FALSE;
 	MpRecipeRegPar_0();
+	
+	MpRecipeUI_0.Enable := FALSE;
+	MpRecipeUI_0();
 END_PROGRAM
 

@@ -10,7 +10,47 @@
 <Target xsi:type="brease" contentRefId="contentTop" widgetRefId="LogoutButton1" attribute="visible" />
 </Binding>
 
-  </Bindings>
+  <Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button2" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button3" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button4" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button5" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button6" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button7" attribute="enable" />
+</Binding>
+
+
+
+
+<Binding mode="twoWay">
+<Source xsi:type="mapp" refId="gAlarmXCore" attribute="link" />
+<Target xsi:type="brease" contentRefId="contentAlarms" widgetRefId="AlarmList1" attribute="mpLink" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="mapp" refId="gAlarmXHistory" attribute="link" />
+<Target xsi:type="brease" contentRefId="contentAlarms" widgetRefId="AlarmHistory1" attribute="mpLink" />
+</Binding>
+</Bindings>
 
 
 </BindingsSet>

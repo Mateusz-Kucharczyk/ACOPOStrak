@@ -13,5 +13,6 @@
     <Object Type="Package">mappView</Object>
     <Object Type="Program" Language="IEC">svgTransform</Object>
     <Object Type="Package">Package</Object>
+    <Object Type="Program" Language="IEC">Alarms</Object>
   </Objects>
 </Package>
