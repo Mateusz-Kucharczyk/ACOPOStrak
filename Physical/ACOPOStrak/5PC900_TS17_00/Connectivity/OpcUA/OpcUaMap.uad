@@ -11,8 +11,6 @@
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
         <Variable Name="svgBlocksToColor" EnableArrayElements="True" />
-        </Variable>
-        </Variable>
       </Task>
       
       <Task Name="DeltaOut">
