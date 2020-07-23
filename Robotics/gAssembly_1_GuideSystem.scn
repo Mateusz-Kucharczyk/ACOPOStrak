@@ -2,17 +2,17 @@
 <Object objecttypeid="1" name="ACOPOStrak Scene" visible="1" mask="" binding="" jointoparent="0">
 	<ParID parid="80" val="FALSE"/>
 	<ParID parid="81" val="60"/>
-	<ParID parid="82" val="0.399466"/>
+	<ParID parid="82" val="1.2537"/>
 	<ParID parid="90" val="0"/>
-	<ParID parid="100" val="64.2669"/>
-	<ParID parid="101" val="-16059.2"/>
-	<ParID parid="102" val="305.63"/>
-	<ParID parid="103" val="0"/>
-	<ParID parid="104" val="1"/>
-	<ParID parid="105" val="0"/>
-	<ParID parid="106" val="0"/>
-	<ParID parid="107" val="0"/>
-	<ParID parid="108" val="1"/>
+	<ParID parid="100" val="16904.8"/>
+	<ParID parid="101" val="-268.641"/>
+	<ParID parid="102" val="1008.37"/>
+	<ParID parid="103" val="-0.997054"/>
+	<ParID parid="104" val="0.0231351"/>
+	<ParID parid="105" val="-0.073139"/>
+	<ParID parid="106" val="-0.076335"/>
+	<ParID parid="107" val="-0.393493"/>
+	<ParID parid="108" val="0.916153"/>
 	<ParID parid="110" val="0.25"/>
 	<ParID parid="120" val="1,1,1"/>
 	<ParID parid="140" val="0.75,0.75,0.75"/>
@@ -2156,7 +2156,7 @@
 	</Object>
 	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="#210*::DeltaOut:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::DeltaOut:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::DeltaOut:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="5010"/>
-		<ParID parid="101" val="-8340"/>
+		<ParID parid="101" val="-840"/>
 		<ParID parid="102" val="980"/>
 		<ParID parid="103" val="0"/>
 		<ParID parid="104" val="0"/>
@@ -2239,8 +2239,8 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-150"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="7.49622"/>
-		<ParID parid="211" val="-21.1511"/>
+		<ParID parid="210" val="7.49625"/>
+		<ParID parid="211" val="-21.151"/>
 		<ParID parid="212" val="30.2233"/>
 		<ParID parid="220" val="-1.30585"/>
 		<ParID parid="221" val="189.741"/>
