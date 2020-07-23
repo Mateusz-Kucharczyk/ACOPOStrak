@@ -10,7 +10,6 @@ VAR
 	diResume : BOOL;
 	diStop : {REDUND_UNREPLICABLE} BOOL;
 	diErrorReset : BOOL;
-	ShuttleReady : BOOL;
 END_VAR
 (*Other*)
 VAR

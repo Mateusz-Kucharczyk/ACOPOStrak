@@ -31,26 +31,19 @@ VAR
 END_VAR
 (*Timers*)
 VAR
-	TON_Pouring_A : TON;
+	TON_Pouring_Down : TON;
 	TON_Capping : TON;
-	TON_Pouring_B : TON;
+	TON_Pouring_Top : TON;
 END_VAR
 (*Pouring and Capping*)
 VAR
-	Pouring_A_Busy : BOOL := FALSE;
-	Pouring_A_Comming : BOOL := FALSE;
-	Pouring_A_Broken : BOOL;
-	Pouring_B_Busy : BOOL := FALSE;
-	Pouring_B_Comming : BOOL := FALSE;
-	Pouring_B_Broken : BOOL;
+	Pouring_Down_Busy : BOOL := FALSE;
+	Pouring_Down_Comming : BOOL := FALSE;
+	Pouring_Down_Broken : BOOL;
+	Pouring_Top_Busy : BOOL := FALSE;
+	Pouring_Top_Comming : BOOL := FALSE;
+	Pouring_Top_Broken : BOOL;
 	Capping_Busy : BOOL := FALSE;
 	Capping_Comming : BOOL := FALSE;
 	Capping_Broken : BOOL;
-END_VAR
-(*Bottle input and output*)
-VAR
-	BottleInPlace_Input : BOOL;
-	BottleInPlace_Output : BOOL := FALSE;
-	ShuttleInPlace_Input : BOOL;
-	ShuttleInPlace_Output : BOOL;
 END_VAR

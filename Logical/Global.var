@@ -10,7 +10,11 @@ END_VAR
 (*shuttle monitor structure for Vis*)
 VAR
 	gShuttleMon : McAcpTrakAssemblyMonData;
-	ShuttleOutInPosition : BOOL;
-	ShutteInInPosition : BOOL;
 END_VAR
-
+(*Bottle input and output*)
+VAR
+	gBottleInPlace_Input : BOOL := FALSE;
+	gBottleInPlace_Output : BOOL := FALSE;
+	gShuttleInPlace_Input : BOOL := FALSE;
+	gShuttleInPlace_Output : BOOL := FALSE;
+END_VAR

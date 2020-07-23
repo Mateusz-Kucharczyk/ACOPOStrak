@@ -41,13 +41,15 @@ PROGRAM _CYCLIC
 			END_IF;
 		WAIT_SHUTTLE:
 			MpDelta3Axis_0.MoveProgram := 0;
-			IF ShutteInInPosition THEN
+			IF gShuttleInPlace_Input THEN
 				Step := MOVE_PROGRAM;
+				
 			END_IF;
 		MOVE_PROGRAM:
-			MpDelta3Axis_0.MoveProgram :=1;
+			MpDelta3Axis_0.MoveProgram :=TRUE;
 			IF MpDelta3Axis_0.MoveDone THEN
 				Step:= WAIT_SHUTTLE;
+				gBottleInPlace_Input:=TRUE;
 			END_IF;
 			IF diInterrupt THEN
 				Step := INTERRUPT;

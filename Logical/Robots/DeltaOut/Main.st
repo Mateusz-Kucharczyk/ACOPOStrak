@@ -45,7 +45,7 @@ PROGRAM _CYCLIC
 		WAIT_SHUTTLE:
 			MpDelta3Axis_0.Continue := FALSE;
 			
-			IF EDGEPOS(ShuttleReady) THEN
+			IF EDGEPOS(gShuttleInPlace_Output) THEN
 	  			Step := MOVE_PROGRAM;
 			END_IF;
 		MOVE_PROGRAM:
@@ -57,7 +57,8 @@ PROGRAM _CYCLIC
 			
 			IF MpDelta3Axis_0.MoveDone THEN
 				MpDelta3Axis_0.MoveProgram := FALSE;
-	  			Step := WAIT_SHUTTLE;
+				Step := WAIT_SHUTTLE;
+				gBottleInPlace_Output:=TRUE;
 			END_IF;
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
