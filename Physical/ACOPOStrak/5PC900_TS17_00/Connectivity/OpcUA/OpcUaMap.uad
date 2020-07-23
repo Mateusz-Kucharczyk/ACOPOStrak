@@ -12,7 +12,6 @@
         <Variable Name="tranformation" />
         <Variable Name="svgBlocksToColor" EnableArrayElements="True" />
       </Task>
-      
       <Task Name="DeltaOut">
         <Variable Name="MpDelta3Axis_0">
           <Variable Name="Info">
@@ -26,7 +25,9 @@
             <Variable Name="JointAxisPosition" EnableArrayElements="True" />
           </Variable>
         </Variable>
-
+      </Task>
+      <Task Name="Vis">
+        <Variable Name="ShuttlesVisibleFalse" />
       </Task>
     </Module>
   </DefaultView>

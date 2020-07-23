@@ -4,4 +4,5 @@ VAR
 	NumVisShuttle : USINT := 0;
 	i : USINT := 0;
 	pUserData : REFERENCE TO ShuttleUserData_typ;
+	ShuttlesVisibleFalse : BOOL := FALSE;
 END_VAR

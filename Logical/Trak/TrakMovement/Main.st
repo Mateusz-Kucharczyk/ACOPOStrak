@@ -25,11 +25,11 @@ PROGRAM _INIT
 	MC_BR_AsmReadStatus_AcpTrak_0.Enable := TRUE;
    
 	// Setting timer for Pouring_Down/Up and Capping
-	TON_Pouring_Top.PT:=T#5s;
+	TON_Pouring_Top.PT:=VisPouring_Time;
 	TON_Pouring_Top.IN:=FALSE;
-	TON_Pouring_Down.PT:=T#5s;
+	TON_Pouring_Down.PT:=VisPouring_Time;
 	TON_Pouring_Down.IN:=FALSE;
-	TON_Capping.PT:=T#2s;
+	TON_Capping.PT:=VisCapping_Time;
 	TON_Capping.IN:=FALSE;
    
 END_PROGRAM
@@ -40,6 +40,9 @@ PROGRAM _CYCLIC
 	MC_BR_ShReadInfo_AcpTrak_0.Enable     :=FALSE;
 	MC_BR_ShReadInfo_AcpTrak_0();
    
+	
+	
+	
 	// Turn off absolute movement of Shuttle and execute it
 	MC_BR_RoutedMoveAbs_AcpTrak_0.Execute := FALSE;
 	MC_BR_RoutedMoveAbs_AcpTrak_0();
@@ -131,6 +134,7 @@ PROGRAM _CYCLIC
 			MC_BR_ShReadInfo_AcpTrak_0.Enable:=TRUE;
 			MC_BR_ShReadInfo_AcpTrak_0();
            
+			
 			// States of running shuttles
            
 			IF  MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorBottleInput' THEN
@@ -145,11 +149,8 @@ PROGRAM _CYCLIC
 			ELSIF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorBottleInput' THEN
 				Step_Sector:=Bottle_Input;
                
-			ELSIF   MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorWaitPour'
-				OR MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorWaitPour'
-				THEN
+			ELSIF   MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorWaitPour' THEN
 				Step_Sector:=WaitPour;
-               
 				// Pouring arrive
 				IF Pouring_Down_Comming=FALSE AND Step_Sector=WaitPour  THEN
 					Step_Sector:=Pouring_Down;
@@ -157,8 +158,11 @@ PROGRAM _CYCLIC
 				IF Pouring_Down_Comming=TRUE AND Step_Sector=WaitPour AND Pouring_Top_Comming=FALSE  THEN
 					Step_Sector:=Pouring_Top;
 				END_IF;
-           
-			ELSIF   MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_Down'
+				
+			ELSIF  MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorWaitPour' THEN
+				Step_Sector:=WaitPour;
+				
+			ELSIF   MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_Down' 
 				OR MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorPouring_Down'
 				THEN
 				Step_Sector:=Pouring_Down;
@@ -184,16 +188,16 @@ PROGRAM _CYCLIC
 					TON_Pouring_Top.IN:=FALSE;
 				END_IF
                
-			ELSIF   MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorWaitCapping'
-				OR MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorWaitCapping'
-				THEN
+			ELSIF   MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorWaitCapping' THEN
 				Step_Sector:=WaitCap;
-               
+      
 				// Sending shuttle to capping if its idle
 				IF Step_Sector=WaitCap AND Capping_Comming=FALSE AND Capping_Broken = FALSE THEN
 					Step_Sector:=Capping;
 				END_IF;
- 
+			ELSIF  MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorWaitCapping' THEN
+				Step_Sector:=WaitCap;
+				
 			ELSIF   MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorCapping'
 				OR MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorCapping'
 				THEN
@@ -232,8 +236,8 @@ PROGRAM _CYCLIC
 			IF Pouring_Top_Broken THEN
 				Pouring_Top_Comming:=TRUE;
 			END_IF;
-			IF EDGENEG(Pouring_Down_Broken) THEN
-				Pouring_Down_Comming:=FALSE;
+			IF EDGENEG(Pouring_Top_Broken) THEN
+				Pouring_Top_Comming:=FALSE;
 			END_IF;
 			IF Capping_Broken THEN
 				Capping_Comming:=TRUE;
@@ -263,14 +267,6 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorBottleInput); 
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305+3.66;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
                    
 					// Wait for pouring if Pouring_A/_B are busy
 				WaitPour:
@@ -278,14 +274,6 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorWaitPour);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.6;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
                    
 					// Pouring bottle in down station  
 				Pouring_Down:
@@ -297,14 +285,6 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorPouring_Down);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
                    
 					// Pouring bottle in Top station
 				Pouring_Top:
@@ -316,14 +296,6 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorPouring_Top);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
                    
 					// Wait for capping if Cap station is busy
 				WaitCap:
@@ -331,14 +303,6 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorWaitCapping);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.5;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
                        
 					// Capping a bottle
 				Capping:
@@ -350,14 +314,6 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorCapping);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
                    
 					// Take bottle from Shuttel
 				Bottle_Output:
@@ -365,18 +321,19 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorBottleOutput);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
 			END_CASE;
            
+			MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
+			MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+			MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+			MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
+			MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
+			MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+			MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+			MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+			
 			// Stop command
-			IF(gTrakAsm.Command.ShuttleStop) AND (ActiveShuttle > NUM_SIM_SHUTTLES) THEN
+			IF(gTrakAsm.Command.ShuttleStop) THEN
 				CntShuttle := 1;
 				Step := STOPPING;
 			END_IF
@@ -388,6 +345,8 @@ PROGRAM _CYCLIC
 			END_IF
  
 		STOPPING:
+			gShuttleInPlace_Input:=FALSE;
+			gShuttleInPlace_Output:=FALSE;
 			IF EDGEPOS(MC_Stop_0.Done) THEN
 				CntShuttle := CntShuttle + 1;
 				MC_Stop_0.Execute := FALSE;
@@ -441,7 +400,21 @@ PROGRAM _CYCLIC
 	TON_Pouring_Down();
 	TON_Capping();
    
- 
+	//Updating values of vel or states with actual data in Visualisation
+	
+	gTrakAsm.Command.Power					:=VisPower;
+	gTrakAsm.Command.ShuttleStart			:=VisShuttleStart;
+	gTrakAsm.Command.ShuttleStop 			:=VisShuttleStop;
+	Pouring_Top_Broken 						:=VisPouring_Top_Broken;
+	Pouring_Down_Broken						:=VisPouring_Down_Broken;
+	Capping_Broken							:=VisCapping_Broken;
+	gTrakAsm.Parameter.Velocity				:=VisVelocity;
+	gTrakAsm.Parameter.Acceleration			:=VisAcceleration;
+	gTrakAsm.Parameter.Deceleration			:=VisDeceleration;
+	TON_Pouring_Top.PT						:=VisPouring_Time;
+	TON_Pouring_Down.PT						:=VisPouring_Time;
+	TON_Capping.PT							:=VisCapping_Time;
+
  
    
 	// Decrease acctual running shuttle
