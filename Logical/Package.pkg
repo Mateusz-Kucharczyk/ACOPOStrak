@@ -5,16 +5,12 @@
     <Object Type="File" Description="Global data types">Global.typ</Object>
     <Object Type="File" Description="Global variables">Global.var</Object>
     <Object Type="Package" Description="Global libraries">Libraries</Object>
-    <Object Type="Program" Language="IEC">StartMovement</Object>
     <Object Type="Program" Language="IEC">Vis</Object>
-
     <Object Type="Program" Language="IEC">TrakMovement</Object>
     <Object Type="Program" Language="IEC">Recipe</Object>
     <Object Type="Package">mappView</Object>
     <Object Type="Program" Language="IEC">svgTransform</Object>
     <Object Type="Package">Package</Object>
-
     <Object Type="Package">Robots</Object>
-
   </Objects>
 </Package>

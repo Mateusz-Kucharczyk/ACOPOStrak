@@ -48,15 +48,17 @@
     <BinaryObject Name="Config_4" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Hierarchy" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="sysconf" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="Config_10" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config_5" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config_6" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config_7" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="sysconf" Source="" Memory="SystemROM" Language="Binary" />
     <BinaryObject Name="Config_8" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="TC" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config_11" Source="" Memory="UserROM" Language="Binary" />
-    <BinaryObject Name="Config_10" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="Config_9" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Config_30" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="Config_20" Source="" Memory="UserROM" Language="Binary" />
   </Binaries>
   <Libraries>
     <LibraryObject Name="CoTrace" Source="Libraries.CoTrace.lby" Memory="UserROM" Language="binary" Debugging="true" />
