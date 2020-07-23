@@ -34,5 +34,17 @@
 			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch6" attribute="enable" />
 		</Binding>
 
-	</Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.Names" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedValue" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.SelectedIndex" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:WidgetString" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="dataProvider" />
+</Binding>
+</Bindings>
 </BindingsSet>
