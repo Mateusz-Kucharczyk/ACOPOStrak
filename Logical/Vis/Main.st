@@ -4,13 +4,17 @@ PROGRAM _INIT
 	SizeofVis := SIZEOF(Vis);
 	// max number of displayed shuttles  
 	NumVisShuttle := SIZEOF(Vis.Shuttle) / SIZEOF(Vis.Shuttle[0]);  
+	FOR i:=0 TO (NumVisShuttle-1) DO
+		Vis.Shuttle[i].ColorRed     := 1.000;
+		Vis.Shuttle[i].ColorGreen   := 1.000;
+		Vis.Shuttle[i].ColorBlue    := 1.000;
+	END_FOR;
 END_PROGRAM
 
 PROGRAM _CYCLIC 
 
 	FOR i:=0 TO (NumVisShuttle-1) DO 
 		IF gShuttleMon.Shuttle[i].Available THEN
-			// format selected monitor data to fit B&R scene viewer  
 			Vis.Shuttle[i].Available     := 1;
 			Vis.Shuttle[i].PositionX     := LREAL_TO_REAL(gShuttleMon.Shuttle[i].Position.X);
 			Vis.Shuttle[i].PositionY     := LREAL_TO_REAL(gShuttleMon.Shuttle[i].Position.Y);
@@ -19,29 +23,19 @@ PROGRAM _CYCLIC
 			Vis.Shuttle[i].ExtentToBack  := LREAL_TO_REAL(gShuttleMon.Shuttle[i].ExtentToBack);
 			Vis.Shuttle[i].Width         := LREAL_TO_REAL(gShuttleMon.Shuttle[i].Width);  
 			brsitoa(gShuttleMon.Shuttle[i].Index, ADR(Vis.Shuttle[i].Text));
-			Vis.Shuttle[i].ColorRed      := 0.5;       //
-			Vis.Shuttle[i].ColorGreen    := 0.5;      // default shuttle color gray
-			Vis.Shuttle[i].ColorBlue     := 0.5;        //
+			     //
             
-			// example: set shuttle colour via user data
+			
 			IF gShuttleMon.Shuttle[i].UserData <> 0 THEN  
 				pUserData ACCESS gShuttleMon.Shuttle[i].UserData;    // access to user data of this shuttle
-				IF pUserData.Color = ORANGE THEN                     // Color is defined with RGB values between 0 and 1
-					Vis.Shuttle[i].ColorRed     := 1.000;
-					Vis.Shuttle[i].ColorGreen   := 0.5451;
-					Vis.Shuttle[i].ColorBlue    := 0.000;
-				ELSIF pUserData.Color = GREEN THEN
+				IF gShuttleColor[i] = 1 THEN                     // Color is defined with RGB values between 0 and 1
 					Vis.Shuttle[i].ColorRed     := 0.000;
 					Vis.Shuttle[i].ColorGreen   := 1.000;
 					Vis.Shuttle[i].ColorBlue    := 0.000;
-				ELSIF pUserData.Color = RED THEN
+				ELSIF gShuttleColor[i] = 2 THEN
 					Vis.Shuttle[i].ColorRed     := 1.000;
 					Vis.Shuttle[i].ColorGreen   := 0.000;
 					Vis.Shuttle[i].ColorBlue    := 0.000;
-				ELSIF pUserData.Color = BLUE THEN
-					Vis.Shuttle[i].ColorRed     := 0.000;
-					Vis.Shuttle[i].ColorGreen   := 0.000;
-					Vis.Shuttle[i].ColorBlue    := 1.000;
 				ELSIF pUserData.Color = WHITE THEN
 					Vis.Shuttle[i].ColorRed     := 1.000;
 					Vis.Shuttle[i].ColorGreen   := 1.000;

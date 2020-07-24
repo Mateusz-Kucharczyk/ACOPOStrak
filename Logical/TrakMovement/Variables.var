@@ -1,7 +1,4 @@
-VAR CONSTANT
-	NUM_SIM_SHUTTLES : USINT := 10; (*Maximum Shuttles Added in the Simulation*)
-	MAX_NUM_SHUTTLES : USINT := 25; (*Maximum Shuttles Handled by the Trak*)
-END_VAR
+
 VAR
 	SimShuttlePosition : ARRAY[1..MAX_NUM_SHUTTLES] OF LREAL;
 END_VAR
@@ -27,7 +24,6 @@ VAR
 	MC_Stop_0 : MC_Stop;
 	SizeofUserdata : UDINT;
 	Shuttles_exist : BOOL;
-	ActiveShuttle : INT := NUM_SIM_SHUTTLES;
 END_VAR
 (*Timers*)
 VAR
