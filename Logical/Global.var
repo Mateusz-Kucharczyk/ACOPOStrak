@@ -21,5 +21,6 @@ VAR
 	gColorBlue : INT;
 	gColorGreen : INT;
 	gColorRed : INT;
+	gColorSum : INT;
 END_VAR
 

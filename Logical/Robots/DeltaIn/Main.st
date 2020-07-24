@@ -45,12 +45,15 @@ PROGRAM _CYCLIC
 				Step := MOVE_PROGRAM;
 			END_IF;
 		MOVE_PROGRAM:
-			MpDelta3Axis_0.MoveProgram :=1;
-			IF MpDelta3Axis_0.MoveDone THEN
-				Step:= WAIT_SHUTTLE;
-			END_IF;
-			IF diInterrupt THEN
-				Step := INTERRUPT;
+			IF gColorSum > 1 THEN
+					MpDelta3Axis_0.MoveProgram :=1;
+				IF MpDelta3Axis_0.MoveDone THEN
+					gColorSum := gColorSum -1;
+					Step:= WAIT_SHUTTLE;
+				END_IF;
+				IF diInterrupt THEN
+					Step := INTERRUPT;
+				END_IF;
 			END_IF;
 					
 		INTERRUPT:
