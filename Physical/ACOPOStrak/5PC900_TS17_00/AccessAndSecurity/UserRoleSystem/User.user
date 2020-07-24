@@ -3,10 +3,21 @@
   <Element ID="Anonymous" Type="User">
     <Property ID="UserID" Value="1" />
     <Group ID="Roles">
+      <Property ID="Role[1]" Value="Everyone" />
+    </Group>
+  </Element>
+  <Element ID="admin" Type="User">
+    <Property ID="UserID" Value="2" />
+    <Property ID="Password" Value="nP/oU8HIdx8QlPlvvoR4X7cwJW8d43sQ8HaeDY9bpQjlAFV1AZQ=" Description="admin" />
+    <Group ID="Roles">
       <Property ID="Role[1]" Value="Administrators" />
     </Group>
   </Element>
-  <Element ID="usr1" Type="User">
-    <Property ID="UserID" Value="2" />
+  <Element ID="operator" Type="User">
+    <Property ID="UserID" Value="3" />
+    <Property ID="Password" Value="FTMa+kU/VqfMJBa/JTcEK+uUH6rpsoVFTiXb03hltbxEv15VcEE=" Description="operator" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Operator" />
+    </Group>
   </Element>
 </Configuration>

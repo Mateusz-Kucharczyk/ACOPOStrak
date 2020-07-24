@@ -8,6 +8,9 @@
   </Aliases>
   <DefaultView>
     <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="ShuttleNumber" />
+      </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
         <Variable Name="svgBlocksToColor" EnableArrayElements="True" />

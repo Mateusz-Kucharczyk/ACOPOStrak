@@ -1,4 +1,6 @@
-
+VAR
+	ShuttleNumber : USINT;
+END_VAR
 (*Assembly interface*)
 VAR
 	gTrakAsm : TrakAsm_type;
@@ -11,4 +13,3 @@ END_VAR
 VAR
 	gShuttleMon : McAcpTrakAssemblyMonData;
 END_VAR
-

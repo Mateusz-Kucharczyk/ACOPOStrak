@@ -9,40 +9,7 @@
 <Source xsi:type="session" refId="btnLogoutHide" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentTop" widgetRefId="LogoutButton1" attribute="visible" />
 </Binding>
-
-  <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button1" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button2" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button3" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button4" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button5" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button6" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Button7" attribute="enable" />
-</Binding>
-
-
-
-
-<Binding mode="twoWay">
+		<Binding mode="twoWay">
 <Source xsi:type="mapp" refId="gAlarmXCore" attribute="link" />
 <Target xsi:type="brease" contentRefId="contentAlarms" widgetRefId="AlarmList1" attribute="mpLink" />
 </Binding>
@@ -57,6 +24,50 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.SelectedIndex" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ShuttleNumber" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="DropDownBox1" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="DropDownBox1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton2" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton3" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton4" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton5" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton6" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton7" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton8" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton9" attribute="enable" />
 </Binding>
 </Bindings>
 
