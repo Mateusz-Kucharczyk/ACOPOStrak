@@ -1,6 +1,7 @@
-
 (*Assembly interface*)
 VAR
+	gBottleInPlace_Turn : BOOL;
+	gShuttleInPlace_Turn : BOOL;
 	gTrakAsm : TrakAsm_type;
 END_VAR
 (*shuttle-UserData structure*)

@@ -12,7 +12,6 @@
         <Variable Name="tranformation" />
         <Variable Name="svgBlocksToColor" EnableArrayElements="True" />
       </Task>
-      
       <Task Name="DeltaOut">
         <Variable Name="MpDelta3Axis_0">
           <Variable Name="Info">
@@ -26,7 +25,16 @@
             <Variable Name="JointAxisPosition" EnableArrayElements="True" />
           </Variable>
         </Variable>
-
+      </Task>
+      <Task Name="DeltaTurn">
+        <Variable Name="DeltaParameters">
+          <Variable Name="Position" EnableArrayElements="True" />
+        </Variable>
+        <Variable Name="MpDelta4Axis_0">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
       </Task>
     </Module>
   </DefaultView>
