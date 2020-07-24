@@ -2,14 +2,17 @@
 VAR
 	MpRecipeXML_0 : MpRecipeXml;
 	MpRecipeRegPar_0 : MpRecipeRegPar;
-END_VAR
-(*Structures*)
-VAR
-	ClientOrder : Order_type; (*Currently loaded recipe*)
+	MpRecipeUI_0 : MpRecipeUI;
 END_VAR
 (*Enums*)
 VAR
 	Step : RecipeState_type;
+END_VAR
+(*Structures*)
+VAR
+	UISetup : MpRecipeUISetupType;
+	UIConnect : MpRecipeUIConnectType;
+	ClientOrder : Order_type; (*Currently loaded recipe*)
 END_VAR
 (*IO's*)
 VAR
@@ -19,6 +22,10 @@ VAR
 END_VAR
 (*Other*)
 VAR
+	WidgetString : ARRAY[0..19] OF STRING[255];
+	UpdateHelpString : BOOL;
 	ErrorMessage : STRING[256];
 	Filename : STRING[80];
+	i : INT; (*Loop iterator*)
+	Temp : STRING[2]; (*Temporarly stores interator converted to string*)
 END_VAR

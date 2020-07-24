@@ -9,8 +9,88 @@
 <Source xsi:type="session" refId="btnLogoutHide" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentTop" widgetRefId="LogoutButton1" attribute="visible" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="mapp" refId="gAlarmXCore" attribute="link" />
+<Target xsi:type="brease" contentRefId="contentAlarms" widgetRefId="AlarmList1" attribute="mpLink" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="mapp" refId="gAlarmXHistory" attribute="link" />
+<Target xsi:type="brease" contentRefId="contentAlarms" widgetRefId="AlarmHistory1" attribute="mpLink" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:ShuttleNumber" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="DropDownBox1" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="DropDownBox1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton2" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton3" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton4" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton5" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton6" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton7" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton8" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton9" attribute="enable" />
+</Binding>
+	<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:ClientOrder.numberOfPackages" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:ClientOrder.bottlesPerPackage" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput2" attribute="value" />
+</Binding>
+	<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.New.Create" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="AddRecipeButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.New.FileName" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="TextInput2" attribute="value" />
+</Binding>
 
-  </Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:OrderPreview.bottlesPerPackage" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:diPreview" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="RefreshRecipeListButton1" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Recipe:OrderPreview.numberOfPackages" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput3" attribute="value" />
+</Binding>
+</Bindings>
 
 
 </BindingsSet>

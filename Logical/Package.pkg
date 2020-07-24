@@ -11,5 +11,6 @@
     <Object Type="Package">Package</Object>
     <Object Type="Package">Robots</Object>
     <Object Type="Package">Trak</Object>
+    <Object Type="Program" Language="IEC">Alarms</Object>
   </Objects>
 </Package>

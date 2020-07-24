@@ -8,6 +8,10 @@
   </Aliases>
   <DefaultView>
     <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="ShuttleNumber" />
+        <Variable Name="someStrings" />
+      </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
         <Variable Name="svgBlocksToColor" EnableArrayElements="True" />
@@ -28,6 +32,35 @@
       </Task>
       <Task Name="Vis">
         <Variable Name="ShuttlesVisibleFalse" />
+      <Task Name="Recipe">
+        <Variable Name="UIConnect">
+          <Variable Name="Recipe">
+            <Variable Name="List">
+              <Variable Name="Names" EnableArrayElements="True" />
+              <Variable Name="StepUp" />
+              <Variable Name="StepDown" />
+              <Variable Name="SelectedIndex" />
+              <Variable Name="MaxSelection" />
+            </Variable>
+            <Variable Name="Load" />
+            <Variable Name="Save" />
+            <Variable Name="Refresh" />
+            <Variable Name="Delete" />
+            <Variable Name="Rename" />
+            <Variable Name="NewFileName" />
+          </Variable>
+          <Variable Name="New">
+            <Variable Name="FileName" />
+            <Variable Name="Create" />
+          </Variable>
+        </Variable>
+        <Variable Name="WidgetString" />
+        <Variable Name="ClientOrder">
+          <Variable Name="numberOfPackages" />
+          <Variable Name="bottlesPerPackage" />
+          <Variable Name="bottleSize" />
+          <Variable Name="drinkColor" />
+        </Variable>
       </Task>
     </Module>
   </DefaultView>

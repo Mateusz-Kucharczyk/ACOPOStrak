@@ -1,3 +1,7 @@
+
+VAR
+	ShuttleNumber : USINT;
+END_VAR
 (*Assembly interface*)
 VAR
 	gTrakAsm : TrakAsm_type;
@@ -9,6 +13,7 @@ END_VAR
 (*shuttle monitor structure for Vis*)
 VAR
 	gShuttleMon : McAcpTrakAssemblyMonData;
+	someStrings : ARRAY[0..3] OF STRING[80] := ['test1','test2','test3','test4'];
 END_VAR
 (*Bottle input and output*)
 VAR
