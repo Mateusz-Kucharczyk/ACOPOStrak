@@ -33,7 +33,6 @@
 			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch6" attribute="enable" />
 		</Binding>
-<<<<<<< HEAD
 
 
 
@@ -73,7 +72,5 @@
 <Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.NewFileName" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="TextInput1" attribute="value" />
 		</Binding>
-=======
->>>>>>> b75cb3302d76d7282342bc456f280631d5f562ee
 	</Bindings>
 </BindingsSet>

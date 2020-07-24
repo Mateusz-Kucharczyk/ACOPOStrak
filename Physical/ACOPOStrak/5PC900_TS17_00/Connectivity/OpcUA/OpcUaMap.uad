@@ -32,6 +32,7 @@
       </Task>
       <Task Name="Vis">
         <Variable Name="ShuttlesVisibleFalse" />
+      </Task>
       <Task Name="Recipe">
         <Variable Name="UIConnect">
           <Variable Name="Recipe">

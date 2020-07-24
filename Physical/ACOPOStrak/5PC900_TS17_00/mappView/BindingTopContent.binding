@@ -82,11 +82,7 @@
 <Source xsi:type="opcUa" refId="::Recipe:OrderPreview.bottlesPerPackage" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput4" attribute="value" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:diPreview" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="RefreshRecipeListButton1" attribute="value" />
-</Binding>
-<Binding mode="oneWay">
+		<Binding mode="oneWay">
 <Source xsi:type="opcUa" refId="::Recipe:OrderPreview.numberOfPackages" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput3" attribute="value" />
 </Binding>
