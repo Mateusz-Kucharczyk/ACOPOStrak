@@ -395,7 +395,9 @@ PROGRAM _CYCLIC
 					MC_BR_ShReadInfo_AcpTrak_0.Axis 									:=ADR(ShuttleAxis[CntShuttle]);
 					MC_BR_ShReadInfo_AcpTrak_0.Enable									:=TRUE;
 					MC_BR_ShReadInfo_AcpTrak_0();
-					IF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.RemainingDistance < 1 THEN
+					IF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.RemainingDistance < 1 
+						AND (MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName='SectorBottleInput' OR
+						MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName='SectorBottleInput') THEN
 	  					ManualShuttleReset:= ManualShuttleReset +1;
 					END_IF;
 				END_FOR;
@@ -410,6 +412,9 @@ PROGRAM _CYCLIC
 					Capping_Busy:=FALSE;
 					gShuttleInPlace_Input:=FALSE;
 					gShuttleInPlace_Output:=FALSE;
+					TON_Capping.IN:=FALSE;
+					TON_Pouring_Down.IN:=FALSE;
+					TON_Pouring_Top.IN:=FALSE;
 					
 				END_IF;
 			END_IF;
