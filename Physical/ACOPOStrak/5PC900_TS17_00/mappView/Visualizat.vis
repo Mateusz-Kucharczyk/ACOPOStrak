@@ -18,6 +18,7 @@
 		<EventBindingsSet refId="contentLogin_eventbinding" />
 		<EventBindingsSet refId="contentHome_eventbinding" />
 		<EventBindingsSet refId="contentAlarms_eventbinding" />
+		<EventBindingsSet refId="contentOrders_eventbinding" />
 	</EventBindingsSets>
   <Dialogs>
     <Dialog refId="dialogLogin" />
