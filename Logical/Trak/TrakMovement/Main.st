@@ -374,23 +374,28 @@ PROGRAM _CYCLIC
 			MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
 
 			
-			
+			ManualShuttleReset:=0;
 			IF VisManual=FALSE THEN
-				ManualShuttleReset:=0;
+
 				FOR CntShuttle:=NUM_SIM_SHUTTLES TO 1 BY -1 DO
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorBottleInput); 
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305+3.66;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
-					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis         							:= ADR(ShuttleAxis[ActiveShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute      						 	:= TRUE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector       					 		:= ADR(SectorBottleInput); 
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Position     						    := 0.305+3.66;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      						:= gTrakAsm.Parameter.Velocity;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  						:= gTrakAsm.Parameter.Acceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  						:= gTrakAsm.Parameter.Deceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          						:= 0.0;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    						:= mcABORTING;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
-					IF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.RemainingDistance < 0.5 THEN
+					MC_BR_ShReadInfo_AcpTrak_0.Enable									:=FALSE;
+					MC_BR_ShReadInfo_AcpTrak_0();
+					MC_BR_ShReadInfo_AcpTrak_0.Axis 									:=ADR(ShuttleAxis[CntShuttle]);
+					MC_BR_ShReadInfo_AcpTrak_0.Enable									:=TRUE;
+					MC_BR_ShReadInfo_AcpTrak_0();
+					IF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.RemainingDistance < 1 THEN
 	  					ManualShuttleReset:= ManualShuttleReset +1;
 					END_IF;
 				END_FOR;
