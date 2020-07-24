@@ -9,21 +9,13 @@
 <Source xsi:type="session" refId="btnLogoutHide" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentTop" widgetRefId="LogoutButton1" attribute="visible" />
 </Binding>
-		<Binding mode="twoWay">
+<Binding mode="twoWay">
 <Source xsi:type="mapp" refId="gAlarmXCore" attribute="link" />
 <Target xsi:type="brease" contentRefId="contentAlarms" widgetRefId="AlarmList1" attribute="mpLink" />
 </Binding>
 <Binding mode="twoWay">
 <Source xsi:type="mapp" refId="gAlarmXHistory" attribute="link" />
 <Target xsi:type="brease" contentRefId="contentAlarms" widgetRefId="AlarmHistory1" attribute="mpLink" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.Names" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="dataProvider" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.SelectedIndex" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedIndex" />
 </Binding>
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:ShuttleNumber" attribute="value" />
@@ -70,6 +62,7 @@
 <Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton9" attribute="enable" />
 </Binding>
 </Bindings>
+
 
 
 </BindingsSet>

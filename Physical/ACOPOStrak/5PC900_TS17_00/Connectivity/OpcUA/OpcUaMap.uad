@@ -10,6 +10,7 @@
     <Module Name="&lt;Default&gt;">
       <GlobalVariables Name="Global Variables">
         <Variable Name="ShuttleNumber" />
+        <Variable Name="someStrings" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
@@ -19,7 +20,7 @@
         <Variable Name="UIConnect">
           <Variable Name="Recipe">
             <Variable Name="List">
-              <Variable Name="Names" />
+              <Variable Name="Names" EnableArrayElements="True" />
               <Variable Name="StepUp" />
               <Variable Name="StepDown" />
               <Variable Name="SelectedIndex" />
@@ -27,6 +28,7 @@
             </Variable>
           </Variable>
         </Variable>
+        <Variable Name="WidgetString" />
       </Task>
     </Module>
   </DefaultView>
