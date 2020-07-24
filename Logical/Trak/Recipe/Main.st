@@ -9,12 +9,12 @@ PROGRAM _INIT
 	MpRecipeXML_0.Enable := TRUE;
 	
 	MpRecipeRegPar_0.MpLink := ADR(gRecipeXml);
-	MpRecipeRegPar_0.PVName := ADR('Recipe:ClientOrder');
+	MpRecipeRegPar_0.PVName := ADR('gOrder');
 	MpRecipeRegPar_0.Enable := TRUE;
 	
 	MpRecipeUI_0.MpLink := ADR(gRecipeXml);
 	MpRecipeUI_0.Enable := TRUE;
-	
+	gOrder;
 	UISetup.RecipeListSize:= 20;
 	UIConnect.Recipe.Refresh := TRUE;
 	

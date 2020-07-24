@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DATA>
+	<Element Name="gOrder" Type="PvParameter">
+		<Group ID="gOrder">
+			<Property ID="numberOfPackages" DataType="USINT" Value="10" />
+			<Property ID="bottlesPerPackage" DataType="USINT" Value="5" />
+			<Property ID="bottleSize" DataType="DINT" Value="1" />
+			<Property ID="drinkColor" DataType="DINT" Value="2" />
+		</Group>
+	</Element>
+</DATA>
