@@ -9,7 +9,8 @@ TYPE
 		READY,
 		PROCESS,
 		STOPPING,
-		RESET
+		RESET,
+		MANUAL
 		);
 	StepSector : 
 		(

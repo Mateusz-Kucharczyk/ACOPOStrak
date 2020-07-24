@@ -20,9 +20,9 @@ VAR
 	MC_BR_SecAddShuttle_AcpTrak_0 : MC_BR_SecAddShuttle_AcpTrak;
 	MC_BR_AsmGetShuttle_AcpTrak_0 : MC_BR_AsmGetShuttle_AcpTrak;
 	MC_BR_RoutedMoveVel_AcpTrak_0 : MC_BR_RoutedMoveVel_AcpTrak;
+	MC_BR_RoutedMoveAbs_AcpTrak_0 : MC_BR_RoutedMoveAbs_AcpTrak;
 	MC_BR_AsmReadStatus_AcpTrak_0 : MC_BR_AsmReadStatus_AcpTrak;
 	MC_BR_AsmReset_AcpTrak_0 : MC_BR_AsmReset_AcpTrak;
-	MC_BR_RoutedMoveAbs_AcpTrak_0 : MC_BR_RoutedMoveAbs_AcpTrak;
 	MC_BR_ShReadInfo_AcpTrak_0 : MC_BR_ShReadInfo_AcpTrak;
 	MC_Stop_0 : MC_Stop;
 	SizeofUserdata : UDINT;
@@ -60,4 +60,9 @@ VAR
 	VisVelocity : REAL := 2.0;
 	VisAcceleration : REAL := 20.0;
 	VisDeceleration : REAL := 20.0;
+	VisManual : BOOL;
+	VisShuttle : USINT := 1;
+	VisManualVelocity : REAL := 1.0;
+	VisManualSectorTop : BOOL := FALSE;
+	ManualShuttleReset : INT;
 END_VAR

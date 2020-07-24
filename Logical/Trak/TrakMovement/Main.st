@@ -46,7 +46,8 @@ PROGRAM _CYCLIC
 	// Turn off absolute movement of Shuttle and execute it
 	MC_BR_RoutedMoveAbs_AcpTrak_0.Execute := FALSE;
 	MC_BR_RoutedMoveAbs_AcpTrak_0();
-   
+	MC_BR_RoutedMoveVel_AcpTrak_0.Execute:=FALSE;
+	MC_BR_RoutedMoveVel_AcpTrak_0();
 	CASE Step OF
    
 		// Assemply power off and waiting for power on command
@@ -124,7 +125,12 @@ PROGRAM _CYCLIC
 			ELSIF (gTrakAsm.Command.ShuttleStart) THEN
 				gTrakAsm.Command.ShuttleStart := FALSE;
 				CntShuttle := 1;
-				Step := PROCESS;
+				IF VisManual=TRUE THEN
+					Step := MANUAL;
+				ELSE
+					Step := PROCESS;
+				END_IF;
+
 			END_IF
    
 			// Main Step, where Shattles run
@@ -210,7 +216,6 @@ PROGRAM _CYCLIC
 					TON_Capping.IN:=FALSE;
 					Capping_Comming:=FALSE;
 				END_IF
- 
 			ELSIF   MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorBottleOutput' THEN
 				Step_Sector:=Bottle_Output;
 				gShuttleInPlace_Output:=TRUE;
@@ -333,7 +338,7 @@ PROGRAM _CYCLIC
 			MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
 			
 			// Stop command
-			IF(gTrakAsm.Command.ShuttleStop) THEN
+			IF(gTrakAsm.Command.ShuttleStop) OR VisManual=TRUE THEN
 				CntShuttle := 1;
 				Step := STOPPING;
 			END_IF
@@ -343,6 +348,66 @@ PROGRAM _CYCLIC
 				MC_BR_AsmReset_AcpTrak_0.Execute := TRUE;
 				Step := RESET;
 			END_IF
+		MANUAL:
+			
+
+			MC_BR_RoutedMoveVel_AcpTrak_0.Axis			:=ADR(ShuttleAxis[VisShuttle]);
+			MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=TRUE;
+			IF VisManualSectorTop=TRUE THEN
+				MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualTop);
+			ELSE
+				MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualMain);
+			END_IF;
+
+			MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := VisManualVelocity;
+			MC_BR_RoutedMoveVel_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+			MC_BR_RoutedMoveVel_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+			MC_BR_RoutedMoveVel_AcpTrak_0.Jerk          := 0.0;
+			MC_BR_RoutedMoveVel_AcpTrak_0.BufferMode    := mcABORTING;
+			IF VisManualVelocity>=0.0 THEN
+				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+			ELSE
+				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_NEGATIVE;
+			END_IF;
+			MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+			
+			MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+
+			
+			
+			IF VisManual=FALSE THEN
+				ManualShuttleReset:=0;
+				FOR CntShuttle:=NUM_SIM_SHUTTLES TO 1 BY -1 DO
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorBottleInput); 
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305+3.66;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      := gTrakAsm.Parameter.Velocity;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          := 0.0;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    := mcABORTING;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+					IF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.RemainingDistance < 0.5 THEN
+	  					ManualShuttleReset:= ManualShuttleReset +1;
+					END_IF;
+				END_FOR;
+				IF ManualShuttleReset=NUM_SIM_SHUTTLES THEN
+					CntShuttle:=1;
+					Step := READY;
+					Pouring_Top_Comming:=FALSE;
+					Pouring_Down_Comming:=FALSE;
+					Pouring_Top_Busy:=FALSE;
+					Pouring_Down_Busy:=FALSE;
+					Capping_Comming:=FALSE;
+					Capping_Busy:=FALSE;
+					gShuttleInPlace_Input:=FALSE;
+					gShuttleInPlace_Output:=FALSE;
+					
+				END_IF;
+			END_IF;
  
 		STOPPING:
 			gShuttleInPlace_Input:=FALSE;
@@ -360,7 +425,12 @@ PROGRAM _CYCLIC
        
 			IF EDGEPOS(MC_Stop_0.Done) AND (CntShuttle > NUM_SIM_SHUTTLES) THEN (* Back to ready, after every shuttle on the trak has stopped *)
 				gTrakAsm.Command.ShuttleStop := FALSE;
-				Step := READY;
+				IF VisManual=TRUE THEN
+	  				Step:=MANUAL;
+				ELSE
+					Step := READY;	
+				END_IF;
+
 			END_IF
        
 			// Reset due to error
@@ -394,6 +464,7 @@ PROGRAM _CYCLIC
 	MC_BR_AsmReadStatus_AcpTrak_0();
 	MC_BR_AsmReset_AcpTrak_0();
 	MC_BR_RoutedMoveAbs_AcpTrak_0();
+	MC_BR_RoutedMoveVel_AcpTrak_0();
    
 	// Timers functions
 	TON_Pouring_Top();
@@ -414,7 +485,6 @@ PROGRAM _CYCLIC
 	TON_Pouring_Top.PT						:=VisPouring_Time;
 	TON_Pouring_Down.PT						:=VisPouring_Time;
 	TON_Capping.PT							:=VisCapping_Time;
-
  
    
 	// Decrease acctual running shuttle
