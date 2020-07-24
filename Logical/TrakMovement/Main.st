@@ -260,7 +260,7 @@ PROGRAM _CYCLIC
 				
 				// Bottle input at Shuttel
 				Bottle_Input:
-					gShuttleColor[ActiveShuttle-1] := 0;
+					gShuttleColor[10-ActiveShuttle] := 0;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorBottleInput);	
@@ -294,7 +294,16 @@ PROGRAM _CYCLIC
 					Pouring_Down_Comming:=TRUE;
 					IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_Down' THEN
 						Pouring_Down_Busy:=TRUE;
-						gShuttleColor[ActiveShuttle-1] := 1;
+						IF gColorGreen > 0 THEN
+							gShuttleColor[10-ActiveShuttle] := 1;
+							gColorGreen := gColorGreen - 1;
+						ELSIF gColorRed > 0 THEN
+							gShuttleColor[10-ActiveShuttle] := 2;
+							gColorRed := gColorRed - 1;
+						ELSIF gColorBlue > 0 THEN
+							gShuttleColor[10-ActiveShuttle] := 3;
+							gColorBlue := gColorBlue - 1;
+						END_IF;
 					END_IF;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
@@ -314,7 +323,16 @@ PROGRAM _CYCLIC
 					Pouring_Top_Comming   :=TRUE;
 					IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_Top' THEN
 						Pouring_Top_Busy := TRUE;
-						gShuttleColor[ActiveShuttle-1] := 2;
+						IF gColorGreen > 0 THEN
+							gShuttleColor[10-ActiveShuttle] := 1;
+							gColorGreen := gColorGreen - 1;
+						ELSIF gColorRed > 0 THEN
+							gShuttleColor[10-ActiveShuttle] := 2;
+							gColorRed := gColorRed - 1;
+						ELSIF gColorBlue > 0 THEN
+							gShuttleColor[10-ActiveShuttle] := 3;
+							gColorBlue := gColorBlue - 1;
+						END_IF;
 					END_IF;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;

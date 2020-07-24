@@ -36,6 +36,10 @@ PROGRAM _CYCLIC
 					Vis.Shuttle[i].ColorRed     := 1.000;
 					Vis.Shuttle[i].ColorGreen   := 0.000;
 					Vis.Shuttle[i].ColorBlue    := 0.000;
+				ELSIF gShuttleColor[i] = 3 THEN
+					Vis.Shuttle[i].ColorRed     := 0.000;
+					Vis.Shuttle[i].ColorGreen   := 0.000;
+					Vis.Shuttle[i].ColorBlue    := 1.000;
 				ELSIF pUserData.Color = WHITE THEN
 					Vis.Shuttle[i].ColorRed     := 1.000;
 					Vis.Shuttle[i].ColorGreen   := 1.000;

@@ -17,5 +17,8 @@ VAR
 	gShuttleMon : McAcpTrakAssemblyMonData;
 	ShuttleOutInPosition : BOOL;
 	ShutteInInPosition : BOOL;
+	gColorBlue : INT;
+	gColorGreen : INT;
+	gColorRed : INT;
 END_VAR
 
