@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="contentOrders" height="700" width="1180" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<<<<<<< HEAD
   <Widgets>
     <Widget xsi:type="widgets.brease.TextInput" id="TextInput1" top="180" left="280" width="250" zIndex="0" keyboard="false" placeholder="Enter name" />
     <Widget xsi:type="widgets.brease.PushButton" id="DeleteRecipeButton" top="430" left="280" width="250" zIndex="5" text="Delete" backColor="rgba(200, 100, 100, 1)" style="Command1" />
@@ -27,4 +28,7 @@
     <Widget xsi:type="widgets.brease.Label" id="BottleSizeLabel1" top="570" left="810" width="140" zIndex="23" text="Bottle size" textColor="rgba(255, 255, 255, 1)" />
     <Widget xsi:type="widgets.brease.Label" id="DrinkColorLabel1" top="610" left="810" width="139" zIndex="24" text="Drink color" textColor="rgba(255, 255, 255, 1)" />
   </Widgets>
+=======
+  <Widgets />
+>>>>>>> b75cb3302d76d7282342bc456f280631d5f562ee
 </Content>

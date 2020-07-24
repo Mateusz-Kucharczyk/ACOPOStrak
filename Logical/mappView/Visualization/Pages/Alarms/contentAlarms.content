@@ -12,8 +12,8 @@
                 <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItem3" width="100" zIndex="2" columnType="category" text="$IAT/alarmListCategory" />
               </Widgets>
             </Widget>
-            <Widget xsi:type="widgets.brease.Button" id="btnAcknowledgeAll" top="510" left="640" width="160" height="50" zIndex="1" breakWord="true" multiLine="true" text="$IAT/btnAcknowledgeAll" wordWrap="true" style="Operate" />
-            <Widget xsi:type="widgets.brease.Button" id="btnAcknowledge" top="510" left="380" width="160" height="50" zIndex="2" text="$IAT/btnAcknowledge" style="Operate" />
+            <Widget xsi:type="widgets.brease.Button" id="btnAcknowledgeAll" top="510" left="640" width="160" height="50" zIndex="1" breakWord="true" multiLine="true" text="$IAT/btnAcknowledgeAll" wordWrap="true" permissionOperate="['Administrators']" style="Operate" />
+            <Widget xsi:type="widgets.brease.Button" id="btnAcknowledge" top="510" left="380" width="160" height="50" zIndex="2" text="$IAT/btnAcknowledge" permissionOperate="['Administrators']" style="Operate" />
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.TabItem" id="TabItem2" left="0" zIndex="1" text="$IAT/tabAlarmHistory">

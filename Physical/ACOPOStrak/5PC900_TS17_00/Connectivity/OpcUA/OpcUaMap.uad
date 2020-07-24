@@ -9,6 +9,7 @@
   <DefaultView>
     <Module Name="&lt;Default&gt;">
       <GlobalVariables Name="Global Variables">
+        <Variable Name="ShuttleNumber" />
         <Variable Name="someStrings" />
       </GlobalVariables>
       <Task Name="svgTransfo">
