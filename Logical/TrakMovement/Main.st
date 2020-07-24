@@ -33,6 +33,10 @@ PROGRAM _INIT
 	TON_Capping.PT:=T#2s;
 	TON_Capping.IN:=FALSE;
 	
+	FOR i:=0 TO NUM_SIM_SHUTTLES DO
+		gShuttleColored[i] := FALSE;
+	END_FOR;
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -260,6 +264,7 @@ PROGRAM _CYCLIC
 				
 				// Bottle input at Shuttel
 				Bottle_Input:
+					gShuttleColored[10-ActiveShuttle] := FALSE;
 					gShuttleColor[10-ActiveShuttle] := 0;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
@@ -294,16 +299,21 @@ PROGRAM _CYCLIC
 					Pouring_Down_Comming:=TRUE;
 					IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_Down' THEN
 						Pouring_Down_Busy:=TRUE;
-						IF gColorGreen > 0 THEN
-							gShuttleColor[10-ActiveShuttle] := 1;
-							gColorGreen := gColorGreen - 1;
-						ELSIF gColorRed > 0 THEN
-							gShuttleColor[10-ActiveShuttle] := 2;
-							gColorRed := gColorRed - 1;
-						ELSIF gColorBlue > 0 THEN
-							gShuttleColor[10-ActiveShuttle] := 3;
-							gColorBlue := gColorBlue - 1;
-						END_IF;
+						IF NOT (gShuttleColored[10-ActiveShuttle]) THEN
+							IF gColorGreen > 0 THEN
+								gShuttleColor[10-ActiveShuttle] := 1;
+								gColorGreen := gColorGreen - 1;
+								gShuttleColored[10-ActiveShuttle] := TRUE;
+							ELSIF gColorRed > 0 THEN
+								gShuttleColor[10-ActiveShuttle] := 2;
+								gColorRed := gColorRed - 1;
+								gShuttleColored[10-ActiveShuttle] := TRUE;
+							ELSIF gColorBlue > 0 THEN
+								gShuttleColor[10-ActiveShuttle] := 3;
+								gColorBlue := gColorBlue - 1;
+								gShuttleColored[10-ActiveShuttle] := TRUE;
+							END_IF;
+						END_IF;	
 					END_IF;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
@@ -323,16 +333,21 @@ PROGRAM _CYCLIC
 					Pouring_Top_Comming   :=TRUE;
 					IF	MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_Top' THEN
 						Pouring_Top_Busy := TRUE;
-						IF gColorGreen > 0 THEN
-							gShuttleColor[10-ActiveShuttle] := 1;
-							gColorGreen := gColorGreen - 1;
-						ELSIF gColorRed > 0 THEN
-							gShuttleColor[10-ActiveShuttle] := 2;
-							gColorRed := gColorRed - 1;
-						ELSIF gColorBlue > 0 THEN
-							gShuttleColor[10-ActiveShuttle] := 3;
-							gColorBlue := gColorBlue - 1;
-						END_IF;
+						IF NOT (gShuttleColored[10-ActiveShuttle]) THEN
+							IF gColorGreen > 0 THEN
+								gShuttleColor[10-ActiveShuttle] := 1;
+								gColorGreen := gColorGreen - 1;
+								gShuttleColored[10-ActiveShuttle] := TRUE;
+							ELSIF gColorRed > 0 THEN
+								gShuttleColor[10-ActiveShuttle] := 2;
+								gColorRed := gColorRed - 1;
+								gShuttleColored[10-ActiveShuttle] := TRUE;
+							ELSIF gColorBlue > 0 THEN
+								gShuttleColor[10-ActiveShuttle] := 3;
+								gColorBlue := gColorBlue - 1;
+								gShuttleColored[10-ActiveShuttle] := TRUE;
+							END_IF;
+						END_IF;	
 					END_IF;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;

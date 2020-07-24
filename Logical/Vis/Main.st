@@ -40,7 +40,7 @@ PROGRAM _CYCLIC
 					Vis.Shuttle[i].ColorRed     := 0.000;
 					Vis.Shuttle[i].ColorGreen   := 0.000;
 					Vis.Shuttle[i].ColorBlue    := 1.000;
-				ELSIF pUserData.Color = WHITE THEN
+				ELSIF pUserData.Color = 0 THEN
 					Vis.Shuttle[i].ColorRed     := 1.000;
 					Vis.Shuttle[i].ColorGreen   := 1.000;
 					Vis.Shuttle[i].ColorBlue    := 1.000;

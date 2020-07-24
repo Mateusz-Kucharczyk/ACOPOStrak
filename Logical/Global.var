@@ -11,6 +11,7 @@ VAR
 	gShuttleUserData : ShuttleUserData_typ;
 	ActiveShuttle : INT := NUM_SIM_SHUTTLES;
 	gShuttleColor : ARRAY[0..NUM_SIM_SHUTTLES] OF INT;
+	gShuttleColored : ARRAY[0..NUM_SIM_SHUTTLES] OF BOOL;
 END_VAR
 (*shuttle monitor structure for Vis*)
 VAR
