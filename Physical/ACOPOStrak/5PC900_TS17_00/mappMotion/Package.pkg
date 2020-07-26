@@ -6,5 +6,6 @@
     <Object Type="File">Hierarchy.objecthierarchy</Object>
     <Object Type="Package">3AxesDeltaAIn</Object>
     <Object Type="Package">3AxesDeltaAOut</Object>
+    <Object Type="Package">4AxesDeltaA</Object>
   </Objects>
 </Package>
