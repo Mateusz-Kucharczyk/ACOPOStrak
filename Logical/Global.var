@@ -38,6 +38,8 @@ VAR
 	gColorBlue : INT;
 	gColorGreen : INT;
 	gColorRed : INT;
+	gOrderedBottles : USINT;
+	gBottlesOut : USINT;
 	gColorSum : INT;
 	gOrder : Order_type;
 	gProcessFinished : BOOL;
