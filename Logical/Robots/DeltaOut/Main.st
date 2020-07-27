@@ -51,7 +51,7 @@ PROGRAM _CYCLIC
 			END_IF;
 			//RecipeBottlesPerPack := gOrder.bottlesPerPackage;
 		MOVE_PROGRAM:
-			IF RecipeBottlesPerPack = 4 THEN
+			IF gOrder.bottlesPerPackage = 4 THEN
 				CASE BottlesPerPack OF
 				
 					1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
@@ -91,7 +91,7 @@ PROGRAM _CYCLIC
 				Step := WAIT_SHUTTLE;
 				gBottleInPlace_Output:=TRUE;
 				BottlesPerPack:=BottlesPerPack+1;
-				IF BottlesPerPack>RecipeBottlesPerPack THEN
+				IF BottlesPerPack>gOrder.bottlesPerPackage THEN
 					BottlesPerPack:=1;
 				END_IF;
 			END_IF;

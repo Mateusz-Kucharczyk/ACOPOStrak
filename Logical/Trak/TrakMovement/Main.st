@@ -1,4 +1,6 @@
 PROGRAM _INIT
+	
+	gProcessFinished := TRUE;
    
     // Adding Shuttles for simulation
 	FOR i := 1 TO NUM_SIM_SHUTTLES DO
@@ -128,6 +130,8 @@ PROGRAM _CYCLIC
 				IF VisManual=TRUE THEN
 					Step := MANUAL;
 				ELSE
+					gColorSum := gOrder.bottlesPerPackage * gOrder.numberOfPackages;
+					gProcessFinished := FALSE;
 					Step := PROCESS;
 				END_IF;
 
@@ -408,7 +412,7 @@ PROGRAM _CYCLIC
 			END_FOR;
 			IF ManualShuttleReset=NUM_SIM_SHUTTLES THEN
 				Step:=READY;
-				gProcessFinished:=TRUE;
+				gProcessFinished := TRUE;
 			ELSE
 				ManualShuttleReset:=0;
 			END_IF
@@ -511,6 +515,17 @@ PROGRAM _CYCLIC
        
 			IF EDGEPOS(MC_Stop_0.Done) AND (CntShuttle > NUM_SIM_SHUTTLES) THEN (* Back to ready, after every shuttle on the trak has stopped *)
 				gTrakAsm.Command.ShuttleStop := FALSE;
+				Pouring_Top_Comming:=FALSE;
+				Pouring_Down_Comming:=FALSE;
+				Pouring_Top_Busy:=FALSE;
+				Pouring_Down_Busy:=FALSE;
+				Capping_Comming:=FALSE;
+				Capping_Busy:=FALSE;
+				gShuttleInPlace_Input:=FALSE;
+				gShuttleInPlace_Output:=FALSE;
+				TON_Capping.IN:=FALSE;
+				TON_Pouring_Down.IN:=FALSE;
+				TON_Pouring_Top.IN:=FALSE;
 				IF VisManual=TRUE THEN
 					Step:=MANUAL;
 				ELSE

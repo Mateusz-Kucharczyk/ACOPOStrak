@@ -30,7 +30,7 @@ VAR
 	ActiveShuttle : INT := NUM_SIM_SHUTTLES;
 END_VAR
 VAR CONSTANT
-	NUM_SIM_SHUTTLES : USINT := 10;
+	NUM_SIM_SHUTTLES : USINT := 15;
 END_VAR
 VAR
 	gShuttleColor : ARRAY[0..NUM_SIM_SHUTTLES] OF INT;
@@ -38,6 +38,8 @@ VAR
 	gColorBlue : INT;
 	gColorGreen : INT;
 	gColorRed : INT;
+	gOrderedBottles : USINT;
+	gBottlesOut : USINT;
 	gColorSum : INT;
 	gdiStart : BOOL;
 	gOrder : Order_type;

@@ -54,8 +54,8 @@ VAR
 	VisPouring_Time_Small : TIME := T#2s;
 	VisPouring_Time_Large : TIME := T#4s;
 	VisVelocity : REAL := 2.0;
-	VisAcceleration : REAL := 20.0;
-	VisDeceleration : REAL := 20.0;
+	VisAcceleration : REAL := 10;
+	VisDeceleration : REAL := 5;
 	VisManual : BOOL;
 	VisShuttle : USINT := 1;
 	VisManualVelocity : REAL := 1.0;
