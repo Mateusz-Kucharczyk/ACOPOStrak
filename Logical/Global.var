@@ -39,6 +39,11 @@ VAR
 	gColorGreen : INT;
 	gColorRed : INT;
 	gColorSum : INT;
+	gdiStart : BOOL;
 	gOrder : Order_type;
 	gProcessFinished : BOOL;
+	gdiStop : BOOL;
+	gdiInterrupt : BOOL;
+	gdiContinue : BOOL;
+	gdiInstantStop : BOOL;
 END_VAR

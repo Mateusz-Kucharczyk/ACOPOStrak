@@ -14,7 +14,7 @@ PROGRAM _CYCLIC
     
 	MpDelta3Axis_0();
 	
-	IF diStop THEN
+	IF gdiInstantStop THEN
 		Step:=STOP;
 	END_IF;
 	
@@ -25,7 +25,7 @@ PROGRAM _CYCLIC
 	
 	CASE Step OF
 		INIT:
-			IF diStart THEN
+			IF gdiStart THEN
 				Step := POWER;
 			END_IF;
 		POWER:
@@ -52,7 +52,7 @@ PROGRAM _CYCLIC
 					Step:= WAIT_SHUTTLE;
 					gBottleInPlace_Input:=TRUE;
 				END_IF;
-				IF diInterrupt THEN
+				IF gdiInterrupt THEN
 					Step := INTERRUPT;
 				END_IF;
 			END_IF;
@@ -60,7 +60,7 @@ PROGRAM _CYCLIC
 
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
-			IF diContionue THEN
+			IF gdiContinue THEN
 				MpDelta3Axis_0.Interrupt := FALSE;
 				MpDelta3Axis_0.Continue := TRUE;
 				Step := MOVE_PROGRAM;
@@ -68,7 +68,7 @@ PROGRAM _CYCLIC
 					
 		STOP:
 			MpDelta3Axis_0.Stop := TRUE;
-			IF (NOT diStop) AND MpDelta3Axis_0.Stopped THEN
+			IF (NOT gdiInstantStop) AND MpDelta3Axis_0.Stopped THEN
 				
 				MpDelta3Axis_0.Home := FALSE;
 				MpDelta3Axis_0.Interrupt := FALSE;
