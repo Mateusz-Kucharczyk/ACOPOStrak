@@ -2,6 +2,7 @@
 PROGRAM _INIT
 	(* Insert code here *)
 	loopTmp := 1;
+	ShuttleNumber :=1;
 END_PROGRAM
 
 PROGRAM _CYCLIC
