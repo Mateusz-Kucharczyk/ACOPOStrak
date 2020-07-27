@@ -25,9 +25,7 @@ PROGRAM _INIT
 	MC_BR_AsmReadStatus_AcpTrak_0.Enable := TRUE;
    
 	// Setting timer for Pouring_Down/Up and Capping
-	TON_Pouring_Top.PT:=VisPouring_Time;
 	TON_Pouring_Top.IN:=FALSE;
-	TON_Pouring_Down.PT:=VisPouring_Time;
 	TON_Pouring_Down.IN:=FALSE;
 	TON_Capping.PT:=VisCapping_Time;
 	TON_Capping.IN:=FALSE;
@@ -35,8 +33,9 @@ PROGRAM _INIT
 END_PROGRAM
  
 PROGRAM _CYCLIC
-   
-    // Turn off Shuttle read info and execute it
+	
+		
+	// Turn off Shuttle read info and execute it
 	MC_BR_ShReadInfo_AcpTrak_0.Enable     :=FALSE;
 	MC_BR_ShReadInfo_AcpTrak_0();
    
@@ -288,7 +287,18 @@ PROGRAM _CYCLIC
 					IF  MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_Down' THEN
 						Pouring_Down_Busy:=TRUE;
 						IF NOT (gShuttleColored[10-ActiveShuttle]) THEN
-							IF gColorGreen > 0 THEN
+							CASE gOrder.drinkColor OF
+								DRINK_COLOR_RED:
+									gShuttleColor[10-ActiveShuttle] := 2;
+									gShuttleColored[10-ActiveShuttle] := TRUE;
+								DRINK_COLOR_GREEN:
+									gShuttleColor[10-ActiveShuttle] := 1;
+									gShuttleColored[10-ActiveShuttle] := TRUE;
+								DRINK_COLOR_BLUE:
+									gShuttleColor[10-ActiveShuttle] := 3;
+									gShuttleColored[10-ActiveShuttle] := TRUE;
+							END_CASE;
+							(*IF gColorGreen > 0 THEN
 								gShuttleColor[10-ActiveShuttle] := 1;
 								gColorGreen := gColorGreen - 1;
 								gShuttleColored[10-ActiveShuttle] := TRUE;
@@ -300,7 +310,7 @@ PROGRAM _CYCLIC
 								gShuttleColor[10-ActiveShuttle] := 3;
 								gColorBlue := gColorBlue - 1;
 								gShuttleColored[10-ActiveShuttle] := TRUE;
-							END_IF;
+							END_IF;*)
 						END_IF;
 					END_IF;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
@@ -314,7 +324,18 @@ PROGRAM _CYCLIC
 					IF  MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_Top' THEN
 						Pouring_Top_Busy := TRUE;
 						IF NOT (gShuttleColored[10-ActiveShuttle]) THEN
-							IF gColorGreen > 0 THEN
+							CASE gOrder.drinkColor OF
+								DRINK_COLOR_RED:
+									gShuttleColor[10-ActiveShuttle] := 2;
+									gShuttleColored[10-ActiveShuttle] := TRUE;
+								DRINK_COLOR_GREEN:
+									gShuttleColor[10-ActiveShuttle] := 1;
+									gShuttleColored[10-ActiveShuttle] := TRUE;
+								DRINK_COLOR_BLUE:
+									gShuttleColor[10-ActiveShuttle] := 3;
+									gShuttleColored[10-ActiveShuttle] := TRUE;
+							END_CASE;
+							(*IF gColorGreen > 0 THEN
 								gShuttleColor[10-ActiveShuttle] := 1;
 								gColorGreen := gColorGreen - 1;
 								gShuttleColored[10-ActiveShuttle] := TRUE;
@@ -326,7 +347,7 @@ PROGRAM _CYCLIC
 								gShuttleColor[10-ActiveShuttle] := 3;
 								gColorBlue := gColorBlue - 1;
 								gShuttleColored[10-ActiveShuttle] := TRUE;
-							END_IF;
+							END_IF;*)
 						END_IF;
 					END_IF;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
@@ -524,9 +545,15 @@ PROGRAM _CYCLIC
 	gTrakAsm.Parameter.Velocity				:=VisVelocity;
 	gTrakAsm.Parameter.Acceleration			:=VisAcceleration;
 	gTrakAsm.Parameter.Deceleration			:=VisDeceleration;
-	TON_Pouring_Top.PT						:=VisPouring_Time;
-	TON_Pouring_Down.PT						:=VisPouring_Time;
 	TON_Capping.PT							:=VisCapping_Time;
+	CASE gOrder.bottleSize OF
+		BOTTLE_SIZE_LARGE:
+			TON_Pouring_Down.PT := VisPouring_Time_Large;
+			TON_Pouring_Top.PT:=VisPouring_Time_Large;
+		BOTTLE_SIZE_SMALL:
+			TON_Pouring_Down.PT := VisPouring_Time_Small;
+			TON_Pouring_Top.PT:=VisPouring_Time_Small;
+	END_CASE;
  
    
 	// Decrease acctual running shuttle

@@ -51,7 +51,8 @@ VAR
 	VisPouring_Top_Broken : BOOL := FALSE;
 	VisPouring_Down_Broken : BOOL := FALSE;
 	VisCapping_Time : TIME := T#2s;
-	VisPouring_Time : TIME := T#5s;
+	VisPouring_Time_Small : TIME := T#2s;
+	VisPouring_Time_Large : TIME := T#4s;
 	VisVelocity : REAL := 2.0;
 	VisAcceleration : REAL := 20.0;
 	VisDeceleration : REAL := 20.0;
