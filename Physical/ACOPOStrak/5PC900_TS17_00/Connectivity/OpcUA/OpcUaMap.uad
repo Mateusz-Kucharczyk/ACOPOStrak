@@ -35,7 +35,6 @@
           </Variable>
         </Variable>
       </Task>
-
       <Task Name="Vis">
         <Variable Name="ShuttlesVisibleFalse" />
       </Task>
@@ -78,6 +77,9 @@
           <Variable Name="bottleSize" />
           <Variable Name="drinkColor" />
         </Variable>
+        <Variable Name="ErrorMessage" />
+        <Variable Name="diErrorReset" />
+        <Variable Name="isError" />
       </Task>
     </Module>
   </DefaultView>

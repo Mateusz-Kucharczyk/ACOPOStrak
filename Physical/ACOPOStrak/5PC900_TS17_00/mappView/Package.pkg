@@ -11,5 +11,6 @@
     <Object Type="File">BindingHomePage.binding</Object>
     <Object Type="File">contentAlarms.eventbinding</Object>
     <Object Type="File">contentOrders.eventbinding</Object>
+    <Object Type="File">contentOrdersError.eventbinding</Object>
   </Objects>
 </Package>

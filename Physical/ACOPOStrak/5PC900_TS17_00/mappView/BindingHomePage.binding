@@ -82,5 +82,9 @@
 <Source xsi:type="opcUa" refId="::Recipe:ClientOrder.bottlesPerPackage" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput2" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:ErrorMessage" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrdersError" widgetRefId="ErrorTextOutput" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>
