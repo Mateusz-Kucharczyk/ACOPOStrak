@@ -23,10 +23,10 @@ END_VAR
 (*Other*)
 VAR
 	WidgetString : ARRAY[0..19] OF STRING[255];
-	UpdateHelpString : BOOL;
 	ErrorMessage : STRING[256];
 	Filename : STRING[80];
 	i : INT; (*Loop iterator*)
+	isError : BOOL;
 	PVName : STRING[100];
 	Temp : STRING[2]; (*Temporarly stores interator converted to string*)
 END_VAR

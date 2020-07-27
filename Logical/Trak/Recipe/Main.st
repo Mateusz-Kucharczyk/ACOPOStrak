@@ -3,10 +3,12 @@ PROGRAM _INIT
 	Filename := 'OutFile';
 	ErrorMessage := '';
 	PVName := 'Recipe:ClientOrder';
+	
 	gOrder.bottleSize := 0;
 	gOrder.bottlesPerPackage := 0;
 	gOrder.drinkColor := 0;
 	gOrder.numberOfPackages := 0;
+	
 	MpRecipeXML_0.MpLink := ADR(gRecipeXml);
 	MpRecipeXML_0.DeviceName := ADR('CF');
 	MpRecipeXML_0.FileName := ADR(Filename);
@@ -30,9 +32,9 @@ PROGRAM _CYCLIC
 	MpRecipeXML_0();
 	MpRecipeRegPar_0();
 	MpRecipeUI_0();
+	
 	gOrder := ClientOrder;
 	
-	//UIConnect.Recipe.Refresh := TRUE;
 	FOR i := 0 TO 19 BY 1 DO
 		// delete contents of WidgetString[i]
 		WidgetString[i] := DELETE(WidgetString[i], 255, 0);
@@ -51,8 +53,10 @@ PROGRAM _CYCLIC
 	END_FOR;
 	
 	MpRecipeXML_0.ErrorReset := diErrorReset;
+	MpRecipeRegPar_0.ErrorReset:= diErrorReset;
+	MpRecipeUI_0.ErrorReset := diErrorReset;
 	
-	IF EDGEPOS(MpRecipeXML_0.Error) THEN
+	IF EDGEPOS(MpRecipeXML_0.Error) OR EDGEPOS(MpRecipeRegPar_0.Error) OR EDGEPOS(MpRecipeUI_0.Error) THEN
 		Step := STEP_ERROR;
 	END_IF;
 	
@@ -82,17 +86,25 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		STEP_ERROR:
-
-			IF MpRecipeXML_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_WITH_ERRORS THEN
+			isError := TRUE;
+			
+			IF MpRecipeXML_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_WITH_ERRORS
+				OR MpRecipeUI_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_WITH_ERRORS THEN
 				// Damaged XML structure
 				ErrorMessage := 'XML structure may be damaged. Check if all tags are correct!';
-			ELSIF MpRecipeXML_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_DATA THEN
+			ELSIF MpRecipeXML_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_DATA
+				OR MpRecipeUI_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_DATA THEN
 				// File is missing
-				ErrorMessage := 'The file may be missing!';
+				ErrorMessage := 'The file or XML structure may be missing!';
+			ELSIF UIConnect.Recipe.NewFileName = '' AND MpRecipeUI_0.Error THEN
+				// Somebody tried to add recipe without new name
+				ErrorMessage := 'You must enter new file name!';
 			END_IF;
 			
-			IF NOT(MpRecipeXML_0.Error) THEN
+			IF NOT(MpRecipeXML_0.Error) AND NOT(MpRecipeUI_0.Error) AND NOT(MpRecipeRegPar_0.Error) THEN
 				ErrorMessage := '';
+				diErrorReset := FALSE;
+				isError := FALSE;
 				Step := STEP_AWAIT;
 			END_IF;
 	END_CASE;

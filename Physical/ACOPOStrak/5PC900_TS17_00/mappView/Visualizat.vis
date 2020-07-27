@@ -19,9 +19,11 @@
 		<EventBindingsSet refId="contentHome_eventbinding" />
 		<EventBindingsSet refId="contentAlarms_eventbinding" />
 		<EventBindingsSet refId="contentOrders_eventbinding" />
+		<EventBindingsSet refId="contentOrdersError_eventbinding" />
 	</EventBindingsSets>
   <Dialogs>
-    <Dialog refId="dialogLogin" />
+		<Dialog refId="dialogLogin" />
+		<Dialog refId="ordersErrorDialog" />
   </Dialogs>
   <Contents>
 		<Content refId="contentNavigation" />
@@ -30,6 +32,7 @@
 		<Content refId="contentSettings" />
 		<Content refId="contentOrders" />
 		<Content refId="contentAlarms" />
+		<Content refId="contentOrdersError" />
 	</Contents>
   <SnippetsSets>
     <!--<SnippetsSet refId=""/>-->
