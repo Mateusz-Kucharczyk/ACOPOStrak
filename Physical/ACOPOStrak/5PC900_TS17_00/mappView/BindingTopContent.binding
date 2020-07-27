@@ -87,6 +87,10 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gProcessFinished" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="LoadRecipeButton" attribute="enable" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gCurrentRecipeName" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="CurrentProgramNameTextOutput" attribute="value" />
+</Binding>
 </Bindings>
 
 

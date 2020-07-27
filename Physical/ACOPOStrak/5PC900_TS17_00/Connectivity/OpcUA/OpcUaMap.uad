@@ -17,6 +17,7 @@
           <Variable Name="drinkColor" />
         </Variable>
         <Variable Name="gProcessFinished" />
+        <Variable Name="gCurrentRecipeName" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />

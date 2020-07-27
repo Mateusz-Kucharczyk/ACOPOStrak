@@ -27,6 +27,7 @@ VAR
 	Filename : STRING[80];
 	i : INT; (*Loop iterator*)
 	isError : BOOL;
+	SelectedProgramName : STRING[255];
 	PVName : STRING[100];
 	Temp : STRING[2]; (*Temporarly stores interator converted to string*)
 END_VAR

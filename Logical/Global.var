@@ -42,5 +42,6 @@ VAR
 	gBottlesOut : USINT;
 	gColorSum : INT;
 	gOrder : Order_type;
+	gCurrentRecipeName : STRING[255];
 	gProcessFinished : BOOL;
 END_VAR

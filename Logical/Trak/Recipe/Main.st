@@ -36,7 +36,10 @@ PROGRAM _CYCLIC
 	
 	IF gProcessFinished THEN
 		gOrder := ClientOrder;
+		gCurrentRecipeName := UIConnect.Recipe.List.Names[UIConnect.Recipe.List.SelectedIndex];
 	END_IF;
+	
+	SelectedProgramName := UIConnect.Recipe.List.Names[UIConnect.Recipe.List.SelectedIndex];
 	
 	FOR i := 0 TO 19 BY 1 DO
 		// delete contents of WidgetString[i]
