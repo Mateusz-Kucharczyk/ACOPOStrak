@@ -4,8 +4,7 @@ PROGRAM _INIT
 	MpDelta3Axis_0.Enable := TRUE; 
 	MpDelta3Axis_0.Parameters := ADR(DeltaParameters); 
 
-	MpDelta3Axis_0.Override := 100.0; 
-	DeltaParameters.ProgramName := 'RoboticIn.st';    //File stored on FileDevice
+	MpDelta3Axis_0.Override := 100.0;
 	DeltaParameters.Velocity := 5.0;
 	DeltaParameters.Acceleration := 50.0;
 	Step := INIT;
@@ -43,7 +42,7 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.MoveProgram := 0;
 			IF gShuttleInPlace_Input THEN
 				Step := MOVE_PROGRAM;
-				
+				DeltaParameters.ProgramName := 'RoboticDown.st';    //File stored on FileDevice
 			END_IF;
 		MOVE_PROGRAM:
 			IF gColorSum >0 THEN
@@ -57,6 +56,8 @@ PROGRAM _CYCLIC
 					Step := INTERRUPT;
 				END_IF;
 			END_IF;
+			
+
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
 			IF diContionue THEN

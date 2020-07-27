@@ -1,20 +1,23 @@
 
 PROGRAM _INIT
-	Filename := 'MyFile';
+	Filename := 'OutFile';
 	ErrorMessage := '';
-	
+	PVName := 'Recipe:ClientOrder';
+	gOrder.bottleSize := 0;
+	gOrder.bottlesPerPackage := 0;
+	gOrder.drinkColor := 0;
+	gOrder.numberOfPackages := 0;
 	MpRecipeXML_0.MpLink := ADR(gRecipeXml);
 	MpRecipeXML_0.DeviceName := ADR('CF');
 	MpRecipeXML_0.FileName := ADR(Filename);
 	MpRecipeXML_0.Enable := TRUE;
 	
 	MpRecipeRegPar_0.MpLink := ADR(gRecipeXml);
-	MpRecipeRegPar_0.PVName := ADR('gOrder');
+	MpRecipeRegPar_0.PVName := ADR(PVName);
 	MpRecipeRegPar_0.Enable := TRUE;
 	
 	MpRecipeUI_0.MpLink := ADR(gRecipeXml);
 	MpRecipeUI_0.Enable := TRUE;
-	gOrder;
 	UISetup.RecipeListSize:= 20;
 	UIConnect.Recipe.Refresh := TRUE;
 	
@@ -27,6 +30,7 @@ PROGRAM _CYCLIC
 	MpRecipeXML_0();
 	MpRecipeRegPar_0();
 	MpRecipeUI_0();
+	gOrder := ClientOrder;
 	
 	//UIConnect.Recipe.Refresh := TRUE;
 	FOR i := 0 TO 19 BY 1 DO
