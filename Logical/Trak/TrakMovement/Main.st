@@ -131,10 +131,18 @@ PROGRAM _CYCLIC
 				END_IF;
 
 			END_IF
-   
+			IF EDGEPOS(VisEEActivation) THEN
+				Step:=EE;
+				ActiveShuttle:=NUM_SIM_SHUTTLES;
+			END_IF;
 			// Main Step, where Shattles run
 		PROCESS:   
            
+			IF EDGEPOS(VisEEActivation) THEN
+				Step:=EE;
+				ActiveShuttle:=NUM_SIM_SHUTTLES;
+			END_IF;
+			
 			MC_BR_ShReadInfo_AcpTrak_0.Axis:= ADR(ShuttleAxis[ActiveShuttle]); //ActiveShuttle
 			MC_BR_ShReadInfo_AcpTrak_0.Enable:=TRUE;
 			MC_BR_ShReadInfo_AcpTrak_0();
@@ -506,6 +514,71 @@ PROGRAM _CYCLIC
 				Step := READY;
 			END_IF
        
+		EE:
+			IF EEInit=TRUE THEN
+				
+			ELSE
+				
+				IF TON_EE.Q = FALSE THEN
+				TON_EE.IN:=TRUE;
+				IF ActiveShuttle<15 THEN
+		  
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute      						 	:= FALSE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis         							:= ADR(ShuttleAxis[ActiveShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute      						 	:= TRUE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector       					 		:= ADR(SectorManualTop); 
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Position     						    := 0.55 * ActiveShuttle;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      						:= gTrakAsm.Parameter.Velocity;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  						:= gTrakAsm.Parameter.Acceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  						:= gTrakAsm.Parameter.Deceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          						:= 0.0;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    						:= mcABORTING;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_NEGATIVE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+					MC_BR_ShReadInfo_AcpTrak_0.Enable									:=FALSE;
+					
+					ELSE
+	
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute      						 	:= FALSE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis         							:= ADR(ShuttleAxis[ActiveShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute      						 	:= TRUE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector       					 		:= ADR(SectorManualTop); 
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Position     						    := 0.57 * ActiveShuttle;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Velocity      						:= gTrakAsm.Parameter.Velocity;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Acceleration  						:= gTrakAsm.Parameter.Acceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Deceleration  						:= gTrakAsm.Parameter.Deceleration;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Jerk          						:= 0.0;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.BufferMode    						:= mcABORTING;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+					MC_BR_ShReadInfo_AcpTrak_0.Enable									:=FALSE;
+				END_IF;
+			ELSE
+				FOR EEfor:=NUM_SIM_SHUTTLES TO 1 BY -1 DO
+					
+						MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=FALSE;
+						MC_BR_RoutedMoveVel_AcpTrak_0();
+						MC_BR_RoutedMoveVel_AcpTrak_0.Axis			:=ADR(ShuttleAxis[EEfor]);
+						MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=TRUE;
+						MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualTop);
+						MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := 2.0;
+						MC_BR_RoutedMoveVel_AcpTrak_0.Acceleration  := 0.1;
+						MC_BR_RoutedMoveVel_AcpTrak_0.Deceleration  := 0.1;
+						MC_BR_RoutedMoveVel_AcpTrak_0.Jerk          := 0.0;
+						MC_BR_RoutedMoveVel_AcpTrak_0.BufferMode    := mcABORTING;
+						MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_NEGATIVE;
+						MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+						MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+						MC_BR_RoutedMoveVel_AcpTrak_0();
+						
+					END_FOR;
+				EEInit:=TRUE;
+			END_IF;
+		END_IF;
+		
+		
 	END_CASE
    
 	// Read Assembly status cyclic to Assembly interface
@@ -533,7 +606,7 @@ PROGRAM _CYCLIC
 	TON_Pouring_Top();
 	TON_Pouring_Down();
 	TON_Capping();
-   
+   	TON_EE();
 	//Updating values of vel or states with actual data in Visualisation
 	
 	gTrakAsm.Command.Power					:=VisPower;
@@ -558,7 +631,7 @@ PROGRAM _CYCLIC
    
 	// Decrease acctual running shuttle
 	ActiveShuttle:=ActiveShuttle-1;
-	IF ActiveShuttle=0 THEN
+	IF ActiveShuttle<1 THEN
 		ActiveShuttle:=NUM_SIM_SHUTTLES;
 	END_IF;
    

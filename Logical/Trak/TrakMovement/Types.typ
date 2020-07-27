@@ -10,7 +10,8 @@ TYPE
 		PROCESS,
 		STOPPING,
 		RESET,
-		MANUAL
+		MANUAL,
+		EE
 		);
 	StepSector : 
 		(

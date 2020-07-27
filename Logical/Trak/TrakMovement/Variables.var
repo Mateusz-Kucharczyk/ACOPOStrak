@@ -29,6 +29,7 @@ VAR
 	TON_Pouring_Down : TON;
 	TON_Capping : TON;
 	TON_Pouring_Top : TON;
+	TON_EE : TON := (PT:=T#5s);
 END_VAR
 (*Pouring and Capping*)
 VAR
@@ -61,4 +62,7 @@ VAR
 	VisManualVelocity : REAL := 1.0;
 	VisManualSectorTop : BOOL := FALSE;
 	ManualShuttleReset : INT;
+	VisEEActivation : BOOL := FALSE;
+	EEfor : USINT;
+	EEInit : BOOL := FALSE;
 END_VAR
