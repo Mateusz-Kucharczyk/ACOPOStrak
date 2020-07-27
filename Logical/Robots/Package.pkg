@@ -5,5 +5,6 @@
     <Object Type="Program" Language="IEC">DeltaIn</Object>
     <Object Type="Program" Language="IEC">DeltaOut</Object>
     <Object Type="File" Private="true">Types.typ</Object>
+    <Object Type="Program" Language="IEC">DeltaTurn</Object>
   </Objects>
 </Package>

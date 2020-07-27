@@ -35,8 +35,19 @@
           </Variable>
         </Variable>
       </Task>
+
       <Task Name="Vis">
         <Variable Name="ShuttlesVisibleFalse" />
+      </Task>
+      <Task Name="DeltaTurn">
+        <Variable Name="DeltaParameters">
+          <Variable Name="Position" EnableArrayElements="True" />
+        </Variable>
+        <Variable Name="MpDelta4Axis_0">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
       </Task>
       <Task Name="Recipe">
         <Variable Name="UIConnect">
