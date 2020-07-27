@@ -42,7 +42,7 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.MoveProgram := 0;
 			IF gShuttleInPlace_Input THEN
 				Step := MOVE_PROGRAM;
-				DeltaParameters.ProgramName := 'RoboticDown.st';    //File stored on FileDevice
+				DeltaParameters.ProgramName := 'RoboticIn.st';    //File stored on FileDevice
 			END_IF;
 		MOVE_PROGRAM:
 			IF gColorSum >0 THEN

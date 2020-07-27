@@ -118,6 +118,7 @@ PROGRAM _CYCLIC
 			// Active track and ready for command
 		READY:
 			// Power off command
+			ManualShuttleReset:=0;
 			IF (gTrakAsm.Command.Power = FALSE) THEN
 				Step := POWER_OFF;
 				// Starting main Step - process
@@ -134,11 +135,15 @@ PROGRAM _CYCLIC
    
 			// Main Step, where Shattles run
 		PROCESS:   
-           
-			MC_BR_ShReadInfo_AcpTrak_0.Axis:= ADR(ShuttleAxis[ActiveShuttle]); //ActiveShuttle
-			MC_BR_ShReadInfo_AcpTrak_0.Enable:=TRUE;
-			MC_BR_ShReadInfo_AcpTrak_0();
-           
+			
+			FOR ActiveShuttle:=NUM_SIM_SHUTTLES TO 1 BY -1 DO
+				MC_BR_ShReadInfo_AcpTrak_0.Enable:=FALSE;
+				MC_BR_ShReadInfo_AcpTrak_0();
+				MC_BR_ShReadInfo_AcpTrak_0.Axis:= ADR(ShuttleAxis[ActiveShuttle]); //ActiveShuttle
+				MC_BR_ShReadInfo_AcpTrak_0.Enable:=TRUE;
+				MC_BR_ShReadInfo_AcpTrak_0();
+				MC_BR_RoutedMoveAbs_AcpTrak_0.Execute:=FALSE;
+				MC_BR_RoutedMoveAbs_AcpTrak_0();
 			
 			// States of running shuttles
            
@@ -267,8 +272,8 @@ PROGRAM _CYCLIC
                
 				// Bottle input at Shuttel
 				Bottle_Input:
-					gShuttleColored[10-ActiveShuttle]:=FALSE;
-					gShuttleColor[10-ActiveShuttle] := 0;
+					gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle]:=FALSE;
+					gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 0;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorBottleInput); 
@@ -286,17 +291,17 @@ PROGRAM _CYCLIC
 					Pouring_Down_Comming:=TRUE;
 					IF  MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_Down' THEN
 						Pouring_Down_Busy:=TRUE;
-						IF NOT (gShuttleColored[10-ActiveShuttle]) THEN
+						IF NOT (gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle]) THEN
 							CASE gOrder.drinkColor OF
 								DRINK_COLOR_RED:
-									gShuttleColor[10-ActiveShuttle] := 2;
-									gShuttleColored[10-ActiveShuttle] := TRUE;
+									gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 2;
+									gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 								DRINK_COLOR_GREEN:
-									gShuttleColor[10-ActiveShuttle] := 1;
-									gShuttleColored[10-ActiveShuttle] := TRUE;
+									gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 1;
+									gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 								DRINK_COLOR_BLUE:
-									gShuttleColor[10-ActiveShuttle] := 3;
-									gShuttleColored[10-ActiveShuttle] := TRUE;
+									gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 3;
+									gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 							END_CASE;
 							(*IF gColorGreen > 0 THEN
 								gShuttleColor[10-ActiveShuttle] := 1;
@@ -323,17 +328,17 @@ PROGRAM _CYCLIC
 					Pouring_Top_Comming   :=TRUE;
 					IF  MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorPouring_Top' THEN
 						Pouring_Top_Busy := TRUE;
-						IF NOT (gShuttleColored[10-ActiveShuttle]) THEN
+						IF NOT (gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle]) THEN
 							CASE gOrder.drinkColor OF
 								DRINK_COLOR_RED:
-									gShuttleColor[10-ActiveShuttle] := 2;
-									gShuttleColored[10-ActiveShuttle] := TRUE;
+									gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 2;
+									gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 								DRINK_COLOR_GREEN:
-									gShuttleColor[10-ActiveShuttle] := 1;
-									gShuttleColored[10-ActiveShuttle] := TRUE;
+									gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 1;
+									gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 								DRINK_COLOR_BLUE:
-									gShuttleColor[10-ActiveShuttle] := 3;
-									gShuttleColored[10-ActiveShuttle] := TRUE;
+									gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 3;
+									gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 							END_CASE;
 							(*IF gColorGreen > 0 THEN
 								gShuttleColor[10-ActiveShuttle] := 1;
@@ -389,6 +394,23 @@ PROGRAM _CYCLIC
 			MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
 			MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
 			MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+			MC_BR_RoutedMoveAbs_AcpTrak_0();
+				
+				IF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.RemainingDistance < 1 
+					AND gColorSum=0 AND (MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName='SectorBottleInput' OR
+					MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName='SectorBottleInput') THEN
+					ManualShuttleReset:= ManualShuttleReset +1;
+					
+				END_IF;
+				
+				
+			END_FOR;
+			IF ManualShuttleReset=NUM_SIM_SHUTTLES THEN
+				Step:=READY;
+				gProcessFinished:=TRUE;
+			ELSE
+				ManualShuttleReset:=0;
+			END_IF
 			
 			// Stop command
 			IF(gTrakAsm.Command.ShuttleStop) OR VisManual=TRUE THEN
@@ -449,9 +471,9 @@ PROGRAM _CYCLIC
 					MC_BR_ShReadInfo_AcpTrak_0.Enable									:=TRUE;
 					MC_BR_ShReadInfo_AcpTrak_0();
 					IF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.RemainingDistance < 1 
-						AND (MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName='SectorBottleInput' OR
+						AND  (MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName='SectorBottleInput' OR
 						MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName='SectorBottleInput') THEN
-	  					ManualShuttleReset:= ManualShuttleReset +1;
+						ManualShuttleReset:= ManualShuttleReset +1;
 					END_IF;
 				END_FOR;
 				IF ManualShuttleReset=NUM_SIM_SHUTTLES THEN
@@ -489,7 +511,7 @@ PROGRAM _CYCLIC
 			IF EDGEPOS(MC_Stop_0.Done) AND (CntShuttle > NUM_SIM_SHUTTLES) THEN (* Back to ready, after every shuttle on the trak has stopped *)
 				gTrakAsm.Command.ShuttleStop := FALSE;
 				IF VisManual=TRUE THEN
-	  				Step:=MANUAL;
+					Step:=MANUAL;
 				ELSE
 					Step := READY;	
 				END_IF;
@@ -526,7 +548,6 @@ PROGRAM _CYCLIC
 	MC_BR_RoutedMoveVel_AcpTrak_0();
 	MC_BR_AsmReadStatus_AcpTrak_0();
 	MC_BR_AsmReset_AcpTrak_0();
-	MC_BR_RoutedMoveAbs_AcpTrak_0();
 	MC_BR_RoutedMoveVel_AcpTrak_0();
    
 	// Timers functions
@@ -555,12 +576,6 @@ PROGRAM _CYCLIC
 			TON_Pouring_Top.PT:=VisPouring_Time_Small;
 	END_CASE;
  
-   
-	// Decrease acctual running shuttle
-	ActiveShuttle:=ActiveShuttle-1;
-	IF ActiveShuttle=0 THEN
-		ActiveShuttle:=NUM_SIM_SHUTTLES;
-	END_IF;
    
 END_PROGRAM
  
