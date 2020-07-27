@@ -14,7 +14,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	
-	DeltaParameters.ProgramName := PName;
+	//DeltaParameters.ProgramName := PName;
 	MpDelta3Axis_0.ErrorReset := diErrorReset;
 	
 	IF EDGEPOS(MpDelta3Axis_0.Error) THEN
@@ -45,36 +45,43 @@ PROGRAM _CYCLIC
 		WAIT_SHUTTLE:
 			MpDelta3Axis_0.Continue := FALSE;
 			
+			
 			IF EDGEPOS(gShuttleInPlace_Output) THEN
-	  			Step := MOVE_PROGRAM;
+				Step := MOVE_PROGRAM;
+////				IF BottlesPerPack<RecipeBottlesPerPack THEN
+////					BottlesPerPack := BottlesPerPack+1;
+////				ELSE
+////					BottlesPerPack := 1;
+////				END_IF;
 			END_IF;
+			//RecipeBottlesPerPack := gOrder.bottlesPerPackage;
 		MOVE_PROGRAM:
-			IF RecipeBottlesPerPack=4THEN
+			IF RecipeBottlesPerPack = 4 THEN
 				CASE BottlesPerPack OF
 				
-					1:	DeltaParameters.ProgramName := 'Robotic1.st';
+					1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
 					
-					2:	DeltaParameters.ProgramName := 'Robotic2.st';
+					2:	DeltaParameters.ProgramName := 'RoboticOut2.st';
 				
-					3:	DeltaParameters.ProgramName := 'Robotic4.st';
+					3:	DeltaParameters.ProgramName := 'RoboticOut5.st';
 				
-					4:	DeltaParameters.ProgramName := 'Robotic5.st';
+					4:	DeltaParameters.ProgramName := 'RoboticOut4.st';
 				
 				END_CASE;
 			ELSE
 			CASE BottlesPerPack OF
 				
-				1:	DeltaParameters.ProgramName := 'Robotic1.st';
+				1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
 					
-				2:	DeltaParameters.ProgramName := 'Robotic2.st';
+				2:	DeltaParameters.ProgramName := 'RoboticOut2.st';
 				
-				3:	DeltaParameters.ProgramName := 'Robotic3.st';
+				3:	DeltaParameters.ProgramName := 'RoboticOut3.st';
 				
-				4:	DeltaParameters.ProgramName := 'Robotic4.st';
+				4:	DeltaParameters.ProgramName := 'RoboticOut4.st';
 				
-				5:	DeltaParameters.ProgramName := 'Robotic5.st';
+				5:	DeltaParameters.ProgramName := 'RoboticOut5.st';
 				
-				6:	DeltaParameters.ProgramName := 'Robotic6.st';
+				6:	DeltaParameters.ProgramName := 'RoboticOut6.st';
 				
 				END_CASE;
 			END_IF;

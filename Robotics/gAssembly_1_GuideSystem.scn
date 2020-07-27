@@ -2,17 +2,17 @@
 <Object objecttypeid="1" name="ACOPOStrak Scene" visible="1" mask="" binding="" jointoparent="0">
 	<ParID parid="80" val="FALSE"/>
 	<ParID parid="81" val="60"/>
-	<ParID parid="82" val="2.22101"/>
+	<ParID parid="82" val="0.399468"/>
 	<ParID parid="90" val="0"/>
-	<ParID parid="100" val="16254.8"/>
-	<ParID parid="101" val="1364.87"/>
-	<ParID parid="102" val="3130.87"/>
-	<ParID parid="103" val="-0.937257"/>
-	<ParID parid="104" val="-0.247291"/>
-	<ParID parid="105" val="-0.245756"/>
-	<ParID parid="106" val="-0.268235"/>
-	<ParID parid="107" val="0.0611959"/>
-	<ParID parid="108" val="0.961408"/>
+	<ParID parid="100" val="13889.4"/>
+	<ParID parid="101" val="-2419.8"/>
+	<ParID parid="102" val="17178.7"/>
+	<ParID parid="103" val="-0.478799"/>
+	<ParID parid="104" val="0.0894501"/>
+	<ParID parid="105" val="-0.873356"/>
+	<ParID parid="106" val="-0.87745"/>
+	<ParID parid="107" val="-0.0160704"/>
+	<ParID parid="108" val="0.479398"/>
 	<ParID parid="110" val="0.25"/>
 	<ParID parid="120" val="1,1,1"/>
 	<ParID parid="140" val="0.75,0.75,0.75"/>
@@ -2193,12 +2193,12 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-150"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="0"/>
-		<ParID parid="211" val="0"/>
-		<ParID parid="212" val="0"/>
-		<ParID parid="220" val="-1.38778e-13"/>
-		<ParID parid="221" val="0"/>
-		<ParID parid="222" val="-562.311"/>
+		<ParID parid="210" val="7.49622"/>
+		<ParID parid="211" val="-22.5502"/>
+		<ParID parid="212" val="31.6225"/>
+		<ParID parid="220" val="3.66616e-06"/>
+		<ParID parid="221" val="200"/>
+		<ParID parid="222" val="-600"/>
 	</Object>
 	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="#210*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="350"/>
@@ -2285,14 +2285,31 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-150"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="3.4054"/>
-		<ParID parid="211" val="3.4054"/>
-		<ParID parid="212" val="3.4054"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
 		<ParID parid="213" val="0"/>
-		<ParID parid="220" val="4.16334e-14"/>
-		<ParID parid="221" val="2.77556e-14"/>
-		<ParID parid="222" val="-595.096"/>
+		<ParID parid="220" val="0"/>
+		<ParID parid="221" val="-1.38778e-14"/>
+		<ParID parid="222" val="-583.013"/>
 		<ParID parid="223" val="0"/>
+	</Object>
+	<Object objecttypeid="630" name="Cuboid" visible="1" mask="" binding="" jointoparent="0">
+		<ParID parid="100" val="4980"/>
+		<ParID parid="101" val="-1100"/>
+		<ParID parid="102" val="-100"/>
+		<ParID parid="103" val="0"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1"/>
+		<ParID parid="107" val="1"/>
+		<ParID parid="108" val="1"/>
+		<ParID parid="120" val="3: Grey Matte"/>
+		<ParID parid="122" val="FALSE"/>
+		<ParID parid="123" val="0"/>
+		<ParID parid="140" val="100"/>
+		<ParID parid="141" val="80"/>
+		<ParID parid="142" val="500"/>
 	</Object>
 </Object>
 <Materials>
