@@ -1,5 +1,5 @@
 VAR
 	tranformation : STRING[255];
 	loopTmp : USINT;
-	svgBlocksToColor : ARRAY[0..4] OF USINT;
+	svgBlocksToColor : ARRAY[0..5] OF USINT;
 END_VAR

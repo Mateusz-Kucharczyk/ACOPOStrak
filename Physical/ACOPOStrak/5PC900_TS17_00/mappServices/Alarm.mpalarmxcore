@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCore" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="UserAlarm" />
+        <Property ID="Message" Value="ffffffffff" />
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

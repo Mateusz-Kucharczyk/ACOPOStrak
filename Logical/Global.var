@@ -1,3 +1,6 @@
+VAR
+	ShuttleNumber : USINT;
+END_VAR
 (*Assembly interface*)
 VAR
 	gBottleInPlace_Turn : BOOL;
@@ -36,4 +39,5 @@ VAR
 	gColorGreen : INT;
 	gColorRed : INT;
 	gColorSum : INT;
+	gOrder : Order_type;
 END_VAR

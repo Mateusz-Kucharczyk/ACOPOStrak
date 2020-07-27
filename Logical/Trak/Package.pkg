@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="Program" Language="IEC">TrakMovement</Object>
     <Object Type="Program" Language="IEC">Vis</Object>
+    <Object Type="Program" Language="IEC">Recipe</Object>
   </Objects>
 </Package>

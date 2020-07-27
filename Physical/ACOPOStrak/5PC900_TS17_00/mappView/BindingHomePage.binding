@@ -5,33 +5,72 @@
 			<Source xsi:type="opcUa" refId="::svgTransfo:tranformation" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="Paper1" attribute="transform" />
 		</Binding>
-	<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch1" attribute="value" />
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch1" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch2" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch3" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch4" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch5" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch7" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch6" attribute="enable" />
+		</Binding>
+
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:WidgetString" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="dataProvider" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch2" attribute="enable" />
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.SelectedIndex" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedIndex" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch3" attribute="enable" />
-</Binding>
-<Binding mode="oneWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch4" attribute="enable" />
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.Names" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedValue" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch5" attribute="enable" />
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Load" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="LoadRecipeButton" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch7" attribute="enable" />
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Save" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="SaveRecipeButton" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch6" attribute="enable" />
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Refresh" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="RefreshRecipeListButton" attribute="value" />
 </Binding>
-</Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Rename" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="RenameRecipeButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Delete" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="DeleteRecipeButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.NewFileName" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="TextInput1" attribute="value" />
+		</Binding>
+	</Bindings>
 </BindingsSet>

@@ -6,7 +6,7 @@
   </header>
   <body>
     <tu tuid="Samples.HELLO_WORLD">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Witaj świecie!</seg>
       </tuv>
       <tuv xml:lang="en">
@@ -15,152 +15,627 @@
       <tuv xml:lang="de">
         <seg>Servus Welt!</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Witaj świecie!</seg>
+      </tuv>
       <tuv xml:lang="fr">
         <seg>Bonjour tout le monde!</seg>
       </tuv>
     </tu>
     <tu tuid="navBtnHome">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Strona główna</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Home</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Strona główna</seg>
+      </tuv>
     </tu>
     <tu tuid="navBtnAlarm">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Alarmy</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Alarms</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Alarmy</seg>
+      </tuv>
     </tu>
     <tu tuid="navBtnOrders">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Zamówienia</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Orders</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zamówienia</seg>
+      </tuv>
     </tu>
     <tu tuid="navBtnSettings">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Ustawienia</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Settings</seg>
       </tuv>
-    </tu>
-    <tu tuid="lgnBtnLogin">
       <tuv xml:lang="pl-PL">
-        <seg>Zaloguj się</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Login</seg>
-      </tuv>
-    </tu>
-    <tu tuid="lgnBtnLogout">
-      <tuv xml:lang="pl-PL">
-        <seg>Wyloguj się </seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Logout</seg>
+        <seg>Ustawienia</seg>
       </tuv>
     </tu>
     <tu tuid="lgnLabelLoggedAs">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Zalogowano jako:</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Logged as:</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zalogowano jako:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnBtnLogin">
+      <tuv xml:lang="pl">
+        <seg>Zaloguj się</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Login</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zaloguj się</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnBtnLogout">
+      <tuv xml:lang="pl">
+        <seg>Wyloguj się </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Logout</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wyloguj się </seg>
+      </tuv>
     </tu>
     <tu tuid="lgnWidgetUsername">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Nazwa użytkownika</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Username</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Nazwa użytkownika</seg>
+      </tuv>
     </tu>
     <tu tuid="lgnWidgetPassword">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Hasło</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Password</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Hasło</seg>
+      </tuv>
     </tu>
     <tu tuid="lgnWidgetSuccess">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Zalogowano pomyślnie</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Login successful</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zalogowano pomyślnie</seg>
+      </tuv>
     </tu>
     <tu tuid="lgnWidgetChange">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Zmienono użytkowanika na:</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>User changed to: </seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zmienono użytkowanika na:</seg>
+      </tuv>
     </tu>
     <tu tuid="lgnWidgetAuth">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Nie udało się zalogować</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Authorisation failed</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Nie udało się zalogować</seg>
+      </tuv>
     </tu>
     <tu tuid="lgnWidgetFail">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Ustawienie użytkownika się nie powiodło</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Set user failed</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Ustawienie użytkownika się nie powiodło</seg>
+      </tuv>
     </tu>
     <tu tuid="switchBtnTextOff">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Wył.</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Off</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wył.</seg>
+      </tuv>
     </tu>
     <tu tuid="switchBtnTextOn">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Wł</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>On</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wł</seg>
+      </tuv>
     </tu>
     <tu tuid="statusLabelWorking">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Pracuje</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Working</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Pracuje</seg>
+      </tuv>
     </tu>
     <tu tuid="statusLabelError">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Błąd. Sprawdź alarmy</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Error. Check alarms</seg>
       </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Błąd. Sprawdź alarmy</seg>
+      </tuv>
     </tu>
     <tu tuid="statusLabelOff">
-      <tuv xml:lang="pl-PL">
+      <tuv xml:lang="pl">
         <seg>Wyłączony</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Power off</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wyłączony</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnTwistOn">
+      <tuv xml:lang="pl">
+        <seg>Zakręcaj</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Twist on</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zakręcaj</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnPourRed">
+      <tuv xml:lang="pl">
+        <seg>Czerwony</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Red</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Czerwony</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnPourGreen">
+      <tuv xml:lang="pl">
+        <seg>Zielony</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Green</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zielony</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnPourBlue">
+      <tuv xml:lang="pl">
+        <seg>Niebieski</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Blue</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Niebieski</seg>
+      </tuv>
+    </tu>
+    <tu tuid="tabTextStatus">
+      <tuv xml:lang="pl">
+        <seg>Status</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Status</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Status</seg>
+      </tuv>
+    </tu>
+    <tu tuid="tabTextControl">
+      <tuv xml:lang="pl">
+        <seg>Sterowanie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Control</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Sterowanie</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationInput">
+      <tuv xml:lang="pl">
+        <seg>Załadunek</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Input</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Załadunek</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationOutput">
+      <tuv xml:lang="pl">
+        <seg>Wyładunek</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Output</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wyładunek</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationNozzle">
+      <tuv xml:lang="pl">
+        <seg>Nalewanie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Nozzle</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Nalewanie</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationNozzleUp">
+      <tuv xml:lang="pl">
+        <seg>poboczny trak</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>secondary track</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>poboczny trak</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationNozzleDown">
+      <tuv xml:lang="pl">
+        <seg>główny trak</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>main track</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>główny trak</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationTwistOn">
+      <tuv xml:lang="pl">
+        <seg>Zakręcanie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Twist On</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zakręcanie</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationConveyor">
+      <tuv xml:lang="pl">
+        <seg>Transporter</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Conveyor</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Transporter</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStation">
+      <tuv xml:lang="pl">
+        <seg>Stacja </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Station</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Stacja </seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStatus">
+      <tuv xml:lang="pl">
+        <seg>Status stacji</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Station status</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Status stacji</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblControlMode">
+      <tuv xml:lang="pl">
+        <seg>Sterowanie ręczne</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Manual control</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Sterowanie ręczne</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnAcknowledge">
+      <tuv xml:lang="pl">
+        <seg>Zatwierdź</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Acknowledge</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zatwierdź</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnAcknowledgeAll">
+      <tuv xml:lang="pl">
+        <seg>Zatwierdź wszystkie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Acknowledge All</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zatwierdź wszystkie</seg>
+      </tuv>
+    </tu>
+    <tu tuid="tabAlarm">
+      <tuv xml:lang="pl">
+        <seg>Bieżące</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Current</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Bieżące</seg>
+      </tuv>
+    </tu>
+    <tu tuid="tabAlarmHistory">
+      <tuv xml:lang="pl">
+        <seg>Historia</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>History</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Historia</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListTimestamp">
+      <tuv xml:lang="pl">
+        <seg>Data</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Date</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Data</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListMessage">
+      <tuv xml:lang="pl">
+        <seg>Wiadomość</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Message</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wiadomość</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListCategory">
+      <tuv xml:lang="pl">
+        <seg>Kategoria</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Category</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Kategoria</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListOldStage">
+      <tuv xml:lang="pl">
+        <seg>Stary status</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Old state</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Stary status</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListNewStage">
+      <tuv xml:lang="pl">
+        <seg>Bieżący status</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>New state</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Bieżący status</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListBtnNext">
+      <tuv xml:lang="pl">
+        <seg>Następny</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Next</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Następny</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListBtnPrevious">
+      <tuv xml:lang="pl">
+        <seg>Poprzedni</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Previous</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Poprzedni</seg>
+      </tuv>
+    </tu>
+    <tu tuid="msgBoxMsg">
+      <tuv xml:lang="pl">
+        <seg>Nie masz wystarczających uprawnień</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>You don't have permission </seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Nie masz wystarczających uprawnień</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingLanguage">
+      <tuv xml:lang="pl">
+        <seg>Język</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Language</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Język</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingNozzleTime">
+      <tuv xml:lang="pl">
+        <seg>Czas nalewania</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Pouring time</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Czas nalewania</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingTwistTime">
+      <tuv xml:lang="pl">
+        <seg>Czas zakręcania</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Bottle capping time</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Czas zakręcania</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingTrakVelocity">
+      <tuv xml:lang="pl">
+        <seg>Prękdkość traka</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Track velocity </seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Prękdkość traka</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingTrakAcceleration">
+      <tuv xml:lang="pl">
+        <seg>Przyśpieszenie traka</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Track acceleration</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Przyśpieszenie traka</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingMeasurmentUnit">
+      <tuv xml:lang="pl">
+        <seg>Jednostki</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Units</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Jednostki</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblShuttle">
+      <tuv xml:lang="pl">
+        <seg>Wózek nr</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Shuttle No.</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wózek nr</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnForward">
+      <tuv xml:lang="pl">
+        <seg>Naprzód</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Forward</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Naprzód</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnBackward">
+      <tuv xml:lang="pl">
+        <seg>Do tyłu</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Backward</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Do tyłu</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingTrakDeceleration">
+      <tuv xml:lang="pl">
+        <seg>Zmniejszanie prędkości traka</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Track deceleration</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zmniejszanie prędkości traka</seg>
       </tuv>
     </tu>
   </body>
