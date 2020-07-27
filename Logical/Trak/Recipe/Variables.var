@@ -27,5 +27,6 @@ VAR
 	ErrorMessage : STRING[256];
 	Filename : STRING[80];
 	i : INT; (*Loop iterator*)
+	PVName : STRING[100];
 	Temp : STRING[2]; (*Temporarly stores interator converted to string*)
 END_VAR

@@ -10,6 +10,12 @@
     <Module Name="&lt;Default&gt;">
       <GlobalVariables Name="Global Variables">
         <Variable Name="ShuttleNumber" />
+        <Variable Name="gOrder">
+          <Variable Name="numberOfPackages" />
+          <Variable Name="bottlesPerPackage" />
+          <Variable Name="bottleSize" />
+          <Variable Name="drinkColor" />
+        </Variable>
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
