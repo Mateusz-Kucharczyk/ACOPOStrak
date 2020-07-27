@@ -218,8 +218,9 @@ PROGRAM _CYCLIC
 				Step_Sector:=Capping;
                
 				// After capping sendig to delivery
-				IF   TON_Capping.Q THEN
+				IF  gBottleInPlace_Turn THEN
 					Capping_Busy := FALSE;
+					gBottleInPlace_Turn := FALSE;	
 					Step_Sector:=Bottle_Output;
 					TON_Capping.IN:=FALSE;
 					Capping_Comming:=FALSE;
@@ -268,7 +269,7 @@ PROGRAM _CYCLIC
 				TON_Pouring_Down.IN:=TRUE;
 			END_IF;
 			IF Capping_Busy=TRUE THEN
-				TON_Capping.IN:=TRUE;
+				gShuttleInPlace_Turn := TRUE;
 			END_IF;
            
 			// Step for active Shuttle
@@ -514,6 +515,17 @@ PROGRAM _CYCLIC
        
 			IF EDGEPOS(MC_Stop_0.Done) AND (CntShuttle > NUM_SIM_SHUTTLES) THEN (* Back to ready, after every shuttle on the trak has stopped *)
 				gTrakAsm.Command.ShuttleStop := FALSE;
+				Pouring_Top_Comming:=FALSE;
+				Pouring_Down_Comming:=FALSE;
+				Pouring_Top_Busy:=FALSE;
+				Pouring_Down_Busy:=FALSE;
+				Capping_Comming:=FALSE;
+				Capping_Busy:=FALSE;
+				gShuttleInPlace_Input:=FALSE;
+				gShuttleInPlace_Output:=FALSE;
+				TON_Capping.IN:=FALSE;
+				TON_Pouring_Down.IN:=FALSE;
+				TON_Pouring_Top.IN:=FALSE;
 				IF VisManual=TRUE THEN
 					Step:=MANUAL;
 				ELSE
