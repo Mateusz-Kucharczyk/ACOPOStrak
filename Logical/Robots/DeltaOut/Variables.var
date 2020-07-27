@@ -1,5 +1,6 @@
 (*FB's*)
 VAR
+	PName : STRING[80];
 	DeltaParameters : MpDelta3AxisParType;
 	MpDelta3Axis_0 : MpDelta3Axis;
 END_VAR

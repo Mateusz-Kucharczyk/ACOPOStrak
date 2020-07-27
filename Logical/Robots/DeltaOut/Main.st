@@ -6,7 +6,7 @@ PROGRAM _INIT
 
 	MpDelta3Axis_0.Override := 100.0; 
 
-	DeltaParameters.ProgramName := 'Robotic1.st';
+	
 	DeltaParameters.Velocity := 5.0;
 	DeltaParameters.Acceleration := 50.0;
 
@@ -14,7 +14,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	
-	
+	DeltaParameters.ProgramName := PName;
 	MpDelta3Axis_0.ErrorReset := diErrorReset;
 	
 	IF EDGEPOS(MpDelta3Axis_0.Error) THEN
