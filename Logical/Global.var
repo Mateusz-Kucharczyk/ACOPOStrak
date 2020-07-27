@@ -40,4 +40,5 @@ VAR
 	gColorRed : INT;
 	gColorSum : INT;
 	gOrder : Order_type;
+	gProcessFinished : BOOL;
 END_VAR

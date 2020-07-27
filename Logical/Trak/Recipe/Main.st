@@ -1,4 +1,5 @@
 
+
 PROGRAM _INIT
 	Filename := 'OutFile';
 	ErrorMessage := '';
