@@ -49,6 +49,35 @@ PROGRAM _CYCLIC
 	  			Step := MOVE_PROGRAM;
 			END_IF;
 		MOVE_PROGRAM:
+			IF RecipeBottlesPerPack=4THEN
+				CASE BottlesPerPack OF
+				
+					1:	DeltaParameters.ProgramName := 'Robotic1.st';
+					
+					2:	DeltaParameters.ProgramName := 'Robotic2.st';
+				
+					3:	DeltaParameters.ProgramName := 'Robotic4.st';
+				
+					4:	DeltaParameters.ProgramName := 'Robotic5.st';
+				
+				END_CASE;
+			ELSE
+			CASE BottlesPerPack OF
+				
+				1:	DeltaParameters.ProgramName := 'Robotic1.st';
+					
+				2:	DeltaParameters.ProgramName := 'Robotic2.st';
+				
+				3:	DeltaParameters.ProgramName := 'Robotic3.st';
+				
+				4:	DeltaParameters.ProgramName := 'Robotic4.st';
+				
+				5:	DeltaParameters.ProgramName := 'Robotic5.st';
+				
+				6:	DeltaParameters.ProgramName := 'Robotic6.st';
+				
+				END_CASE;
+			END_IF;
 			MpDelta3Axis_0.MoveProgram := TRUE;
 			
 			IF diInterrupt THEN
@@ -59,6 +88,10 @@ PROGRAM _CYCLIC
 				MpDelta3Axis_0.MoveProgram := FALSE;
 				Step := WAIT_SHUTTLE;
 				gBottleInPlace_Output:=TRUE;
+				BottlesPerPack:=BottlesPerPack+1;
+				IF BottlesPerPack>RecipeBottlesPerPack THEN
+					BottlesPerPack:=1;
+				END_IF;
 			END_IF;
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
