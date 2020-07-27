@@ -16,6 +16,7 @@
           <Variable Name="bottleSize" />
           <Variable Name="drinkColor" />
         </Variable>
+        <Variable Name="gProcessFinished" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />

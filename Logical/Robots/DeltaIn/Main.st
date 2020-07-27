@@ -48,7 +48,7 @@ PROGRAM _CYCLIC
 			IF gColorSum >0 THEN
 				MpDelta3Axis_0.MoveProgram :=TRUE;
 				IF MpDelta3Axis_0.MoveDone THEN
-					gColorSum := gColorSum -1;
+					gColorSum := gColorSum - 1;
 					Step:= WAIT_SHUTTLE;
 					gBottleInPlace_Input:=TRUE;
 				END_IF;

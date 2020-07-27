@@ -72,16 +72,22 @@
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="TextInput2" attribute="value" />
 </Binding>
 
+
+		
+			
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.numberOfPackages" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput3" attribute="value" />
+</Binding>
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:OrderPreview.bottlesPerPackage" attribute="value" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.bottlesPerPackage" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput4" attribute="value" />
 </Binding>
-		<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::Recipe:OrderPreview.numberOfPackages" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput3" attribute="value" />
-		</Binding>
-			
-	</Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gProcessFinished" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="LoadRecipeButton" attribute="enable" />
+</Binding>
+</Bindings>
 
 
 </BindingsSet>

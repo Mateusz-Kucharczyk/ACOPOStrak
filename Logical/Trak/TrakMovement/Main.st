@@ -1,4 +1,6 @@
 PROGRAM _INIT
+	
+	gProcessFinished := TRUE;
    
     // Adding Shuttles for simulation
 	FOR i := 1 TO NUM_SIM_SHUTTLES DO
@@ -128,6 +130,8 @@ PROGRAM _CYCLIC
 				IF VisManual=TRUE THEN
 					Step := MANUAL;
 				ELSE
+					gColorSum := gOrder.bottlesPerPackage * gOrder.numberOfPackages;
+					gProcessFinished := FALSE;
 					Step := PROCESS;
 				END_IF;
 
@@ -407,7 +411,7 @@ PROGRAM _CYCLIC
 			END_FOR;
 			IF ManualShuttleReset=NUM_SIM_SHUTTLES THEN
 				Step:=READY;
-				gProcessFinished:=TRUE;
+				gProcessFinished := TRUE;
 			ELSE
 				ManualShuttleReset:=0;
 			END_IF
