@@ -2,7 +2,6 @@
 
 PROGRAM _INIT
 	Filename := 'OutFile';
-	ErrorMessage := '';
 	PVName := 'Recipe:ClientOrder';
 	
 	gOrder.bottleSize := 0;
@@ -40,7 +39,21 @@ PROGRAM _CYCLIC
 		gCurrentRecipeName := UIConnect.Recipe.List.Names[UIConnect.Recipe.List.SelectedIndex];
 	END_IF;
 	
-	SelectedProgramName := UIConnect.Recipe.List.Names[UIConnect.Recipe.List.SelectedIndex];
+		
+	IF EDGENEG(UIConnect.New.Create) THEN
+		NewRecipe.bottleSize := 0;
+		NewRecipe.bottlesPerPackage := 0;
+		NewRecipe.drinkColor := 0;
+		NewRecipe.numberOfPackages :=0;
+		UIConnect.New.FileName := '';
+	END_IF;
+	
+	IF diAdd AND NOT(diLoad) THEN
+		ClientOrder := NewRecipe;
+		UIConnect.New.Create := TRUE;
+		diAdd := FALSE;
+		MpRecipeUI_0();
+	END_IF;
 	
 	FOR i := 0 TO 19 BY 1 DO
 		// delete contents of WidgetString[i]
@@ -59,28 +72,27 @@ PROGRAM _CYCLIC
 		END_IF;	
 	END_FOR;
 	
+	// Error reset handling
 	MpRecipeXML_0.ErrorReset := diErrorReset;
 	MpRecipeRegPar_0.ErrorReset:= diErrorReset;
 	MpRecipeUI_0.ErrorReset := diErrorReset;
 	
 	IF MpRecipeXML_0.Error OR MpRecipeRegPar_0.Error OR MpRecipeUI_0.Error THEN
-		isError := TRUE;
 		IF MpRecipeXML_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_WITH_ERRORS
 			OR MpRecipeUI_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_WITH_ERRORS THEN
 			// Damaged XML structure
-			ErrorMessage := 'XML structure may be damaged. Check if all tags are correct!';
+			ErrorStatus := ERROR_XML_DAMAGED;
 		ELSIF MpRecipeXML_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_DATA
 			OR MpRecipeUI_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_DATA THEN
 			// File is missing
-			ErrorMessage := 'The file or XML structure may be missing!';
+			ErrorStatus := ERROR_FILE_MISSING;
 		ELSIF UIConnect.Recipe.NewFileName = '' AND MpRecipeUI_0.Error THEN
 			// Somebody tried to add recipe without new name
-			ErrorMessage := 'You must enter new file name!';
+			ErrorStatus := ERROR_WRONG_FILE_NAME;
 		END_IF;
 	ELSE
-		ErrorMessage := '';
+		ErrorStatus := NO_ERROR;
 		diErrorReset := FALSE;
-		isError := FALSE;
 	END_IF;
 
 END_PROGRAM

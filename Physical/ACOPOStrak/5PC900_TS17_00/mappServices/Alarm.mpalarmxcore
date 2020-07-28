@@ -36,6 +36,19 @@
         <Property ID="Name" Value="SuddenlyStopAlarm" />
         <Property ID="Message" Value="Procces was suddenly" />
       </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="SectorCappingAlarm" />
+        <Property ID="Message" Value="Capping Sector inefficient" />
+        <Property ID="Code" Value="3" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::TrakMoveme:VisCapping_Broken" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="TRUE" />
+            </Group>
+          </Group>
+        </Selector>
+      </Group>
     </Group>
   </Element>
 </Configuration>

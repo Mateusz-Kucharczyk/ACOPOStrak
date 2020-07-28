@@ -19,6 +19,8 @@
         <Variable Name="gProcessFinished" />
         <Variable Name="gVisPower" />
         <Variable Name="gCurrentRecipeName" />
+        <Variable Name="gVisInput_Broken" />
+        <Variable Name="gVisOutput_Broken" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
@@ -80,10 +82,17 @@
           <Variable Name="bottleSize" />
           <Variable Name="drinkColor" />
         </Variable>
-        <Variable Name="ErrorMessage" />
         <Variable Name="diErrorReset" />
         <Variable Name="isError" />
         <Variable Name="diLoad" />
+        <Variable Name="ErrorStatus" />
+        <Variable Name="diAdd" />
+        <Variable Name="NewRecipe">
+          <Variable Name="numberOfPackages" />
+          <Variable Name="bottlesPerPackage" />
+          <Variable Name="bottleSize" />
+          <Variable Name="drinkColor" />
+        </Variable>
       </Task>
       <Task Name="TrakMoveme">
         <Variable Name="VisAcceleration" />

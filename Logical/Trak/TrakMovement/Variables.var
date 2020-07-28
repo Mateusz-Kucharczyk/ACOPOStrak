@@ -27,7 +27,6 @@ END_VAR
 (*Timers*)
 VAR
 	TON_Pouring_Down : TON;
-	TON_Capping : TON;
 	TON_Pouring_Top : TON;
 END_VAR
 (*Pouring and Capping*)
@@ -47,9 +46,9 @@ END_VAR
 VAR
 	VisShuttleStart : BOOL := FALSE;
 	VisShuttleStop : BOOL := FALSE;
-	VisCapping_Broken : BOOL := FALSE;
-	VisPouring_Top_Broken : BOOL := FALSE;
-	VisPouring_Down_Broken : BOOL := FALSE;
+	VisCapping_Broken : BOOL := TRUE;
+	VisPouring_Top_Broken : BOOL := TRUE;
+	VisPouring_Down_Broken : BOOL := TRUE;
 	VisPouring_Time_Large : REAL := 4.0;
 	VisPouring_Time_Small : REAL := 2.0;
 	VisVelocity : REAL := 2.0;
