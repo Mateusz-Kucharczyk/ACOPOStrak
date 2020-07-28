@@ -57,7 +57,7 @@
             <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton6" top="418" left="400" width="70" height="55" zIndex="23" text="$IAT/btnPourBlue" />
             <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton7" top="230" left="305" zIndex="24" text="$IAT/btnTwistOn" />
             <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton9" top="570" left="370" height="50" zIndex="25" text="$IAT/btnBackward" />
-            <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch9" top="515" left="141" width="80" zIndex="26" mouseDownText="$IAT/switchBtnTextOn" text="$IAT/switchBtnTextOff" value="true" backColor="rgba(255, 0, 51, 1)" mouseDownBackColor="rgba(0, 255, 0, 1)" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch9" top="515" left="141" width="80" zIndex="26" mouseDownText="$IAT/switchBtnTextOn" text="$IAT/switchBtnTextOff" backColor="rgba(255, 0, 51, 1)" mouseDownBackColor="rgba(0, 255, 0, 1)" />
             <Widget xsi:type="widgets.brease.Label" id="Label19" top="570" left="0" width="140" height="40" zIndex="27" multiLine="true" text="$IAT/lblShuttle" wordWrap="true" textColor="rgba(0, 0, 0, 1)" textAlign="center" bold="false" style="Caption" />
             <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton2" top="510" left="240" height="50" zIndex="28" breakWord="true" mouseDownText="$IAT/lblStationNozzleUp" multiLine="true" text="$IAT/lblStationNozzleUp" wordWrap="true" mouseDownBackColor="rgba(0, 255, 0, 1)" checkedBackColor="rgba(0, 255, 0, 1)" />
             <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton8" top="510" left="370" height="50" zIndex="29" text="$IAT/btnForward" />
