@@ -79,10 +79,17 @@
           <Variable Name="bottleSize" />
           <Variable Name="drinkColor" />
         </Variable>
-        <Variable Name="ErrorMessage" />
         <Variable Name="diErrorReset" />
         <Variable Name="isError" />
         <Variable Name="diLoad" />
+        <Variable Name="ErrorStatus" />
+        <Variable Name="diAdd" />
+        <Variable Name="NewRecipe">
+          <Variable Name="numberOfPackages" />
+          <Variable Name="bottlesPerPackage" />
+          <Variable Name="bottleSize" />
+          <Variable Name="drinkColor" />
+        </Variable>
       </Task>
     </Module>
   </DefaultView>
