@@ -1,6 +1,7 @@
 PROGRAM _INIT
 	
 	gProcessFinished := TRUE;
+	gVisPower := FALSE;
    
     // Adding Shuttles for simulation
 	FOR i := 1 TO NUM_SIM_SHUTTLES DO
