@@ -16,6 +16,9 @@
           <Variable Name="bottleSize" />
           <Variable Name="drinkColor" />
         </Variable>
+        <Variable Name="gProcessFinished" />
+        <Variable Name="gVisPower" />
+        <Variable Name="gCurrentRecipeName" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
@@ -80,6 +83,25 @@
         <Variable Name="ErrorMessage" />
         <Variable Name="diErrorReset" />
         <Variable Name="isError" />
+        <Variable Name="diLoad" />
+      </Task>
+      <Task Name="TrakMoveme">
+        <Variable Name="VisAcceleration" />
+        <Variable Name="VisCapping_Broken" />
+        <Variable Name="VisDeceleration" />
+        <Variable Name="VisManual" />
+        <Variable Name="VisManualSectorTop" />
+        <Variable Name="VisManualVelocity" />
+        <Variable Name="VisPouring_Down_Broken" />
+        <Variable Name="VisPouring_Top_Broken" />
+        <Variable Name="VisShuttle" />
+        <Variable Name="VisShuttleStart" />
+        <Variable Name="VisShuttleStop" />
+        <Variable Name="VisVelocity" />
+        <Variable Name="VisPouring_Time_Large" />
+        <Variable Name="VisPouring_Time_Small" />
+        <Variable Name="VisMove_Neg" />
+        <Variable Name="VisMove_Pos" />
       </Task>
     </Module>
   </DefaultView>

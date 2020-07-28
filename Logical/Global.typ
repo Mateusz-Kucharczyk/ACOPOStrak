@@ -42,10 +42,10 @@ TYPE
 		Status : TrakAsmStatus_type;
 	END_STRUCT;
 	Order_type : 	STRUCT 
-		numberOfPackages : USINT;
-		bottlesPerPackage : USINT;
-		bottleSize : BottleSize_enum;
-		drinkColor : DrinkColor_enum;
+		numberOfPackages : USINT := 5;
+		bottlesPerPackage : USINT := 5;
+		bottleSize : BottleSize_enum := BOTTLE_SIZE_LARGE;
+		drinkColor : DrinkColor_enum := DRINK_COLOR_RED;
 	END_STRUCT;
 	DrinkColor_enum : 
 		(

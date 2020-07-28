@@ -41,24 +41,25 @@ VAR
 	Capping_Busy : BOOL := FALSE;
 	Capping_Comming : BOOL := FALSE;
 	Capping_Broken : BOOL := FALSE;
+	ManualShuttleReset : INT;
 END_VAR
 (*Visualization*)
 VAR
-	VisPower : BOOL := FALSE;
 	VisShuttleStart : BOOL := FALSE;
 	VisShuttleStop : BOOL := FALSE;
 	VisCapping_Broken : BOOL := FALSE;
 	VisPouring_Top_Broken : BOOL := FALSE;
 	VisPouring_Down_Broken : BOOL := FALSE;
-	VisCapping_Time : TIME := T#2s;
-	VisPouring_Time_Small : TIME := T#2s;
-	VisPouring_Time_Large : TIME := T#4s;
+	VisPouring_Time_Large : REAL := 4.0;
+	VisPouring_Time_Small : REAL := 2.0;
 	VisVelocity : REAL := 2.0;
-	VisAcceleration : REAL := 20.0;
-	VisDeceleration : REAL := 20.0;
+	VisAcceleration : REAL := 10;
+	VisDeceleration : REAL := 5;
 	VisManual : BOOL;
 	VisShuttle : USINT := 1;
 	VisManualVelocity : REAL := 1.0;
 	VisManualSectorTop : BOOL := FALSE;
-	ManualShuttleReset : INT;
+	VisMove_Pos : BOOL := FALSE;
+	VisMove_Neg : BOOL;
+	SvgTranform : ARRAY[0..5] OF USINT;
 END_VAR

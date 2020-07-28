@@ -1,12 +1,7 @@
 VAR
-	NrOfRotations : USINT;
 	DeltaParameters : MpDelta4AxisParType;
 	MpDelta4Axis_0 : MpDelta4Axis;
-	diStop : BOOL;
 	Step : StepType;
 	diErrorReset : BOOL;
-	diStart : BOOL;
-	diInterrupt : BOOL;
-	diContionue : BOOL;
 	turned : BOOL;
 END_VAR

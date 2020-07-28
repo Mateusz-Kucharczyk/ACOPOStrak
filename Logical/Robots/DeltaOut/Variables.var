@@ -1,6 +1,5 @@
 (*FB's*)
 VAR
-	PName : STRING[80];
 	DeltaParameters : MpDelta3AxisParType;
 	MpDelta3Axis_0 : MpDelta3Axis;
 END_VAR
@@ -9,12 +8,10 @@ VAR
 	diStart : BOOL;
 	diInterrupt : BOOL;
 	diResume : BOOL;
-	diStop : {REDUND_UNREPLICABLE} BOOL;
 	diErrorReset : BOOL;
 END_VAR
 (*Other*)
 VAR
 	Step : StepType;
 	BottlesPerPack : USINT := 1;
-	RecipeBottlesPerPack : USINT := 4;
 END_VAR

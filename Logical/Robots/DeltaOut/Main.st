@@ -27,7 +27,7 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.Home := FALSE;
 			MpDelta3Axis_0.MoveProgram := FALSE;
 			
-			IF diStart THEN
+			IF gVisPower THEN
 	  			Step := POWER;
 			END_IF;
 		POWER:
@@ -48,15 +48,10 @@ PROGRAM _CYCLIC
 			
 			IF EDGEPOS(gShuttleInPlace_Output) THEN
 				Step := MOVE_PROGRAM;
-////				IF BottlesPerPack<RecipeBottlesPerPack THEN
-////					BottlesPerPack := BottlesPerPack+1;
-////				ELSE
-////					BottlesPerPack := 1;
-////				END_IF;
 			END_IF;
 			//RecipeBottlesPerPack := gOrder.bottlesPerPackage;
 		MOVE_PROGRAM:
-			IF RecipeBottlesPerPack = 4 THEN
+			IF gOrder.bottlesPerPackage = 4 THEN
 				CASE BottlesPerPack OF
 				
 					1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
@@ -87,7 +82,7 @@ PROGRAM _CYCLIC
 			END_IF;
 			MpDelta3Axis_0.MoveProgram := TRUE;
 			
-			IF diInterrupt THEN
+			IF gdiInterrupt THEN
 				Step := INTERRUPT;
 			END_IF;
 			
@@ -96,20 +91,30 @@ PROGRAM _CYCLIC
 				Step := WAIT_SHUTTLE;
 				gBottleInPlace_Output:=TRUE;
 				BottlesPerPack:=BottlesPerPack+1;
-				IF BottlesPerPack>RecipeBottlesPerPack THEN
+				IF BottlesPerPack>gOrder.bottlesPerPackage THEN
 					BottlesPerPack:=1;
 				END_IF;
 			END_IF;
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
 			
-			IF diResume THEN
+			IF gdiContinue THEN
 				MpDelta3Axis_0.Interrupt := FALSE;
 				MpDelta3Axis_0.Continue := TRUE;
 				Step := MOVE_PROGRAM;				
 			END_IF;
 		STOP:
-		
+			MpDelta3Axis_0.Stop := TRUE;
+			IF (NOT gdiInstantStop) AND MpDelta3Axis_0.Stopped THEN
+				
+				MpDelta3Axis_0.Home := FALSE;
+				MpDelta3Axis_0.Interrupt := FALSE;
+				MpDelta3Axis_0.Continue := FALSE;
+				MpDelta3Axis_0.MoveProgram := FALSE;
+				MpDelta3Axis_0.Stop := FALSE;
+				
+				Step := INIT;
+			END_IF;
 		ERROR:
 		
 			IF NOT(MpDelta3Axis_0.Error) THEN

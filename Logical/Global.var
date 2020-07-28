@@ -38,6 +38,16 @@ VAR
 	gColorBlue : INT;
 	gColorGreen : INT;
 	gColorRed : INT;
+	gOrderedBottles : USINT;
+	gBottlesOut : USINT;
 	gColorSum : INT;
+	gdiStart : BOOL;
 	gOrder : Order_type;
+	gVisPower : BOOL;
+	gCurrentRecipeName : STRING[255];
+	gProcessFinished : BOOL;
+	gdiStop : BOOL;
+	gdiInterrupt : BOOL;
+	gdiContinue : BOOL;
+	gdiInstantStop : BOOL;
 END_VAR

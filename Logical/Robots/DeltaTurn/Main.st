@@ -21,7 +21,7 @@ PROGRAM _CYCLIC
 	(* Insert code here *)
 	MpDelta4Axis_0();
 	
-	IF diStop THEN
+	IF gdiInstantStop THEN
 		Step:=STOP;
 	END_IF;
 	
@@ -32,7 +32,7 @@ PROGRAM _CYCLIC
 	
 	CASE Step OF
 		INIT:
-			IF diStart THEN
+			IF gVisPower THEN
 				Step := POWER;
 			END_IF;
 		POWER:
@@ -49,7 +49,6 @@ PROGRAM _CYCLIC
 			MpDelta4Axis_0.MoveProgram := FALSE;
 			IF EDGEPOS(gShuttleInPlace_Turn) THEN
 				Step := MOVE_PROGRAM;
-				
 			END_IF;
 			turned := FALSE;
 			
@@ -59,14 +58,15 @@ PROGRAM _CYCLIC
 			IF MpDelta4Axis_0.MoveDone THEN
 				Step:= WAIT_SHUTTLE;
 				gBottleInPlace_Turn:=TRUE;
+				gShuttleInPlace_Turn := FALSE;
 			END_IF;
-			IF diInterrupt THEN
+			IF gdiInterrupt THEN
 				Step := INTERRUPT;
 			END_IF;
 					
 		INTERRUPT:
 			MpDelta4Axis_0.Interrupt := TRUE;
-			IF diContionue THEN
+			IF gdiContinue THEN
 				MpDelta4Axis_0.Interrupt := FALSE;
 				MpDelta4Axis_0.Continue := FALSE;
 				MpDelta4Axis_0.Continue := TRUE;
@@ -75,7 +75,7 @@ PROGRAM _CYCLIC
 					
 		STOP:
 			MpDelta4Axis_0.Stop := TRUE;
-			IF (NOT diStop) AND MpDelta4Axis_0.Stopped THEN
+			IF (NOT gdiInstantStop) AND MpDelta4Axis_0.Stopped THEN
 				
 				MpDelta4Axis_0.Home := FALSE;
 				MpDelta4Axis_0.Interrupt := FALSE;
