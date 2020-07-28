@@ -1,6 +1,7 @@
 PROGRAM _INIT
 	
 	gProcessFinished := TRUE;
+	gVisPower := FALSE;
    
 	// Adding Shuttles for simulation
 	FOR i := 1 TO NUM_SIM_SHUTTLES DO
@@ -237,6 +238,7 @@ PROGRAM _CYCLIC
 				ELSIF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorBottleOutput' THEN
 					Step_Sector:=Bottle_Output;
 				END_IF;
+
            
 				// TON activation
 				IF Pouring_Top_Busy=TRUE THEN
@@ -612,6 +614,18 @@ PROGRAM _CYCLIC
 		Capping_Comming:=FALSE;
 		SvgTranform[2]:=0;
 	END_IF;
+			IF gVisInput_Broken THEN
+				SvgTranform[0]:=0;
+			END_IF
+			IF NOT (gVisInput_Broken) THEN
+					SvgTranform[0]:=2;	
+			END_IF;
+			IF gVisOutput_Broken THEN
+				SvgTranform[1]:=0;
+			END_IF
+			IF NOT (gVisOutput_Broken) THEN
+				SvgTranform[1]:=2;	
+			END_IF;
    
 END_PROGRAM
  

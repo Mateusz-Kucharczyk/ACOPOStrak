@@ -12,6 +12,7 @@
   <BindingsSets>
 		<BindingsSet refId="bindingTopContent" />
 		<BindingsSet refId="bindingHomePage" />
+		<BindingsSet refId="newRecipeDialog" />
 	</BindingsSets>
   <EventBindingsSets>
 		<EventBindingsSet refId="contentTop_eventbinding" />
@@ -19,11 +20,11 @@
 		<EventBindingsSet refId="contentHome_eventbinding" />
 		<EventBindingsSet refId="contentAlarms_eventbinding" />
 		<EventBindingsSet refId="contentOrders_eventbinding" />
-		<EventBindingsSet refId="contentOrdersError_eventbinding" />
+		<EventBindingsSet refId="contentAddNewRecipe_eventbinding" />
 	</EventBindingsSets>
   <Dialogs>
 		<Dialog refId="dialogLogin" />
-		<Dialog refId="ordersErrorDialog" />
+		<Dialog refId="addNewRecipeDialog" />
   </Dialogs>
   <Contents>
 		<Content refId="contentNavigation" />
@@ -32,7 +33,7 @@
 		<Content refId="contentSettings" />
 		<Content refId="contentOrders" />
 		<Content refId="contentAlarms" />
-		<Content refId="contentOrdersError" />
+		<Content refId="contentAddNewRecipe" />
 	</Contents>
   <SnippetsSets>
     <!--<SnippetsSet refId=""/>-->

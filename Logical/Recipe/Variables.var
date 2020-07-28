@@ -8,6 +8,7 @@ END_VAR
 VAR
 	UISetup : MpRecipeUISetupType;
 	UIConnect : MpRecipeUIConnectType;
+	NewRecipe : Order_type;
 	ClientOrder : Order_type; (*Currently loaded recipe*)
 END_VAR
 (*IO's*)
@@ -17,12 +18,15 @@ END_VAR
 (*Other*)
 VAR
 	WidgetString : ARRAY[0..19] OF STRING[255];
-	ErrorMessage : STRING[256];
 	Filename : STRING[80];
 	i : INT; (*Loop iterator*)
-	isError : BOOL;
-	SelectedProgramName : STRING[255];
 	PVName : STRING[100];
 	Temp : STRING[2]; (*Temporarly stores interator converted to string*)
 	diLoad : BOOL;
+END_VAR
+(*Error flags for message box*)
+VAR
+	isError : BOOL;
+	ErrorStatus : Error_type := NO_ERROR;
+	diAdd : BOOL;
 END_VAR

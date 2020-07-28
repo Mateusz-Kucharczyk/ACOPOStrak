@@ -49,5 +49,7 @@ VAR
 	gdiStop : BOOL;
 	gdiInterrupt : BOOL;
 	gdiContinue : BOOL;
+	gVisOutput_Broken : BOOL := TRUE;
+	gVisInput_Broken : BOOL := TRUE;
 	gdiInstantStop : BOOL;
 END_VAR

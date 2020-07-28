@@ -36,68 +36,64 @@
 
 
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:WidgetString" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="dataProvider" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.SelectedIndex" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedIndex" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.Names" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedValue" />
-</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:WidgetString" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="dataProvider" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.SelectedIndex" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.Names" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedValue" />
+		</Binding>
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Save" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="SaveRecipeButton" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Refresh" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="RefreshRecipeListButton" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Rename" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="RenameRecipeButton" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Delete" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="DeleteRecipeButton" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.NewFileName" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="TextInput1" attribute="value" />
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Save" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="SaveRecipeButton" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Refresh" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="RefreshRecipeListButton" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Rename" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="RenameRecipeButton" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Delete" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="DeleteRecipeButton" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.NewFileName" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="TextInput1" attribute="value" />
 		</Binding>
 	
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:ClientOrder.numberOfPackages" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput1" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:ClientOrder.bottlesPerPackage" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput2" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:ErrorMessage" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrdersError" widgetRefId="ErrorTextOutput" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:diLoad" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="LoadRecipeButton" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.numberOfPackages" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeNumOfPckg" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.bottlesPerPackage" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottlPerPckg" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gCurrentRecipeName" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="CurrentProgramNameTextOutput" attribute="value" />
-</Binding>
-</Bindings>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:ClientOrder.numberOfPackages" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput1" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:ClientOrder.bottlesPerPackage" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput2" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Recipe:diLoad" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="LoadRecipeButton" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.numberOfPackages" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeNumOfPckg" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.bottlesPerPackage" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottlPerPckg" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gCurrentRecipeName" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="CurrentProgramNameTextOutput" attribute="value" />
+		</Binding>
+	</Bindings>
 </BindingsSet>

@@ -827,35 +827,39 @@
         <seg>Język</seg>
       </tuv>
     </tu>
-    <tu tuid="settingNozzleTime">
+    <tu tuid="settingNozzleTimeLarge">
       <tuv xml:lang="ja">
-        <seg>注ぎ時間</seg>
+        <seg>注ぎ時間 
+大きい</seg>
       </tuv>
       <tuv xml:lang="uk">
-        <seg>Час наливання</seg>
+        <seg>Час наливання - 
+великий</seg>
       </tuv>
       <tuv xml:lang="pl">
-        <seg>Czas nalewania</seg>
+        <seg>Czas nalewania - duże</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Pouring time</seg>
+        <seg>Pouring time - Large</seg>
       </tuv>
       <tuv xml:lang="pl-PL">
         <seg>Czas nalewania</seg>
       </tuv>
     </tu>
-    <tu tuid="settingTwistTime">
+    <tu tuid="settingNozzleTimeSmall">
       <tuv xml:lang="ja">
-        <seg>回し時間</seg>
+        <seg>注ぎ時間 
+小さい</seg>
       </tuv>
       <tuv xml:lang="uk">
-        <seg>Час закручування</seg>
+        <seg>Час наливання - 
+малий</seg>
       </tuv>
       <tuv xml:lang="pl">
-        <seg>Czas zakręcania</seg>
+        <seg>Czas nalewania - małe</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Bottle capping time</seg>
+        <seg>Pouring time - small</seg>
       </tuv>
       <tuv xml:lang="pl-PL">
         <seg>Czas zakręcania</seg>
@@ -1023,6 +1027,156 @@
       </tuv>
       <tuv xml:lang="en">
         <seg>Stop after program execution</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderPcgNo">
+      <tuv xml:lang="pl">
+        <seg>Ilość zgrzewek </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Number of packages</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderBtlInPckNo">
+      <tuv xml:lang="pl">
+        <seg>Ilość butelek w zgrzewce </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Bottles per package</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderBottleSize">
+      <tuv xml:lang="pl">
+        <seg>Rozmiar butelki </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Bottle size</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderDrinkColor">
+      <tuv xml:lang="pl">
+        <seg>Kolor napoju </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Drink color</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderSave">
+      <tuv xml:lang="pl">
+        <seg>Zapisz</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Save</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderLoad">
+      <tuv xml:lang="pl">
+        <seg>Załaduj</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Load</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderRefresh">
+      <tuv xml:lang="pl">
+        <seg>Odśwież </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Refresh</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderEnterName">
+      <tuv xml:lang="pl">
+        <seg>Wprowadź nazwę </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Enter name</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderRename">
+      <tuv xml:lang="pl">
+        <seg>Zmień nazwę </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Rename</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderEnterNewName">
+      <tuv xml:lang="pl">
+        <seg>Wprowadź nową nazwę </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Enter new name</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderAdd">
+      <tuv xml:lang="pl">
+        <seg>Dodaj</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Add</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderDelete">
+      <tuv xml:lang="pl">
+        <seg>Usuń</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Delete</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderLarge">
+      <tuv xml:lang="pl">
+        <seg>Duże </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Large</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderSmall">
+      <tuv xml:lang="pl">
+        <seg>Małe</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Small</seg>
+      </tuv>
+    </tu>
+    <tu tuid="recipeDamage">
+      <tuv xml:lang="pl">
+        <seg>Struktura XML może być uszkodzona. Sprawdź wszystkie tagi!</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>XML structure may be damaged. Check if all tags are correct!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="recipeMissing">
+      <tuv xml:lang="pl">
+        <seg>Może brakować pliku lub struktury XML!</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>The file or XML structure may be missing!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="recipeEnter">
+      <tuv xml:lang="pl">
+        <seg>Wprowadź nową nazwę pliku!</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>You must enter new file name!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="nameShuttle">
+      <tuv xml:lang="ja">
+        <seg>シャトル</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>візок</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wózek</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Shuttle</seg>
       </tuv>
     </tu>
   </body>

@@ -51,7 +51,8 @@ PROGRAM _CYCLIC
 			END_IF;
 			//RecipeBottlesPerPack := gOrder.bottlesPerPackage;
 		MOVE_PROGRAM:
-			IF gOrder.bottlesPerPackage = 4 THEN
+			IF gVisOutput_Broken THEN
+				IF gOrder.bottlesPerPackage = 4 THEN
 				CASE BottlesPerPack OF
 				
 					1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
@@ -94,11 +95,14 @@ PROGRAM _CYCLIC
 				IF BottlesPerPack>gOrder.bottlesPerPackage THEN
 					BottlesPerPack:=1;
 				END_IF;
+				END_IF;
+			ELSE
+					Step := INTERRUPT;
 			END_IF;
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
 			
-			IF gdiContinue THEN
+			IF gdiContinue OR EDGEPOS (gVisOutput_Broken) THEN
 				MpDelta3Axis_0.Interrupt := FALSE;
 				MpDelta3Axis_0.Continue := TRUE;
 				Step := MOVE_PROGRAM;				
@@ -124,6 +128,7 @@ PROGRAM _CYCLIC
 		
 	END_CASE;
     
+		
 	MpDelta3Axis_0();
      
 END_PROGRAM
