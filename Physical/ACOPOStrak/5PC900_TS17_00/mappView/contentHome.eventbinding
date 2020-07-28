@@ -421,7 +421,7 @@
 							type="OK"
 							message="$IAT/msgBoxMsg"
 							header="$IAT/lblControlMode"
-							icon="Warning" />
+							icon="Hand" />
 					</Target>
 				</Action>
 			</EventHandler>

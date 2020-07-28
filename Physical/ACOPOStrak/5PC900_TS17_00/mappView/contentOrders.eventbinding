@@ -6,14 +6,14 @@
       <EventHandler condition="newValue = 0">
         <Action>
           <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label1">
-            <Method xsi:type="widgets.brease.Label.Action.SetText" text="Small" />
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderSmall" />
           </Target>
         </Action>
       </EventHandler>
       <EventHandler condition="newValue = 1">
         <Action>
           <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label1">
-            <Method xsi:type="widgets.brease.Label.Action.SetText" text="Large" />
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderLarge" />
           </Target>
         </Action>
       </EventHandler>
@@ -23,21 +23,21 @@
       <EventHandler condition="newValue = 0">
         <Action>
           <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label2">
-            <Method xsi:type="widgets.brease.Label.Action.SetText" text="Red" />
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourRed" />
           </Target>
         </Action>
       </EventHandler>
       <EventHandler condition="newValue = 1">
         <Action>
           <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label2">
-            <Method xsi:type="widgets.brease.Label.Action.SetText" text="Green" />
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourGreen" />
           </Target>
         </Action>
       </EventHandler>
       <EventHandler condition="newValue = 2">
         <Action>
           <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label2">
-            <Method xsi:type="widgets.brease.Label.Action.SetText" text="Blue" />
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourBlue" />
           </Target>
         </Action>
       </EventHandler>
