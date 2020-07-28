@@ -52,6 +52,7 @@
             <Variable Name="JointAxisPosition" EnableArrayElements="True" />
           </Variable>
         </Variable>
+        <Variable Name="turned" />
       </Task>
       <Task Name="Recipe">
         <Variable Name="UIConnect">

@@ -3,5 +3,5 @@ VAR
 	MpDelta4Axis_0 : MpDelta4Axis;
 	Step : StepType;
 	diErrorReset : BOOL;
-	turned : BOOL;
+	turned : UINT;
 END_VAR

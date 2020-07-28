@@ -7,8 +7,8 @@ VAR CONSTANT
 
 
 PROGRAM _MAIN          
- Feedrate(6000);   //move with reduced speed
- PathAcceleration(60000);
+ Feedrate(60000);   //move with reduced speed
+ PathAcceleration(600000);
  MoveJ(P1);        //move system to point P1
  MoveJ(P2);
  WaitTime(2);        //wait for 1 second    

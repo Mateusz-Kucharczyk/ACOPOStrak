@@ -50,12 +50,16 @@ PROGRAM _CYCLIC
 			IF EDGEPOS(gShuttleInPlace_Turn) THEN
 				Step := MOVE_PROGRAM;
 			END_IF;
-			turned := FALSE;
+			turned := 0;
 			
 		MOVE_PROGRAM:
 			MpDelta4Axis_0.MoveProgram :=TRUE;
 			
-			IF MpDelta4Axis_0.MoveDone THEN
+			IF turned<240 THEN
+				turned := turned+8;
+			END_IF;
+			
+				IF MpDelta4Axis_0.MoveDone THEN
 				Step:= WAIT_SHUTTLE;
 				gBottleInPlace_Turn:=TRUE;
 				gShuttleInPlace_Turn := FALSE;
