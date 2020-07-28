@@ -9,6 +9,11 @@ PROGRAM _INIT
 	gOrder.drinkColor := 0;
 	gOrder.numberOfPackages := 0;
 	
+	NewRecipe.bottlesPerPackage := 0;
+	NewRecipe.numberOfPackages := 0;
+	NewRecipe.drinkColor := 0;
+	NewRecipe.bottleSize := 0;
+	
 	MpRecipeXML_0.MpLink := ADR(gRecipeXml);
 	MpRecipeXML_0.DeviceName := ADR('CF');
 	MpRecipeXML_0.FileName := ADR(Filename);
@@ -39,20 +44,19 @@ PROGRAM _CYCLIC
 		gCurrentRecipeName := UIConnect.Recipe.List.Names[UIConnect.Recipe.List.SelectedIndex];
 	END_IF;
 	
-		
-	IF EDGENEG(UIConnect.New.Create) THEN
-		NewRecipe.bottleSize := 0;
-		NewRecipe.bottlesPerPackage := 0;
-		NewRecipe.drinkColor := 0;
-		NewRecipe.numberOfPackages :=0;
-		UIConnect.New.FileName := '';
-	END_IF;
-	
 	IF diAdd AND NOT(diLoad) THEN
 		ClientOrder := NewRecipe;
 		UIConnect.New.Create := TRUE;
 		diAdd := FALSE;
 		MpRecipeUI_0();
+	END_IF;
+	
+	IF EDGENEG(UIConnect.New.Create) THEN
+		UIConnect.New.FileName := '';
+		NewRecipe.bottlesPerPackage := 0;
+		NewRecipe.numberOfPackages := 0;
+		NewRecipe.drinkColor := 0;
+		NewRecipe.bottleSize := 0;
 	END_IF;
 	
 	FOR i := 0 TO 19 BY 1 DO
@@ -86,7 +90,7 @@ PROGRAM _CYCLIC
 			OR MpRecipeUI_0.Info.Diag.StatusID.ID = mpRECIPE_ERR_LOAD_DATA THEN
 			// File is missing
 			ErrorStatus := ERROR_FILE_MISSING;
-		ELSIF UIConnect.Recipe.NewFileName = '' AND MpRecipeUI_0.Error THEN
+		ELSIF (UIConnect.Recipe.NewFileName = '' OR UIConnect.New.FileName = '') AND MpRecipeUI_0.Error THEN
 			// Somebody tried to add recipe without new name
 			ErrorStatus := ERROR_WRONG_FILE_NAME;
 		END_IF;

@@ -5,14 +5,8 @@
 
 
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:NewRecipe.bottleSize" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="BottleSizeDropDownBox" attribute="selectedIndex" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:NewRecipe.bottlesPerPackage" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="BottlesPerPckgNumericInput" attribute="value" />
-</Binding>
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Recipe:NewRecipe.numberOfPackages" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="NumOfPckgsNumericInput" attribute="value" />
@@ -26,6 +20,14 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Recipe:UIConnect.New.FileName" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="newRecipeNameTextInput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:NewRecipe.bottleSize" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="BottleSizeDropDownBox" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:NewRecipe.bottlesPerPackage" attribute="node" />
+<Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="BottlesPerPckgNumericInput" attribute="node" />
 </Binding>
 </Bindings>
 </BindingsSet>
