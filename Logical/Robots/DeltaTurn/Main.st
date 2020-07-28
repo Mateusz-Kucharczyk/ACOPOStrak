@@ -32,7 +32,7 @@ PROGRAM _CYCLIC
 	
 	CASE Step OF
 		INIT:
-			IF diStart THEN
+			IF gVisPower THEN
 				Step := POWER;
 			END_IF;
 		POWER:

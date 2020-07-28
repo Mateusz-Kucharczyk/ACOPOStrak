@@ -4,10 +4,6 @@ VAR
 	MpRecipeRegPar_0 : MpRecipeRegPar;
 	MpRecipeUI_0 : MpRecipeUI;
 END_VAR
-(*Enums*)
-VAR
-	Step : RecipeState_type;
-END_VAR
 (*Structures*)
 VAR
 	UISetup : MpRecipeUISetupType;
@@ -16,8 +12,6 @@ VAR
 END_VAR
 (*IO's*)
 VAR
-	diSave : BOOL;
-	diLoad : BOOL;
 	diErrorReset : BOOL;
 END_VAR
 (*Other*)

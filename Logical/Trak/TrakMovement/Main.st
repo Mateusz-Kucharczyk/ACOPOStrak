@@ -29,7 +29,7 @@ PROGRAM _INIT
 	// Setting timer for Pouring_Down/Up and Capping
 	TON_Pouring_Top.IN:=FALSE;
 	TON_Pouring_Down.IN:=FALSE;
-	TON_Capping.PT:=VisCapping_Time;
+	TON_Capping.PT:=T#3s;
 	TON_Capping.IN:=FALSE;
    
 END_PROGRAM
@@ -124,16 +124,14 @@ PROGRAM _CYCLIC
 			IF (gTrakAsm.Command.Power = FALSE) THEN
 				Step := POWER_OFF;
 				// Starting main Step - process
+			ELSIF VisManual=TRUE THEN
+				Step := MANUAL;
 			ELSIF (gTrakAsm.Command.ShuttleStart) THEN
 				gTrakAsm.Command.ShuttleStart := FALSE;
 				CntShuttle := 1;
-				IF VisManual=TRUE THEN
-					Step := MANUAL;
-				ELSE
-					gColorSum := gOrder.bottlesPerPackage * gOrder.numberOfPackages;
-					gProcessFinished := FALSE;
-					Step := PROCESS;
-				END_IF;
+				gColorSum := gOrder.bottlesPerPackage * gOrder.numberOfPackages;
+				gProcessFinished := FALSE;
+				Step := PROCESS;
 
 			END_IF
    
@@ -241,22 +239,28 @@ PROGRAM _CYCLIC
            
 			// Handling Broken stations
 			IF Pouring_Down_Broken THEN
-				Pouring_Down_Comming:=TRUE;
+					Pouring_Down_Comming:=TRUE;
+					SvgTranform[3]:=2;
 			END_IF
 			IF EDGENEG(Pouring_Down_Broken) THEN
-				Pouring_Down_Comming:=FALSE;
+					Pouring_Down_Comming:=FALSE;
+					SvgTranform[3]:=0;
 			END_IF;
 			IF Pouring_Top_Broken THEN
-				Pouring_Top_Comming:=TRUE;
+					Pouring_Top_Comming:=TRUE;
+					SvgTranform[4]:=2;
 			END_IF;
 			IF EDGENEG(Pouring_Top_Broken) THEN
-				Pouring_Top_Comming:=FALSE;
+					Pouring_Top_Comming:=FALSE;
+					SvgTranform[4]:=0;
 			END_IF;
 			IF Capping_Broken THEN
-				Capping_Comming:=TRUE;
+					Capping_Comming:=TRUE;
+					SvgTranform[2]:=2;
 			END_IF
 			IF EDGENEG(Capping_Broken) THEN
-				Capping_Comming:=FALSE;
+					Capping_Comming:=FALSE;
+					SvgTranform[2]:=0;
 			END_IF;
  
            
@@ -307,20 +311,7 @@ PROGRAM _CYCLIC
 									gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 3;
 									gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 							END_CASE;
-							(*IF gColorGreen > 0 THEN
-								gShuttleColor[10-ActiveShuttle] := 1;
-								gColorGreen := gColorGreen - 1;
-								gShuttleColored[10-ActiveShuttle] := TRUE;
-							ELSIF gColorRed > 0 THEN
-								gShuttleColor[10-ActiveShuttle] := 2;
-								gColorRed := gColorRed - 1;
-								gShuttleColored[10-ActiveShuttle] := TRUE;
-							ELSIF gColorBlue > 0 THEN
-								gShuttleColor[10-ActiveShuttle] := 3;
-								gColorBlue := gColorBlue - 1;
-								gShuttleColored[10-ActiveShuttle] := TRUE;
-							END_IF;*)
-						END_IF;
+							END_IF;
 					END_IF;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
@@ -344,20 +335,7 @@ PROGRAM _CYCLIC
 									gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 3;
 									gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 							END_CASE;
-							(*IF gColorGreen > 0 THEN
-								gShuttleColor[10-ActiveShuttle] := 1;
-								gColorGreen := gColorGreen - 1;
-								gShuttleColored[10-ActiveShuttle] := TRUE;
-							ELSIF gColorRed > 0 THEN
-								gShuttleColor[10-ActiveShuttle] := 2;
-								gColorRed := gColorRed - 1;
-								gShuttleColored[10-ActiveShuttle] := TRUE;
-							ELSIF gColorBlue > 0 THEN
-								gShuttleColor[10-ActiveShuttle] := 3;
-								gColorBlue := gColorBlue - 1;
-								gShuttleColored[10-ActiveShuttle] := TRUE;
-							END_IF;*)
-						END_IF;
+							END_IF;
 					END_IF;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
@@ -412,6 +390,7 @@ PROGRAM _CYCLIC
 			IF ManualShuttleReset=NUM_SIM_SHUTTLES THEN
 				Step:=READY;
 				gProcessFinished := TRUE;
+				VisShuttleStart:=FALSE;	
 			ELSE
 				ManualShuttleReset:=0;
 			END_IF
@@ -428,36 +407,42 @@ PROGRAM _CYCLIC
 				Step := RESET;
 			END_IF
 		MANUAL:
-			
-
-			MC_BR_RoutedMoveVel_AcpTrak_0.Axis			:=ADR(ShuttleAxis[VisShuttle]);
-			MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=TRUE;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=FALSE;
+				MC_BR_RoutedMoveVel_AcpTrak_0();
+				MC_BR_RoutedMoveVel_AcpTrak_0.Axis			:=ADR(ShuttleAxis[VisShuttle+1]);
+				MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=TRUE;
 			IF VisManualSectorTop=TRUE THEN
-				MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualTop);
+					MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualTop);
 			ELSE
-				MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualMain);
+					MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualMain);
 			END_IF;
-
-			MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := VisManualVelocity;
-			MC_BR_RoutedMoveVel_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-			MC_BR_RoutedMoveVel_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-			MC_BR_RoutedMoveVel_AcpTrak_0.Jerk          := 0.0;
-			MC_BR_RoutedMoveVel_AcpTrak_0.BufferMode    := mcABORTING;
-			IF VisManualVelocity>=0.0 THEN
+			IF VisMove_Pos THEN
+				MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := VisManualVelocity;
+			ELSIF VisMove_Neg THEN
+				MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := VisManualVelocity;
+			ELSE
+					MC_BR_RoutedMoveVel_AcpTrak_0.Velocity  := 0.0;
+			END_IF;	
+				MC_BR_RoutedMoveVel_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Jerk          := 0.0;
+				MC_BR_RoutedMoveVel_AcpTrak_0.BufferMode    := mcABORTING;
+			IF VisMove_Pos THEN
 				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
 			ELSE
 				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_NEGATIVE;
 			END_IF;
-			MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
-			
-			MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
-
+				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+				
+				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
 			
 			ManualShuttleReset:=0;
 			IF VisManual=FALSE THEN
 
 				FOR CntShuttle:=NUM_SIM_SHUTTLES TO 1 BY -1 DO
-					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis         							:= ADR(ShuttleAxis[ActiveShuttle]);
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute:=FALSE;
+					MC_BR_RoutedMoveAbs_AcpTrak_0();
+					MC_BR_RoutedMoveAbs_AcpTrak_0.Axis         							:= ADR(ShuttleAxis[CntShuttle]);
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Execute      						 	:= TRUE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Sector       					 		:= ADR(SectorBottleInput); 
 					MC_BR_RoutedMoveAbs_AcpTrak_0.Position     						    := 0.305+3.66;
@@ -469,6 +454,7 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+					MC_BR_RoutedMoveAbs_AcpTrak_0();
 					MC_BR_ShReadInfo_AcpTrak_0.Enable									:=FALSE;
 					MC_BR_ShReadInfo_AcpTrak_0();
 					MC_BR_ShReadInfo_AcpTrak_0.Axis 									:=ADR(ShuttleAxis[CntShuttle]);
@@ -507,7 +493,7 @@ PROGRAM _CYCLIC
 			ELSIF (ShuttleAxis[CntShuttle].controlif <> 0) AND NOT(MC_Stop_0.Busy) THEN
 				MC_Stop_0.Axis         := ADR(ShuttleAxis[CntShuttle]);
 				MC_Stop_0.Execute      := TRUE;
-				MC_Stop_0.Deceleration := 20;
+				MC_Stop_0.Deceleration := 40;
 				MC_Stop_0.Jerk         := 0.0;
 				MC_BR_RoutedMoveVel_AcpTrak_0.Execute := FALSE;
 			END_IF
@@ -571,24 +557,22 @@ PROGRAM _CYCLIC
 	TON_Capping();
    
 	//Updating values of vel or states with actual data in Visualisation
-	
-	gTrakAsm.Command.Power					:=VisPower;
+	gTrakAsm.Command.Power					:=gVisPower;
 	gTrakAsm.Command.ShuttleStart			:=VisShuttleStart;
 	gTrakAsm.Command.ShuttleStop 			:=VisShuttleStop;
-	Pouring_Top_Broken 						:=VisPouring_Top_Broken;
-	Pouring_Down_Broken						:=VisPouring_Down_Broken;
-	Capping_Broken							:=VisCapping_Broken;
+	Pouring_Top_Broken 						:=NOT(VisPouring_Top_Broken);
+	Pouring_Down_Broken						:=NOT(VisPouring_Down_Broken);
+	Capping_Broken							:=NOT(VisCapping_Broken);
 	gTrakAsm.Parameter.Velocity				:=VisVelocity;
 	gTrakAsm.Parameter.Acceleration			:=VisAcceleration;
 	gTrakAsm.Parameter.Deceleration			:=VisDeceleration;
-	TON_Capping.PT							:=VisCapping_Time;
 	CASE gOrder.bottleSize OF
 		BOTTLE_SIZE_LARGE:
-			TON_Pouring_Down.PT := VisPouring_Time_Large;
-			TON_Pouring_Top.PT:=VisPouring_Time_Large;
+			TON_Pouring_Down.PT 			:=REAL_TO_TIME(1000*VisPouring_Time_Large);
+			TON_Pouring_Top.PT				:=REAL_TO_TIME(1000*VisPouring_Time_Large);
 		BOTTLE_SIZE_SMALL:
-			TON_Pouring_Down.PT := VisPouring_Time_Small;
-			TON_Pouring_Top.PT:=VisPouring_Time_Small;
+			TON_Pouring_Down.PT 			:=REAL_TO_TIME(1000*VisPouring_Time_Small);
+			TON_Pouring_Top.PT				:=REAL_TO_TIME(1000*VisPouring_Time_Small);
 	END_CASE;
  
    

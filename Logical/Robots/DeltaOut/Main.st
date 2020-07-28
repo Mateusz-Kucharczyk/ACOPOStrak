@@ -27,7 +27,7 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.Home := FALSE;
 			MpDelta3Axis_0.MoveProgram := FALSE;
 			
-			IF diStart THEN
+			IF gVisPower THEN
 	  			Step := POWER;
 			END_IF;
 		POWER:

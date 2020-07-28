@@ -7,11 +7,11 @@
     <Widget xsi:type="widgets.brease.Label" id="Label8" top="495" left="200" width="200" zIndex="3" text="$IAT/settingTrakVelocity" textColor="rgba(0, 0, 0, 1)" style="seq-label" />
     <Widget xsi:type="widgets.brease.Label" id="Label9" top="340" left="200" width="200" zIndex="4" text="$IAT/settingTrakAcceleration" textColor="rgba(0, 0, 0, 1)" style="seq-label" />
     <Widget xsi:type="widgets.brease.LanguageSelector" id="LanguageSelector1" top="99" left="539" width="140" zIndex="5" listWidth="200" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput1" top="185" left="535" width="140" zIndex="6" maxValue="50" useDigitGrouping="false" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput2" top="265" left="535" width="140" zIndex="7" maxValue="50" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput3" top="345" left="535" width="140" zIndex="8" maxValue="40" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput4" top="500" left="535" width="140" zIndex="9" maxValue="4" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput1" top="185" left="535" width="140" zIndex="6" maxValue="50" unit="{'metric':'SEC','imperial':'SEC','imperial-us':'SEC'}" unitAlign="right" useDigitGrouping="false" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput2" top="265" left="535" width="140" zIndex="7" maxValue="50" unit="{'metric':'SEC','imperial':'SEC','imperial-us':'SEC'}" unitAlign="right" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput3" top="345" left="535" width="140" zIndex="8" maxValue="40" unit="{'metric':'MSK','imperial':'MSK','imperial-us':'MSK'}" unitAlign="right" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput4" top="500" left="535" width="140" zIndex="9" maxValue="4" unit="{'metric':'MTS','imperial':'MTS','imperial-us':'MTS'}" unitAlign="right" />
     <Widget xsi:type="widgets.brease.Label" id="Label10" top="415" left="200" width="200" zIndex="10" text="$IAT/settingTrakDeceleration" textColor="rgba(0, 0, 0, 1)" style="seq-label" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput5" top="420" left="535" width="140" zIndex="11" maxValue="40" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="NumericInput5" top="420" left="535" width="140" zIndex="11" maxValue="40" unit="{'metric':'MSK','imperial':'MSK','imperial-us':'MSK'}" unitAlign="right" />
   </Widgets>
 </Content>
