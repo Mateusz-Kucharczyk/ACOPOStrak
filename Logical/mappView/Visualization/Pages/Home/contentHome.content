@@ -67,5 +67,16 @@
     <Widget xsi:type="widgets.brease.Button" id="Button2" top="120" left="680" height="60" zIndex="3" text="$IAT/btnStop" />
     <Widget xsi:type="widgets.brease.Button" id="Button3" top="200" left="520" width="260" height="60" zIndex="4" breakWord="true" multiLine="true" text="$IAT/btnStopContinue" wordWrap="true" />
     <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch8" top="60" left="520" zIndex="5" mouseDownText="$IAT/switchBtnTextOff" text="$IAT/switchBtnTextOn" mouseDownBackColor="rgba(0, 255, 0, 1)" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="HomePageCurrentRecipeNumOfPckg" top="70" left="1007" zIndex="6" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="2px" cornerRadius="0px" borderColor="rgba(255, 255, 255, 1)" textColor="rgba(255, 255, 255, 1)" style="Output" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="HomePageCurrentRecipeBottlPerPckg" top="112" left="1007" zIndex="13" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="2px" cornerRadius="0px" borderColor="rgba(255, 255, 255, 1)" textColor="rgba(255, 255, 255, 1)" style="Output" />
+    <Widget xsi:type="widgets.brease.Label" id="HomePageCurrentRecipeBottleSizeLabel" top="152" left="1007" width="100" zIndex="7" text="" borderWidth="2px" borderColor="rgba(255, 255, 255, 1)" borderStyle="solid" textColor="rgba(255, 255, 255, 1)" textAlign="right" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.Label" id="HomePageCurrentRecipeDrinkColorLabel" top="192" left="1007" width="100" zIndex="8" text="" borderWidth="2px" borderColor="rgba(255, 255, 255, 1)" borderStyle="solid" textColor="rgba(255, 255, 255, 1)" textAlign="right" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.Label" id="NumberOfPackagesLabel1" top="70" left="819" width="140" zIndex="9" text="Number of packages" textColor="rgba(255, 255, 255, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="BottlesPerPackageLabel1" top="112" left="819" width="140" zIndex="10" text="Bottles per package" textColor="rgba(255, 255, 255, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="BottleSizeLabel1" top="152" left="819" width="140" zIndex="11" text="Bottle size" textColor="rgba(255, 255, 255, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="DrinkColorLabel1" top="192" left="819" width="139" zIndex="12" text="Drink color" textColor="rgba(255, 255, 255, 1)" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="CurrentProgramNameTextOutput" top="229" left="1011" zIndex="14" textColor="rgba(255, 255, 255, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="CurrentProgramName" top="229" left="819" width="139" zIndex="15" text="Current program name" textColor="rgba(255, 255, 255, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="CurrentRecipeLabel" top="32" left="819" width="290" zIndex="16" text="Current recipe" textColor="rgba(255, 255, 255, 1)" fontSize="24px" />
   </Widgets>
 </Content>

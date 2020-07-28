@@ -18,7 +18,7 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="EventBinding_3">
+    <EventBinding id="openErrorDialog">
       <Source xsi:type="opcUa.Event" refId="::Recipe:isError" event="ValueChanged" />
       <EventHandler condition="newValue = TRUE">
         <Action>

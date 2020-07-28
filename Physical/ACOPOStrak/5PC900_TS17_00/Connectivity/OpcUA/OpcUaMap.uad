@@ -18,6 +18,7 @@
         </Variable>
         <Variable Name="gProcessFinished" />
         <Variable Name="gVisPower" />
+        <Variable Name="gCurrentRecipeName" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
@@ -82,6 +83,7 @@
         <Variable Name="ErrorMessage" />
         <Variable Name="diErrorReset" />
         <Variable Name="isError" />
+        <Variable Name="diLoad" />
       </Task>
       <Task Name="TrakMoveme">
         <Variable Name="VisAcceleration" />
