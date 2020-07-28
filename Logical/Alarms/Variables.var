@@ -1,5 +1,6 @@
 VAR
 	MpAlarmXCore_0 : MpAlarmXCore;
 	MpAlarmXHistory_0 : MpAlarmXHistory;
-	UserAlarm : BOOL;
+	SectorTopAlarm : BOOL;
+	SectorDownAlarm : BOOL;
 END_VAR

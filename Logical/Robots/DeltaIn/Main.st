@@ -44,6 +44,7 @@ PROGRAM _CYCLIC
 				Step := MOVE_PROGRAM;
 				DeltaParameters.ProgramName := 'RoboticIn.st';    //File stored on FileDevice
 			END_IF;
+			
 		MOVE_PROGRAM:
 			IF gColorSum >0 THEN
 				MpDelta3Axis_0.MoveProgram :=TRUE;
