@@ -2,17 +2,17 @@
 <Object objecttypeid="1" name="ACOPOStrak Scene" visible="1" mask="" binding="" jointoparent="0">
 	<ParID parid="80" val="FALSE"/>
 	<ParID parid="81" val="60"/>
-	<ParID parid="82" val="0.272842"/>
+	<ParID parid="82" val="1.03612"/>
 	<ParID parid="90" val="0"/>
-	<ParID parid="100" val="9958.11"/>
-	<ParID parid="101" val="108.362"/>
-	<ParID parid="102" val="345.364"/>
-	<ParID parid="103" val="-1"/>
-	<ParID parid="104" val="0"/>
-	<ParID parid="105" val="0"/>
-	<ParID parid="106" val="0"/>
-	<ParID parid="107" val="0"/>
-	<ParID parid="108" val="1"/>
+	<ParID parid="100" val="-4755.69"/>
+	<ParID parid="101" val="-2661.19"/>
+	<ParID parid="102" val="4425.25"/>
+	<ParID parid="103" val="0.863667"/>
+	<ParID parid="104" val="0.259756"/>
+	<ParID parid="105" val="-0.43198"/>
+	<ParID parid="106" val="0.207594"/>
+	<ParID parid="107" val="0.597644"/>
+	<ParID parid="108" val="0.77442"/>
 	<ParID parid="110" val="0.25"/>
 	<ParID parid="120" val="1,1,1"/>
 	<ParID parid="140" val="0.75,0.75,0.75"/>
@@ -324,7 +324,7 @@
 		<ParID parid="121" val="3: Grey Matte"/>
 		<ParID parid="130" val="1"/>
 	</Object>
-	<Object objecttypeid="250" name="Shuttles" visible="1" mask="" binding="" jointoparent="0">
+	<Object objecttypeid="250" name="Shuttles" visible="1" mask="" binding="#14*TRUE" jointoparent="0">
 		<ParID parid="100" val="0"/>
 		<ParID parid="101" val="0"/>
 		<ParID parid="102" val="203"/>
@@ -351,35 +351,35 @@
 			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 			<ParID parid="200" val="gAssembly_1"/>
-			<ParID parid="210" val="ï¿½2ï¿½ï¿½ï¿½v"/>
+			<ParID parid="210" val="TÎºö©w"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:0#100:4#101:8#103:12#130:16#140:48#120:60#121:64#122:68" binding="" jointoparent="0">
-			<ParID parid="100" val="3803.33"/>
-			<ParID parid="101" val="160.249"/>
-			<ParID parid="102" val="0"/>
-			<ParID parid="103" val="316.86"/>
-			<ParID parid="104" val="0"/>
-			<ParID parid="105" val="0"/>
-			<ParID parid="123" val="1"/>
-			<ParID parid="130" val="15"/>
-			<ParID parid="140" val="1,0,0"/>
-			<ParID parid="150" val="13: Black Metal Shine"/>
-		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:72#100:76#101:80#103:84#130:88#140:120#120:132#121:136#122:140" binding="" jointoparent="0">
-			<ParID parid="100" val="3769.47"/>
-			<ParID parid="101" val="15"/>
+		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:0#100:4#101:8#103:12#130:16#140:48#120:60#121:64#122:68" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
 			<ParID parid="102" val="0"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val="14"/>
-			<ParID parid="140" val="1,0,0"/>
+			<ParID parid="130" val=""/>
+			<ParID parid="140" val="0,0,0"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:144#100:148#101:152#103:156#130:160#140:192#120:204#121:208#122:212" binding="" jointoparent="0">
-			<ParID parid="100" val="4925"/>
-			<ParID parid="101" val="15"/>
+		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:72#100:76#101:80#103:84#130:88#140:120#120:132#121:136#122:140" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="0"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="123" val="1"/>
+			<ParID parid="130" val=""/>
+			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="150" val="13: Black Metal Shine"/>
+		</Object>
+		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:144#100:148#101:152#103:156#130:160#140:192#120:204#121:208#122:212" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
 			<ParID parid="102" val="0"/>
 			<ParID parid="103" val="0"/>
 			<ParID parid="104" val="0"/>
@@ -401,7 +401,7 @@
 			<ParID parid="140" val="1,0.55,0"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:288#100:292#101:296#103:300#130:304#140:336#120:348#121:352#122:356" binding="" jointoparent="0">
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:288#100:292#101:296#103:300#130:304#140:336#120:348#121:352#122:356" binding="" jointoparent="0">
 			<ParID parid="100" val="2285"/>
 			<ParID parid="101" val="15"/>
 			<ParID parid="102" val="0"/>
@@ -437,7 +437,7 @@
 			<ParID parid="140" val="1,0.55,0"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:504#100:508#101:512#103:516#130:520#140:552#120:564#121:568#122:572" binding="" jointoparent="0">
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:504#100:508#101:512#103:516#130:520#140:552#120:564#121:568#122:572" binding="" jointoparent="0">
 			<ParID parid="100" val="491.106"/>
 			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
@@ -449,7 +449,7 @@
 			<ParID parid="140" val="1,0.55,0"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:576#100:580#101:584#103:588#130:592#140:624#120:636#121:640#122:644" binding="" jointoparent="0">
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:576#100:580#101:584#103:588#130:592#140:624#120:636#121:640#122:644" binding="" jointoparent="0">
 			<ParID parid="100" val="560.159"/>
 			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
@@ -2193,12 +2193,12 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-150"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="7.49622"/>
-		<ParID parid="211" val="-22.5502"/>
-		<ParID parid="212" val="31.6225"/>
-		<ParID parid="220" val="3.66616e-06"/>
-		<ParID parid="221" val="200"/>
-		<ParID parid="222" val="-600"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
+		<ParID parid="220" val="-1.38778e-13"/>
+		<ParID parid="221" val="0"/>
+		<ParID parid="222" val="-562.311"/>
 	</Object>
 	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="#210*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="350"/>
@@ -2239,14 +2239,14 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-150"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="7.49622"/>
-		<ParID parid="211" val="31.6225"/>
-		<ParID parid="212" val="-22.5502"/>
-		<ParID parid="220" val="3.66616e-06"/>
-		<ParID parid="221" val="-200"/>
-		<ParID parid="222" val="-600"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
+		<ParID parid="220" val="-1.38778e-13"/>
+		<ParID parid="221" val="0"/>
+		<ParID parid="222" val="-562.311"/>
 	</Object>
-	<Object objecttypeid="770" name="4-Axes Delta (A)" visible="1" mask="" binding="#210*::DeltaTurn:MpDelta4Axis_0.Info.JointAxisPosition[0]#211*::DeltaTurn:MpDelta4Axis_0.Info.JointAxisPosition[1]#212*::DeltaTurn:MpDelta4Axis_0.Info.JointAxisPosition[2]#213*::DeltaTurn:MpDelta4Axis_0.Info.JointAxisPosition[3]" jointoparent="0">
+	<Object objecttypeid="770" name="4-Axes Delta (A)" visible="1" mask="" binding="#103*::DeltaTurn:turned#210*::DeltaTurn:MpDelta4Axis_0.Info.JointAxisPosition[0]#211*::DeltaTurn:MpDelta4Axis_0.Info.JointAxisPosition[1]#212*::DeltaTurn:MpDelta4Axis_0.Info.JointAxisPosition[2]#213*::DeltaTurn:MpDelta4Axis_0.Info.JointAxisPosition[3]" jointoparent="0">
 		<ParID parid="100" val="4930"/>
 		<ParID parid="101" val="15"/>
 		<ParID parid="102" val="980"/>
@@ -2285,13 +2285,13 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-150"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="4.75818"/>
-		<ParID parid="211" val="4.75818"/>
-		<ParID parid="212" val="4.75818"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
 		<ParID parid="213" val="0"/>
-		<ParID parid="220" val="6.93889e-15"/>
+		<ParID parid="220" val="0"/>
 		<ParID parid="221" val="-1.38778e-14"/>
-		<ParID parid="222" val="-600"/>
+		<ParID parid="222" val="-583.013"/>
 		<ParID parid="223" val="0"/>
 	</Object>
 </Object>
