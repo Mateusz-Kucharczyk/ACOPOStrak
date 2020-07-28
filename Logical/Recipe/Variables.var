@@ -26,7 +26,6 @@ VAR
 END_VAR
 (*Error flags for message box*)
 VAR
-	isError : BOOL;
 	ErrorStatus : Error_type := NO_ERROR;
 	diAdd : BOOL;
 END_VAR

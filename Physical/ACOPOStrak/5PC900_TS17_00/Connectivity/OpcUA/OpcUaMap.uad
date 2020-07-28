@@ -3,7 +3,14 @@
   <Aliases>
     <ACLAliases />
     <EURangeViolationAliases />
-    <EURangesAliases />
+    <EURangesAliases>
+      <EURanges Id="1">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+          <High ValueProvider="Const">6</High>
+        </EURange>
+      </EURanges>
+    </EURangesAliases>
     <EngineeringUnitAliases />
   </Aliases>
   <DefaultView>
@@ -83,13 +90,12 @@
           <Variable Name="drinkColor" />
         </Variable>
         <Variable Name="diErrorReset" />
-        <Variable Name="isError" />
         <Variable Name="diLoad" />
         <Variable Name="ErrorStatus" />
         <Variable Name="diAdd" />
         <Variable Name="NewRecipe">
           <Variable Name="numberOfPackages" />
-          <Variable Name="bottlesPerPackage" />
+          <Variable Name="bottlesPerPackage" EURangesId="1" />
           <Variable Name="bottleSize" />
           <Variable Name="drinkColor" />
         </Variable>
