@@ -13,8 +13,6 @@ VAR
 END_VAR
 (*IO's*)
 VAR
-	diSave : BOOL;
-	diLoad : BOOL;
 	diErrorReset : BOOL;
 END_VAR
 (*Other*)
@@ -24,6 +22,7 @@ VAR
 	i : INT; (*Loop iterator*)
 	PVName : STRING[100];
 	Temp : STRING[2]; (*Temporarly stores interator converted to string*)
+	diLoad : BOOL;
 END_VAR
 (*Error flags for message box*)
 VAR

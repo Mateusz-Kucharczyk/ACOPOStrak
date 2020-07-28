@@ -3,8 +3,51 @@
   <Element ID="gAlarmXCore" Type="mpalarmxcore">
     <Group ID="mapp.AlarmX.Core.Configuration">
       <Group ID="[0]">
-        <Property ID="Name" Value="UserAlarm" />
-        <Property ID="Message" Value="ffffffffff" />
+        <Property ID="Name" Value="InterruptAlarm" />
+        <Property ID="Message" Value="Procces was interrupted" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="SectorTopAlarm" />
+        <Property ID="Message" Value="Top Pouring Sector inefficient" />
+        <Property ID="Code" Value="1" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::TrakMoveme:VisPouring_Top_Broken" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="TRUE" />
+            </Group>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="SectorDownAlarm" />
+        <Property ID="Message" Value="Down Pouring Sector inefficient" />
+        <Property ID="Code" Value="2" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::TrakMoveme:VisPouring_Down_Broken" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="TRUE" />
+            </Group>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="SuddenlyStopAlarm" />
+        <Property ID="Message" Value="Procces was suddenly" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="SectorCappingAlarm" />
+        <Property ID="Message" Value="Capping Sector inefficient" />
+        <Property ID="Code" Value="3" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::TrakMoveme:VisCapping_Broken" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="TRUE" />
+            </Group>
+          </Group>
+        </Selector>
       </Group>
     </Group>
   </Element>

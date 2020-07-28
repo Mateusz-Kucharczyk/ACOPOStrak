@@ -25,7 +25,7 @@ PROGRAM _CYCLIC
 	
 	CASE Step OF
 		INIT:
-			IF gdiStart THEN
+			IF gVisPower THEN
 				Step := POWER;
 			END_IF;
 		POWER:
@@ -44,8 +44,10 @@ PROGRAM _CYCLIC
 				Step := MOVE_PROGRAM;
 				DeltaParameters.ProgramName := 'RoboticIn.st';    //File stored on FileDevice
 			END_IF;
+			
 		MOVE_PROGRAM:
-			IF gColorSum >0 THEN
+			IF gVisInput_Broken THEN
+				IF gColorSum >0 THEN
 				MpDelta3Axis_0.MoveProgram :=TRUE;
 				IF MpDelta3Axis_0.MoveDone THEN
 					gColorSum := gColorSum - 1;
@@ -55,12 +57,15 @@ PROGRAM _CYCLIC
 				IF gdiInterrupt THEN
 					Step := INTERRUPT;
 				END_IF;
+				END_IF;
+			ELSE
+				Step := INTERRUPT;
 			END_IF;
 			
 
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
-			IF gdiContinue THEN
+			IF gdiContinue OR EDGEPOS (gVisInput_Broken) THEN
 				MpDelta3Axis_0.Interrupt := FALSE;
 				MpDelta3Axis_0.Continue := TRUE;
 				Step := MOVE_PROGRAM;
@@ -86,7 +91,7 @@ PROGRAM _CYCLIC
 
 
 	END_CASE;
-  
+	
 	END_PROGRAM
 
 	PROGRAM _EXIT

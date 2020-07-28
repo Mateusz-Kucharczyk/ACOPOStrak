@@ -1,16 +1,18 @@
 (*FB's*)
 VAR
-	PName : STRING[80];
 	DeltaParameters : MpDelta3AxisParType;
 	MpDelta3Axis_0 : MpDelta3Axis;
 END_VAR
 (*IO's*)
 VAR
+	diStart : BOOL;
+	diInterrupt : BOOL;
+	diResume : BOOL;
 	diErrorReset : BOOL;
 END_VAR
 (*Other*)
 VAR
 	Step : StepType;
 	BottlesPerPack : USINT := 1;
-	RecipeBottlesPerPack : USINT := 4;
+	Status : UINT;
 END_VAR

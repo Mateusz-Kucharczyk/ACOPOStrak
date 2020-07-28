@@ -1,5 +1,4 @@
 VAR
-	NrOfRotations : USINT;
 	DeltaParameters : MpDelta4AxisParType;
 	MpDelta4Axis_0 : MpDelta4Axis;
 	Step : StepType;
