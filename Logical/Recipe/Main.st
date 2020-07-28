@@ -34,7 +34,8 @@ PROGRAM _CYCLIC
 	MpRecipeRegPar_0();
 	MpRecipeUI_0();
 	
-	IF gProcessFinished THEN
+	IF gProcessFinished AND diLoad THEN
+		diLoad := FALSE;
 		gOrder := ClientOrder;
 		gCurrentRecipeName := UIConnect.Recipe.List.Names[UIConnect.Recipe.List.SelectedIndex];
 	END_IF;

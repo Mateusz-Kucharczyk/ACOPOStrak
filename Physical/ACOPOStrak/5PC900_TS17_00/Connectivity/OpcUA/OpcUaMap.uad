@@ -82,6 +82,7 @@
         <Variable Name="ErrorMessage" />
         <Variable Name="diErrorReset" />
         <Variable Name="isError" />
+        <Variable Name="diLoad" />
       </Task>
     </Module>
   </DefaultView>

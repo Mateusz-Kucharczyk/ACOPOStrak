@@ -48,10 +48,7 @@
 <Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.List.Names" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="ListBox1" attribute="selectedValue" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Load" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="LoadRecipeButton" attribute="value" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Recipe:UIConnect.Recipe.Save" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="SaveRecipeButton" attribute="value" />
@@ -85,6 +82,22 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Recipe:ErrorMessage" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentOrdersError" widgetRefId="ErrorTextOutput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:diLoad" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="LoadRecipeButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.numberOfPackages" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeNumOfPckg" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.bottlesPerPackage" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottlPerPckg" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gCurrentRecipeName" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="CurrentProgramNameTextOutput" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

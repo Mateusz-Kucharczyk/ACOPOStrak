@@ -11,7 +11,7 @@
     <Task Name="TrakMoveme" Source="Trak.TrakMovement.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#4">
-    <Task Name="Recipe" Source="Trak.Recipe.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Recipe" Source="Recipe.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="svgTransfo" Source="svgTransform.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="DeltaTurn" Source="Robots.DeltaTurn.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Alarms" Source="Alarms.prg" Memory="UserROM" Language="IEC" Debugging="true" />

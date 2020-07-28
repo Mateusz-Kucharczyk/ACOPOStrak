@@ -11,6 +11,7 @@
     <Object Type="Package">Robots</Object>
     <Object Type="Package">Trak</Object>
     <Object Type="Program" Language="IEC">Alarms</Object>
+    <Object Type="Program" Language="IEC">Recipe</Object>
     <Object Type="Package">PutTheseFilesIntoCPlease</Object>
   </Objects>
 </Package>
