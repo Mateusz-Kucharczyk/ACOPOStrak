@@ -139,5 +139,15 @@
 		</Binding>
 
 
-	</Bindings>
+	
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gVisOutput_Broken" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gVisInput_Broken" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch3" attribute="value" />
+</Binding>
+</Bindings>
 </BindingsSet>

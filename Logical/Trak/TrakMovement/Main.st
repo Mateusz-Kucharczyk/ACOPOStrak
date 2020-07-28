@@ -261,8 +261,22 @@ PROGRAM _CYCLIC
 			END_IF
 			IF EDGENEG(Capping_Broken) THEN
 					Capping_Comming:=FALSE;
-					SvgTranform[2]:=0;
+					SvgTranform[2]:=0;	
 			END_IF;
+			IF gVisInput_Broken THEN
+				SvgTranform[0]:=0;
+			END_IF
+			IF NOT (gVisInput_Broken) THEN
+					SvgTranform[0]:=2;	
+			END_IF;
+			IF gVisOutput_Broken THEN
+				SvgTranform[1]:=0;
+			END_IF
+			IF NOT (gVisOutput_Broken) THEN
+				SvgTranform[1]:=2;	
+			END_IF;
+					
+				
  
            
 			// TON activation

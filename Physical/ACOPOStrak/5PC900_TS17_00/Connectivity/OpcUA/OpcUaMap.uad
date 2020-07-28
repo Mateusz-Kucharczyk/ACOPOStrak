@@ -19,6 +19,8 @@
         <Variable Name="gProcessFinished" />
         <Variable Name="gVisPower" />
         <Variable Name="gCurrentRecipeName" />
+        <Variable Name="gVisInput_Broken" />
+        <Variable Name="gVisOutput_Broken" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
