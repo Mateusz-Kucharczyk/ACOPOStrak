@@ -17,7 +17,6 @@
 			<Source xsi:type="mapp" refId="gAlarmXHistory" attribute="link" />
 			<Target xsi:type="brease" contentRefId="contentAlarms" widgetRefId="AlarmHistory1" attribute="mpLink" />
 		</Binding>
-
 		<Binding mode="twoWay">
 			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="DropDownBox1" attribute="enable" />
@@ -58,8 +57,6 @@
 			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="MomentaryPushButton9" attribute="enable" />
 		</Binding>
-	
-
 		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::Recipe:UIConnect.New.Create" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="AddRecipeButton" attribute="value" />
@@ -68,10 +65,6 @@
 			<Source xsi:type="opcUa" refId="::Recipe:UIConnect.New.FileName" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="TextInput2" attribute="value" />
 		</Binding>
-
-
-		
-			
 		<Binding mode="oneWay">
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.numberOfPackages" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumericOutput3" attribute="value" />
@@ -138,23 +131,20 @@
 			<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="CurrentProgramNameTextOutput" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-		<Source xsi:type="opcUa" refId="::AsGlobalPV:gVisOutput_Broken" attribute="value" />
-		<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch5" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gVisOutput_Broken" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch5" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-		<Source xsi:type="opcUa" refId="::AsGlobalPV:gVisInput_Broken" attribute="value" />
-		<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch3" attribute="value" />
-		<Binding mode="twoWay">
-		<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-		<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleButton1" attribute="enable" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gVisInput_Broken" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch3" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-		<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-		<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleButton2" attribute="enable" />
+			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleButton2" attribute="enable" />
 		</Binding>
 		<Binding mode="twoWay">
-		<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-		<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch9" attribute="enable" />
+			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch9" attribute="enable" />
 		</Binding>
 	</Bindings>
 </BindingsSet>
