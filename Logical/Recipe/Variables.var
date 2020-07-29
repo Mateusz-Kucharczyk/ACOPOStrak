@@ -28,4 +28,5 @@ END_VAR
 VAR
 	ErrorStatus : Error_type := NO_ERROR;
 	diAdd : BOOL;
+	coffinFlag : BOOL;
 END_VAR

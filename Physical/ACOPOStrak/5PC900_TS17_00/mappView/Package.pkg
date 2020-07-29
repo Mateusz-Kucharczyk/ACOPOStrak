@@ -13,5 +13,6 @@
     <Object Type="File">contentOrders.eventbinding</Object>
     <Object Type="File">newRecipeDialog.binding</Object>
     <Object Type="File">contentAddNewRecipe.eventbinding</Object>
+    <Object Type="File">contentNavigation.eventbinding</Object>
   </Objects>
 </Package>
