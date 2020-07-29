@@ -44,6 +44,13 @@ PROGRAM _CYCLIC
 		gCurrentRecipeName := UIConnect.Recipe.List.Names[UIConnect.Recipe.List.SelectedIndex];
 	END_IF;
 	
+	IF UIConnect.New.FileName = 'Death' THEN
+		coffinFlag := TRUE;
+	ELSE
+		coffinFlag := FALSE;
+	END_IF;
+	
+	
 	IF diAdd AND NOT(diLoad) THEN
 		ClientOrder := NewRecipe;
 		UIConnect.New.Create := TRUE;

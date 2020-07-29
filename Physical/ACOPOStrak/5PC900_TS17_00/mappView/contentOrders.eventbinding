@@ -154,5 +154,15 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="coffinBinding">
+      <Source xsi:type="opcUa.Event" refId="::Recipe:coffinFlag" event="ValueChanged" />
+      <EventHandler condition="newValue">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="coffinPop" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

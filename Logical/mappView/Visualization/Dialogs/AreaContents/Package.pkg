@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="File">contentLogin.content</Object>
     <Object Type="File">contentAddNewRecipe.content</Object>
+    <Object Type="File">contentCoffin.content</Object>
   </Objects>
 </Package>

@@ -25,6 +25,7 @@
   <Dialogs>
 		<Dialog refId="dialogLogin" />
 		<Dialog refId="addNewRecipeDialog" />
+		<Dialog refId="coffinPop" />
   </Dialogs>
   <Contents>
 		<Content refId="contentNavigation" />
@@ -34,6 +35,7 @@
 		<Content refId="contentOrders" />
 		<Content refId="contentAlarms" />
 		<Content refId="contentAddNewRecipe" />
+		<Content refId="coffinContent" />
 	</Contents>
   <SnippetsSets>
     <!--<SnippetsSet refId=""/>-->
