@@ -498,7 +498,6 @@
 				</Action>
 			</EventHandler>
 		</EventBinding>
-<<<<<<< HEAD
 		<EventBinding id="contentHome.Button3.Click">
 			<Source contentRefId="contentHome" widgetRefId="Button3" xsi:type="widgets.brease.Button.Event" event="Click" />
 			<EventHandler>
@@ -513,7 +512,9 @@
 					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:Stop_With_Execution">
 						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
 					</Target>
+					</Action>
 			</EventHandler>
+		</EventBinding>
 		<EventBinding id="contentHome.Button1.DisabledClick">
 			<Source contentRefId="contentHome" widgetRefId="Button1" xsi:type="widgets.brease.Button.Event" event="DisabledClick" />
 			<EventHandler>
