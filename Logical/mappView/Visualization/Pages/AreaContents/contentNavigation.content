@@ -6,7 +6,7 @@
         <Widget xsi:type="widgets.brease.NavigationButton" id="navBtnSettings" top="120" left="0" width="120" height="80" zIndex="0" image="Media/SymbolLib/Symbols/Settings.svg" imageAlign="top" pageId="pageSettings" text="$IAT/navBtnSettings" textAlign="center" />
         <Widget xsi:type="widgets.brease.NavigationButton" id="navBtnAlarms" top="220" left="0" width="120" height="80" zIndex="1" image="Media/SymbolLib/Alarm/Alarm.svg" imageAlign="top" pageId="pageAlarms" text="$IAT/navBtnAlarm" />
         <Widget xsi:type="widgets.brease.NavigationButton" id="navBtnHome" top="20" left="0" width="120" height="80" zIndex="2" breakWord="true" image="Media/SymbolLib/Symbols/Home.svg" imageAlign="top" multiLine="true" pageId="pageHome" text="$IAT/navBtnHome" wordWrap="true" />
-        <Widget xsi:type="widgets.brease.NavigationButton" id="navBtnOrders" top="320" left="0" width="120" height="80" zIndex="3" image="Media/SymbolLib/Edit/Edit.svg" imageAlign="top" pageId="pageOrders" text="$IAT/navBtnOrders" />
+        <Widget xsi:type="widgets.brease.NavigationButton" id="navBtnOrders" top="320" left="0" width="120" height="80" zIndex="3" image="Media/SymbolLib/Edit/Edit.svg" imageAlign="top" pageId="pageOrders" text="$IAT/navBtnOrders" permissionOperate="['Administrators', 'Operator']" />
       </Widgets>
     </Widget>
   </Widgets>

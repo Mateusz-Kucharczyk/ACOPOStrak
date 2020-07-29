@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="contentHome" height="700" width="1160" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.TabControl" id="TabControl1" top="100" left="20" width="480" height="600" zIndex="0">
+    <Widget xsi:type="widgets.brease.TabControl" id="TabControl1" top="20" left="20" width="480" height="780" zIndex="0">
       <Widgets>
         <Widget xsi:type="widgets.brease.TabItem" id="TabItem1" left="0" zIndex="0" text="$IAT/tabTextStatus" imageColor="rgba(255, 204, 0, 1)" textColor="rgba(0, 0, 0, 1)" activeBorderStyle="none">
           <Widgets>
@@ -64,10 +64,10 @@
       </Widgets>
     </Widget>
     <Widget xsi:type="widgets.brease.Paper" id="Paper1" top="280" left="480" width="680" height="360" zIndex="1" colorList="#339900,#339900,#cc3300,#ffcc00" maxZoomLevel="100" minZoomLevel="100" svgFilePath="Media/svg.svg" borderStyle="none" enable="false" />
-    <Widget xsi:type="widgets.brease.Button" id="Button1" top="120" left="520" height="60" zIndex="2" text="$IAT/btnStart" style="Command1" />
-    <Widget xsi:type="widgets.brease.Button" id="Button2" top="120" left="680" height="60" zIndex="3" text="$IAT/btnStop" style="Command1" />
-    <Widget xsi:type="widgets.brease.Button" id="Button3" top="200" left="520" width="260" height="60" zIndex="4" breakWord="true" multiLine="true" text="$IAT/btnStopContinue" wordWrap="true" style="Command1" />
-    <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch8" top="60" left="520" zIndex="5" mouseDownText="$IAT/switchBtnTextOff" text="$IAT/switchBtnTextOn" mouseDownBackColor="rgba(0, 255, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Button" id="Button1" top="120" left="520" height="60" zIndex="2" text="$IAT/btnStart" permissionOperate="['Administrators', 'Operator']" style="Command1" />
+    <Widget xsi:type="widgets.brease.Button" id="Button2" top="120" left="680" height="60" zIndex="3" text="$IAT/btnStop" permissionOperate="['Administrators', 'Operator']" style="Command1" />
+    <Widget xsi:type="widgets.brease.Button" id="Button3" top="200" left="520" width="260" height="60" zIndex="4" breakWord="true" multiLine="true" text="$IAT/btnStopContinue" wordWrap="true" permissionOperate="['Administrators', 'Operator']" style="Command1" />
+    <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch8" top="60" left="520" zIndex="5" mouseDownText="$IAT/switchBtnTextOn" text="$IAT/switchBtnTextOff" mouseDownBackColor="rgba(0, 255, 0, 1)" permissionOperate="['Administrators', 'Operator']" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="HomePageCurrentRecipeNumOfPckg" top="70" left="1007" zIndex="6" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="2px" cornerRadius="0px" borderColor="rgba(255, 255, 255, 1)" textColor="rgba(255, 255, 255, 1)" style="Output" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="HomePageCurrentRecipeBottlPerPckg" top="112" left="1007" zIndex="13" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="2px" cornerRadius="0px" borderColor="rgba(255, 255, 255, 1)" textColor="rgba(255, 255, 255, 1)" style="Output" />
     <Widget xsi:type="widgets.brease.Label" id="HomePageCurrentRecipeBottleSizeLabel" top="152" left="1007" width="100" zIndex="7" text="" borderWidth="2px" borderColor="rgba(255, 255, 255, 1)" borderStyle="solid" textColor="rgba(255, 255, 255, 1)" textAlign="right" fontSize="20px" />

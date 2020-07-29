@@ -52,5 +52,6 @@ VAR
 	gdiContinue : BOOL;
 	gVisOutput_Broken : BOOL := TRUE;
 	gVisInput_Broken : BOOL := TRUE;
+	gBgColor : ARRAY[0..2] OF REAL;
 	gdiInstantStop : BOOL;
 END_VAR
