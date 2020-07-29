@@ -1,8 +1,13 @@
 VAR
-	Vis : McAcpTrakAssemblyVisData;
+	ShuttlesVisibleFalse : BOOL := FALSE;
+	pUserData : REFERENCE TO ShuttleUserData_typ;
 	SizeofVis : UDINT := 0;
 	NumVisShuttle : USINT := 0;
 	i : USINT := 0;
-	pUserData : REFERENCE TO ShuttleUserData_typ;
-	ShuttlesVisibleFalse : BOOL := FALSE;
+	Vizu : Vis_type;
+	BlueChangeRate : REAL;
+	GreenChangeRate : REAL;
+	RedChangeRate : REAL;
+	New_Variable : INT;
+	EasterEgg : BOOL;
 END_VAR
