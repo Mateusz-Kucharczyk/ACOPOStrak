@@ -15,6 +15,7 @@
     <Task Name="svgTransfo" Source="svgTransform.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="DeltaTurn" Source="Robots.DeltaTurn.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Alarms" Source="Alarms.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="SI" Source="Robots.SI.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />
