@@ -43,9 +43,7 @@ PROGRAM _CYCLIC
 	  			Step := WAIT_SHUTTLE;
 			END_IF;
 		WAIT_SHUTTLE:
-			MpDelta3Axis_0.Continue := FALSE;
-			
-			
+				
 			IF EDGEPOS(gShuttleInPlace_Output) THEN
 				Step := MOVE_PROGRAM;
 			END_IF;
@@ -84,7 +82,8 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.MoveProgram := TRUE;
 			
 			IF gdiInterrupt THEN
-				Step := INTERRUPT;
+					Step := INTERRUPT;
+					MpDelta3Axis_0.Continue := FALSE;
 			END_IF;
 			
 			IF MpDelta3Axis_0.MoveDone THEN
@@ -97,7 +96,8 @@ PROGRAM _CYCLIC
 				END_IF;
 				END_IF;
 			ELSE
-					Step := INTERRUPT;
+				Step := INTERRUPT;
+				MpDelta3Axis_0.Continue := FALSE;
 			END_IF;
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;

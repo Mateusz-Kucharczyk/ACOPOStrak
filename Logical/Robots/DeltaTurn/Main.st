@@ -59,13 +59,14 @@ PROGRAM _CYCLIC
 				turned := turned+8;
 			END_IF;
 			
-				IF MpDelta4Axis_0.MoveDone THEN
+			IF MpDelta4Axis_0.MoveDone THEN
 				Step:= WAIT_SHUTTLE;
 				gBottleInPlace_Turn:=TRUE;
 				gShuttleInPlace_Turn := FALSE;
 			END_IF;
 			IF gdiInterrupt THEN
 				Step := INTERRUPT;
+				MpDelta4Axis_0.Continue := FALSE;
 			END_IF;
 					
 		INTERRUPT:
