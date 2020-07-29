@@ -364,13 +364,6 @@
 			<Source xsi:type="widgets.brease.ToggleSwitch.Event" contentRefId="contentHome" widgetRefId="ToggleSwitch1" event="ValueChanged" />
 			<EventHandler>
 				<Action>
-					<Target xsi:type="widgets.brease.ToggleSwitch.Action" contentRefId="contentHome" widgetRefId="ToggleSwitch2">
-						<Method xsi:type="widgets.brease.ToggleSwitch.Action.SetValueBool" value="true" />
-					</Target>
-				</Action>
-			</EventHandler>
-			<EventHandler>
-				<Action>
 					<Target xsi:type="widgets.brease.ToggleSwitch.Action" contentRefId="contentHome" widgetRefId="ToggleSwitch3">
 						<Method xsi:type="widgets.brease.ToggleSwitch.Action.SetValueBool" value="true" />
 					</Target>
