@@ -53,7 +53,7 @@ PROGRAM _CYCLIC
 			turned := 0;
 			
 		MOVE_PROGRAM:
-			IF (gVisTurn_Broken) THEN
+			IF NOT(gVisTurn_Broken) THEN
 					MpDelta4Axis_0.MoveProgram :=TRUE;
 				
 				IF turned<240 THEN

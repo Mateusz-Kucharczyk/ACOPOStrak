@@ -369,11 +369,27 @@ PROGRAM _CYCLIC
 				
 			END_FOR;
 			
-			
+			IF Stop_With_Execution THEN
+				ManualShuttleReset:=0;
+				FOR ActiveShuttle:=NUM_SIM_SHUTTLES TO 1 BY -1 DO
+					MC_BR_ShReadInfo_AcpTrak_0.Enable:=FALSE;
+					MC_BR_ShReadInfo_AcpTrak_0();
+					MC_BR_ShReadInfo_AcpTrak_0.Axis:= ADR(ShuttleAxis[ActiveShuttle]); //ActiveShuttle
+					MC_BR_ShReadInfo_AcpTrak_0.Enable:=TRUE;
+					MC_BR_ShReadInfo_AcpTrak_0();
+					
+					IF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.RemainingDistance < 1 
+						AND gColorSum=0 AND (MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName='SectorBottleInput' OR
+						MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName='SectorBottleInput') THEN
+						ManualShuttleReset:= ManualShuttleReset +1;		
+					END_IF;
+				END_FOR;
+			END_IF;
 			IF ManualShuttleReset=NUM_SIM_SHUTTLES THEN
 				Step:=READY;
 				gProcessFinished := TRUE;
 				VisShuttleStart:=FALSE;	
+				Stop_With_Execution:=FALSE;
 			ELSE
 				ManualShuttleReset:=0;
 			END_IF
@@ -440,34 +456,34 @@ PROGRAM _CYCLIC
 					
 				END_IF;
 			ELSE
-			MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=FALSE;
-			MC_BR_RoutedMoveVel_AcpTrak_0();
-			MC_BR_RoutedMoveVel_AcpTrak_0.Axis			:=ADR(ShuttleAxis[VisShuttle+1]);
-			MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=TRUE;
-			IF VisManualSectorTop=TRUE THEN
-				MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualTop);
-			ELSE
-				MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualMain);
-			END_IF;
-			IF VisMove_Pos THEN
-				MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := VisManualVelocity;
-			ELSIF VisMove_Neg THEN
-				MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := VisManualVelocity;
-			ELSE
-				MC_BR_RoutedMoveVel_AcpTrak_0.Velocity  := 0.0;
-			END_IF;	
-			MC_BR_RoutedMoveVel_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
-			MC_BR_RoutedMoveVel_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
-			MC_BR_RoutedMoveVel_AcpTrak_0.Jerk          := 0.0;
-			MC_BR_RoutedMoveVel_AcpTrak_0.BufferMode    := mcABORTING;
-			IF VisMove_Pos THEN
-				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
-			ELSE
-				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_NEGATIVE;
-			END_IF;
-			MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=FALSE;
+				MC_BR_RoutedMoveVel_AcpTrak_0();
+				MC_BR_RoutedMoveVel_AcpTrak_0.Axis			:=ADR(ShuttleAxis[VisShuttle+1]);
+				MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=TRUE;
+				IF VisManualSectorTop=TRUE THEN
+					MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualTop);
+				ELSE
+					MC_BR_RoutedMoveVel_AcpTrak_0.Sector        := ADR(SectorManualMain);
+				END_IF;
+				IF VisMove_Pos THEN
+					MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := VisManualVelocity;
+				ELSIF VisMove_Neg THEN
+					MC_BR_RoutedMoveVel_AcpTrak_0.Velocity      := VisManualVelocity;
+				ELSE
+					MC_BR_RoutedMoveVel_AcpTrak_0.Velocity  := 0.0;
+				END_IF;	
+				MC_BR_RoutedMoveVel_AcpTrak_0.Acceleration  := gTrakAsm.Parameter.Acceleration;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Deceleration  := gTrakAsm.Parameter.Deceleration;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Jerk          := 0.0;
+				MC_BR_RoutedMoveVel_AcpTrak_0.BufferMode    := mcABORTING;
+				IF VisMove_Pos THEN
+					MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
+				ELSE
+					MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_NEGATIVE;
+				END_IF;
+				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
 				
-			MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
+				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.StartDirection     := mcDIR_UNDEFINED;
 			END_IF
 			ManualShuttleReset:=0;
 
@@ -764,14 +780,15 @@ PROGRAM _CYCLIC
 	IF NOT (gVisOutput_Broken) THEN
 		SvgTranform[1]:=2;	
 	END_IF;
-	MC_BR_ShReadInfo_AcpTrak_0.Enable									:=FALSE;
+	MC_BR_ShReadInfo_AcpTrak_0.Enable:=FALSE;
 	MC_BR_ShReadInfo_AcpTrak_0();
-	MC_BR_ShReadInfo_AcpTrak_0.Axis 									:=ADR(ShuttleAxis[zmienna]);
-	MC_BR_ShReadInfo_AcpTrak_0.Enable									:=TRUE;
+	MC_BR_ShReadInfo_AcpTrak_0.Axis:= ADR(ShuttleAxis[zmienna]); //ActiveShuttle
+	MC_BR_ShReadInfo_AcpTrak_0.Enable:=TRUE;
 	MC_BR_ShReadInfo_AcpTrak_0();
-END_PROGRAM
+	
+					END_PROGRAM
  
 PROGRAM _EXIT
-    (* Insert code here *)
+					(* Insert code here *)
      
-END_PROGRAM
+	END_PROGRAM

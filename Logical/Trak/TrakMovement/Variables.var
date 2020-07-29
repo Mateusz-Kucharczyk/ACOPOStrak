@@ -67,6 +67,5 @@ VAR
 	VisMove_Pos : BOOL := FALSE;
 	VisMove_Neg : BOOL;
 	SvgTranform : ARRAY[0..5] OF USINT;
-	zmienna : USINT := 1;
-	zastopuj : BOOL;
+	zmienna : INT;
 END_VAR
