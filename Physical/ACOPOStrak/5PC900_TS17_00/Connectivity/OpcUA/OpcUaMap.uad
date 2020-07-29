@@ -47,6 +47,7 @@
             <Variable Name="JointAxisPosition" EnableArrayElements="True" />
           </Variable>
         </Variable>
+        <Variable Name="diInterrupt" />
       </Task>
       <Task Name="Vis">
         <Variable Name="ShuttlesVisibleFalse" />
@@ -121,6 +122,8 @@
         <Variable Name="VisPouring_Time_Small" />
         <Variable Name="VisMove_Neg" />
         <Variable Name="VisMove_Pos" />
+        <Variable Name="Step" />
+        <Variable Name="Stop_With_Execution" />
       </Task>
       <Task Name="SI">
         <Variable Name="MpDelta3Axis_0">

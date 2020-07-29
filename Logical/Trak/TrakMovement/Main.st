@@ -138,7 +138,8 @@ PROGRAM _CYCLIC
 			END_IF
    
 			// Main Step, where Shattles run
-		PROCESS:   
+		PROCESS:
+	  
 			
 			FOR ActiveShuttle:=NUM_SIM_SHUTTLES TO 1 BY -1 DO
 				MC_BR_ShReadInfo_AcpTrak_0.Enable:=FALSE;
@@ -359,12 +360,13 @@ PROGRAM _CYCLIC
 				IF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.RemainingDistance < 1 
 					AND gColorSum=0 AND (MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName='SectorBottleInput' OR
 					MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName='SectorBottleInput') THEN
-					ManualShuttleReset:= ManualShuttleReset +1;
-					
+					ManualShuttleReset:= ManualShuttleReset +1;		
 				END_IF;
 				
 				
 			END_FOR;
+			
+			
 			IF ManualShuttleReset=NUM_SIM_SHUTTLES THEN
 				Step:=READY;
 				gProcessFinished := TRUE;
@@ -460,7 +462,6 @@ PROGRAM _CYCLIC
 					
 				END_IF;
 			END_IF;
- 
 		STOPPING:
 			gShuttleInPlace_Input:=FALSE;
 			gShuttleInPlace_Output:=FALSE;

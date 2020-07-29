@@ -15,10 +15,10 @@ PROGRAM _CYCLIC
 	  MpAlarmXReset(gAlarmXCore, 'InterruptAlarm');
 	END_IF;
 	
-	IF EDGEPOS(gdiInstantStop) THEN
+	IF EDGEPOS(TrakStop) THEN
 		MpAlarmXSet(gAlarmXCore, 'SuddenlyStopAlarm');
 	END_IF;
-	IF EDGENEG(gdiInstantStop) THEN
+	IF EDGENEG(TrakStop) THEN
 		MpAlarmXReset(gAlarmXCore, 'SuddenlyStopAlarm');
 	END_IF;
 	
