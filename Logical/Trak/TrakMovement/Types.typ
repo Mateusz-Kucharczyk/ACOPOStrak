@@ -10,7 +10,9 @@ TYPE
 		PROCESS,
 		STOPPING,
 		RESET,
-		MANUAL
+		MANUAL,
+		DELTA_TURN,
+		DELTA_MOVE
 		);
 	StepSector : 
 		(
