@@ -66,7 +66,9 @@ PROGRAM _CYCLIC
 			
 
 		INTERRUPT:
-			MpDelta3Axis_0.Interrupt := TRUE;
+			IF NOT(MpDelta3Axis_0.Info.Program.ProgramMonitor.BlockMonitor.Current = 'END_PROGRAM') THEN
+				MpDelta3Axis_0.Interrupt := TRUE;
+			END_IF;
 			IF gdiContinue OR EDGEPOS (gVisInput_Broken) THEN
 				MpDelta3Axis_0.Interrupt := FALSE;
 				MpDelta3Axis_0.Continue := TRUE;

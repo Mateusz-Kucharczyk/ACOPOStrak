@@ -122,6 +122,20 @@
         <Variable Name="VisMove_Neg" />
         <Variable Name="VisMove_Pos" />
       </Task>
+      <Task Name="SI">
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="Parameters">
+            <Variable Name="Position" EnableArrayElements="True" />
+          </Variable>
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
+        <Variable Name="x" />
+        <Variable Name="y" />
+        <Variable Name="z" />
+        <Variable Name="diPartyOn" />
+      </Task>
     </Module>
   </DefaultView>
 </OpcUaSource>

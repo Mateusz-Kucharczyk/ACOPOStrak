@@ -11,10 +11,6 @@
 		</Binding>
 		<Binding mode="twoWay">
 			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch2" attribute="enable" />
-		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="ToggleSwitch3" attribute="enable" />
 		</Binding>
 		<Binding mode="oneWay">

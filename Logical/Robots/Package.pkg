@@ -6,5 +6,6 @@
     <Object Type="Program" Language="IEC">DeltaOut</Object>
     <Object Type="File" Private="true">Types.typ</Object>
     <Object Type="Program" Language="IEC">DeltaTurn</Object>
+    <Object Type="Program" Language="IEC">SI</Object>
   </Objects>
 </Package>
