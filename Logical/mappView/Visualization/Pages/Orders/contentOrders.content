@@ -29,6 +29,5 @@
     <Widget xsi:type="widgets.brease.Label" id="CurrentProgramName" top="220" left="772" width="139" zIndex="25" text="Current program name" textColor="rgba(255, 255, 255, 1)" />
     <Widget xsi:type="widgets.brease.Label" id="CurrentRecipeLabel" top="22" left="772" width="290" zIndex="26" text="Current recipe" textColor="rgba(255, 255, 255, 1)" fontSize="24px" />
     <Widget xsi:type="widgets.brease.Label" id="SelectedRecipeLabel" top="321" left="767" width="290" zIndex="27" text="Selected recipe" textColor="rgba(255, 255, 255, 1)" fontSize="24px" />
-    <Widget xsi:type="widgets.brease.Image" id="Image1" top="100" left="610" width="350" height="200" zIndex="28" image="Media/coffin.gif" visible="false" />
   </Widgets>
 </Content>

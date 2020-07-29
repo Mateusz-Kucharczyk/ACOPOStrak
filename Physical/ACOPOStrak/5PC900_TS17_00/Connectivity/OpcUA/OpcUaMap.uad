@@ -28,6 +28,7 @@
         <Variable Name="gCurrentRecipeName" />
         <Variable Name="gVisInput_Broken" />
         <Variable Name="gVisOutput_Broken" />
+        <Variable Name="gBgColor" EnableArrayElements="True" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
@@ -46,9 +47,11 @@
             <Variable Name="JointAxisPosition" EnableArrayElements="True" />
           </Variable>
         </Variable>
+        <Variable Name="diInterrupt" />
       </Task>
       <Task Name="Vis">
         <Variable Name="ShuttlesVisibleFalse" />
+        <Variable Name="New_Variable" />
       </Task>
       <Task Name="DeltaTurn">
         <Variable Name="DeltaParameters">
@@ -119,6 +122,22 @@
         <Variable Name="VisPouring_Time_Small" />
         <Variable Name="VisMove_Neg" />
         <Variable Name="VisMove_Pos" />
+        <Variable Name="Step" />
+        <Variable Name="Stop_With_Execution" />
+      </Task>
+      <Task Name="SI">
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="Parameters">
+            <Variable Name="Position" EnableArrayElements="True" />
+          </Variable>
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
+        <Variable Name="x" />
+        <Variable Name="y" />
+        <Variable Name="z" />
+        <Variable Name="diPartyOn" />
       </Task>
     </Module>
   </DefaultView>

@@ -21,6 +21,7 @@
 		<EventBindingsSet refId="contentAlarms_eventbinding" />
 		<EventBindingsSet refId="contentOrders_eventbinding" />
 		<EventBindingsSet refId="contentAddNewRecipe_eventbinding" />
+		<EventBindingsSet refId="contentNavigation_eventbinding" />
 	</EventBindingsSets>
   <Dialogs>
 		<Dialog refId="dialogLogin" />
