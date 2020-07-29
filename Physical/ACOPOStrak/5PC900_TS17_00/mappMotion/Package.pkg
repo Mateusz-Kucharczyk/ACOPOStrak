@@ -7,5 +7,6 @@
     <Object Type="Package">3AxesDeltaAIn</Object>
     <Object Type="Package">3AxesDeltaAOut</Object>
     <Object Type="Package">4AxesDeltaA</Object>
+    <Object Type="Package">3AxesDeltaASI</Object>
   </Objects>
 </Package>
