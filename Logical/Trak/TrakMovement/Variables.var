@@ -38,6 +38,7 @@ VAR
 	Pouring_Top_Comming : BOOL := FALSE;
 	Pouring_Top_Broken : BOOL := FALSE;
 	Capping_Busy : BOOL := FALSE;
+	Stop_With_Execution : BOOL := FALSE;
 	Capping_Comming : BOOL := FALSE;
 	Capping_Broken : BOOL := FALSE;
 	ManualShuttleReset : INT;

@@ -1,4 +1,5 @@
 VAR
 	MpAlarmXCore_0 : MpAlarmXCore;
 	MpAlarmXHistory_0 : MpAlarmXHistory;
+	TrakStop : BOOL;
 END_VAR

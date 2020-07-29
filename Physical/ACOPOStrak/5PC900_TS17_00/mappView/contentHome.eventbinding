@@ -472,6 +472,20 @@
 					</Target>
 				</Action>
 			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::DeltaIn:diInterrupt">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:Stop_With_Execution">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
 		</EventBinding>
 		<EventBinding id="contentHome.Button2.Click">
 			<Source contentRefId="contentHome" widgetRefId="Button2" xsi:type="widgets.brease.Button.Event" event="Click" />
@@ -485,9 +499,26 @@
 			<EventHandler>
 				<Action>
 
-						<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStop">
-							<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" /> 
-						</Target>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStop">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" /> 
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Button3.Click">
+			<Source contentRefId="contentHome" widgetRefId="Button3" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::DeltaIn:diInterrupt">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:Stop_With_Execution">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
+					</Target>
 				</Action>
 			</EventHandler>
 		</EventBinding>
