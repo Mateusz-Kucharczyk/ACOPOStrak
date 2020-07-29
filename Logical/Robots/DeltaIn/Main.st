@@ -55,11 +55,13 @@ PROGRAM _CYCLIC
 					gBottleInPlace_Input:=TRUE;
 				END_IF;
 				IF gdiInterrupt THEN
-					Step := INTERRUPT;
+						Step := INTERRUPT;
+						MpDelta3Axis_0.Continue := FALSE;
 				END_IF;
 				END_IF;
 			ELSE
 				Step := INTERRUPT;
+				MpDelta3Axis_0.Continue := FALSE;
 			END_IF;
 			
 
