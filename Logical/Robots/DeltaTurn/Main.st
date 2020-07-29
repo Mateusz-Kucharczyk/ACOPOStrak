@@ -53,27 +53,30 @@ PROGRAM _CYCLIC
 			turned := 0;
 			
 		MOVE_PROGRAM:
-			MpDelta4Axis_0.MoveProgram :=TRUE;
-			
-			IF turned<240 THEN
-				turned := turned+8;
-			END_IF;
-			
-			IF MpDelta4Axis_0.MoveDone THEN
-				Step:= WAIT_SHUTTLE;
-				gBottleInPlace_Turn:=TRUE;
-				gShuttleInPlace_Turn := FALSE;
-			END_IF;
-			IF gdiInterrupt THEN
+			IF (gVisTurn_Broken) THEN
+					MpDelta4Axis_0.MoveProgram :=TRUE;
+				
+				IF turned<240 THEN
+					turned := turned+8;
+				END_IF;
+				
+				IF MpDelta4Axis_0.MoveDone THEN
+					Step:= WAIT_SHUTTLE;
+					gBottleInPlace_Turn:=TRUE;
+					gShuttleInPlace_Turn := FALSE;
+				END_IF;
+				IF gdiInterrupt THEN
+					Step := INTERRUPT;
+					MpDelta4Axis_0.Continue := FALSE;
+				END_IF;
+			ELSE
 				Step := INTERRUPT;
 				MpDelta4Axis_0.Continue := FALSE;
 			END_IF;
-					
 		INTERRUPT:
 			MpDelta4Axis_0.Interrupt := TRUE;
-			IF gdiContinue THEN
+			IF gdiContinue AND EDGEPOS(gVisTurn_Broken) THEN
 				MpDelta4Axis_0.Interrupt := FALSE;
-				MpDelta4Axis_0.Continue := FALSE;
 				MpDelta4Axis_0.Continue := TRUE;
 				Step := MOVE_PROGRAM;
 			END_IF;	

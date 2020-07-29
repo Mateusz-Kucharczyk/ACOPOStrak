@@ -1,4 +1,5 @@
 VAR
+	gVisTurn_Broken : BOOL;
 	ShuttleNumber : USINT;
 END_VAR
 (*Assembly interface*)
