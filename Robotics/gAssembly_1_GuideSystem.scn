@@ -2294,7 +2294,7 @@
 		<ParID parid="222" val="-583.013"/>
 		<ParID parid="223" val="0"/>
 	</Object>
-	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::SI:PartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
+	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::AsGlobalPV:gPartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="1000"/>
 		<ParID parid="101" val="1000"/>
 		<ParID parid="102" val="1000"/>
@@ -2333,14 +2333,14 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="-43.1982"/>
-		<ParID parid="211" val="-12.0953"/>
-		<ParID parid="212" val="45.5185"/>
-		<ParID parid="220" val="129.072"/>
-		<ParID parid="221" val="130.754"/>
-		<ParID parid="222" val="-394.001"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
+		<ParID parid="220" val="-4.16334e-14"/>
+		<ParID parid="221" val="-4.16334e-14"/>
+		<ParID parid="222" val="-430.562"/>
 	</Object>
-	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::SI:PartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
+	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::AsGlobalPV:gPartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="505.451"/>
 		<ParID parid="101" val="1461.26"/>
 		<ParID parid="102" val="1105.18"/>
@@ -2379,14 +2379,14 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="-43.1982"/>
-		<ParID parid="211" val="-12.0953"/>
-		<ParID parid="212" val="45.5185"/>
-		<ParID parid="220" val="129.072"/>
-		<ParID parid="221" val="130.754"/>
-		<ParID parid="222" val="-394.001"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
+		<ParID parid="220" val="-4.16334e-14"/>
+		<ParID parid="221" val="-4.16334e-14"/>
+		<ParID parid="222" val="-430.562"/>
 	</Object>
-	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::SI:PartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
+	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::AsGlobalPV:gPartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="1684.79"/>
 		<ParID parid="101" val="641.003"/>
 		<ParID parid="102" val="983.941"/>
@@ -2425,14 +2425,14 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="-43.1982"/>
-		<ParID parid="211" val="-12.0953"/>
-		<ParID parid="212" val="45.5185"/>
-		<ParID parid="220" val="129.072"/>
-		<ParID parid="221" val="130.754"/>
-		<ParID parid="222" val="-394.001"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
+		<ParID parid="220" val="-4.16334e-14"/>
+		<ParID parid="221" val="-4.16334e-14"/>
+		<ParID parid="222" val="-430.562"/>
 	</Object>
-	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::SI:PartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
+	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::AsGlobalPV:gPartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="1559.28"/>
 		<ParID parid="101" val="909.296"/>
 		<ParID parid="102" val="415.924"/>
@@ -2471,14 +2471,14 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="-43.1982"/>
-		<ParID parid="211" val="-12.0953"/>
-		<ParID parid="212" val="45.5185"/>
-		<ParID parid="220" val="129.072"/>
-		<ParID parid="221" val="130.754"/>
-		<ParID parid="222" val="-394.001"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
+		<ParID parid="220" val="-4.16334e-14"/>
+		<ParID parid="221" val="-4.16334e-14"/>
+		<ParID parid="222" val="-430.562"/>
 	</Object>
-	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::SI:PartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
+	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::AsGlobalPV:gPartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="779.94"/>
 		<ParID parid="101" val="1294.07"/>
 		<ParID parid="102" val="501.276"/>
@@ -2517,14 +2517,14 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="-43.1982"/>
-		<ParID parid="211" val="-12.0953"/>
-		<ParID parid="212" val="45.5185"/>
-		<ParID parid="220" val="129.072"/>
-		<ParID parid="221" val="130.754"/>
-		<ParID parid="222" val="-394.001"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
+		<ParID parid="220" val="-4.16334e-14"/>
+		<ParID parid="221" val="-4.16334e-14"/>
+		<ParID parid="222" val="-430.562"/>
 	</Object>
-	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::SI:PartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
+	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::AsGlobalPV:gPartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="97.3115"/>
 		<ParID parid="101" val="1668.73"/>
 		<ParID parid="102" val="469.915"/>
@@ -2563,14 +2563,14 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="-43.1982"/>
-		<ParID parid="211" val="-12.0953"/>
-		<ParID parid="212" val="45.5185"/>
-		<ParID parid="220" val="129.072"/>
-		<ParID parid="221" val="130.754"/>
-		<ParID parid="222" val="-394.001"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
+		<ParID parid="220" val="-4.16334e-14"/>
+		<ParID parid="221" val="-4.16334e-14"/>
+		<ParID parid="222" val="-430.562"/>
 	</Object>
-	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::SI:PartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
+	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::AsGlobalPV:gPartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="-297.731"/>
 		<ParID parid="101" val="1653.98"/>
 		<ParID parid="102" val="1104.34"/>
@@ -2609,14 +2609,14 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="-43.1982"/>
-		<ParID parid="211" val="-12.0953"/>
-		<ParID parid="212" val="45.5185"/>
-		<ParID parid="220" val="129.072"/>
-		<ParID parid="221" val="130.754"/>
-		<ParID parid="222" val="-394.001"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
+		<ParID parid="220" val="-4.16334e-14"/>
+		<ParID parid="221" val="-4.16334e-14"/>
+		<ParID parid="222" val="-430.562"/>
 	</Object>
-	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::SI:PartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
+	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::AsGlobalPV:gPartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="-527.237"/>
 		<ParID parid="101" val="1960.25"/>
 		<ParID parid="102" val="585.847"/>
@@ -2655,12 +2655,12 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="-43.1982"/>
-		<ParID parid="211" val="-12.0953"/>
-		<ParID parid="212" val="45.5185"/>
-		<ParID parid="220" val="129.072"/>
-		<ParID parid="221" val="130.754"/>
-		<ParID parid="222" val="-394.001"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
+		<ParID parid="220" val="-4.16334e-14"/>
+		<ParID parid="221" val="-4.16334e-14"/>
+		<ParID parid="222" val="-430.562"/>
 	</Object>
 </Object>
 <Materials>

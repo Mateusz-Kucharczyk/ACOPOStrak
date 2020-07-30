@@ -32,6 +32,9 @@ PROGRAM _CYCLIC
 	
 	CASE Step OF
 		INIT:
+			MpDelta4Axis_0.Power := FALSE;
+			MpDelta4Axis_0.Home := FALSE;
+			MpDelta4Axis_0.MoveProgram := FALSE;
 			IF gVisPower THEN
 				Step := POWER;
 			END_IF;
@@ -56,26 +59,23 @@ PROGRAM _CYCLIC
 			IF NOT(gVisTurn_Broken) THEN
 					MpDelta4Axis_0.MoveProgram :=TRUE;
 				
-				IF turned<240 THEN
-					turned := turned+8;
-				END_IF;
-				
-				IF MpDelta4Axis_0.MoveDone THEN
-					Step:= WAIT_SHUTTLE;
-					gBottleInPlace_Turn:=TRUE;
-					gShuttleInPlace_Turn := FALSE;
-				END_IF;
-				IF gdiInterrupt THEN
+					//Turning the robot around
+					IF turned<240 THEN
+						turned := turned+8;
+					END_IF;
+					
+					IF MpDelta4Axis_0.MoveDone THEN
+						Step:= WAIT_SHUTTLE;
+						gBottleInPlace_Turn:=TRUE;
+						gShuttleInPlace_Turn := FALSE;
+					END_IF;
+				ELSE
 					Step := INTERRUPT;
 					MpDelta4Axis_0.Continue := FALSE;
-				END_IF;
-			ELSE
-				Step := INTERRUPT;
-				MpDelta4Axis_0.Continue := FALSE;
 			END_IF;
 		INTERRUPT:
 			MpDelta4Axis_0.Interrupt := TRUE;
-			IF gdiContinue AND EDGEPOS(gVisTurn_Broken) THEN
+			IF EDGEPOS(gVisTurn_Broken) THEN
 				MpDelta4Axis_0.Interrupt := FALSE;
 				MpDelta4Axis_0.Continue := TRUE;
 				Step := MOVE_PROGRAM;
@@ -95,8 +95,12 @@ PROGRAM _CYCLIC
 			END_IF;
 		ERROR:
 			
+			MpDelta4Axis_0.MoveProgram := FALSE;
+			MpDelta4Axis_0.ErrorReset := TRUE;
+			
 			IF NOT(MpDelta4Axis_0.Error) THEN
-				Step := INIT;
+				Step := WAIT_SHUTTLE;
+				MpDelta4Axis_0.ErrorReset := FALSE;
 			END_IF;
 
 
