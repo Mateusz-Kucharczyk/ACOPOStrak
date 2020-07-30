@@ -18,6 +18,7 @@ PROGRAM _CYCLIC
 	
 	//DeltaParameters.ProgramName := PName;
 	MpDelta3Axis_0();
+	PartyOn := gPartyOn;
 	
 	IF EDGEPOS(MpDelta3Axis_0.Error) THEN
 		Step := ERROR;
@@ -46,7 +47,7 @@ PROGRAM _CYCLIC
 			END_IF;
 		WAIT_SHUTTLE:
 				
-			IF diPartyOn THEN
+			IF PartyOn THEN
 				Step := MOVE_PROGRAM;
 			ELSE
 				x := 0;
@@ -68,17 +69,19 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 			IF x=360 THEN
-	  			y := y+1;
+	  			
 				IF y=360 THEN
-					z := 360;
+					z := z+4;
 					IF z=360 THEN
 						x := 0;
 						y := 0;
 						z := 0;
 					END_IF;
+				ELSE
+					y := y+4;
 				END_IF;
 			ELSE
-				x := x+8;
+				x := x+4;
 			END_IF;
 			
 		INTERRUPT:

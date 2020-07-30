@@ -1,4 +1,6 @@
 VAR
+	gPartyOn : BOOL;
+	gVisTurn_Broken : BOOL;
 	ShuttleNumber : USINT;
 END_VAR
 (*Assembly interface*)
@@ -51,5 +53,6 @@ VAR
 	gdiContinue : BOOL;
 	gVisOutput_Broken : BOOL := TRUE;
 	gVisInput_Broken : BOOL := TRUE;
+	gBgColor : ARRAY[0..2] OF REAL;
 	gdiInstantStop : BOOL;
 END_VAR

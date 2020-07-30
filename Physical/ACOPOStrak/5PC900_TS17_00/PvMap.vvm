@@ -1,3 +1,4 @@
 VAR_CONFIG
+	::TrakMoveme:VisShuttleStop AT %Q.::Alarms:TrakStop; (*Insert your comment here...*)
 	::TrakMoveme:SvgTranform AT %Q.::svgTransfo:svgBlocksToColor; (*Insert your comment here...*)
 END_VAR

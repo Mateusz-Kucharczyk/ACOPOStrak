@@ -14,7 +14,7 @@
           <Group ID="Monitoring">
             <Property ID="MonitoredPV" Value="::TrakMoveme:VisPouring_Top_Broken" />
             <Group ID="TriggerValues">
-              <Property ID="[0]" Value="TRUE" />
+              <Property ID="[0]" Value="FALSE" />
             </Group>
           </Group>
         </Selector>
@@ -27,14 +27,14 @@
           <Group ID="Monitoring">
             <Property ID="MonitoredPV" Value="::TrakMoveme:VisPouring_Down_Broken" />
             <Group ID="TriggerValues">
-              <Property ID="[0]" Value="TRUE" />
+              <Property ID="[0]" Value="FALSE" />
             </Group>
           </Group>
         </Selector>
       </Group>
       <Group ID="[3]">
         <Property ID="Name" Value="SuddenlyStopAlarm" />
-        <Property ID="Message" Value="Procces was suddenly" />
+        <Property ID="Message" Value="Procces was suddenly stopped" />
       </Group>
       <Group ID="[4]">
         <Property ID="Name" Value="SectorCappingAlarm" />
@@ -44,8 +44,93 @@
           <Group ID="Monitoring">
             <Property ID="MonitoredPV" Value="::TrakMoveme:VisCapping_Broken" />
             <Group ID="TriggerValues">
+              <Property ID="[0]" Value="FALSE" />
+            </Group>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Name" Value="SectorInputAlarm" />
+        <Property ID="Message" Value="Input Sector inefficient" />
+        <Property ID="Code" Value="4" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::gVisInput_Broken" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="FALSE" />
+            </Group>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="SectorIOutputAlarm" />
+        <Property ID="Message" Value="Output Sector inefficient" />
+        <Property ID="Code" Value="5" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::gVisOutput_Broken" />
+            <Group ID="TriggerValues">
+              <Property ID="[0]" Value="FALSE" />
+            </Group>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[7]">
+        <Property ID="Name" Value="ManualWorkAlarm" />
+        <Property ID="Message" Value="Trak is in manual work" />
+        <Property ID="Code" Value="6" />
+        <Property ID="Severity" Value="10" />
+        <Selector ID="Behavior" Value="DiscreteValueMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::TrakMoveme:VisManual" />
+            <Group ID="TriggerValues">
               <Property ID="[0]" Value="TRUE" />
             </Group>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[8]">
+        <Property ID="Name" Value="HighAccelerationAlarm" />
+        <Property ID="Message" Value="High acceleration has been set" />
+        <Property ID="Code" Value="7" />
+        <Property ID="Severity" Value="10" />
+        <Selector ID="Behavior" Value="LevelMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::TrakMoveme:VisAcceleration" />
+            <Selector ID="HighLimitEnable" Value="Static">
+              <Property ID="Limit" Value="37" />
+              <Property ID="LimitText" Value="High acceleration has been set" />
+            </Selector>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[9]">
+        <Property ID="Name" Value="HighDecelerationAlarm" />
+        <Property ID="Message" Value="High deceleration has been set" />
+        <Property ID="Code" Value="9" />
+        <Property ID="Severity" Value="10" />
+        <Selector ID="Behavior" Value="LevelMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::TrakMoveme:VisDeceleration" />
+            <Selector ID="HighLimitEnable" Value="Static">
+              <Property ID="Limit" Value="37" />
+              <Property ID="LimitText" Value="High deceleration has been set" />
+            </Selector>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[10]">
+        <Property ID="Name" Value="HighVelocityAlarm" />
+        <Property ID="Message" Value="High velocity has been set" />
+        <Property ID="Code" Value="10" />
+        <Property ID="Severity" Value="10" />
+        <Selector ID="Behavior" Value="LevelMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::TrakMoveme:VisVelocity" />
+            <Selector ID="HighLimitEnable" Value="Static">
+              <Property ID="Limit" Value="3.5" />
+              <Property ID="LimitText" Value="High velocity has been set" />
+            </Selector>
           </Group>
         </Selector>
       </Group>

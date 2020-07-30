@@ -364,13 +364,6 @@
 			<Source xsi:type="widgets.brease.ToggleSwitch.Event" contentRefId="contentHome" widgetRefId="ToggleSwitch1" event="ValueChanged" />
 			<EventHandler>
 				<Action>
-					<Target xsi:type="widgets.brease.ToggleSwitch.Action" contentRefId="contentHome" widgetRefId="ToggleSwitch2">
-						<Method xsi:type="widgets.brease.ToggleSwitch.Action.SetValueBool" value="true" />
-					</Target>
-				</Action>
-			</EventHandler>
-			<EventHandler>
-				<Action>
 					<Target xsi:type="widgets.brease.ToggleSwitch.Action" contentRefId="contentHome" widgetRefId="ToggleSwitch3">
 						<Method xsi:type="widgets.brease.ToggleSwitch.Action.SetValueBool" value="true" />
 					</Target>
@@ -420,14 +413,14 @@
 			<EventHandler condition="newValue = 0">
 				<Action>
 					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottleSizeLabel">
-						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderSmall" />
+						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderLarge" />
 					</Target>
 				</Action>
 			</EventHandler>
 			<EventHandler condition="newValue = 1">
 				<Action>
 					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottleSizeLabel">
-						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderLarge" />
+						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderSmall" />
 					</Target>
 				</Action>
 			</EventHandler>
@@ -472,6 +465,20 @@
 					</Target>
 				</Action>
 			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::DeltaIn:diInterrupt">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:Stop_With_Execution">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
 		</EventBinding>
 		<EventBinding id="contentHome.Button2.Click">
 			<Source contentRefId="contentHome" widgetRefId="Button2" xsi:type="widgets.brease.Button.Event" event="Click" />
@@ -487,6 +494,23 @@
 
 					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStop">
 						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" /> 
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Button3.Click">
+			<Source contentRefId="contentHome" widgetRefId="Button3" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::DeltaIn:diInterrupt">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:Stop_With_Execution">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
 					</Target>
 				</Action>
 			</EventHandler>
