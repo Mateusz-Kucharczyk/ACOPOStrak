@@ -1022,6 +1022,9 @@
       </tuv>
     </tu>
     <tu tuid="btnStopContinue">
+      <tuv xml:lang="uk">
+        <seg>Зупинка після виконання програми</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Zatrzymaj po wykonaniu programu</seg>
       </tuv>
@@ -1030,6 +1033,9 @@
       </tuv>
     </tu>
     <tu tuid="orderPcgNo">
+      <tuv xml:lang="uk">
+        <seg>Кількість пачок</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Ilość zgrzewek </seg>
       </tuv>
@@ -1038,6 +1044,9 @@
       </tuv>
     </tu>
     <tu tuid="orderBtlInPckNo">
+      <tuv xml:lang="uk">
+        <seg>Кількість пляшок в пачці</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Ilość butelek w zgrzewce </seg>
       </tuv>
@@ -1046,6 +1055,9 @@
       </tuv>
     </tu>
     <tu tuid="orderBottleSize">
+      <tuv xml:lang="uk">
+        <seg>Розмір пляшки</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Rozmiar butelki </seg>
       </tuv>
@@ -1054,6 +1066,9 @@
       </tuv>
     </tu>
     <tu tuid="orderDrinkColor">
+      <tuv xml:lang="uk">
+        <seg>Колір напою</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Kolor napoju </seg>
       </tuv>
@@ -1062,6 +1077,9 @@
       </tuv>
     </tu>
     <tu tuid="orderSave">
+      <tuv xml:lang="uk">
+        <seg>Зберегти</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Zapisz</seg>
       </tuv>
@@ -1070,6 +1088,9 @@
       </tuv>
     </tu>
     <tu tuid="orderLoad">
+      <tuv xml:lang="uk">
+        <seg>Завантажити</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Załaduj</seg>
       </tuv>
@@ -1078,6 +1099,9 @@
       </tuv>
     </tu>
     <tu tuid="orderRefresh">
+      <tuv xml:lang="uk">
+        <seg>Оновити</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Odśwież </seg>
       </tuv>
@@ -1086,6 +1110,9 @@
       </tuv>
     </tu>
     <tu tuid="orderEnterName">
+      <tuv xml:lang="uk">
+        <seg> введіть ім’я</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Wprowadź nazwę </seg>
       </tuv>
@@ -1094,6 +1121,9 @@
       </tuv>
     </tu>
     <tu tuid="orderRename">
+      <tuv xml:lang="uk">
+        <seg>змініть ім’я</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Zmień nazwę </seg>
       </tuv>
@@ -1102,6 +1132,9 @@
       </tuv>
     </tu>
     <tu tuid="orderEnterNewName">
+      <tuv xml:lang="uk">
+        <seg>Введіть нове ім’я</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Wprowadź nową nazwę </seg>
       </tuv>
@@ -1110,6 +1143,9 @@
       </tuv>
     </tu>
     <tu tuid="orderAdd">
+      <tuv xml:lang="uk">
+        <seg>Додайте</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Dodaj</seg>
       </tuv>
@@ -1117,15 +1153,10 @@
         <seg>Add</seg>
       </tuv>
     </tu>
-    <tu tuid="orderDelete">
-      <tuv xml:lang="pl">
-        <seg>Usuń</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Delete</seg>
-      </tuv>
-    </tu>
     <tu tuid="orderLarge">
+      <tuv xml:lang="uk">
+        <seg>великий</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Duże </seg>
       </tuv>
@@ -1134,11 +1165,25 @@
       </tuv>
     </tu>
     <tu tuid="orderSmall">
+      <tuv xml:lang="uk">
+        <seg>малий</seg>
+      </tuv>
       <tuv xml:lang="pl">
         <seg>Małe</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Small</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderDelete">
+      <tuv xml:lang="uk">
+        <seg>Видалити</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Usuń</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Delete</seg>
       </tuv>
     </tu>
     <tu tuid="recipeDamage">
@@ -1177,6 +1222,62 @@
       </tuv>
       <tuv xml:lang="en">
         <seg>Shuttle</seg>
+      </tuv>
+    </tu>
+    <tu tuid="currentProgram">
+      <tuv xml:lang="ja">
+        <seg>現在のレシピ</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Поточний рецепт</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Aktualny przepis</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Current recipe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="LoadedProgram">
+      <tuv xml:lang="ja">
+        <seg>選択したレシピ</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Вибраний рецепт</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wybrany przepis</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Selected recipe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="CurrentProgName">
+      <tuv xml:lang="ja">
+        <seg>現在のプログラム名</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Поточна назва програми</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Bieżąca nazwa programu</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Current program name</seg>
+      </tuv>
+    </tu>
+    <tu tuid="createnew">
+      <tuv xml:lang="ja">
+        <seg>新しく作る</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Створити новий</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Stwórz nowy</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Create new</seg>
       </tuv>
     </tu>
   </body>

@@ -11,7 +11,6 @@ VAR
 	DeltaInit : BOOL := FALSE;
 	DeltaFor : USINT;
 	Delta_Shuttle : USINT := 0;
-	Delta_Turn : BOOL := FALSE;
 END_VAR
 (*FUB*)
 VAR
@@ -67,6 +66,5 @@ VAR
 	VisMove_Pos : BOOL := FALSE;
 	VisMove_Neg : BOOL;
 	SvgTranform : ARRAY[0..5] OF USINT;
-	zmienna : USINT := 1;
-	zastopuj : BOOL;
+	zmienna : INT;
 END_VAR
