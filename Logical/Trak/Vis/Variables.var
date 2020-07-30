@@ -1,0 +1,12 @@
+VAR
+	ShuttlesVisibleFalse : BOOL := FALSE;
+	pUserData : REFERENCE TO ShuttleUserData_typ;
+	SizeofVis : UDINT := 0;
+	NumVisShuttle : USINT := 0;
+	i : USINT := 0;
+	Vizu : Vis_type;
+	BlueChangeRate : REAL;
+	GreenChangeRate : REAL;
+	RedChangeRate : REAL;
+	New_Variable : INT;
+END_VAR

@@ -1,0 +1,70 @@
+VAR
+	SimShuttlePosition : ARRAY[1..MAX_NUM_SHUTTLES] OF LREAL;
+END_VAR
+(*sequence control*)
+VAR
+	Step : StepEnum;
+	Step_Sector : StepSector;
+	ShuttleAxis : ARRAY[1..MAX_NUM_SHUTTLES] OF McAxisType;
+	CntShuttle : UINT;
+	i : INT;
+	DeltaInit : BOOL := FALSE;
+	DeltaFor : USINT;
+	Delta_Shuttle : USINT := 0;
+END_VAR
+(*FUB*)
+VAR
+	MC_BR_AsmPowerOn_AcpTrak_0 : MC_BR_AsmPowerOn_AcpTrak;
+	MC_BR_AsmPowerOff_AcpTrak_0 : MC_BR_AsmPowerOff_AcpTrak;
+	MC_BR_SecAddShuttle_AcpTrak_0 : MC_BR_SecAddShuttle_AcpTrak;
+	MC_BR_AsmGetShuttle_AcpTrak_0 : MC_BR_AsmGetShuttle_AcpTrak;
+	MC_BR_RoutedMoveVel_AcpTrak_0 : MC_BR_RoutedMoveVel_AcpTrak;
+	MC_BR_RoutedMoveAbs_AcpTrak_0 : MC_BR_RoutedMoveAbs_AcpTrak;
+	MC_BR_AsmReadStatus_AcpTrak_0 : MC_BR_AsmReadStatus_AcpTrak;
+	MC_BR_AsmReset_AcpTrak_0 : MC_BR_AsmReset_AcpTrak;
+	MC_BR_ShReadInfo_AcpTrak_0 : MC_BR_ShReadInfo_AcpTrak;
+	MC_Stop_0 : MC_Stop;
+	SizeofUserdata : UDINT;
+	Shuttles_exist : BOOL;
+END_VAR
+(*Timers*)
+VAR
+	TON_Pouring_Down : TON;
+	TON_Pouring_Top : TON;
+	TON_Delta : TON := (PT:=T#12s);
+END_VAR
+(*Pouring and Capping*)
+VAR
+	Pouring_Down_Busy : BOOL := FALSE;
+	Pouring_Down_Comming : BOOL := FALSE;
+	Pouring_Down_Broken : BOOL := FALSE;
+	Pouring_Top_Busy : BOOL := FALSE;
+	Pouring_Top_Comming : BOOL := FALSE;
+	Pouring_Top_Broken : BOOL := FALSE;
+	Capping_Busy : BOOL := FALSE;
+	Stop_With_Execution : BOOL := FALSE;
+	Capping_Comming : BOOL := FALSE;
+	Capping_Broken : BOOL := FALSE;
+	ManualShuttleReset : INT;
+END_VAR
+(*Visualization*)
+VAR
+	VisShuttleStart : BOOL := FALSE;
+	VisShuttleStop : BOOL := FALSE;
+	VisCapping_Broken : BOOL := TRUE;
+	VisPouring_Top_Broken : BOOL := TRUE;
+	VisPouring_Down_Broken : BOOL := TRUE;
+	VisPouring_Time_Large : REAL := 4.0;
+	VisPouring_Time_Small : REAL := 2.0;
+	VisVelocity : REAL := 2.0;
+	VisAcceleration : REAL := 10;
+	VisDeceleration : REAL := 5;
+	VisManual : BOOL;
+	VisShuttle : USINT := 1;
+	VisManualVelocity : REAL := 1.0;
+	VisManualSectorTop : BOOL := FALSE;
+	VisMove_Pos : BOOL := FALSE;
+	VisMove_Neg : BOOL;
+	NullOrder : BOOL := FALSE;
+	SvgTranform : ARRAY[0..5] OF USINT;
+END_VAR

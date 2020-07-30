@@ -1,0 +1,14 @@
+
+TYPE
+	StepType : 
+		(
+		INIT,
+		POWER,
+		HOME,
+		WAIT_SHUTTLE,
+		MOVE_PROGRAM,
+		INTERRUPT,
+		STOP,
+		ERROR
+		);
+END_TYPE

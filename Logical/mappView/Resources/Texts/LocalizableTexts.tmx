@@ -1,0 +1,1284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">IAT</prop>
+  </header>
+  <body>
+    <tu tuid="Samples.HELLO_WORLD">
+      <tuv xml:lang="ja">
+        <seg>こんにちは、世界！</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Привіт Світ!</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Witaj świecie!</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Hello world!</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Witaj świecie!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="navBtnHome">
+      <tuv xml:lang="ja">
+        <seg>メインページ</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Головна</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Strona główna</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Home</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Strona główna</seg>
+      </tuv>
+    </tu>
+    <tu tuid="navBtnAlarm">
+      <tuv xml:lang="ja">
+        <seg>お知らせ</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Тривоги</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Alarmy</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Alarms</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Alarmy</seg>
+      </tuv>
+    </tu>
+    <tu tuid="navBtnOrders">
+      <tuv xml:lang="ja">
+        <seg>注文</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>замовлення</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zamówienia</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Orders</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zamówienia</seg>
+      </tuv>
+    </tu>
+    <tu tuid="navBtnSettings">
+      <tuv xml:lang="ja">
+        <seg>設定</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>налаштування</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Ustawienia</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Settings</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Ustawienia</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnLabelLoggedAs">
+      <tuv xml:lang="ja">
+        <seg>現在のユーザー：</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>увійшли як:</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zalogowano jako:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Logged as:</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zalogowano jako:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnBtnLogin">
+      <tuv xml:lang="ja">
+        <seg>ログイン</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Увійти</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zaloguj się</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Login</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zaloguj się</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnBtnLogout">
+      <tuv xml:lang="ja">
+        <seg>ログアウト</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>вийти</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wyloguj się </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Logout</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wyloguj się </seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetUsername">
+      <tuv xml:lang="ja">
+        <seg>ニックネーム</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Ім'я користувача</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Nazwa użytkownika</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Username</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Nazwa użytkownika</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetPassword">
+      <tuv xml:lang="ja">
+        <seg>パスワード</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>пароль</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Hasło</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Password</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Hasło</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetSuccess">
+      <tuv xml:lang="ja">
+        <seg>ログイン成功</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>успішно увійшов</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zalogowano pomyślnie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Login successful</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zalogowano pomyślnie</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetChange">
+      <tuv xml:lang="ja">
+        <seg>...にユーザー交代</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Користувача змінено на:</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zmienono użytkowanika na:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User changed to: </seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zmienono użytkowanika na:</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetAuth">
+      <tuv xml:lang="ja">
+        <seg>ログイン失敗</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>увійти не вдалося</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Nie udało się zalogować</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Authorisation failed</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Nie udało się zalogować</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnWidgetFail">
+      <tuv xml:lang="ja">
+        <seg>設定失敗</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Помилка налаштування користувача</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Ustawienie użytkownika się nie powiodło</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Set user failed</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Ustawienie użytkownika się nie powiodło</seg>
+      </tuv>
+    </tu>
+    <tu tuid="switchBtnTextOff">
+      <tuv xml:lang="ja">
+        <seg>消</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>вик.</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wył.</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Off</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wył.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="switchBtnTextOn">
+      <tuv xml:lang="ja">
+        <seg>点</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>вві</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wł</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>On</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wł</seg>
+      </tuv>
+    </tu>
+    <tu tuid="statusLabelWorking">
+      <tuv xml:lang="ja">
+        <seg>操業</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>робочий</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Włączony</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Working</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Pracuje</seg>
+      </tuv>
+    </tu>
+    <tu tuid="statusLabelError">
+      <tuv xml:lang="ja">
+        <seg>エラーです。お知らせをご覧ください。</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Помилка. Перевірте сигнали тривоги</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Błąd. Sprawdź alarmy</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error. Check alarms</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Błąd. Sprawdź alarmy</seg>
+      </tuv>
+    </tu>
+    <tu tuid="statusLabelOff">
+      <tuv xml:lang="ja">
+        <seg>中止</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>виключено</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wyłączony</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Power off</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wyłączony</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnTwistOn">
+      <tuv xml:lang="ja">
+        <seg>回す</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>закручування</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zakręcaj</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Twist on</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zakręcaj</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnPourRed">
+      <tuv xml:lang="ja">
+        <seg>赤</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>червоний</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Czerwony</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Red</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Czerwony</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnPourGreen">
+      <tuv xml:lang="ja">
+        <seg>緑</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>зелений</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zielony</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Green</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zielony</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnPourBlue">
+      <tuv xml:lang="ja">
+        <seg>青</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>синій</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Niebieski</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Blue</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Niebieski</seg>
+      </tuv>
+    </tu>
+    <tu tuid="tabTextStatus">
+      <tuv xml:lang="ja">
+        <seg>ステータス</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>статус</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Status</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Status</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Status</seg>
+      </tuv>
+    </tu>
+    <tu tuid="tabTextControl">
+      <tuv xml:lang="ja">
+        <seg>操作</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>контроль</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Sterowanie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Control</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Sterowanie</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationInput">
+      <tuv xml:lang="ja">
+        <seg>載荷</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>завантаження</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Załadunek</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Input</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Załadunek</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationOutput">
+      <tuv xml:lang="ja">
+        <seg>荷降ろし</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>розвантаження</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wyładunek</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Output</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wyładunek</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationNozzle">
+      <tuv xml:lang="ja">
+        <seg>注ぎ</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>наливання</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Nalewanie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Nozzle</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Nalewanie</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationNozzleUp">
+      <tuv xml:lang="ja">
+        <seg>サイドコンベヤ―</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>бічна доріжка</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>poboczny trak</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>secondary track</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>poboczny trak</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationNozzleDown">
+      <tuv xml:lang="ja">
+        <seg>メインコンベヤ―</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Головна доріжка</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>główny trak</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>main track</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>główny trak</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationTwistOn">
+      <tuv xml:lang="ja">
+        <seg>回し</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>закручування</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zakręcanie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Twist On</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zakręcanie</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStationConveyor">
+      <tuv xml:lang="ja">
+        <seg>トランスポーター</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>транспортер</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Transporter</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Conveyor</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Transporter</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStation">
+      <tuv xml:lang="ja">
+        <seg>ステーション</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>станція</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Stacja </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Station</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Stacja </seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblStatus">
+      <tuv xml:lang="ja">
+        <seg>ステーションのステータス</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>статус станції</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Status stacji</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Station status</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Status stacji</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblControlMode">
+      <tuv xml:lang="ja">
+        <seg>手動操作</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>ручне управління</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Sterowanie ręczne</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Manual control</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Sterowanie ręczne</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnAcknowledge">
+      <tuv xml:lang="ja">
+        <seg>確認</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg> підтвердити</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zatwierdź</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Acknowledge</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zatwierdź</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnAcknowledgeAll">
+      <tuv xml:lang="ja">
+        <seg>全部確認</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>підтвердити все</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zatwierdź wszystkie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Acknowledge All</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zatwierdź wszystkie</seg>
+      </tuv>
+    </tu>
+    <tu tuid="tabAlarm">
+      <tuv xml:lang="ja">
+        <seg>現行</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>поточний</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Bieżące</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Current</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Bieżące</seg>
+      </tuv>
+    </tu>
+    <tu tuid="tabAlarmHistory">
+      <tuv xml:lang="ja">
+        <seg>歴史</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>історія</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Historia</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>History</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Historia</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListTimestamp">
+      <tuv xml:lang="ja">
+        <seg>日付</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>дата</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Data</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Date</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Data</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListMessage">
+      <tuv xml:lang="ja">
+        <seg>内容</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>повідомлення</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wiadomość</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Message</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wiadomość</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListCategory">
+      <tuv xml:lang="ja">
+        <seg>項目</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>категорія</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Kategoria</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Category</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Kategoria</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListOldStage">
+      <tuv xml:lang="ja">
+        <seg>前ステータス</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Старий статус</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Stary status</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Old state</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Stary status</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListNewStage">
+      <tuv xml:lang="ja">
+        <seg>現行ステータス</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>поточний статус</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Bieżący status</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>New state</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Bieżący status</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListBtnNext">
+      <tuv xml:lang="ja">
+        <seg>次へ</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>наступний</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Następny</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Next</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Następny</seg>
+      </tuv>
+    </tu>
+    <tu tuid="alarmListBtnPrevious">
+      <tuv xml:lang="ja">
+        <seg>前へ</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Попередній</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Poprzedni</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Previous</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Poprzedni</seg>
+      </tuv>
+    </tu>
+    <tu tuid="msgBoxMsg">
+      <tuv xml:lang="ja">
+        <seg>認定できません。</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>У вас недостатньо дозволів</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Nie masz wystarczających uprawnień</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>You don't have permission </seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Nie masz wystarczających uprawnień</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingLanguage">
+      <tuv xml:lang="ja">
+        <seg>言語</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Мова</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Język</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Language</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Język</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingNozzleTimeLarge">
+      <tuv xml:lang="ja">
+        <seg>注ぎ時間 
+大きい</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Час наливання - 
+великий</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Czas nalewania - duże</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Pouring time - Large</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Czas nalewania</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingNozzleTimeSmall">
+      <tuv xml:lang="ja">
+        <seg>注ぎ時間 
+小さい</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Час наливання - 
+малий</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Czas nalewania - małe</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Pouring time - small</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Czas zakręcania</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingTrakVelocity">
+      <tuv xml:lang="ja">
+        <seg>コンベアの速度</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Швидкість пиляння</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Prękdkość traka</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Track velocity </seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Prękdkość traka</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingTrakAcceleration">
+      <tuv xml:lang="ja">
+        <seg>コンベヤ―の減速</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>швидкість доріжки</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Przyśpieszenie traka</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Track acceleration</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Przyśpieszenie traka</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingMeasurmentUnit">
+      <tuv xml:lang="pl">
+        <seg>Jednostki</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Units</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Jednostki</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lblShuttle">
+      <tuv xml:lang="ja">
+        <seg>シャトル番号</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>візок №</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wózek nr</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Shuttle No.</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Wózek nr</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnForward">
+      <tuv xml:lang="ja">
+        <seg>後ろに</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>вперед</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Naprzód</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Forward</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Naprzód</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnBackward">
+      <tuv xml:lang="ja">
+        <seg>前に</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Назад</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Do tyłu</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Backward</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Do tyłu</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingTrakDeceleration">
+      <tuv xml:lang="ja">
+        <seg>コンベヤ―の減速</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Зменшити швидкість ременя</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zmniejszanie prędkości traka</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Track deceleration</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zmniejszanie prędkości traka</seg>
+      </tuv>
+    </tu>
+    <tu tuid="dialogBogHeader">
+      <tuv xml:lang="ja">
+        <seg>サインインしてください。</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Будь ласка, увійдіть</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Proszę się zalogować</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Please login</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnStop">
+      <tuv xml:lang="ja">
+        <seg>やめる</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Стій</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Stop</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stop</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnStart">
+      <tuv xml:lang="ja">
+        <seg>
+開始</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Старт</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Start</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Start</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnStopContinue">
+      <tuv xml:lang="uk">
+        <seg>Зупинка після виконання програми</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zatrzymaj po wykonaniu programu</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stop after program execution</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderPcgNo">
+      <tuv xml:lang="uk">
+        <seg>Кількість пачок</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Ilość zgrzewek </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Number of packages</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderBtlInPckNo">
+      <tuv xml:lang="uk">
+        <seg>Кількість пляшок в пачці</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Ilość butelek w zgrzewce </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Bottles per package</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderBottleSize">
+      <tuv xml:lang="uk">
+        <seg>Розмір пляшки</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Rozmiar butelki </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Bottle size</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderDrinkColor">
+      <tuv xml:lang="uk">
+        <seg>Колір напою</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Kolor napoju </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Drink color</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderSave">
+      <tuv xml:lang="uk">
+        <seg>Зберегти</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zapisz</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Save</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderLoad">
+      <tuv xml:lang="uk">
+        <seg>Завантажити</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Załaduj</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Load</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderRefresh">
+      <tuv xml:lang="uk">
+        <seg>Оновити</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Odśwież </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Refresh</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderEnterName">
+      <tuv xml:lang="uk">
+        <seg> введіть ім’я</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wprowadź nazwę </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Enter name</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderRename">
+      <tuv xml:lang="uk">
+        <seg>змініть ім’я</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zmień nazwę </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Rename</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderEnterNewName">
+      <tuv xml:lang="uk">
+        <seg>Введіть нове ім’я</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wprowadź nową nazwę </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Enter new name</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderAdd">
+      <tuv xml:lang="uk">
+        <seg>Додайте</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Dodaj</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Add</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderLarge">
+      <tuv xml:lang="uk">
+        <seg>великий</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Duże </seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Large</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderSmall">
+      <tuv xml:lang="uk">
+        <seg>малий</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Małe</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Small</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderDelete">
+      <tuv xml:lang="uk">
+        <seg>Видалити</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Usuń</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Delete</seg>
+      </tuv>
+    </tu>
+    <tu tuid="recipeDamage">
+      <tuv xml:lang="pl">
+        <seg>Struktura XML może być uszkodzona. Sprawdź wszystkie tagi!</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>XML structure may be damaged. Check if all tags are correct!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="recipeMissing">
+      <tuv xml:lang="pl">
+        <seg>Może brakować pliku lub struktury XML!</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>The file or XML structure may be missing!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="recipeEnter">
+      <tuv xml:lang="pl">
+        <seg>Wprowadź nową nazwę pliku!</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>You must enter new file name!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="nameShuttle">
+      <tuv xml:lang="ja">
+        <seg>シャトル</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>візок</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wózek</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Shuttle</seg>
+      </tuv>
+    </tu>
+    <tu tuid="currentProgram">
+      <tuv xml:lang="ja">
+        <seg>現在のレシピ</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Поточний рецепт</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Aktualny przepis</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Current recipe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="LoadedProgram">
+      <tuv xml:lang="ja">
+        <seg>選択したレシピ</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Вибраний рецепт</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Wybrany przepis</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Selected recipe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="CurrentProgName">
+      <tuv xml:lang="ja">
+        <seg>現在のプログラム名</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Поточна назва програми</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Bieżąca nazwa programu</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Current program name</seg>
+      </tuv>
+    </tu>
+    <tu tuid="createnew">
+      <tuv xml:lang="ja">
+        <seg>新しく作る</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>Створити новий</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Stwórz nowy</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Create new</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

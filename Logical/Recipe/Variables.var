@@ -1,0 +1,32 @@
+(*FB's*)
+VAR
+	MpRecipeXML_0 : MpRecipeXml;
+	MpRecipeRegPar_0 : MpRecipeRegPar;
+	MpRecipeUI_0 : MpRecipeUI;
+END_VAR
+(*Structures*)
+VAR
+	UISetup : MpRecipeUISetupType;
+	UIConnect : MpRecipeUIConnectType;
+	NewRecipe : Order_type;
+	ClientOrder : Order_type; (*Currently loaded recipe*)
+END_VAR
+(*IO's*)
+VAR
+	diErrorReset : BOOL;
+END_VAR
+(*Other*)
+VAR
+	WidgetString : ARRAY[0..19] OF STRING[255];
+	Filename : STRING[80];
+	i : INT; (*Loop iterator*)
+	PVName : STRING[100];
+	Temp : STRING[2]; (*Temporarly stores interator converted to string*)
+	diLoad : BOOL;
+END_VAR
+(*Error flags for message box*)
+VAR
+	ErrorStatus : Error_type := NO_ERROR;
+	diAdd : BOOL;
+	coffinFlag : BOOL;
+END_VAR

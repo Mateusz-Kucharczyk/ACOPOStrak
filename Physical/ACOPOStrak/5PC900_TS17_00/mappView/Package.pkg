@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio Version=4.7.3.93 SP?>
 <Package SubType="mappViewControl" PackageType="mappViewControl" xmlns="http://br-automation.co.at/AS/Package">
-  <Objects />
+  <Objects>
+    <Object Type="File">Config.mappviewcfg</Object>
+    <Object Type="File">Visualizat.vis</Object>
+    <Object Type="File">contentTop.eventbinding</Object>
+    <Object Type="File">contentLogin.eventbinding</Object>
+    <Object Type="File">BindingTopContent.binding</Object>
+    <Object Type="File">contentHome.eventbinding</Object>
+    <Object Type="File">BindingHomePage.binding</Object>
+    <Object Type="File">contentAlarms.eventbinding</Object>
+    <Object Type="File">contentOrders.eventbinding</Object>
+    <Object Type="File">newRecipeDialog.binding</Object>
+    <Object Type="File">contentAddNewRecipe.eventbinding</Object>
+    <Object Type="File">contentNavigation.eventbinding</Object>
+  </Objects>
 </Package>

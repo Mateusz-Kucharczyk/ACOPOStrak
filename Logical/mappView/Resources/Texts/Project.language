@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="en" Type="Language">
+    <Property ID="LanguageName" Value="English" />
+    <Property ID="NativeName" Value="English" />
+    <Property ID="IsDesignLanguage" Value="TRUE" />
+  </Element>
+  <Element ID="pl" Type="Language">
+    <Property ID="LanguageName" Value="Polish" />
+    <Property ID="NativeName" Value="Polski" />
+  </Element>
+  <Element ID="uk" Type="Language">
+    <Property ID="LanguageName" Value="Ukrainian" />
+    <Property ID="NativeName" Value="українська" />
+  </Element>
+  <Element ID="ja" Type="Language">
+    <Property ID="LanguageName" Value="Japanese" />
+    <Property ID="NativeName" Value="日本語" />
+  </Element>
+</Configuration>

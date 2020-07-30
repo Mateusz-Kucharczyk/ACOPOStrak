@@ -1,0 +1,17 @@
+(*FB's*)
+VAR
+	DeltaParameters : MpDelta3AxisParType;
+	MpDelta3Axis_0 : MpDelta3Axis;
+END_VAR
+(*IO's*)
+VAR
+	diErrorReset : BOOL;
+END_VAR
+(*Other*)
+VAR
+	Step : StepType;
+	BottlesPerPack : USINT := 1;
+	ProgressBar : INT;
+	gBottlesDone : INT;
+	diStart : BOOL;
+END_VAR

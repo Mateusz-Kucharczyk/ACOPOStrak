@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="contentOrders_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="EventBinding_1">
+      <Source xsi:type="opcUa.Event" refId="::Recipe:ClientOrder.bottleSize" event="ValueChanged" />
+      <EventHandler condition="newValue = 0">
+        <Action>
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label1">
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderLarge" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="newValue = 1">
+        <Action>
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label1">
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderSmall" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_2">
+      <Source xsi:type="opcUa.Event" refId="::Recipe:ClientOrder.drinkColor" event="ValueChanged" />
+      <EventHandler condition="newValue = 0">
+        <Action>
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label2">
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourRed" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="newValue = 1">
+        <Action>
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label2">
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourGreen" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="newValue = 2">
+        <Action>
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label2">
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourBlue" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_3">
+      <Source xsi:type="opcUa.Event" refId="::AsGlobalPV:gOrder.bottleSize" event="ValueChanged" />
+      <EventHandler condition="newValue = 0">
+        <Action>
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label3">
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderLarge" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="newValue = 1">
+        <Action>
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label3">
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderSmall" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_4">
+      <Source xsi:type="opcUa.Event" refId="::AsGlobalPV:gOrder.drinkColor" event="ValueChanged" />
+      <EventHandler condition="newValue = 0">
+        <Action>
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label4">
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourRed" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="newValue = 1">
+        <Action>
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label4">
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourGreen" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="newValue = 2">
+        <Action>
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label4">
+            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourBlue" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="contentOrders.ListBox1.Click">
+      <Source xsi:type="widgets.brease.ListBox.Event" contentRefId="contentOrders" widgetRefId="ListBox1" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::Recipe:UIConnect.Recipe.Load">
+            <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_6">
+      <Source xsi:type="opcUa.Event" refId="::Recipe:ErrorStatus" event="ValueChanged" />
+      <EventHandler condition="newValue = 1">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="The file or XML structure inside it may be missing!" header="File missing" icon="Error" />
+          </Target>
+          <Result>
+            <ResultHandler>
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::Recipe:diErrorReset">
+                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+                </Target>
+              </Action>
+            </ResultHandler>
+          </Result>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="newValue = 2">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="You must enter new file name!" header="No new recipe name" icon="Error" />
+          </Target>
+          <Result>
+            <ResultHandler>
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::Recipe:diErrorReset">
+                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+                </Target>
+              </Action>
+            </ResultHandler>
+          </Result>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="newValue = 3">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="XML structure may be damaged. Check if all tags are correct!" header="XML structure damaged" icon="Error" />
+          </Target>
+          <Result>
+            <ResultHandler>
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::Recipe:diErrorReset">
+                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+                </Target>
+              </Action>
+            </ResultHandler>
+          </Result>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="contentOrders.CreateNewRecipeButton.Click">
+      <Source xsi:type="widgets.brease.PushButton.Event" contentRefId="contentOrders" widgetRefId="CreateNewRecipeButton" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="addNewRecipeDialog" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="coffinBinding">
+      <Source xsi:type="opcUa.Event" refId="::Recipe:coffinFlag" event="ValueChanged" />
+      <EventHandler condition="newValue">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="coffinPop" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

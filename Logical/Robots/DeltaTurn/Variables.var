@@ -1,0 +1,7 @@
+VAR
+	DeltaParameters : MpDelta4AxisParType;
+	MpDelta4Axis_0 : MpDelta4Axis;
+	Step : StepType;
+	diErrorReset : BOOL;
+	turned : UINT;
+END_VAR

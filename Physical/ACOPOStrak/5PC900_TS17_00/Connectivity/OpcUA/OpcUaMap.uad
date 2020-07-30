@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource FileVersion="7" ArVersion="C4.72">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases>
+      <EURanges Id="1">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+          <High ValueProvider="Const">6</High>
+        </EURange>
+      </EURanges>
+    </EURangesAliases>
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView>
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="ShuttleNumber" />
+        <Variable Name="gOrder">
+          <Variable Name="numberOfPackages" />
+          <Variable Name="bottlesPerPackage" />
+          <Variable Name="bottleSize" />
+          <Variable Name="drinkColor" />
+        </Variable>
+        <Variable Name="gProcessFinished" />
+        <Variable Name="gVisPower" />
+        <Variable Name="gCurrentRecipeName" />
+        <Variable Name="gVisInput_Broken" />
+        <Variable Name="gVisOutput_Broken" />
+        <Variable Name="gBgColor" EnableArrayElements="True" />
+        <Variable Name="gPartyOn" />
+      </GlobalVariables>
+      <Task Name="svgTransfo">
+        <Variable Name="tranformation" />
+        <Variable Name="svgBlocksToColor" EnableArrayElements="True" />
+      </Task>
+      <Task Name="DeltaOut">
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
+        <Variable Name="ProgressBar" />
+        <Variable Name="diStart" />
+      </Task>
+      <Task Name="DeltaIn">
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
+      </Task>
+      <Task Name="Vis">
+        <Variable Name="ShuttlesVisibleFalse" />
+        <Variable Name="New_Variable" />
+      </Task>
+      <Task Name="DeltaTurn">
+        <Variable Name="DeltaParameters">
+          <Variable Name="Position" EnableArrayElements="True" />
+        </Variable>
+        <Variable Name="MpDelta4Axis_0">
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
+        <Variable Name="turned" />
+      </Task>
+      <Task Name="Recipe">
+        <Variable Name="UIConnect">
+          <Variable Name="Recipe">
+            <Variable Name="List">
+              <Variable Name="Names" EnableArrayElements="True" />
+              <Variable Name="StepUp" />
+              <Variable Name="StepDown" />
+              <Variable Name="SelectedIndex" />
+              <Variable Name="MaxSelection" />
+            </Variable>
+            <Variable Name="Load" />
+            <Variable Name="Save" />
+            <Variable Name="Refresh" />
+            <Variable Name="Delete" />
+            <Variable Name="Rename" />
+            <Variable Name="NewFileName" />
+          </Variable>
+          <Variable Name="New">
+            <Variable Name="FileName" />
+            <Variable Name="Create" />
+          </Variable>
+        </Variable>
+        <Variable Name="WidgetString" />
+        <Variable Name="ClientOrder">
+          <Variable Name="numberOfPackages" />
+          <Variable Name="bottlesPerPackage" />
+          <Variable Name="bottleSize" />
+          <Variable Name="drinkColor" />
+        </Variable>
+        <Variable Name="diErrorReset" />
+        <Variable Name="diLoad" />
+        <Variable Name="ErrorStatus" />
+        <Variable Name="diAdd" />
+        <Variable Name="NewRecipe">
+          <Variable Name="numberOfPackages" />
+          <Variable Name="bottlesPerPackage" EURangesId="1" />
+          <Variable Name="bottleSize" />
+          <Variable Name="drinkColor" />
+        </Variable>
+        <Variable Name="coffinFlag" />
+      </Task>
+      <Task Name="TrakMoveme">
+        <Variable Name="VisAcceleration" />
+        <Variable Name="VisCapping_Broken" />
+        <Variable Name="VisDeceleration" />
+        <Variable Name="VisManual" />
+        <Variable Name="VisManualSectorTop" />
+        <Variable Name="VisManualVelocity" />
+        <Variable Name="VisPouring_Down_Broken" />
+        <Variable Name="VisPouring_Top_Broken" />
+        <Variable Name="VisShuttle" />
+        <Variable Name="VisShuttleStart" />
+        <Variable Name="VisShuttleStop" />
+        <Variable Name="VisVelocity" />
+        <Variable Name="VisPouring_Time_Large" />
+        <Variable Name="VisPouring_Time_Small" />
+        <Variable Name="VisMove_Neg" />
+        <Variable Name="VisMove_Pos" />
+        <Variable Name="Step" />
+        <Variable Name="Stop_With_Execution" />
+        <Variable Name="NullOrder" />
+      </Task>
+      <Task Name="SI">
+        <Variable Name="MpDelta3Axis_0">
+          <Variable Name="Parameters">
+            <Variable Name="Position" EnableArrayElements="True" />
+          </Variable>
+          <Variable Name="Info">
+            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
+        <Variable Name="x" />
+        <Variable Name="y" />
+        <Variable Name="z" />
+        <Variable Name="PartyOn" />
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

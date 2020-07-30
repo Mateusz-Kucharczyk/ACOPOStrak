@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DATA>
+	<Element Name="Recipe:ClientOrder" Type="PvParameter">
+		<Group ID="Recipe:ClientOrder">
+			<Property ID="numberOfPackages" DataType="USINT" Value="8" />
+			<Property ID="bottlesPerPackage" DataType="USINT" Value="5" />
+			<Property ID="bottleSize" DataType="DINT" Value="0" />
+			<Property ID="drinkColor" DataType="DINT" Value="0" />
+		</Group>
+	</Element>
+</DATA>

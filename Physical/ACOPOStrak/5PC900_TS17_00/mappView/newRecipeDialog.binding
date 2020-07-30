@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="newRecipeDialog" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+  
+
+
+
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:NewRecipe.numberOfPackages" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="NumOfPckgsNumericInput" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:NewRecipe.drinkColor" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="DrinkColorDropDownBox" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:UIConnect.New.FileName" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="newRecipeNameTextInput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:NewRecipe.bottleSize" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="BottleSizeDropDownBox" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:NewRecipe.bottlesPerPackage" attribute="node" />
+<Target xsi:type="brease" contentRefId="contentAddNewRecipe" widgetRefId="BottlesPerPckgNumericInput" attribute="node" />
+</Binding>
+</Bindings>
+</BindingsSet>
