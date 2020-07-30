@@ -11,4 +11,7 @@ END_VAR
 VAR
 	Step : StepType;
 	BottlesPerPack : USINT := 1;
+	ProgressBar : INT;
+	gBottlesDone : INT;
+	diStart : BOOL;
 END_VAR

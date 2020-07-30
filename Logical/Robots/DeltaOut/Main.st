@@ -43,10 +43,17 @@ PROGRAM _CYCLIC
 	  			Step := WAIT_SHUTTLE;
 			END_IF;
 		WAIT_SHUTTLE:
+			IF ProgressBar = 100 AND diStart THEN
+				gBottlesDone := 0;
+			END_IF;
+			
 			IF gShuttleInPlace_Output THEN
 				Step := MOVE_PROGRAM;
+				gBottlesDone := gBottlesDone+1;
+				ProgressBar := 100*gBottlesDone/gOrder.bottlesPerPackage/gOrder.numberOfPackage
 			END_IF;
 		MOVE_PROGRAM:
+			diStart := FALSE;
 			
 			IF gVisOutput_Broken THEN
 				IF gOrder.bottlesPerPackage = 4 THEN
@@ -83,10 +90,10 @@ PROGRAM _CYCLIC
 					MpDelta3Axis_0.MoveProgram := FALSE;
 					Step := WAIT_SHUTTLE;
 					gBottleInPlace_Output:=TRUE;
-					BottlesPerPack:=BottlesPerPack+1;
 					IF BottlesPerPack>gOrder.bottlesPerPackage THEN
 						BottlesPerPack:=1;
 					END_IF;
+					
 				END_IF;
 				ELSE
 					Step := INTERRUPT;

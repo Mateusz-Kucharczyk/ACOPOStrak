@@ -1,4 +1,5 @@
 VAR
+	gbottlesDone  : BOOL;
 	gPartyOn : BOOL;
 	gVisTurn_Broken : BOOL;
 	ShuttleNumber : USINT;

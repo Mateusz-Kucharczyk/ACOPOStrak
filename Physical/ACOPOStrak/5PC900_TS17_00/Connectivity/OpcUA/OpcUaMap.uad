@@ -41,6 +41,8 @@
             <Variable Name="JointAxisPosition" EnableArrayElements="True" />
           </Variable>
         </Variable>
+        <Variable Name="ProgressBar" />
+        <Variable Name="diStart" />
       </Task>
       <Task Name="DeltaIn">
         <Variable Name="MpDelta3Axis_0">

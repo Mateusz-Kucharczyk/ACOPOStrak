@@ -472,6 +472,13 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button1" event="Click" />
       <EventHandler>
         <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::DeltaOut:diStart">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler>
+        <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStop">
             <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
           </Target>
