@@ -125,6 +125,7 @@
         <Variable Name="VisMove_Pos" />
         <Variable Name="Step" />
         <Variable Name="Stop_With_Execution" />
+        <Variable Name="NullOrder" />
       </Task>
       <Task Name="SI">
         <Variable Name="MpDelta3Axis_0">

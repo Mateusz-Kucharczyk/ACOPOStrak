@@ -129,9 +129,15 @@ PROGRAM _CYCLIC
 				Step := MANUAL;
 			ELSIF (gTrakAsm.Command.ShuttleStart) THEN
 				gTrakAsm.Command.ShuttleStart := FALSE;
+				VisShuttleStart:=FALSE;
 				gColorSum := gOrder.bottlesPerPackage * gOrder.numberOfPackages;
-				gProcessFinished := FALSE;
-				Step := PROCESS;
+				IF gColorSum<>0 THEN
+					gProcessFinished := FALSE;
+					Step := PROCESS;
+				ELSE
+					NullOrder:=TRUE;
+				END_IF;
+
 			ELSIF 	gTrakAsm.Command.ShuttleStop THEN
 				Step:=STOPPING;
 				
@@ -785,11 +791,6 @@ PROGRAM _CYCLIC
 	IF NOT (gVisOutput_Broken) THEN
 		SvgTranform[1]:=2;	
 	END_IF;
-	MC_BR_ShReadInfo_AcpTrak_0.Enable:=FALSE;
-	MC_BR_ShReadInfo_AcpTrak_0();
-	MC_BR_ShReadInfo_AcpTrak_0.Axis:= ADR(ShuttleAxis[zmienna]); //ActiveShuttle
-	MC_BR_ShReadInfo_AcpTrak_0.Enable:=TRUE;
-	MC_BR_ShReadInfo_AcpTrak_0();
 	
 					END_PROGRAM
  

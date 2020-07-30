@@ -65,6 +65,6 @@ VAR
 	VisManualSectorTop : BOOL := FALSE;
 	VisMove_Pos : BOOL := FALSE;
 	VisMove_Neg : BOOL;
+	NullOrder : BOOL := FALSE;
 	SvgTranform : ARRAY[0..5] OF USINT;
-	zmienna : INT;
 END_VAR

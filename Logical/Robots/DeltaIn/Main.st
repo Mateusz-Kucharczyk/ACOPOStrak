@@ -57,12 +57,12 @@ PROGRAM _CYCLIC
 					gColorSum := gColorSum - 1;
 					Step:= WAIT_SHUTTLE;
 					gBottleInPlace_Input:=TRUE;
-					END_IF;
+				END_IF;
 				IF gdiInterrupt THEN
-						Step := INTERRUPT;
-						MpDelta3Axis_0.Continue := FALSE;
+					Step := INTERRUPT;
+					MpDelta3Axis_0.Continue := FALSE;
 				END_IF;
-				END_IF;
+			END_IF;
 			
 
 		INTERRUPT:
@@ -83,7 +83,7 @@ PROGRAM _CYCLIC
 				MpDelta3Axis_0.MoveProgram := FALSE;
 				MpDelta3Axis_0.Stop := FALSE;
 				
-	  			Step := INIT;
+				Step := INIT;
 			END_IF;
 		ERROR:
 			
@@ -96,16 +96,16 @@ PROGRAM _CYCLIC
 	
 	END_PROGRAM
 
-	PROGRAM _EXIT
+PROGRAM _EXIT
 
 
-				MpDelta3Axis_0.Power  := FALSE;
-				MpDelta3Axis_0.Home   := FALSE;
-				MpDelta3Axis_0.MoveDirect := FALSE; 
-				MpDelta3Axis_0.MoveLinear := FALSE; 
-				MpDelta3Axis_0();
+	MpDelta3Axis_0.Power  := FALSE;
+	MpDelta3Axis_0.Home   := FALSE;
+	MpDelta3Axis_0.MoveDirect := FALSE; 
+	MpDelta3Axis_0.MoveLinear := FALSE; 
+	MpDelta3Axis_0();
 
-				MpDelta3Axis_0.Enable := FALSE;
-				MpDelta3Axis_0();
+	MpDelta3Axis_0.Enable := FALSE;
+	MpDelta3Axis_0();
 	
 				END_PROGRAM
