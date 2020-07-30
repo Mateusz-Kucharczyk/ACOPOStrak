@@ -49,8 +49,6 @@ VAR
 	gCurrentRecipeName : STRING[255];
 	gProcessFinished : BOOL;
 	gdiStop : BOOL;
-	gdiInterrupt : BOOL;
-	gdiContinue : BOOL;
 	gVisOutput_Broken : BOOL := TRUE;
 	gVisInput_Broken : BOOL := TRUE;
 	gBgColor : ARRAY[0..2] OF REAL;

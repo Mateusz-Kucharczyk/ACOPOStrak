@@ -19,17 +19,16 @@ PROGRAM _CYCLIC
 		Step:=STOP;
 	END_IF;
 	
-	IF diInterrupt THEN
-		Step := INTERRUPT;
-	END_IF;
-	
-	MpDelta3Axis_0.ErrorReset := diErrorReset;
 	IF EDGEPOS(MpDelta3Axis_0.Error) THEN
 		Step := ERROR;
 	END_IF;
 	
 	CASE Step OF
 		INIT:
+			MpDelta3Axis_0.Power := FALSE;
+			MpDelta3Axis_0.Home := FALSE;
+			MpDelta3Axis_0.MoveProgram := FALSE;
+
 			IF gVisPower THEN
 				Step := POWER;
 			END_IF;
@@ -52,27 +51,27 @@ PROGRAM _CYCLIC
 			
 		MOVE_PROGRAM:
 			IF gVisInput_Broken THEN
-				IF gColorSum >0 THEN
-				MpDelta3Axis_0.MoveProgram :=TRUE;
-				IF MpDelta3Axis_0.MoveDone THEN
-					gColorSum := gColorSum - 1;
-					Step:= WAIT_SHUTTLE;
-					gBottleInPlace_Input:=TRUE;
+					IF gColorSum >0 THEN
+						MpDelta3Axis_0.MoveProgram :=TRUE;
+						IF MpDelta3Axis_0.MoveDone THEN
+							gColorSum := gColorSum - 1;
+							Step:= WAIT_SHUTTLE;
+							gBottleInPlace_Input:=TRUE;
+						END_IF;
+						IF diInterrupt THEN
+							Step := INTERRUPT;
+							MpDelta3Axis_0.Continue := FALSE;
+						END_IF;
 					END_IF;
-				IF gdiInterrupt THEN
-						Step := INTERRUPT;
-						MpDelta3Axis_0.Continue := FALSE;
-				END_IF;
-				END_IF;
-			ELSE
-				Step := INTERRUPT;
-				MpDelta3Axis_0.Continue := FALSE;
+				ELSE
+					Step := INTERRUPT;
+					MpDelta3Axis_0.Continue := FALSE;
 			END_IF;
 			
 
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
-			IF NOT (gdiInterrupt) OR EDGEPOS(gVisInput_Broken) THEN
+			IF NOT (diInterrupt) OR EDGEPOS(gVisInput_Broken) THEN
 				MpDelta3Axis_0.Interrupt := FALSE;
 				MpDelta3Axis_0.Continue := TRUE;
 				Step := MOVE_PROGRAM;
@@ -91,9 +90,12 @@ PROGRAM _CYCLIC
 	  			Step := INIT;
 			END_IF;
 		ERROR:
+			MpDelta3Axis_0.MoveProgram := FALSE;
+			MpDelta3Axis_0.ErrorReset := TRUE;
 			
 			IF NOT(MpDelta3Axis_0.Error) THEN
-				Step := INIT;
+				Step := WAIT_SHUTTLE;
+				MpDelta3Axis_0.ErrorReset := FALSE;
 			END_IF;
 
 

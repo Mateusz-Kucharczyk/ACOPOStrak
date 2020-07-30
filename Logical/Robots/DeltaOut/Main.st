@@ -44,65 +44,59 @@ PROGRAM _CYCLIC
 			END_IF;
 		WAIT_SHUTTLE:
 				
-			IF EDGEPOS(gShuttleInPlace_Output) THEN
+			IF gShuttleInPlace_Output THEN
 				Step := MOVE_PROGRAM;
 			END_IF;
-			//RecipeBottlesPerPack := gOrder.bottlesPerPackage;
 		MOVE_PROGRAM:
+			
 			IF gVisOutput_Broken THEN
 				IF gOrder.bottlesPerPackage = 4 THEN
-				CASE BottlesPerPack OF
-				
-					1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
-					
-					2:	DeltaParameters.ProgramName := 'RoboticOut2.st';
-				
-					3:	DeltaParameters.ProgramName := 'RoboticOut5.st';
-				
-					4:	DeltaParameters.ProgramName := 'RoboticOut4.st';
-				
-				END_CASE;
-			ELSE
-			CASE BottlesPerPack OF
-				
-				1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
-					
-				2:	DeltaParameters.ProgramName := 'RoboticOut2.st';
-				
-				3:	DeltaParameters.ProgramName := 'RoboticOut3.st';
-				
-				4:	DeltaParameters.ProgramName := 'RoboticOut4.st';
-				
-				5:	DeltaParameters.ProgramName := 'RoboticOut5.st';
-				
-				6:	DeltaParameters.ProgramName := 'RoboticOut6.st';
-				
-				END_CASE;
-			END_IF;
-			MpDelta3Axis_0.MoveProgram := TRUE;
-			
-			IF gdiInterrupt THEN
+						CASE BottlesPerPack OF
+						
+							1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
+							
+							2:	DeltaParameters.ProgramName := 'RoboticOut2.st';
+						
+							3:	DeltaParameters.ProgramName := 'RoboticOut5.st';
+						
+							4:	DeltaParameters.ProgramName := 'RoboticOut4.st';
+						
+						END_CASE;
+					ELSE
+						CASE BottlesPerPack OF
+						
+							1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
+								
+							2:	DeltaParameters.ProgramName := 'RoboticOut2.st';
+							
+							3:	DeltaParameters.ProgramName := 'RoboticOut3.st';
+							
+							4:	DeltaParameters.ProgramName := 'RoboticOut4.st';
+							
+							5:	DeltaParameters.ProgramName := 'RoboticOut5.st';
+							
+							6:	DeltaParameters.ProgramName := 'RoboticOut6.st';
+						
+						END_CASE;
+				END_IF;
+				MpDelta3Axis_0.MoveProgram := TRUE;			
+				IF MpDelta3Axis_0.MoveDone THEN
+					MpDelta3Axis_0.MoveProgram := FALSE;
+					Step := WAIT_SHUTTLE;
+					gBottleInPlace_Output:=TRUE;
+					BottlesPerPack:=BottlesPerPack+1;
+					IF BottlesPerPack>gOrder.bottlesPerPackage THEN
+						BottlesPerPack:=1;
+					END_IF;
+				END_IF;
+				ELSE
 					Step := INTERRUPT;
 					MpDelta3Axis_0.Continue := FALSE;
-			END_IF;
-			
-			IF MpDelta3Axis_0.MoveDone THEN
-				MpDelta3Axis_0.MoveProgram := FALSE;
-				Step := WAIT_SHUTTLE;
-				gBottleInPlace_Output:=TRUE;
-				BottlesPerPack:=BottlesPerPack+1;
-				IF BottlesPerPack>gOrder.bottlesPerPackage THEN
-					BottlesPerPack:=1;
-				END_IF;
-				END_IF;
-			ELSE
-				Step := INTERRUPT;
-				MpDelta3Axis_0.Continue := FALSE;
 			END_IF;
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
 			
-			IF gdiContinue OR EDGEPOS (gVisOutput_Broken) THEN
+			IF EDGEPOS (gVisOutput_Broken) THEN
 				MpDelta3Axis_0.Interrupt := FALSE;
 				MpDelta3Axis_0.Continue := TRUE;
 				Step := MOVE_PROGRAM;				
@@ -121,8 +115,12 @@ PROGRAM _CYCLIC
 			END_IF;
 		ERROR:
 		
+			MpDelta3Axis_0.MoveProgram := FALSE;
+			MpDelta3Axis_0.ErrorReset := TRUE;
+			
 			IF NOT(MpDelta3Axis_0.Error) THEN
-	  			Step := INIT;
+				Step := WAIT_SHUTTLE;
+				MpDelta3Axis_0.ErrorReset := FALSE;
 			END_IF;
 		
 		

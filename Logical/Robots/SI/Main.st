@@ -18,7 +18,6 @@ PROGRAM _CYCLIC
 	
 	//DeltaParameters.ProgramName := PName;
 	MpDelta3Axis_0();
-	PartyOn := gPartyOn;
 	
 	IF EDGEPOS(MpDelta3Axis_0.Error) THEN
 		Step := ERROR;
@@ -47,7 +46,7 @@ PROGRAM _CYCLIC
 			END_IF;
 		WAIT_SHUTTLE:
 				
-			IF PartyOn THEN
+			IF gPartyOn THEN
 				Step := MOVE_PROGRAM;
 			ELSE
 				x := 0;
@@ -57,12 +56,7 @@ PROGRAM _CYCLIC
 			//RecipeBottlesPerPack := gOrder.bottlesPerPackage;
 		MOVE_PROGRAM:
 			MpDelta3Axis_0.MoveProgram := TRUE;
-			
-			IF gdiInterrupt THEN
-				Step := INTERRUPT;
-				MpDelta3Axis_0.Continue := FALSE;
-			END_IF;	
-			
+									
 			IF MpDelta3Axis_0.MoveDone THEN
 				MpDelta3Axis_0.MoveProgram := FALSE;
 				Step := WAIT_SHUTTLE;
@@ -83,34 +77,7 @@ PROGRAM _CYCLIC
 			ELSE
 				x := x+4;
 			END_IF;
-			
-		INTERRUPT:
-			MpDelta3Axis_0.Interrupt := TRUE;
-			
-			IF gdiContinue OR EDGEPOS (gVisOutput_Broken) THEN
-				MpDelta3Axis_0.Interrupt := FALSE;
-				MpDelta3Axis_0.Continue := TRUE;
-				Step := MOVE_PROGRAM;				
-			END_IF;
-		STOP:
-			MpDelta3Axis_0.Stop := TRUE;
-			IF (NOT gdiInstantStop) AND MpDelta3Axis_0.Stopped THEN
 				
-				MpDelta3Axis_0.Home := FALSE;
-				MpDelta3Axis_0.Interrupt := FALSE;
-				MpDelta3Axis_0.Continue := FALSE;
-				MpDelta3Axis_0.MoveProgram := FALSE;
-				MpDelta3Axis_0.Stop := FALSE;
-				
-				Step := INIT;
-			END_IF;
-		ERROR:
-		
-			IF NOT(MpDelta3Axis_0.Error) THEN
-				Step := INIT;
-			END_IF;
-		
-		
 	END_CASE;
     
 		
