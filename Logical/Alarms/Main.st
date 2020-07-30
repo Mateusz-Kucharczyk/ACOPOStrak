@@ -8,12 +8,12 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	IF EDGEPOS(gdiInterrupt) THEN
-		MpAlarmXSet(gAlarmXCore, 'InterruptAlarm');
-	END_IF;
-	IF EDGENEG(gdiInterrupt) THEN
-	  MpAlarmXReset(gAlarmXCore, 'InterruptAlarm');
-	END_IF;
+//	IF EDGEPOS(gdiInstatntStop) THEN
+//		MpAlarmXSet(gAlarmXCore, 'InterruptAlarm');
+//	END_IF;
+//	IF EDGENEG(gdiInstatntStop) THEN
+//	  MpAlarmXReset(gAlarmXCore, 'InterruptAlarm');
+//	END_IF;
 	
 	IF EDGEPOS(TrakStop) THEN
 		MpAlarmXSet(gAlarmXCore, 'SuddenlyStopAlarm');

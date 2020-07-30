@@ -9,5 +9,4 @@ VAR
 	GreenChangeRate : REAL;
 	RedChangeRate : REAL;
 	New_Variable : INT;
-	EasterEgg : BOOL;
 END_VAR
