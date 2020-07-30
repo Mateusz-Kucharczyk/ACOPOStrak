@@ -43,6 +43,10 @@ PROGRAM _CYCLIC
 		ELSIF Vizu.BckgColor[2] < 0 THEN
 			BlueChangeRate := 0.1;
 		END_IF;
+	ELSE
+		Vizu.BckgColor[0] := 0.5;
+		Vizu.BckgColor[1] := 0.5;
+		Vizu.BckgColor[2] := 0.5;
 	END_IF;
 	
 	New_Variable := New_Variable + 1;
