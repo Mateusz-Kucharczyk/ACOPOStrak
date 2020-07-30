@@ -130,7 +130,9 @@ PROGRAM _CYCLIC
 			ELSIF (gTrakAsm.Command.ShuttleStart) THEN
 				gTrakAsm.Command.ShuttleStart := FALSE;
 				VisShuttleStart:=FALSE;
-				gColorSum := gOrder.bottlesPerPackage * gOrder.numberOfPackages;
+				IF gColorSum=0 THEN
+				gColorSum := gOrder.bottlesPerPackage * gOrder.numberOfPackages; 
+				END_IF;
 				IF gColorSum<>0 THEN
 					gProcessFinished := FALSE;
 					Step := PROCESS;

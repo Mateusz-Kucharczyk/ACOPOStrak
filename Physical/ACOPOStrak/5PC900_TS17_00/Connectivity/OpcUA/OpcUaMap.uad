@@ -30,6 +30,7 @@
         <Variable Name="gVisOutput_Broken" />
         <Variable Name="gBgColor" EnableArrayElements="True" />
         <Variable Name="gPartyOn" />
+        <Variable Name="gColorSum" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
@@ -140,7 +141,6 @@
         <Variable Name="x" />
         <Variable Name="y" />
         <Variable Name="z" />
-        <Variable Name="PartyOn" />
       </Task>
     </Module>
   </DefaultView>

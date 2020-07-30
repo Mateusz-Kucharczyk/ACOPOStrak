@@ -43,8 +43,9 @@ PROGRAM _CYCLIC
 	  			Step := WAIT_SHUTTLE;
 			END_IF;
 		WAIT_SHUTTLE:
-			IF ProgressBar = 100 AND diStart THEN
+			IF ProgressBar > 99 AND diStart THEN
 				gBottlesDone := 0;
+				ProgressBar := 0;
 			END_IF;
 			
 			IF gShuttleInPlace_Output THEN

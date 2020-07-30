@@ -539,6 +539,13 @@
           </Target>
         </Action>
       </EventHandler>
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gColorSum">
+            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+          </Target>
+        </Action>
+      </EventHandler>
     </EventBinding>
     <EventBinding id="contentHome.Button1.DisabledClick">
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button1" event="DisabledClick" />

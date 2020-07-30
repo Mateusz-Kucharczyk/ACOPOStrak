@@ -5,5 +5,4 @@ VAR
 	x : INT;
 	y : INT;
 	z : INT;
-	PartyOn : BOOL;
 END_VAR
