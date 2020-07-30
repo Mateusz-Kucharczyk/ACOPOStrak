@@ -29,6 +29,7 @@
         <Variable Name="gVisInput_Broken" />
         <Variable Name="gVisOutput_Broken" />
         <Variable Name="gBgColor" EnableArrayElements="True" />
+        <Variable Name="gPartyOn" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
@@ -137,7 +138,7 @@
         <Variable Name="x" />
         <Variable Name="y" />
         <Variable Name="z" />
-        <Variable Name="diPartyOn" />
+        <Variable Name="PartyOn" />
       </Task>
     </Module>
   </DefaultView>

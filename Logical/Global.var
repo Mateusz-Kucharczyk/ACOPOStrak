@@ -1,4 +1,5 @@
 VAR
+	gPartyOn : BOOL;
 	gVisTurn_Broken : BOOL;
 	ShuttleNumber : USINT;
 END_VAR

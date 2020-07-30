@@ -50,6 +50,11 @@ PROGRAM _CYCLIC
 		coffinFlag := FALSE;
 	END_IF;
 	
+	IF UIConnect.New.FileName = 'Party' THEN
+		gPartyOn := TRUE;
+	ELSE
+		gPartyOn := FALSE;
+	END_IF;
 	
 	IF diAdd AND NOT(diLoad) THEN
 		ClientOrder := NewRecipe;

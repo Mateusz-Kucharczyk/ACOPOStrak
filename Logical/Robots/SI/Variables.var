@@ -1,9 +1,9 @@
 VAR
 	MpDelta3AxisPar_0 : MpDelta3AxisParType;
 	MpDelta3Axis_0 : MpDelta3Axis;
-	diPartyOn : BOOL;
 	Step : StepType;
 	x : INT;
 	y : INT;
 	z : INT;
+	PartyOn : BOOL;
 END_VAR

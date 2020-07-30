@@ -20,7 +20,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC 
 
-	IF EasterEgg THEN
+	IF gPartyOn THEN
 		Vizu.BckgColor[0] := Vizu.BckgColor[0] + RedChangeRate;
 		IF  Vizu.BckgColor[0] > 1 THEN
 			RedChangeRate := -0.01;

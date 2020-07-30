@@ -413,14 +413,14 @@
 			<EventHandler condition="newValue = 0">
 				<Action>
 					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottleSizeLabel">
-						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderSmall" />
+						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderLarge" />
 					</Target>
 				</Action>
 			</EventHandler>
 			<EventHandler condition="newValue = 1">
 				<Action>
 					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottleSizeLabel">
-						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderLarge" />
+						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderSmall" />
 					</Target>
 				</Action>
 			</EventHandler>
@@ -512,9 +512,9 @@
 					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:Stop_With_Execution">
 						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
 					</Target>
-					</Action>
+				</Action>
 			</EventHandler>
-			</EventBinding>
+		</EventBinding>
 		<EventBinding id="contentHome.Button1.DisabledClick">
 			<Source contentRefId="contentHome" widgetRefId="Button1" xsi:type="widgets.brease.Button.Event" event="DisabledClick" />
 			<EventHandler>

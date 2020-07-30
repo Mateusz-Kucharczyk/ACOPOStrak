@@ -1,5 +1,5 @@
 ï»¿<?xml version="1.0"?>
-<Object objecttypeid="1" name="ACOPOStrak Scene" visible="1" mask="" binding="" jointoparent="0">
+<Object objecttypeid="1" name="ACOPOStrak Scene" visible="1" mask="#140:10800" binding="" jointoparent="0">
 	<ParID parid="80" val="FALSE"/>
 	<ParID parid="81" val="60"/>
 	<ParID parid="82" val="1.66867"/>
@@ -351,7 +351,7 @@
 			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 			<ParID parid="200" val="gAssembly_1"/>
-			<ParID parid="210" val=",dÈö©w"/>
+			<ParID parid="210" val=",dï¿½ï¿½ï¿½w"/>
 		</Object>
 		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:0#100:4#101:8#103:12#130:16#140:48#120:60#121:64#122:68" binding="" jointoparent="0">
 			<ParID parid="100" val="4918.18"/>
