@@ -5,14 +5,10 @@ VAR
 END_VAR
 (*IO's*)
 VAR
-	diStart : BOOL;
-	diInterrupt : BOOL;
-	diResume : BOOL;
 	diErrorReset : BOOL;
 END_VAR
 (*Other*)
 VAR
 	Step : StepType;
 	BottlesPerPack : USINT := 1;
-	Status : UINT;
 END_VAR

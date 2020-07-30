@@ -45,14 +45,13 @@ PROGRAM _CYCLIC
 			END_IF;
 		WAIT_SHUTTLE:	
 			MpDelta3Axis_0.MoveProgram := 0;
-			IF gShuttleInPlace_Input AND NOT gdiStop THEN
+			IF gShuttleInPlace_Input AND gVisInput_Broken AND NOT gdiStop THEN
 				Step := MOVE_PROGRAM;
 				DeltaParameters.ProgramName := 'RoboticIn.st';    //File stored on FileDevice
 			END_IF;
 			
 		MOVE_PROGRAM:
-			IF gVisInput_Broken THEN
-				IF gColorSum >0 THEN
+			IF gColorSum >0 THEN
 				MpDelta3Axis_0.MoveProgram :=TRUE;
 				IF MpDelta3Axis_0.MoveDone THEN
 					gColorSum := gColorSum - 1;
@@ -64,10 +63,6 @@ PROGRAM _CYCLIC
 						MpDelta3Axis_0.Continue := FALSE;
 				END_IF;
 				END_IF;
-			ELSE
-				Step := INTERRUPT;
-				MpDelta3Axis_0.Continue := FALSE;
-			END_IF;
 			
 
 		INTERRUPT:
