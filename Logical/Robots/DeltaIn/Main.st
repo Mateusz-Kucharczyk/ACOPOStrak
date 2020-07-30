@@ -44,7 +44,7 @@ PROGRAM _CYCLIC
 			END_IF;
 		WAIT_SHUTTLE:	
 			MpDelta3Axis_0.MoveProgram := 0;
-			IF gShuttleInPlace_Input AND NOT gdiStop THEN
+			IF gShuttleInPlace_Input AND NOT gdiStop  THEN
 				Step := MOVE_PROGRAM;
 				DeltaParameters.ProgramName := 'RoboticIn.st';    //File stored on FileDevice
 			END_IF;

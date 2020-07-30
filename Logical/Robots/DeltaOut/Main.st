@@ -50,7 +50,7 @@ PROGRAM _CYCLIC
 			IF gShuttleInPlace_Output THEN
 				Step := MOVE_PROGRAM;
 				gBottlesDone := gBottlesDone+1;
-				ProgressBar := 100*gBottlesDone/gOrder.bottlesPerPackage/gOrder.numberOfPackage
+				ProgressBar := 100*gBottlesDone/gOrder.bottlesPerPackage/gOrder.numberOfPackages;
 			END_IF;
 		MOVE_PROGRAM:
 			diStart := FALSE;

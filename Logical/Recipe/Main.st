@@ -69,7 +69,9 @@ PROGRAM _CYCLIC
 		NewRecipe.numberOfPackages := 0;
 		NewRecipe.drinkColor := 0;
 		NewRecipe.bottleSize := 0;
+		
 	END_IF;
+	UIConnect.Recipe;
 	
 	FOR i := 0 TO 19 BY 1 DO
 		// delete contents of WidgetString[i]

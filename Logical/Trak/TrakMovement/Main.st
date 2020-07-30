@@ -163,7 +163,10 @@ PROGRAM _CYCLIC
            
 				IF  MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorBottleInput' THEN
 					Step_Sector:=Bottle_Input;
-					gShuttleInPlace_Input:=TRUE;
+					IF NOT(Stop_With_Execution) THEN
+	  					gShuttleInPlace_Input:=TRUE;
+					END_IF;
+
 					IF gBottleInPlace_Input=TRUE THEN
 						Step_Sector:=WaitPour;
 						gBottleInPlace_Input:=FALSE;
