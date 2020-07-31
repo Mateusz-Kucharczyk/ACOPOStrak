@@ -92,7 +92,7 @@
         <Variable Name="WidgetString" />
         <Variable Name="ClientOrder">
           <Variable Name="numberOfPackages" />
-          <Variable Name="bottlesPerPackage" />
+          <Variable Name="bottlesPerPackage" EURangesId="1" />
           <Variable Name="bottleSize" />
           <Variable Name="drinkColor" />
         </Variable>

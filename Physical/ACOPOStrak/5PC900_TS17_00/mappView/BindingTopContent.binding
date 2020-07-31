@@ -122,5 +122,22 @@
 <Source xsi:type="opcUa" refId="::DeltaOut:ProgressBar" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentTop" widgetRefId="ProgressBar1" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:ClientOrder.drinkColor" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="BottleSizeDropDownBox1" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:ClientOrder.bottleSize" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="BottleSizeDropDownBox" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:ClientOrder.numberOfPackages" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="NumberOfPackagesEditInput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:ClientOrder.bottlesPerPackage" attribute="node" />
+<Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="BottlePerPckgNumericEdit" attribute="node" />
+</Binding>
 </Bindings>
 </BindingsSet>
