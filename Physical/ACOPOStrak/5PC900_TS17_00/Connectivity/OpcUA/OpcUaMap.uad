@@ -59,17 +59,6 @@
         <Variable Name="PositionY" EnableArrayElements="True" />
         <Variable Name="RotationZ" EnableArrayElements="True" />
       </Task>
-      <Task Name="DeltaTurn">
-        <Variable Name="DeltaParameters">
-          <Variable Name="Position" EnableArrayElements="True" />
-        </Variable>
-        <Variable Name="MpDelta4Axis_0">
-          <Variable Name="Info">
-            <Variable Name="JointAxisPosition" EnableArrayElements="True" />
-          </Variable>
-        </Variable>
-        <Variable Name="turned" />
-      </Task>
       <Task Name="Recipe">
         <Variable Name="UIConnect">
           <Variable Name="Recipe">

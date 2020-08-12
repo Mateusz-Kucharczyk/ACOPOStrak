@@ -30,6 +30,7 @@ PROGRAM _INIT
 	// Setting timer for Pouring_Down/Up and Capping
 	TON_Pouring_Top.IN:=FALSE;
 	TON_Pouring_Down.IN:=FALSE;
+	TON_Capping.IN:=FALSE;
    
 END_PROGRAM
  
@@ -233,10 +234,10 @@ PROGRAM _CYCLIC
 					Step_Sector:=Capping;
                
 					// After capping sendig to delivery
-					IF  gBottleInPlace_Turn THEN
-						Capping_Busy := FALSE;
-						gBottleInPlace_Turn := FALSE;	
+					IF  TON_Capping.Q THEN
+						Capping_Busy := FALSE;	
 						Step_Sector:=Bottle_Output;
+						TON_Capping.IN:=FALSE;
 						Capping_Comming:=FALSE;
 					END_IF
 				ELSIF   MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorBottleOutput' THEN
@@ -250,7 +251,7 @@ PROGRAM _CYCLIC
 						gBottleInPlace_Output:=FALSE;
 						gShuttleInPlace_Output:=FALSE;
 					END_IF;
-               
+               	
 				ELSIF MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName = 'SectorBottleOutput' THEN
 					Step_Sector:=Bottle_Output;
 				END_IF;
@@ -264,9 +265,7 @@ PROGRAM _CYCLIC
 					TON_Pouring_Down.IN:=TRUE;
 				END_IF;
 				IF Capping_Busy=TRUE THEN
-					gShuttleInPlace_Turn := TRUE;
-				ELSE 
-					gShuttleInPlace_Turn := FALSE;
+					TON_Capping.IN:=TRUE;
 				END_IF;
            
 				// Step for active Shuttle
@@ -315,7 +314,7 @@ PROGRAM _CYCLIC
 							DRINK_COLOR_GREEN:
 								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
 							DRINK_COLOR_BLUE:
-								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.505;
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.455;
 						END_CASE;
 						// Pouring bottle in Top station
 					Pouring_Top:
@@ -345,7 +344,7 @@ PROGRAM _CYCLIC
 							DRINK_COLOR_GREEN:
 								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
 							DRINK_COLOR_BLUE:
-								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.505;
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.455;
 						END_CASE;
                    
 						// Wait for capping if Cap station is busy
@@ -749,7 +748,8 @@ PROGRAM _CYCLIC
 	TON_Pouring_Top();
 	TON_Pouring_Down();
 	TON_Delta();
-   
+	TON_Capping();
+	
 	//Updating values of vel or states with actual data in Visualisation
 	gTrakAsm.Command.Power					:=gVisPower;
 	gTrakAsm.Command.ShuttleStart			:=VisShuttleStart;

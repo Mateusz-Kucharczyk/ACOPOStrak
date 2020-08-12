@@ -31,6 +31,7 @@ END_VAR
 VAR
 	TON_Pouring_Down : TON;
 	TON_Pouring_Top : TON;
+	TON_Capping : TON := (PT:=T#4s);
 	TON_Delta : TON := (PT:=T#12s);
 END_VAR
 (*Pouring and Capping*)
