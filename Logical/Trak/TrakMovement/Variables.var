@@ -68,3 +68,7 @@ VAR
 	NullOrder : BOOL := FALSE;
 	SvgTranform : ARRAY[0..5] OF USINT;
 END_VAR
+(*Visualization Bottle controll*)
+VAR
+	BottleVisibility : ARRAY[0..9] OF BOOL := [10(0)];
+END_VAR

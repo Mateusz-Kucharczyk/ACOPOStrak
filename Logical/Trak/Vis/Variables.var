@@ -8,5 +8,8 @@ VAR
 	BlueChangeRate : REAL;
 	GreenChangeRate : REAL;
 	RedChangeRate : REAL;
+	PositionX : ARRAY[0..9] OF REAL;
+	PositionY : ARRAY[0..9] OF REAL;
+	RotationZ : ARRAY[0..9] OF REAL;
 	New_Variable : INT;
 END_VAR

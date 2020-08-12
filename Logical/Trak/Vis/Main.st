@@ -95,5 +95,10 @@ PROGRAM _CYCLIC
 			brsmemset(ADR(Vizu.Vis.Shuttle[i]), 0, SIZEOF(Vizu.Vis.Shuttle[0]));  //If the selected shuttle is not available, it will be invisible in the Scene Viewer
 		END_IF
 	END_FOR
+	FOR i:=0 TO 9 DO
+		PositionX[i]:=Vizu.Vis.Shuttle[i].PositionX;
+		PositionY[i]:=Vizu.Vis.Shuttle[i].PositionX;
+		RotationZ[i]:=Vizu.Vis.Shuttle[i].RotationZ;
+	END_FOR;
     
 END_PROGRAM

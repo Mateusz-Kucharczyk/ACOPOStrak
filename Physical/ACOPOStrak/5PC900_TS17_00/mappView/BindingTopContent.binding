@@ -139,5 +139,9 @@
 <Source xsi:type="opcUa" refId="::Recipe:ClientOrder.bottlesPerPackage" attribute="node" />
 <Target xsi:type="brease" contentRefId="contentOrders" widgetRefId="BottlePerPckgNumericEdit" attribute="node" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.numberOfPackages" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeNumOfPckg" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

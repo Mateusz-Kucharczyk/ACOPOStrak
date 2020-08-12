@@ -55,6 +55,9 @@
       <Task Name="Vis">
         <Variable Name="ShuttlesVisibleFalse" />
         <Variable Name="New_Variable" />
+        <Variable Name="PositionX" EnableArrayElements="True" />
+        <Variable Name="PositionY" EnableArrayElements="True" />
+        <Variable Name="RotationZ" EnableArrayElements="True" />
       </Task>
       <Task Name="DeltaTurn">
         <Variable Name="DeltaParameters">
@@ -128,6 +131,7 @@
         <Variable Name="Step" />
         <Variable Name="Stop_With_Execution" />
         <Variable Name="NullOrder" />
+        <Variable Name="BottleVisibility" EnableArrayElements="True" />
       </Task>
       <Task Name="SI">
         <Variable Name="MpDelta3Axis_0">

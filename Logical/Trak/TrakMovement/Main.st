@@ -96,7 +96,6 @@ PROGRAM _CYCLIC
 		GET_SHUTTLE:
            
 			MC_BR_AsmGetShuttle_AcpTrak_0.Enable := TRUE;
-           
 			IF (MC_BR_AsmGetShuttle_AcpTrak_0.Valid) THEN
 				IF (MC_BR_AsmGetShuttle_AcpTrak_0.RemainingCount <> (MC_BR_AsmGetShuttle_AcpTrak_0.TotalCount - CntShuttle)) THEN
 					CntShuttle := CntShuttle + 1;
@@ -170,6 +169,7 @@ PROGRAM _CYCLIC
 					END_IF;
 
 					IF gBottleInPlace_Input=TRUE THEN
+						BottleVisibility[ActiveShuttle-1]:=TRUE;
 						Step_Sector:=WaitPour;
 						gBottleInPlace_Input:=FALSE;
 						gShuttleInPlace_Input:=FALSE;
@@ -245,6 +245,7 @@ PROGRAM _CYCLIC
                
 					// bottle in place for delivery waiting for signal and then sending shuttle to sector input
 					IF gBottleInPlace_Output=TRUE THEN
+						BottleVisibility[ActiveShuttle-1]:=FALSE;
 						Step_Sector:=Bottle_Input;
 						gBottleInPlace_Output:=FALSE;
 						gShuttleInPlace_Output:=FALSE;
@@ -279,7 +280,6 @@ PROGRAM _CYCLIC
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorBottleInput); 
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305+3.66;
-                   
 						// Wait for pouring if Pouring_A/_B are busy
 					WaitPour:
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
@@ -376,8 +376,6 @@ PROGRAM _CYCLIC
 					MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.RouteDestinationInfo.SectorName='SectorBottleInput') THEN
 					ManualShuttleReset:= ManualShuttleReset +1;		
 				END_IF;
-				
-				
 			END_FOR;
 			
 			IF Stop_With_Execution THEN
