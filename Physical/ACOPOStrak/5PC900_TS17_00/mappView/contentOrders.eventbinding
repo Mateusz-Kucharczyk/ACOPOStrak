@@ -5,14 +5,14 @@
       <Source xsi:type="opcUa.Event" refId="::Recipe:ClientOrder.bottleSize" event="ValueChanged" />
       <EventHandler condition="newValue = 0">
         <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label1">
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="BottleSizeLabel1">
             <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderLarge" />
           </Target>
         </Action>
       </EventHandler>
       <EventHandler condition="newValue = 1">
         <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label1">
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="BottleSizeLabel1">
             <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderSmall" />
           </Target>
         </Action>
@@ -22,21 +22,21 @@
       <Source xsi:type="opcUa.Event" refId="::Recipe:ClientOrder.drinkColor" event="ValueChanged" />
       <EventHandler condition="newValue = 0">
         <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label2">
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="DrinkColorLabel1">
             <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourRed" />
           </Target>
         </Action>
       </EventHandler>
       <EventHandler condition="newValue = 1">
         <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label2">
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="DrinkColorLabel1">
             <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourGreen" />
           </Target>
         </Action>
       </EventHandler>
       <EventHandler condition="newValue = 2">
         <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="Label2">
+          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentOrders" widgetRefId="DrinkColorLabel1">
             <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourBlue" />
           </Target>
         </Action>
