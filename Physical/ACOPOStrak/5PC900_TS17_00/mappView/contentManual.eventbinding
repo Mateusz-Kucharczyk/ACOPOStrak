@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="contentManual_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<EventBinding id="contentManual.ToggleSwitch3.DisabledClick">
+			<Source contentRefId="contentManual" widgetRefId="ToggleSwitch3" xsi:type="widgets.brease.ToggleSwitch.Event" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentManual.ToggleSwitch4.DisabledClick">
+			<Source contentRefId="contentManual" widgetRefId="ToggleSwitch4" xsi:type="widgets.brease.ToggleSwitch.Event" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentManual.ToggleSwitch5.DisabledClick">
+			<Source contentRefId="contentManual" widgetRefId="ToggleSwitch5" xsi:type="widgets.brease.ToggleSwitch.Event" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentManual.ToggleSwitch9.DisabledClick">
+			<Source contentRefId="contentManual" widgetRefId="ToggleSwitch9" xsi:type="widgets.brease.ToggleSwitch.Event" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentManual.ToggleButton2.DisabledClick">
+			<Source contentRefId="contentManual" widgetRefId="ToggleButton2" xsi:type="widgets.brease.ToggleButton.Event" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentManual.MomentaryPushButton8.DisabledClick">
+			<Source contentRefId="contentManual" widgetRefId="MomentaryPushButton8" xsi:type="widgets.brease.MomentaryPushButton.Event" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentManual.MomentaryPushButton9.DisabledClick">
+			<Source contentRefId="contentManual" widgetRefId="MomentaryPushButton9" xsi:type="widgets.brease.MomentaryPushButton.Event" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentManual.ToggleSwitch6.DisabledClick">
+			<Source contentRefId="contentManual" widgetRefId="ToggleSwitch6" xsi:type="widgets.brease.ToggleSwitch.Event" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentManual.ToggleSwitch7.DisabledClick">
+			<Source contentRefId="contentManual" widgetRefId="ToggleSwitch7" xsi:type="widgets.brease.ToggleSwitch.Event" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentManual.ToggleSwitch1.DisabledClick">
+			<Source contentRefId="contentManual" widgetRefId="ToggleSwitch1" xsi:type="widgets.brease.ToggleSwitch.Event" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+	</Bindings>
+</EventBindingSet>

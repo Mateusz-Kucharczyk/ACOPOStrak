@@ -79,6 +79,20 @@
         <seg>Zamówienia</seg>
       </tuv>
     </tu>
+    <tu tuid="navBtnManual">
+      <tuv xml:lang="ja">
+        <seg>ジイ</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>мовлен</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Ruchy Manualne</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Manual</seg>
+      </tuv>
+    </tu>
     <tu tuid="navBtnSettings">
       <tuv xml:lang="ja">
         <seg>設定</seg>
@@ -96,23 +110,6 @@
         <seg>Ustawienia</seg>
       </tuv>
     </tu>
-    <tu tuid="lgnLabelLoggedAs">
-      <tuv xml:lang="ja">
-        <seg>現在のユーザー：</seg>
-      </tuv>
-      <tuv xml:lang="uk">
-        <seg>увійшли як:</seg>
-      </tuv>
-      <tuv xml:lang="pl">
-        <seg>Zalogowano jako:</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Logged as:</seg>
-      </tuv>
-      <tuv xml:lang="pl-PL">
-        <seg>Zalogowano jako:</seg>
-      </tuv>
-    </tu>
     <tu tuid="lgnBtnLogin">
       <tuv xml:lang="ja">
         <seg>ログイン</seg>
@@ -128,6 +125,23 @@
       </tuv>
       <tuv xml:lang="pl-PL">
         <seg>Zaloguj się</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lgnLabelLoggedAs">
+      <tuv xml:lang="ja">
+        <seg>現在のユーザー：</seg>
+      </tuv>
+      <tuv xml:lang="uk">
+        <seg>увійшли як:</seg>
+      </tuv>
+      <tuv xml:lang="pl">
+        <seg>Zalogowano jako:</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Logged as:</seg>
+      </tuv>
+      <tuv xml:lang="pl-PL">
+        <seg>Zalogowano jako:</seg>
       </tuv>
     </tu>
     <tu tuid="lgnBtnLogout">

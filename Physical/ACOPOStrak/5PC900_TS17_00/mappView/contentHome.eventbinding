@@ -1,591 +1,544 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EventBindingSet id="contentHome_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Bindings>
-    <EventBinding id="contentHome.Image1.Click">
-      <Source xsi:type="widgets.brease.Image.Event" contentRefId="contentHome" widgetRefId="WarningImgTrak" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.Navigate" pageId="pageAlarms" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.Image2.Click">
-      <Source xsi:type="widgets.brease.Image.Event" contentRefId="contentHome" widgetRefId="warningImgInput" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.Navigate" pageId="pageAlarms" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.Image3.Click">
-      <Source xsi:type="widgets.brease.Image.Event" contentRefId="contentHome" widgetRefId="warningImgNozzle" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.Navigate" pageId="pageAlarms" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.Image4.Click">
-      <Source xsi:type="widgets.brease.Image.Event" contentRefId="contentHome" widgetRefId="warningImgTwiston" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.Navigate" pageId="pageAlarms" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.Image5.Click">
-      <Source xsi:type="widgets.brease.Image.Event" contentRefId="contentHome" widgetRefId="warningImgOutput" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.Navigate" pageId="pageAlarms" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="eventbinding_0">
-      <Source xsi:type="opcUa.Event" refId="::svgTransfo:svgBlocksToColor" event="ValueChanged" />
-      <EventHandler>
-        <Action>
-          <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[0]">
-            <Method xsi:type="opcUa.NodeAction.GetValue" />
-          </ReadTarget>
-          <Result>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblInput">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblInput">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblInput">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgInput">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgInput">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 3">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgInput">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-          </Result>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[1]">
-            <Method xsi:type="opcUa.NodeAction.GetValue" />
-          </ReadTarget>
-          <Result>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblOutput">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblOutput">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblOutput">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgOutput">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgOutput">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgOutput">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-          </Result>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[2]">
-            <Method xsi:type="opcUa.NodeAction.GetValue" />
-          </ReadTarget>
-          <Result>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTwistOn">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTwistOn">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTwistOn">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgTwiston">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgTwiston">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgTwiston">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-          </Result>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[3]">
-            <Method xsi:type="opcUa.NodeAction.GetValue" />
-          </ReadTarget>
-          <Result>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleDown">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleDown">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleDown">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-          </Result>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[4]">
-            <Method xsi:type="opcUa.NodeAction.GetValue" />
-          </ReadTarget>
-          <Result>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleUp">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleUp">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleUp">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-          </Result>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[5]">
-            <Method xsi:type="opcUa.NodeAction.GetValue" />
-          </ReadTarget>
-          <Result>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTransporter">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTransporter">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTransporter">
-                  <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 0">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="WarningImgTrak">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 1">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="WarningImgTrak">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result = 2">
-              <Action>
-                <Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="WarningImgTrak">
-                  <Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-          </Result>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.ToggleSwitch1.ValueChanged">
-      <Source xsi:type="widgets.brease.ToggleSwitch.Event" contentRefId="contentHome" widgetRefId="ToggleSwitch1" event="ValueChanged" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.ToggleSwitch.Action" contentRefId="contentHome" widgetRefId="ToggleSwitch3">
-            <Method xsi:type="widgets.brease.ToggleSwitch.Action.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.ToggleSwitch.Action" contentRefId="contentHome" widgetRefId="ToggleSwitch4">
-            <Method xsi:type="widgets.brease.ToggleSwitch.Action.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.ToggleSwitch.Action" contentRefId="contentHome" widgetRefId="ToggleSwitch5">
-            <Method xsi:type="widgets.brease.ToggleSwitch.Action.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.ToggleSwitch.Action" contentRefId="contentHome" widgetRefId="ToggleSwitch6">
-            <Method xsi:type="widgets.brease.ToggleSwitch.Action.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="widgets.brease.ToggleSwitch.Action" contentRefId="contentHome" widgetRefId="ToggleSwitch7">
-            <Method xsi:type="widgets.brease.ToggleSwitch.Action.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="EventBinding_5">
-      <Source xsi:type="opcUa.Event" refId="::TrakMoveme:NullOrder" event="ValueChanged" />
-      <EventHandler condition="newValue">
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="Please choose recipe" header="No recipe" icon="Hand" />
-          </Target>
-          <Result>
-            <ResultHandler>
-              <Action>
-                <Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:NullOrder">
-                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
-                </Target>
-              </Action>
-            </ResultHandler>
-          </Result>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.ToggleSwitch1.DisabledClick">
-      <Source xsi:type="widgets.brease.ToggleSwitch.Event" contentRefId="contentHome" widgetRefId="ToggleSwitch1" event="DisabledClick" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="HomePageBottleSizeChangedEvent">
-      <Source xsi:type="opcUa.Event" refId="::AsGlobalPV:gOrder.bottleSize" event="ValueChanged" />
-      <EventHandler condition="newValue = 0">
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottleSizeLabel">
-            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderLarge" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler condition="newValue = 1">
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottleSizeLabel">
-            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderSmall" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="HomePageDrinkColorChangedEvent">
-      <Source xsi:type="opcUa.Event" refId="::AsGlobalPV:gOrder.drinkColor" event="ValueChanged" />
-      <EventHandler condition="newValue = 0">
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeDrinkColorLabel">
-            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourRed" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler condition="newValue = 1">
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeDrinkColorLabel">
-            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourGreen" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler condition="newValue = 2">
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeDrinkColorLabel">
-            <Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourBlue" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.Button1.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button1" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::DeltaOut:diStart">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStop">
-            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStart">
-            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::DeltaIn:diInterrupt">
-            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:Stop_With_Execution">
-            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.Button2.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button2" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStart">
-            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStop">
-            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.Button3.Click">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button3" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::DeltaIn:diInterrupt">
-            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:Stop_With_Execution">
-            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
-          </Target>
-        </Action>
-      </EventHandler>
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gColorSum">
-            <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.Button1.DisabledClick">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button1" event="DisabledClick" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.Button2.DisabledClick">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button2" event="DisabledClick" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.Button3.DisabledClick">
-      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button3" event="DisabledClick" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-    <EventBinding id="contentHome.ToggleSwitch8.DisabledClick">
-      <Source xsi:type="widgets.brease.ToggleSwitch.Event" contentRefId="contentHome" widgetRefId="ToggleSwitch8" event="DisabledClick" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Bindings>
+	<Bindings>
+		<EventBinding id="contentHome.Image1.Click">
+			<Source xsi:type="widgets.brease.Image.Event" contentRefId="contentHome" widgetRefId="WarningImgTrak" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.Navigate" pageId="pageAlarms" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Image2.Click">
+			<Source xsi:type="widgets.brease.Image.Event" contentRefId="contentHome" widgetRefId="warningImgInput" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.Navigate" pageId="pageAlarms" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Image3.Click">
+			<Source xsi:type="widgets.brease.Image.Event" contentRefId="contentHome" widgetRefId="warningImgNozzle" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.Navigate" pageId="pageAlarms" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Image4.Click">
+			<Source xsi:type="widgets.brease.Image.Event" contentRefId="contentHome" widgetRefId="warningImgTwiston" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.Navigate" pageId="pageAlarms" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Image5.Click">
+			<Source xsi:type="widgets.brease.Image.Event" contentRefId="contentHome" widgetRefId="warningImgOutput" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.Navigate" pageId="pageAlarms" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="eventbinding_0">
+			<Source xsi:type="opcUa.Event" refId="::svgTransfo:svgBlocksToColor" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[0]">
+						<Method xsi:type="opcUa.NodeAction.GetValue" />
+					</ReadTarget>
+					<Result>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblInput">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblInput">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblInput">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgInput">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgInput">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 3">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgInput">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[1]">
+						<Method xsi:type="opcUa.NodeAction.GetValue" />
+					</ReadTarget>
+					<Result>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblOutput">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblOutput">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblOutput">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgOutput">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgOutput">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgOutput">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[2]">
+						<Method xsi:type="opcUa.NodeAction.GetValue" />
+					</ReadTarget>
+					<Result>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTwistOn">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTwistOn">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTwistOn">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgTwiston">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgTwiston">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgTwiston">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[3]">
+						<Method xsi:type="opcUa.NodeAction.GetValue" />
+					</ReadTarget>
+					<Result>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleDown">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleDown">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleDown">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[4]">
+						<Method xsi:type="opcUa.NodeAction.GetValue" />
+					</ReadTarget>
+					<Result>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleUp">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleUp">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblNozzleUp">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="warningImgNozzle">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::svgTransfo:svgBlocksToColor[5]">
+						<Method xsi:type="opcUa.NodeAction.GetValue" />
+					</ReadTarget>
+					<Result>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTransporter">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelWorking" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTransporter">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelError" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="lblTransporter">
+									<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/statusLabelOff" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 0">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="WarningImgTrak">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="WarningImgTrak">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="true" />
+								</Target>
+							</Action>
+						</ResultHandler>
+						<ResultHandler condition="result = 2">
+							<Action>
+								<Target xsi:type="widgets.brease.Image.Action" contentRefId="contentHome" widgetRefId="WarningImgTrak">
+									<Method xsi:type="widgets.brease.Image.Action.SetVisible" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding>
+			<Source xsi:type="opcUa.Event" refId="::TrakMoveme:NullOrder" event="ValueChanged" />
+			<EventHandler condition="newValue">
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="Please choose recipe" header="No recipe" icon="Hand" />
+					</Target>
+					<Result>
+						<ResultHandler>
+							<Action>
+								<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:NullOrder">
+									<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="HomePageBottleSizeChangedEvent">
+			<Source xsi:type="opcUa.Event" refId="::AsGlobalPV:gOrder.bottleSize" event="ValueChanged" />
+			<EventHandler condition="newValue = 0">
+				<Action>
+					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottleSizeLabel">
+						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderLarge" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="newValue = 1">
+				<Action>
+					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeBottleSizeLabel">
+						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/orderSmall" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="HomePageDrinkColorChangedEvent">
+			<Source xsi:type="opcUa.Event" refId="::AsGlobalPV:gOrder.drinkColor" event="ValueChanged" />
+			<EventHandler condition="newValue = 0">
+				<Action>
+					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeDrinkColorLabel">
+						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourRed" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="newValue = 1">
+				<Action>
+					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeDrinkColorLabel">
+						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourGreen" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="newValue = 2">
+				<Action>
+					<Target xsi:type="widgets.brease.Label.Action" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeDrinkColorLabel">
+						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/btnPourBlue" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Button1.Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button1" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::DeltaOut:diStart">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStop">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStart">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::DeltaIn:diInterrupt">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:Stop_With_Execution">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Button2.Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button2" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStart">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:VisShuttleStop">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Button3.Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button3" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::DeltaIn:diInterrupt">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::TrakMoveme:Stop_With_Execution">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gColorSum">
+						<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Button1.DisabledClick">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button1" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Button2.DisabledClick">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button2" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.Button3.DisabledClick">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="contentHome" widgetRefId="Button3" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="contentHome.ToggleSwitch8.DisabledClick">
+			<Source xsi:type="widgets.brease.ToggleSwitch.Event" contentRefId="contentHome" widgetRefId="ToggleSwitch8" event="DisabledClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="OK" message="$IAT/msgBoxMsg" header="$IAT/lblControlMode" icon="Warning" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+	</Bindings>
 </EventBindingSet>

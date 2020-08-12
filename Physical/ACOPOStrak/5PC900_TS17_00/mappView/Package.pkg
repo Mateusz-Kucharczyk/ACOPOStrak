@@ -14,5 +14,6 @@
     <Object Type="File">newRecipeDialog.binding</Object>
     <Object Type="File">contentAddNewRecipe.eventbinding</Object>
     <Object Type="File">contentNavigation.eventbinding</Object>
+    <Object Type="File">contentManual.eventbinding</Object>
   </Objects>
 </Package>

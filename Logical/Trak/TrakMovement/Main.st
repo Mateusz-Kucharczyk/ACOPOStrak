@@ -130,7 +130,7 @@ PROGRAM _CYCLIC
 				gTrakAsm.Command.ShuttleStart := FALSE;
 				VisShuttleStart:=FALSE;
 				IF gColorSum=0 THEN
-				gColorSum := gOrder.bottlesPerPackage * gOrder.numberOfPackages; 
+					gColorSum := gOrder.bottlesPerPackage * gOrder.numberOfPackages; 
 				END_IF;
 				IF gColorSum<>0 THEN
 					gProcessFinished := FALSE;
@@ -165,7 +165,7 @@ PROGRAM _CYCLIC
 				IF  MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorBottleInput' THEN
 					Step_Sector:=Bottle_Input;
 					IF NOT(Stop_With_Execution) THEN
-	  					gShuttleInPlace_Input:=TRUE;
+						gShuttleInPlace_Input:=TRUE;
 					END_IF;
 
 					IF gBottleInPlace_Input=TRUE THEN
@@ -309,8 +309,14 @@ PROGRAM _CYCLIC
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorPouring_Down);
-						MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
-                   
+						CASE gOrder.drinkColor OF
+							DRINK_COLOR_RED:
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.105;
+							DRINK_COLOR_GREEN:
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
+							DRINK_COLOR_BLUE:
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.505;
+						END_CASE;
 						// Pouring bottle in Top station
 					Pouring_Top:
 						Pouring_Top_Comming   :=TRUE;
@@ -333,7 +339,14 @@ PROGRAM _CYCLIC
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Axis          := ADR(ShuttleAxis[ActiveShuttle]);
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Execute       := TRUE;
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorPouring_Top);
-						MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
+						CASE gOrder.drinkColor OF
+							DRINK_COLOR_RED:
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.105;
+							DRINK_COLOR_GREEN:
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
+							DRINK_COLOR_BLUE:
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.505;
+						END_CASE;
                    
 						// Wait for capping if Cap station is busy
 					WaitCap:
