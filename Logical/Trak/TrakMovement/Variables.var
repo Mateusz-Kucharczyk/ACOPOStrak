@@ -72,4 +72,6 @@ END_VAR
 (*Visualization Bottle controll*)
 VAR
 	BottleVisibility : ARRAY[0..9] OF BOOL := [10(0)];
+	Capping_Position : REAL := 450;
+	Capping_Rotate : REAL := 0;
 END_VAR

@@ -121,6 +121,8 @@
         <Variable Name="Stop_With_Execution" />
         <Variable Name="NullOrder" />
         <Variable Name="BottleVisibility" EnableArrayElements="True" />
+        <Variable Name="Capping_Rotate" />
+        <Variable Name="Capping_Position" />
       </Task>
       <Task Name="SI">
         <Variable Name="MpDelta3Axis_0">

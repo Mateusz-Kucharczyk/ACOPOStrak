@@ -310,11 +310,11 @@ PROGRAM _CYCLIC
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorPouring_Down);
 						CASE gOrder.drinkColor OF
 							DRINK_COLOR_RED:
-								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.105;
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.05;
 							DRINK_COLOR_GREEN:
-								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.20;
 							DRINK_COLOR_BLUE:
-								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.455;
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.35;
 						END_CASE;
 						// Pouring bottle in Top station
 					Pouring_Top:
@@ -340,11 +340,11 @@ PROGRAM _CYCLIC
 						MC_BR_RoutedMoveAbs_AcpTrak_0.Sector        := ADR(SectorPouring_Top);
 						CASE gOrder.drinkColor OF
 							DRINK_COLOR_RED:
-								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.105;
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.05;
 							DRINK_COLOR_GREEN:
-								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.305;
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.20;
 							DRINK_COLOR_BLUE:
-								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.455;
+								MC_BR_RoutedMoveAbs_AcpTrak_0.Position      := 0.35;
 						END_CASE;
                    
 						// Wait for capping if Cap station is busy
@@ -389,6 +389,21 @@ PROGRAM _CYCLIC
 					ManualShuttleReset:= ManualShuttleReset +1;		
 				END_IF;
 			END_FOR;
+			
+			IF Capping_Busy THEN
+				IF Capping_Position=350 THEN
+					Capping_Rotate:=Capping_Rotate+24;
+					IF Capping_Rotate=360 THEN
+						Capping_Rotate:=0;
+					END_IF;
+				ELSE
+					Capping_Position:=Capping_Position-5;	
+				END_IF;
+			ELSE
+				IF NOT(Capping_Position=450) THEN
+	  				Capping_Position:=Capping_Position+5;
+				END_IF;
+			END_IF;
 			
 			IF Stop_With_Execution THEN
 				ManualShuttleReset:=0;
