@@ -170,7 +170,7 @@ PROGRAM _CYCLIC
 					END_IF;
 
 					IF gBottleInPlace_Input=TRUE THEN
-						BottleVisibility[ActiveShuttle-1]:=TRUE;
+					//	BottleVisibility[ActiveShuttle-1]:=TRUE;
 						Step_Sector:=WaitPour;
 						gBottleInPlace_Input:=FALSE;
 						gShuttleInPlace_Input:=FALSE;
@@ -246,7 +246,7 @@ PROGRAM _CYCLIC
                
 					// bottle in place for delivery waiting for signal and then sending shuttle to sector input
 					IF gBottleInPlace_Output=TRUE THEN
-						BottleVisibility[ActiveShuttle-1]:=FALSE;
+					//	BottleVisibility[ActiveShuttle-1]:=FALSE;
 						Step_Sector:=Bottle_Input;
 						gBottleInPlace_Output:=FALSE;
 						gShuttleInPlace_Output:=FALSE;
