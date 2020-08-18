@@ -3,9 +3,9 @@
   <Widgets>
     <Widget xsi:type="widgets.brease.TabControl" id="TabControl1" top="40" left="40" width="1100" height="620" zIndex="0">
       <Widgets>
-        <Widget xsi:type="widgets.brease.TabItem" id="TabItem1" left="0" zIndex="0" text="$IAT/tabAlarm">
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem1" left="0" zIndex="0" text="$IAT/tabAlarm" activeTextColor="rgba(0, 0, 0, 1)">
           <Widgets>
-            <Widget xsi:type="widgets.brease.AlarmList" id="AlarmList1" top="10" left="220" width="740" height="470" zIndex="0" itemsPerPage="7" nextText="$IAT/alarmListBtnNext" previousText="$IAT/alarmListBtnPrevious" textAlign="left">
+            <Widget xsi:type="widgets.brease.AlarmList" id="AlarmList1" top="10" left="220" width="740" height="470" zIndex="0" itemsPerPage="7" nextText="$IAT/alarmListBtnNext" previousText="$IAT/alarmListBtnPrevious" headerTextColor="rgba(0, 0, 0, 1)" textColorSelectedRow="rgba(0, 0, 0, 1)" textColor="rgba(0, 0, 0, 1)" textAlign="left">
               <Widgets>
                 <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItem1" zIndex="0" columnType="timestamp" text="$IAT/alarmListTimestamp" />
                 <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListItem2" width="440" zIndex="1" text="$IAT/alarmListMessage" />
@@ -16,7 +16,7 @@
             <Widget xsi:type="widgets.brease.Button" id="btnAcknowledge" top="510" left="380" width="160" height="50" zIndex="2" text="$IAT/btnAcknowledge" permissionOperate="['Administrators']" style="Operate" />
           </Widgets>
         </Widget>
-        <Widget xsi:type="widgets.brease.TabItem" id="TabItem2" left="0" zIndex="1" text="$IAT/tabAlarmHistory">
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem2" left="0" zIndex="1" text="$IAT/tabAlarmHistory" activeTextColor="rgba(0, 0, 0, 1)">
           <Widgets>
             <Widget xsi:type="widgets.brease.AlarmHistory" id="AlarmHistory1" top="10" left="220" width="740" height="470" zIndex="0" itemsPerPage="7" nextText="$IAT/alarmListBtnNext" previousText="$IAT/alarmListBtnPrevious">
               <Widgets>

@@ -2,42 +2,42 @@
 <Content id="contentHome" height="700" width="1160" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
     <Widget xsi:type="widgets.brease.Paper" id="Paper1" top="320" left="480" width="680" height="360" zIndex="0" colorList="#339900,#339900,#cc3300,#ffcc00" maxZoomLevel="100" minZoomLevel="100" svgFilePath="Media/svg.svg" borderStyle="none" enable="false" />
-    <Widget xsi:type="widgets.brease.Button" id="Button1" top="120" left="520" height="60" zIndex="1" text="$IAT/btnStart" permissionOperate="['Administrators', 'Operator']" style="Command1" />
-    <Widget xsi:type="widgets.brease.Button" id="Button2" top="120" left="680" height="60" zIndex="2" text="$IAT/btnStop" permissionOperate="['Administrators', 'Operator']" style="Command1" />
-    <Widget xsi:type="widgets.brease.Button" id="Button3" top="200" left="520" width="260" height="60" zIndex="3" breakWord="true" multiLine="true" text="$IAT/btnStopContinue" wordWrap="true" permissionOperate="['Administrators', 'Operator']" style="Command1" />
-    <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch8" top="60" left="520" zIndex="4" mouseDownText="$IAT/switchBtnTextOn" text="$IAT/switchBtnTextOff" mouseDownBackColor="rgba(0, 255, 0, 1)" permissionOperate="['Administrators', 'Operator']" />
-    <Widget xsi:type="widgets.brease.NumericOutput" id="HomePageCurrentRecipeNumOfPckg" top="70" left="1007" zIndex="5" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="2px" cornerRadius="0px" borderColor="rgba(255, 255, 255, 1)" textColor="rgba(255, 255, 255, 1)" style="Output" />
-    <Widget xsi:type="widgets.brease.NumericOutput" id="HomePageCurrentRecipeBottlPerPckg" top="112" left="1007" zIndex="12" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="2px" cornerRadius="0px" borderColor="rgba(255, 255, 255, 1)" textColor="rgba(255, 255, 255, 1)" style="Output" />
-    <Widget xsi:type="widgets.brease.Label" id="HomePageCurrentRecipeBottleSizeLabel" top="152" left="1007" width="100" zIndex="6" text="" borderWidth="2px" borderColor="rgba(255, 255, 255, 1)" borderStyle="solid" textColor="rgba(255, 255, 255, 1)" textAlign="right" fontSize="20px" />
-    <Widget xsi:type="widgets.brease.Label" id="HomePageCurrentRecipeDrinkColorLabel" top="192" left="1007" width="100" zIndex="7" text="" borderWidth="2px" borderColor="rgba(255, 255, 255, 1)" borderStyle="solid" textColor="rgba(255, 255, 255, 1)" textAlign="right" fontSize="20px" />
-    <Widget xsi:type="widgets.brease.Label" id="NumberOfPackagesLabel1" top="70" left="819" width="140" zIndex="8" text="$IAT/orderPcgNo" textColor="rgba(255, 255, 255, 1)" />
-    <Widget xsi:type="widgets.brease.Label" id="BottlesPerPackageLabel1" top="112" left="819" width="140" zIndex="9" text="$IAT/orderBtlInPckNo" textColor="rgba(255, 255, 255, 1)" />
-    <Widget xsi:type="widgets.brease.Label" id="BottleSizeLabel1" top="152" left="819" width="140" zIndex="10" text="$IAT/orderBottleSize" textColor="rgba(255, 255, 255, 1)" />
-    <Widget xsi:type="widgets.brease.Label" id="DrinkColorLabel1" top="192" left="819" width="139" zIndex="11" text="$IAT/orderDrinkColor" textColor="rgba(255, 255, 255, 1)" />
-    <Widget xsi:type="widgets.brease.TextOutput" id="CurrentProgramNameTextOutput" top="229" left="1011" zIndex="13" textColor="rgba(255, 255, 255, 1)" />
-    <Widget xsi:type="widgets.brease.Label" id="CurrentProgramName" top="229" left="819" width="139" zIndex="14" text="$IAT/CurrentProgName" textColor="rgba(255, 255, 255, 1)" />
-    <Widget xsi:type="widgets.brease.Label" id="CurrentRecipeLabel" top="32" left="819" width="290" zIndex="15" text="Current recipe" textColor="rgba(255, 255, 255, 1)" fontSize="24px" />
-    <Widget xsi:type="widgets.brease.Label" id="lblTwistOn" top="430" left="222" width="213" zIndex="21" text="Label22" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
-    <Widget xsi:type="widgets.brease.Label" id="lblOutput" top="490" left="222" width="213" zIndex="22" text="Label21" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
-    <Widget xsi:type="widgets.brease.Label" id="lblNozzleUp" top="330" left="222" width="220" zIndex="25" text="Label20" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
-    <Widget xsi:type="widgets.brease.Label" id="lblNozzleDown" top="370" left="222" width="220" zIndex="26" text="Label19" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
-    <Widget xsi:type="widgets.brease.Label" id="lblInput" top="230" left="222" width="213" zIndex="28" text="sss" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
-    <Widget xsi:type="widgets.brease.Label" id="lblTransporter" top="170" left="222" width="213" zIndex="35" text="Label17" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
-    <Widget xsi:type="widgets.brease.Image" id="warningImgOutput" top="490" left="435" width="30" height="30" zIndex="33" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 51, 1)" visible="false" />
-    <Widget xsi:type="widgets.brease.Image" id="warningImgTwiston" top="430" left="435" width="30" height="30" zIndex="30" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 51, 1)" visible="false" />
-    <Widget xsi:type="widgets.brease.Image" id="warningImgNozzle" top="290" left="435" width="30" height="30" zIndex="31" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 51, 1)" visible="false" />
-    <Widget xsi:type="widgets.brease.Image" id="warningImgInput" top="230" left="435" width="30" height="30" zIndex="29" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 51, 1)" visible="false" />
-    <Widget xsi:type="widgets.brease.Image" id="WarningImgTrak" top="170" left="435" width="30" height="30" zIndex="27" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 51, 1)" />
-    <Widget xsi:type="widgets.brease.Label" id="Label13" top="105" left="262" width="200" zIndex="37" text="$IAT/lblStatus" textAlign="center" style="Title1" />
-    <Widget xsi:type="widgets.brease.Label" id="Label12" top="100" left="80" zIndex="36" text="$IAT/lblStation" textAlign="center" style="Title1" />
-    <Widget xsi:type="widgets.brease.Line" id="Line2" zIndex="24" x1="222" x2="222" y1="100" y2="550" />
-    <Widget xsi:type="widgets.brease.Line" id="Line1" zIndex="23" x1="25" x2="492" y1="140" y2="140" />
-    <Widget xsi:type="widgets.brease.Label" id="Label11" top="370" left="52" width="140" zIndex="34" text="$IAT/lblStationNozzleDown" textColor="rgba(0, 0, 0, 1)" textAlign="center" bold="false" style="Caption" />
-    <Widget xsi:type="widgets.brease.Label" id="Label10" top="330" left="52" width="140" zIndex="32" text="$IAT/lblStationNozzleUp" textColor="rgba(0, 0, 0, 1)" textAlign="center" bold="false" style="Caption" />
-    <Widget xsi:type="widgets.brease.Label" id="Label9" top="500" left="40" width="185" zIndex="20" text="$IAT/lblStationOutput" textColor="rgba(0, 0, 0, 1)" textAlign="center" style="seq-label" />
-    <Widget xsi:type="widgets.brease.Label" id="Label8" top="440" left="40" width="185" zIndex="19" text="$IAT/lblStationTwistOn" textColor="rgba(0, 0, 0, 1)" textAlign="center" style="seq-label" />
-    <Widget xsi:type="widgets.brease.Label" id="Label7" top="300" left="42" width="180" zIndex="18" text="$IAT/lblStationNozzle" textColor="rgba(0, 0, 0, 1)" textAlign="center" style="seq-label" />
-    <Widget xsi:type="widgets.brease.Label" id="Label6" top="240" left="40" width="185" zIndex="17" text="$IAT/lblStationInput" textColor="rgba(0, 0, 0, 1)" textAlign="center" style="seq-label" />
-    <Widget xsi:type="widgets.brease.Label" id="Label5" top="180" left="40" width="185" zIndex="16" text="$IAT/lblStationConveyor" textColor="rgba(0, 0, 0, 1)" textAlign="center" style="seq-label" />
+    <Widget xsi:type="widgets.brease.Button" id="Button1" top="120" left="520" height="60" zIndex="1" text="$IAT/btnStart" textColor="rgba(0, 0, 0, 1)" permissionOperate="['Administrators', 'Operator']" style="Command1" />
+    <Widget xsi:type="widgets.brease.Button" id="Button2" top="120" left="680" height="60" zIndex="2" text="$IAT/btnStop" textColor="rgba(0, 0, 0, 1)" permissionOperate="['Administrators', 'Operator']" style="Command1" />
+    <Widget xsi:type="widgets.brease.Button" id="Button3" top="200" left="520" width="260" height="60" zIndex="3" breakWord="true" multiLine="true" text="$IAT/btnStopContinue" wordWrap="true" textColor="rgba(0, 0, 0, 1)" permissionOperate="['Administrators', 'Operator']" style="Command1" />
+    <Widget xsi:type="widgets.brease.ToggleSwitch" id="ToggleSwitch8" top="40" left="520" zIndex="4" mouseDownText="$IAT/switchBtnTextOn" text="$IAT/switchBtnTextOff" textColor="rgba(0, 0, 0, 1)" mouseDownBackColor="rgba(0, 255, 0, 1)" permissionOperate="['Administrators', 'Operator']" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="HomePageCurrentRecipeNumOfPckg" top="80" left="1008" zIndex="5" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="2px" cornerRadius="0px" borderColor="rgba(0, 0, 0, 1)" textColor="rgba(0, 0, 0, 1)" style="Output" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="HomePageCurrentRecipeBottlPerPckg" top="122" left="1008" zIndex="12" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" borderWidth="2px" cornerRadius="0px" borderColor="rgba(0, 0, 0, 1)" textColor="rgba(0, 0, 0, 1)" style="Output" />
+    <Widget xsi:type="widgets.brease.Label" id="HomePageCurrentRecipeBottleSizeLabel" top="162" left="1008" width="100" zIndex="6" text="" borderWidth="2px" borderColor="rgba(0, 0, 0, 1)" borderStyle="solid" textColor="rgba(0, 0, 0, 1)" textAlign="right" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.Label" id="HomePageCurrentRecipeDrinkColorLabel" top="202" left="1008" width="100" zIndex="7" text="" borderWidth="2px" borderColor="rgba(0, 0, 0, 1)" borderStyle="solid" textColor="rgba(0, 0, 0, 1)" textAlign="right" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.Label" id="NumberOfPackagesLabel1" top="80" left="820" width="140" zIndex="8" text="$IAT/orderPcgNo" textColor="rgba(0, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="BottlesPerPackageLabel1" top="122" left="820" width="140" zIndex="9" text="$IAT/orderBtlInPckNo" textColor="rgba(0, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="BottleSizeLabel1" top="162" left="820" width="140" zIndex="10" text="$IAT/orderBottleSize" textColor="rgba(0, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="DrinkColorLabel1" top="202" left="820" width="139" zIndex="11" text="$IAT/orderDrinkColor" textColor="rgba(0, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="CurrentProgramNameTextOutput" top="239" left="1012" width="149" zIndex="13" breakWord="true" multiLine="true" textColor="rgba(0, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="CurrentProgramName" top="239" left="820" width="139" zIndex="14" text="$IAT/CurrentProgName" textColor="rgba(0, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="CurrentRecipeLabel" top="42" left="820" width="290" zIndex="15" text="Current recipe" textColor="rgba(255, 136, 0, 1)" fontSize="24px" />
+    <Widget xsi:type="widgets.brease.Label" id="lblTwistOn" top="365" left="220" width="213" zIndex="21" text="Label22" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
+    <Widget xsi:type="widgets.brease.Label" id="lblOutput" top="425" left="220" width="213" zIndex="22" text="Label21" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
+    <Widget xsi:type="widgets.brease.Label" id="lblNozzleUp" top="265" left="217" width="220" zIndex="25" text="Label20" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
+    <Widget xsi:type="widgets.brease.Label" id="lblNozzleDown" top="315" left="217" width="220" zIndex="26" text="Label19" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
+    <Widget xsi:type="widgets.brease.Label" id="lblInput" top="165" left="220" width="213" zIndex="28" text="sss" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
+    <Widget xsi:type="widgets.brease.Label" id="lblTransporter" top="105" left="220" width="213" zIndex="35" text="Label17" textColor="rgba(64, 64, 64, 1)" textAlign="center" />
+    <Widget xsi:type="widgets.brease.Image" id="warningImgOutput" top="425" left="433" width="30" height="30" zIndex="33" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 51, 1)" visible="false" />
+    <Widget xsi:type="widgets.brease.Image" id="warningImgTwiston" top="365" left="433" width="30" height="30" zIndex="30" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 51, 1)" visible="false" />
+    <Widget xsi:type="widgets.brease.Image" id="warningImgNozzle" top="225" left="433" width="30" height="30" zIndex="31" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 51, 1)" visible="false" />
+    <Widget xsi:type="widgets.brease.Image" id="warningImgInput" top="165" left="433" width="30" height="30" zIndex="29" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 51, 1)" visible="false" />
+    <Widget xsi:type="widgets.brease.Image" id="WarningImgTrak" top="105" left="433" width="30" height="30" zIndex="27" image="Media/SymbolLib/Alarm/Alarm.svg" imageColor="rgba(255, 0, 51, 1)" />
+    <Widget xsi:type="widgets.brease.Label" id="Label13" top="40" left="260" width="200" zIndex="37" text="$IAT/lblStatus" textAlign="center" style="Title1" />
+    <Widget xsi:type="widgets.brease.Label" id="Label12" top="35" left="78" zIndex="36" text="$IAT/lblStation" textAlign="center" style="Title1" />
+    <Widget xsi:type="widgets.brease.Line" id="Line2" zIndex="24" x1="220" x2="220" y1="55" y2="505" />
+    <Widget xsi:type="widgets.brease.Line" id="Line1" zIndex="23" x1="23" x2="490" y1="75" y2="75" />
+    <Widget xsi:type="widgets.brease.Label" id="Label11" top="315" left="50" width="140" zIndex="34" text="$IAT/lblStationNozzleDown" textColor="rgba(0, 0, 0, 1)" textAlign="center" bold="false" style="Caption" />
+    <Widget xsi:type="widgets.brease.Label" id="Label10" top="265" left="50" width="140" zIndex="32" text="$IAT/lblStationNozzleUp" textColor="rgba(0, 0, 0, 1)" textAlign="center" bold="false" style="Caption" />
+    <Widget xsi:type="widgets.brease.Label" id="Label9" top="425" left="28" width="185" zIndex="20" text="$IAT/lblStationOutput" textColor="rgba(0, 0, 0, 1)" textAlign="center" style="seq-label" />
+    <Widget xsi:type="widgets.brease.Label" id="Label8" top="365" left="28" width="185" zIndex="19" text="$IAT/lblStationTwistOn" textColor="rgba(0, 0, 0, 1)" textAlign="center" style="seq-label" />
+    <Widget xsi:type="widgets.brease.Label" id="Label7" top="220" left="30" width="180" zIndex="18" text="$IAT/lblStationNozzle" textColor="rgba(0, 0, 0, 1)" textAlign="center" style="seq-label" />
+    <Widget xsi:type="widgets.brease.Label" id="Label6" top="165" left="28" width="185" zIndex="17" text="$IAT/lblStationInput" textColor="rgba(0, 0, 0, 1)" textAlign="center" style="seq-label" />
+    <Widget xsi:type="widgets.brease.Label" id="Label5" top="105" left="28" width="185" zIndex="16" text="$IAT/lblStationConveyor" textColor="rgba(0, 0, 0, 1)" textAlign="center" style="seq-label" />
   </Widgets>
 </Content>

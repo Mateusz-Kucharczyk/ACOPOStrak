@@ -13,7 +13,7 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	
+		MpDelta3Axis_0.Override:=gDeltaVelocity;
 	//DeltaParameters.ProgramName := PName;
 	MpDelta3Axis_0.ErrorReset := diErrorReset;
 	
@@ -32,7 +32,7 @@ PROGRAM _CYCLIC
 			END_IF;
 		POWER:
 			MpDelta3Axis_0.Power := TRUE;
-			
+			VisDeltaOutState:=1;
 			IF MpDelta3Axis_0.PowerOn THEN
 	  			Step := HOME;
 			END_IF;
@@ -43,6 +43,7 @@ PROGRAM _CYCLIC
 	  			Step := WAIT_SHUTTLE;
 			END_IF;
 		WAIT_SHUTTLE:
+			VisDeltaOutState:=2;
 			IF ProgressBar > 99 AND diStart THEN
 				gBottlesDone := 0;
 				ProgressBar := 0;
@@ -55,7 +56,7 @@ PROGRAM _CYCLIC
 			END_IF;
 		MOVE_PROGRAM:
 			diStart := FALSE;
-			
+			VisDeltaOutState:=3;
 			IF gVisOutput_Broken THEN
 				IF gOrder.bottlesPerPackage = 4 THEN
 						CASE BottlesPerPack OF
@@ -102,7 +103,7 @@ PROGRAM _CYCLIC
 			END_IF;
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
-			
+			VisDeltaOutState:=4;
 			IF EDGEPOS (gVisOutput_Broken) THEN
 				MpDelta3Axis_0.Interrupt := FALSE;
 				MpDelta3Axis_0.Continue := TRUE;

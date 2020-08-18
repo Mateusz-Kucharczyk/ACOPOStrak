@@ -164,5 +164,31 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="contentOrders.DeleteRecipeButton.Click">
+      <Source xsi:type="widgets.brease.PushButton.Event" contentRefId="contentOrders" widgetRefId="DeleteRecipeButton" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="YesNo" message="You want to delete this file?" header="Warning" icon="Warning" />
+          </Target>
+          <Result>
+            <ResultHandler condition="result = 1">
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::Recipe:UIConnect.Recipe.Delete">
+                  <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="1" />
+                </Target>
+              </Action>
+            </ResultHandler>
+            <ResultHandler condition="result = 2">
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::Recipe:UIConnect.Recipe.Delete">
+                  <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+                </Target>
+              </Action>
+            </ResultHandler>
+          </Result>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

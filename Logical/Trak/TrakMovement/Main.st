@@ -53,6 +53,7 @@ PROGRAM _CYCLIC
    
 		// Assemply power off and waiting for power on command
 		POWER_OFF:
+			VisTrakStates:=0;
 			// When power off is done, delete the shuttle reference
 			IF EDGEPOS(MC_BR_AsmPowerOff_AcpTrak_0.Done) THEN    
 				MC_BR_AsmPowerOff_AcpTrak_0.Execute := FALSE;
@@ -66,11 +67,14 @@ PROGRAM _CYCLIC
  
 			// Assembly power ON
 		POWER_ON:
-           
+			VisTrakStates:=1;
 			MC_BR_AsmPowerOn_AcpTrak_0.Execute := TRUE;
            
 			IF EDGEPOS(MC_BR_AsmPowerOn_AcpTrak_0.Done)THEN
 				CntShuttle := 1;
+				VisCappingStates:=1;
+				VisPouringStates[0]:=1;
+				VisPouringStates[1]:=1;
 				IF NOT(Shuttles_exist) THEN
 					Step := ADD_SHUTTLE;
 				ELSE
@@ -119,6 +123,7 @@ PROGRAM _CYCLIC
        
 			// Active track and ready for command
 		READY:
+			VisTrakStates:=2;
 			// Power off command
 			ManualShuttleReset:=0;
 			CntShuttle := 1;
@@ -151,7 +156,24 @@ PROGRAM _CYCLIC
 			// Main Step, where Shattles run
 		PROCESS:   
 
-
+			// if station have no action, its states remain Ready
+			IF TON_Pouring_Down.IN THEN
+				VisPouringStates[0]:=3;
+			ELSE
+				VisPouringStates[0]:=2;
+			END_IF;
+			IF TON_Pouring_Top.IN THEN
+				VisPouringStates[1]:=3;
+			ELSE
+				VisPouringStates[1]:=2;
+			END_IF;
+			IF TON_Capping.IN THEN
+				VisCappingStates:=3;
+			ELSE
+				VisCappingStates:=2;
+			END_IF;
+			VisTrakStates:=3;
+			
 			FOR ActiveShuttle:=NUM_SIM_SHUTTLES TO 1 BY -1 DO
 				MC_BR_ShReadInfo_AcpTrak_0.Enable:=FALSE;
 				MC_BR_ShReadInfo_AcpTrak_0();
@@ -170,7 +192,7 @@ PROGRAM _CYCLIC
 					END_IF;
 
 					IF gBottleInPlace_Input=TRUE THEN
-					//	BottleVisibility[ActiveShuttle-1]:=TRUE;
+						//	BottleVisibility[ActiveShuttle-1]:=TRUE;
 						Step_Sector:=WaitPour;
 						gBottleInPlace_Input:=FALSE;
 						gShuttleInPlace_Input:=FALSE;
@@ -235,6 +257,7 @@ PROGRAM _CYCLIC
                
 					// After capping sendig to delivery
 					IF  TON_Capping.Q THEN
+						
 						Capping_Busy := FALSE;	
 						Step_Sector:=Bottle_Output;
 						TON_Capping.IN:=FALSE;
@@ -246,7 +269,7 @@ PROGRAM _CYCLIC
                
 					// bottle in place for delivery waiting for signal and then sending shuttle to sector input
 					IF gBottleInPlace_Output=TRUE THEN
-					//	BottleVisibility[ActiveShuttle-1]:=FALSE;
+						//	BottleVisibility[ActiveShuttle-1]:=FALSE;
 						Step_Sector:=Bottle_Input;
 						gBottleInPlace_Output:=FALSE;
 						gShuttleInPlace_Output:=FALSE;
@@ -267,7 +290,32 @@ PROGRAM _CYCLIC
 				IF Capping_Busy=TRUE THEN
 					TON_Capping.IN:=TRUE;
 				END_IF;
-           
+				//Handling broken stations
+				IF Pouring_Down_Broken THEN
+					VisPouringStates[0]:=4;
+					Pouring_Down_Comming:=TRUE;
+					SvgTranform[3]:=2;
+				END_IF
+				IF EDGENEG(Pouring_Down_Broken) THEN
+					Pouring_Down_Comming:=FALSE;
+					SvgTranform[3]:=0;
+				END_IF;
+				IF Pouring_Top_Broken THEN
+					VisPouringStates[1]:=4;
+					Pouring_Top_Comming:=TRUE;
+					SvgTranform[4]:=2;
+				END_IF;
+				IF EDGENEG(Pouring_Top_Broken) THEN
+					Pouring_Top_Comming:=FALSE;
+					SvgTranform[4]:=0;
+				END_IF;
+				IF Capping_Broken THEN
+					VisCappingStates:=4;
+					Capping_Comming:=TRUE;
+					SvgTranform[2]:=2;
+				END_IF
+				
+				
 				// Step for active Shuttle
 				CASE Step_Sector OF
                
@@ -401,10 +449,27 @@ PROGRAM _CYCLIC
 				END_IF;
 			ELSE
 				IF NOT(Capping_Position=450) THEN
-	  				Capping_Position:=Capping_Position+5;
+					Capping_Position:=Capping_Position+5;
 				END_IF;
 			END_IF;
-			
+			IF Pouring_Top_Busy THEN
+				IF NOT (Pouring_Top_Position=350) THEN
+					Pouring_Top_Position:=Pouring_Top_Position-5;
+				END_IF;
+			ELSE
+				IF NOT (Pouring_Top_Position=400) THEN
+					Pouring_Top_Position:=Pouring_Top_Position+5;
+				END_IF;
+			END_IF;
+			IF Pouring_Down_Busy THEN
+				IF NOT (Pouring_Down_Position=350) THEN
+					Pouring_Down_Position:=Pouring_Down_Position-5;
+				END_IF;
+			ELSE
+				IF NOT (Pouring_Down_Position=400) THEN
+					Pouring_Down_Position:=Pouring_Down_Position+5;
+				END_IF;
+			END_IF;
 			IF Stop_With_Execution THEN
 				ManualShuttleReset:=0;
 				FOR ActiveShuttle:=NUM_SIM_SHUTTLES TO 1 BY -1 DO
@@ -445,7 +510,12 @@ PROGRAM _CYCLIC
 				Step:=DELTA_TURN;
 				ManualShuttleReset:=0;
 			END_IF;
+			// Machine States
+	
+	
+
 		MANUAL:
+			VisTrakStates:=5;
 			IF VisManual=FALSE THEN
 
 				FOR CntShuttle:=NUM_SIM_SHUTTLES TO 1 BY -1 DO
@@ -528,6 +598,7 @@ PROGRAM _CYCLIC
 			END_IF;
 
 		STOPPING:
+			VisTrakStates:=4;
 			gShuttleInPlace_Input:=FALSE;
 			gShuttleInPlace_Output:=FALSE;
 			gShuttleInPlace_Turn:=FALSE;
@@ -739,6 +810,9 @@ PROGRAM _CYCLIC
 			gVisPower:=TRUE;
 	END_CASE
    
+
+	
+	
 	// Read Assembly status cyclic to Assembly interface
 	gTrakAsm.Status.Disabled  := MC_BR_AsmReadStatus_AcpTrak_0.AssemblyDisabled;
 	gTrakAsm.Status.Ready     := MC_BR_AsmReadStatus_AcpTrak_0.AssemblyReady;
@@ -775,6 +849,10 @@ PROGRAM _CYCLIC
 	gTrakAsm.Parameter.Velocity				:=VisVelocity;
 	gTrakAsm.Parameter.Acceleration			:=VisAcceleration;
 	gTrakAsm.Parameter.Deceleration			:=VisDeceleration;
+	
+	
+	
+	
 	CASE gOrder.bottleSize OF
 		BOTTLE_SIZE_SMALL:
 			TON_Pouring_Down.PT 			:=REAL_TO_TIME(1000*VisPouring_Time_Small);
@@ -786,26 +864,6 @@ PROGRAM _CYCLIC
 	
 	
 	// Handling Broken stations
-	IF Pouring_Down_Broken THEN
-		Pouring_Down_Comming:=TRUE;
-		SvgTranform[3]:=2;
-	END_IF
-	IF EDGENEG(Pouring_Down_Broken) THEN
-		Pouring_Down_Comming:=FALSE;
-		SvgTranform[3]:=0;
-	END_IF;
-	IF Pouring_Top_Broken THEN
-		Pouring_Top_Comming:=TRUE;
-		SvgTranform[4]:=2;
-	END_IF;
-	IF EDGENEG(Pouring_Top_Broken) THEN
-		Pouring_Top_Comming:=FALSE;
-		SvgTranform[4]:=0;
-	END_IF;
-	IF Capping_Broken THEN
-		Capping_Comming:=TRUE;
-		SvgTranform[2]:=2;
-	END_IF
 	IF EDGENEG(Capping_Broken) THEN
 		Capping_Comming:=FALSE;
 		SvgTranform[2]:=0;

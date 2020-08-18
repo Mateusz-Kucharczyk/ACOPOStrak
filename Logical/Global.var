@@ -1,5 +1,5 @@
 VAR
-	gbottlesDone  : BOOL;
+	gbottlesDone : BOOL;
 	gPartyOn : BOOL;
 	gVisTurn_Broken : BOOL;
 	ShuttleNumber : USINT;
@@ -53,5 +53,6 @@ VAR
 	gVisOutput_Broken : BOOL := TRUE;
 	gVisInput_Broken : BOOL := TRUE;
 	gBgColor : ARRAY[0..2] OF REAL;
+	gDeltaVelocity : USINT := 100;
 	gdiInstantStop : BOOL;
 END_VAR

@@ -31,6 +31,7 @@
         <Variable Name="gBgColor" EnableArrayElements="True" />
         <Variable Name="gPartyOn" />
         <Variable Name="gColorSum" />
+        <Variable Name="gDeltaVelocity" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
@@ -44,6 +45,7 @@
         </Variable>
         <Variable Name="ProgressBar" />
         <Variable Name="diStart" />
+        <Variable Name="VisDeltaOutState" />
       </Task>
       <Task Name="DeltaIn">
         <Variable Name="MpDelta3Axis_0">
@@ -51,6 +53,7 @@
             <Variable Name="JointAxisPosition" EnableArrayElements="True" />
           </Variable>
         </Variable>
+        <Variable Name="VisDeltaInState" />
       </Task>
       <Task Name="Vis">
         <Variable Name="ShuttlesVisibleFalse" />
@@ -123,6 +126,11 @@
         <Variable Name="BottleVisibility" EnableArrayElements="True" />
         <Variable Name="Capping_Rotate" />
         <Variable Name="Capping_Position" />
+        <Variable Name="VisCappingStates" />
+        <Variable Name="VisPouringStates" EnableArrayElements="True" />
+        <Variable Name="VisTrakStates" />
+        <Variable Name="Pouring_Down_Position" />
+        <Variable Name="Pouring_Top_Position" />
       </Task>
       <Task Name="SI">
         <Variable Name="MpDelta3Axis_0">

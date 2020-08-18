@@ -220,7 +220,7 @@
         <seg>Користувача змінено на:</seg>
       </tuv>
       <tuv xml:lang="pl">
-        <seg>Zmienono użytkowanika na:</seg>
+        <seg>Zmieniono użytkownika na:</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>User changed to: </seg>
@@ -887,7 +887,7 @@
         <seg>Швидкість пиляння</seg>
       </tuv>
       <tuv xml:lang="pl">
-        <seg>Prękdkość traka</seg>
+        <seg>Prędkość traka</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Track velocity </seg>
@@ -904,7 +904,7 @@
         <seg>швидкість доріжки</seg>
       </tuv>
       <tuv xml:lang="pl">
-        <seg>Przyśpieszenie traka</seg>
+        <seg>Przyspieszenie traka</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Track acceleration</seg>
@@ -983,7 +983,7 @@
         <seg>Зменшити швидкість ременя</seg>
       </tuv>
       <tuv xml:lang="pl">
-        <seg>Zmniejszanie prędkości traka</seg>
+        <seg>Prędkość hamowania traka</seg>
       </tuv>
       <tuv xml:lang="en">
         <seg>Track deceleration</seg>
@@ -1292,6 +1292,110 @@
       </tuv>
       <tuv xml:lang="en">
         <seg>Create new</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StatePowerON">
+      <tuv xml:lang="pl">
+        <seg>Włączony</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Power ON</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StatePowerOFF">
+      <tuv xml:lang="pl">
+        <seg>Wyłączony</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Power OFF</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StatePouring">
+      <tuv xml:lang="pl">
+        <seg>Nalewam</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Pouring</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StateReady">
+      <tuv xml:lang="pl">
+        <seg>Gotowy</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Ready</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StateCapping">
+      <tuv xml:lang="pl">
+        <seg>Zakręcam</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Capping</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StateTaking">
+      <tuv xml:lang="pl">
+        <seg>Pobieram Butelke</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Taking bottle</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StateGiving">
+      <tuv xml:lang="pl">
+        <seg>Daje Butelke</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Giving bottle</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StateInterput">
+      <tuv xml:lang="pl">
+        <seg>Zatrzymanie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Interrupt</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StateMovement">
+      <tuv xml:lang="pl">
+        <seg>Ruch</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Movement</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StateStop">
+      <tuv xml:lang="pl">
+        <seg>Zatrzymany</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stop</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StateManual">
+      <tuv xml:lang="pl">
+        <seg>Tryb Reczny</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Manual</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StateError">
+      <tuv xml:lang="pl">
+        <seg>Awaria</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error</seg>
+      </tuv>
+    </tu>
+    <tu tuid="settingDeltaVelocity">
+      <tuv xml:lang="pl">
+        <seg>Prędkość Delt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Delta velocity</seg>
       </tuv>
     </tu>
   </body>

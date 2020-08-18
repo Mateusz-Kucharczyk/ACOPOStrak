@@ -13,7 +13,7 @@ END_PROGRAM
 PROGRAM _CYCLIC
     
 	MpDelta3Axis_0();
-	
+	MpDelta3Axis_0.Override:=gDeltaVelocity;
 	
 	IF gdiInstantStop THEN
 		Step:=STOP;
@@ -34,6 +34,7 @@ PROGRAM _CYCLIC
 			END_IF;
 		POWER:
 			MpDelta3Axis_0.Power := TRUE;
+			VisDeltaInState:=1;
 			IF MpDelta3Axis_0.PowerOn THEN
 				Step:= HOME;
 			END_IF;
@@ -41,8 +42,10 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.Home := TRUE;
 			IF MpDelta3Axis_0.IsHomed THEN
 				Step := WAIT_SHUTTLE;
+
 			END_IF;
 		WAIT_SHUTTLE:	
+			VisDeltaInState:=2;
 			MpDelta3Axis_0.MoveProgram := 0;
 			IF gShuttleInPlace_Input AND NOT gdiStop  THEN
 				Step := MOVE_PROGRAM;
@@ -50,28 +53,29 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		MOVE_PROGRAM:
-
+			VisDeltaInState:=3;
 			IF gVisInput_Broken THEN
-					IF gColorSum >0 THEN
-						MpDelta3Axis_0.MoveProgram :=TRUE;
-						IF MpDelta3Axis_0.MoveDone THEN
-							gColorSum := gColorSum - 1;
-							Step:= WAIT_SHUTTLE;
-							gBottleInPlace_Input:=TRUE;
-						END_IF;
-						IF diInterrupt THEN
-							Step := INTERRUPT;
-							MpDelta3Axis_0.Continue := FALSE;
-						END_IF;
+				IF gColorSum >0 THEN
+					MpDelta3Axis_0.MoveProgram :=TRUE;
+					IF MpDelta3Axis_0.MoveDone THEN
+						gColorSum := gColorSum - 1;
+						Step:= WAIT_SHUTTLE;
+						gBottleInPlace_Input:=TRUE;
 					END_IF;
-				ELSE
-					Step := INTERRUPT;
-					MpDelta3Axis_0.Continue := FALSE;
+					IF diInterrupt THEN
+						Step := INTERRUPT;
+						MpDelta3Axis_0.Continue := FALSE;
+					END_IF;
+				END_IF;
+			ELSE
+				Step := INTERRUPT;
+				MpDelta3Axis_0.Continue := FALSE;
 
 			END_IF;
 			
 
 		INTERRUPT:
+			VisDeltaInState:=4;
 			MpDelta3Axis_0.Interrupt := TRUE;
 			IF NOT (diInterrupt) OR EDGEPOS(gVisInput_Broken) THEN
 				MpDelta3Axis_0.Interrupt := FALSE;

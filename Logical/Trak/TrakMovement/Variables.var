@@ -67,6 +67,9 @@ VAR
 	VisMove_Pos : BOOL := FALSE;
 	VisMove_Neg : BOOL;
 	NullOrder : BOOL := FALSE;
+	VisCappingStates : USINT := 0;
+	VisTrakStates : USINT;
+	VisPouringStates : ARRAY[0..1] OF USINT := [2(0)];
 	SvgTranform : ARRAY[0..5] OF USINT;
 END_VAR
 (*Visualization Bottle controll*)
@@ -74,4 +77,6 @@ VAR
 	BottleVisibility : ARRAY[0..9] OF BOOL := [10(0)];
 	Capping_Position : REAL := 450;
 	Capping_Rotate : REAL := 0;
+	Pouring_Top_Position : INT := 400;
+	Pouring_Down_Position : INT := 400;
 END_VAR

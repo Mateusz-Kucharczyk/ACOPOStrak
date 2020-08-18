@@ -1,0 +1,14 @@
+To run simulaton ACOPOSTrak You need to have Scene Viever 4 and Automation Studio 4.7.3 or higher
+
+Place all of this files (ACOPOStrak package) at C (path C://ACOPOStrak)
+
+In Scene Viewer:
+Online-->PVI-->Options
+Task Name : Vis
+Variable name : Vizu
+Size[bytes] : 10812
+
+Then Connect PVI and OPCUA.
+
+After starting simulation in Automation Studio You can open this link in Your browser (Google Chrome recomended)
+http://127.0.0.1:81/index.html?visuId=trakVis

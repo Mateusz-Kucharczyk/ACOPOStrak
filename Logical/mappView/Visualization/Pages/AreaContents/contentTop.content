@@ -5,6 +5,8 @@
     <Widget xsi:type="widgets.brease.Button" id="buttonOpenDialog" top="0" left="0" width="120" height="100" zIndex="1" image="Media/SymbolLib/User/Login.svg" imageAlign="top" text="$IAT/lgnBtnLogin" imageHeight="50" imageWidth="50" borderStyle="none" backColor="rgba(71, 75, 79, 1)" textColor="rgba(0, 0, 0, 1)" mouseDownBackColor="rgba(34, 38, 41, 1)" mouseDownTextColor="rgba(255, 255, 255, 1)" textAlign="center" opacity="1" fontSize="15px" bold="true" style="Operate1" />
     <Widget xsi:type="widgets.brease.Label" id="Label1" top="0" left="115" width="200" height="60" zIndex="2" text="$IAT/lgnLabelLoggedAs" textAlign="center" style="seq-label" />
     <Widget xsi:type="widgets.brease.LoginInfo" id="LoginInfo1" top="60" left="120" width="200" zIndex="3" textColor="rgba(0, 0, 0, 1)" textAlign="center" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.ProgressBar" id="ProgressBar1" top="40" left="360" width="820" height="40" zIndex="4" value="50" barBorderColor="rgba(255, 255, 255, 1)" fontSize="15px" fontColor="rgba(255, 255, 255, 1)" />
+    <Widget xsi:type="widgets.brease.ProgressBar" id="ProgressBar1" top="30" left="360" width="460" height="40" zIndex="4" value="50" barBorderColor="rgba(255, 255, 255, 1)" fontSize="15px" fontColor="rgba(255, 255, 255, 1)" />
+    <Widget xsi:type="widgets.brease.DateTimeOutput" id="DateTimeOutput1" top="69" left="800" width="330" zIndex="5" backColor="rgba(71, 75, 79, 1)" borderStyle="none" textColor="rgba(255, 128, 0, 1)" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="0" left="1130" width="200" zIndex="6" image="Media/br_logo.png" />
   </Widgets>
 </Content>
