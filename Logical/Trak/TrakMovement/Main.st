@@ -149,7 +149,7 @@ PROGRAM _CYCLIC
 				Step:=STOPPING;
 				
 			END_IF
-			IF gPartyOn THEN
+			IF gPartyOn THEN 
 				Step:=DELTA_TURN;
 				ManualShuttleReset:=0;
 			END_IF;
@@ -169,7 +169,7 @@ PROGRAM _CYCLIC
 			END_IF;
 			IF TON_Capping.IN THEN
 				VisCappingStates:=3;
-			ELSE
+			ELSE 
 				VisCappingStates:=2;
 			END_IF;
 			VisTrakStates:=3;
@@ -257,7 +257,6 @@ PROGRAM _CYCLIC
                
 					// After capping sendig to delivery
 					IF  TON_Capping.Q THEN
-						
 						Capping_Busy := FALSE;	
 						Step_Sector:=Bottle_Output;
 						TON_Capping.IN:=FALSE;

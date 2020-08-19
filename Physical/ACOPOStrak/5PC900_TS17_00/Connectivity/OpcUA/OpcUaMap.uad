@@ -32,6 +32,7 @@
         <Variable Name="gPartyOn" />
         <Variable Name="gColorSum" />
         <Variable Name="gDeltaVelocity" />
+        <Variable Name="VisManual" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
@@ -107,7 +108,6 @@
         <Variable Name="VisAcceleration" />
         <Variable Name="VisCapping_Broken" />
         <Variable Name="VisDeceleration" />
-        <Variable Name="VisManual" />
         <Variable Name="VisManualSectorTop" />
         <Variable Name="VisManualVelocity" />
         <Variable Name="VisPouring_Down_Broken" />

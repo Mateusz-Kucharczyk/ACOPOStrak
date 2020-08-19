@@ -135,10 +135,7 @@
 <Source xsi:type="opcUa" refId="::TrakMoveme:VisPouring_Down_Broken" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch7" attribute="value" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TrakMoveme:VisManual" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch9" attribute="value" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::TrakMoveme:VisManualSectorTop" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleButton2" attribute="value" />
@@ -172,6 +169,10 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gDeltaVelocity" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentSettings" widgetRefId="NumericInput6" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch9" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

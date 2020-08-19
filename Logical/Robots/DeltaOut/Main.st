@@ -130,7 +130,49 @@ PROGRAM _CYCLIC
 				Step := WAIT_SHUTTLE;
 				MpDelta3Axis_0.ErrorReset := FALSE;
 			END_IF;
-		
+			
+		MANUAL:
+			MpDelta3Axis_0.Override:=100;
+			gDeltaVelocity:=100;
+			MpDelta3Axis_0.Jog:=TRUE;
+			IF VisDeltaNumber = 2 THEN
+				IF VisDeltaInJogXAdd THEN
+					DeltaParameters.Jog.Velocity[0]:=VisDeltaVelocity;
+				END_IF;
+				IF EDGENEG(VisDeltaInJogXAdd) THEN
+					DeltaParameters.Jog.Velocity[0]:=0.0;
+				END_IF;
+				IF VisDeltaInJogXSub THEN
+					DeltaParameters.Jog.Velocity[0]:=-VisDeltaVelocity;
+				END_IF;
+				IF EDGENEG(VisDeltaInJogXSub) THEN
+					DeltaParameters.Jog.Velocity[0]:=0.0;
+				END_IF;
+				IF VisDeltaInJogYAdd THEN
+					DeltaParameters.Jog.Velocity[1]:=VisDeltaVelocity;
+				END_IF;
+				IF EDGENEG(VisDeltaInJogYAdd) THEN
+					DeltaParameters.Jog.Velocity[1]:=0.0;
+				END_IF;
+				IF VisDeltaInJogYSub THEN
+					DeltaParameters.Jog.Velocity[1]:=-VisDeltaVelocity;
+				END_IF;
+				IF EDGENEG(VisDeltaInJogYSub) THEN
+					DeltaParameters.Jog.Velocity[1]:=0.0;
+				END_IF;
+				IF VisDeltaInJogZAdd THEN
+					DeltaParameters.Jog.Velocity[2]:=VisDeltaVelocity;
+				END_IF;
+				IF EDGENEG(VisDeltaInJogZAdd) THEN
+					DeltaParameters.Jog.Velocity[2]:=0.0;
+				END_IF;
+				IF VisDeltaInJogZSub THEN
+					DeltaParameters.Jog.Velocity[2]:=-VisDeltaVelocity;
+				END_IF;
+				IF EDGENEG(VisDeltaInJogZSub) THEN
+					DeltaParameters.Jog.Velocity[2]:=0.0;
+				END_IF;
+			END_IF;
 		
 	END_CASE;
     

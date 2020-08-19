@@ -60,7 +60,6 @@ VAR
 	VisVelocity : REAL := 2.0;
 	VisAcceleration : REAL := 10;
 	VisDeceleration : REAL := 5;
-	VisManual : BOOL;
 	VisShuttle : USINT := 1;
 	VisManualVelocity : REAL := 1.0;
 	VisManualSectorTop : BOOL := FALSE;
