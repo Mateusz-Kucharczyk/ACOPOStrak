@@ -33,6 +33,14 @@
         <Variable Name="gColorSum" />
         <Variable Name="gDeltaVelocity" />
         <Variable Name="VisManual" />
+        <Variable Name="VisDeltaInJogXAdd" />
+        <Variable Name="VisDeltaInJogXSub" />
+        <Variable Name="VisDeltaInJogYAdd" />
+        <Variable Name="VisDeltaInJogYSub" />
+        <Variable Name="VisDeltaInJogZAdd" />
+        <Variable Name="VisDeltaInJogZSub" />
+        <Variable Name="VisDeltaNumber" />
+        <Variable Name="VisDeltaVelocity" />
       </GlobalVariables>
       <Task Name="svgTransfo">
         <Variable Name="tranformation" />
@@ -131,6 +139,12 @@
         <Variable Name="VisTrakStates" />
         <Variable Name="Pouring_Down_Position" />
         <Variable Name="Pouring_Top_Position" />
+        <Variable Name="VisCappingAdd" />
+        <Variable Name="VisCappingRotate" />
+        <Variable Name="VisCappingSub" />
+        <Variable Name="VisPouringAdd" />
+        <Variable Name="VisPouringNumber" />
+        <Variable Name="VisPouringSub" />
       </Task>
       <Task Name="SI">
         <Variable Name="MpDelta3Axis_0">

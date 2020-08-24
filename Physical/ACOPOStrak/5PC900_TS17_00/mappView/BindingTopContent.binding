@@ -83,96 +83,187 @@
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:gOrder.numberOfPackages" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentHome" widgetRefId="HomePageCurrentRecipeNumOfPckg" attribute="value" />
 		</Binding>
+		
+		
+		
+		
+		
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::TrakMoveme:VisManualSectorTop" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleButton2" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::TrakMoveme:VisMove_Pos" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton8" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::TrakMoveme:VisMove_Neg" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton9" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::TrakMoveme:VisShuttle" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="DropDownBox1" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gDeltaVelocity" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentSettings" widgetRefId="NumericInput6" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gVisInput_Broken" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentSettings" widgetRefId="ToggleSwitch3" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:gVisOutput_Broken" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentSettings" widgetRefId="ToggleSwitch5" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::TrakMoveme:VisCapping_Broken" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentSettings" widgetRefId="ToggleSwitch4" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::TrakMoveme:VisPouring_Top_Broken" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentSettings" widgetRefId="ToggleSwitch6" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::TrakMoveme:VisPouring_Down_Broken" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentSettings" widgetRefId="ToggleSwitch7" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisDeltaNumber" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="DropDownBox2" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisDeltaInJogZAdd" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton5" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisDeltaInJogYSub" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton4" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisDeltaInJogYAdd" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton3" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisDeltaInJogXSub" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton2" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisDeltaInJogXAdd" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton1" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisDeltaInJogZSub" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton6" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisDeltaVelocity" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="BasicSlider1" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleButton2" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton9" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton8" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="DropDownBox1" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch1" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="DropDownBox2" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton1" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton3" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton5" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton2" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton4" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton6" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="BasicSlider1" attribute="enable" />
+		</Binding>
 	<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton9" attribute="enable" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gProcessFinished" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch1" attribute="enable" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton8" attribute="enable" />
+<Source xsi:type="opcUa" refId="::TrakMoveme:VisPouringAdd" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton10" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleButton2" attribute="enable" />
+<Source xsi:type="opcUa" refId="::TrakMoveme:VisPouringSub" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton11" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch9" attribute="enable" />
+<Source xsi:type="opcUa" refId="::TrakMoveme:VisCappingAdd" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton12" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch7" attribute="enable" />
+<Source xsi:type="opcUa" refId="::TrakMoveme:VisCappingSub" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton13" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch6" attribute="enable" />
+<Source xsi:type="opcUa" refId="::TrakMoveme:VisCappingRotate" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton14" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch5" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch4" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch3" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch1" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="session" refId="switchManualModeEnable" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="DropDownBox1" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TrakMoveme:VisPouring_Top_Broken" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch6" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TrakMoveme:VisPouring_Down_Broken" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch7" attribute="value" />
-</Binding>
-
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TrakMoveme:VisManualSectorTop" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleButton2" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TrakMoveme:VisMove_Pos" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton8" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TrakMoveme:VisMove_Neg" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton9" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TrakMoveme:VisShuttle" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="DropDownBox1" attribute="selectedIndex" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TrakMoveme:VisCapping_Broken" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch4" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gVisInput_Broken" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch3" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gVisOutput_Broken" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch5" attribute="value" />
-</Binding>
-
-
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gDeltaVelocity" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentSettings" widgetRefId="NumericInput6" attribute="value" />
+<Source xsi:type="opcUa" refId="::TrakMoveme:VisPouringNumber" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="DropDownBox3" attribute="selectedIndex" />
 </Binding>
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="ToggleSwitch9" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton14" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton13" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton12" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="DropDownBox3" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton11" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:VisManual" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentManual" widgetRefId="MomentaryPushButton10" attribute="enable" />
 </Binding>
 </Bindings>
 </BindingsSet>

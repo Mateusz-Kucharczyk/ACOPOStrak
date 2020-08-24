@@ -2,6 +2,7 @@
 <?AutomationStudio Version=4.7.3.93 SP?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
+    <Object Type="Package">ACOPOSTrak</Object>
     <Object Type="File">Instruction.txt</Object>
   </Objects>
 </Package>

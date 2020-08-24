@@ -78,4 +78,10 @@ VAR
 	Capping_Rotate : REAL := 0;
 	Pouring_Top_Position : INT := 400;
 	Pouring_Down_Position : INT := 400;
+	VisCappingRotate : BOOL;
+	VisCappingAdd : BOOL;
+	VisCappingSub : BOOL;
+	VisPouringNumber : INT;
+	VisPouringAdd : BOOL;
+	VisPouringSub : BOOL;
 END_VAR

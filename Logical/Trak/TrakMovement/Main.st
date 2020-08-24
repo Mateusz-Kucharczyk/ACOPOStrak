@@ -544,7 +544,34 @@ PROGRAM _CYCLIC
 						ManualShuttleReset:= ManualShuttleReset +1;
 					END_IF;
 				END_FOR;
-				IF ManualShuttleReset=NUM_SIM_SHUTTLES THEN
+				IF Pouring_Down_Position<>400 THEN
+					IF Pouring_Down_Position<400 THEN
+						Pouring_Down_Position:=Pouring_Down_Position+5;
+					END_IF;
+					IF Pouring_Down_Position>400 THEN
+						Pouring_Down_Position:=Pouring_Down_Position-5;
+					END_IF;
+				END_IF;
+				IF Pouring_Top_Position<>400 THEN
+					IF Pouring_Top_Position<400 THEN
+						Pouring_Top_Position:=Pouring_Top_Position+5;
+					END_IF;
+					IF Pouring_Down_Position>400 THEN
+						Pouring_Top_Position:=Pouring_Top_Position-5;
+					END_IF;
+				END_IF;
+				IF Capping_Position<>400 THEN
+					IF Capping_Position<400 THEN
+						Capping_Position:=Capping_Position+5;
+					END_IF;
+					IF Capping_Position>400 THEN
+						Capping_Position:=Capping_Position-5;
+					END_IF;
+				END_IF;
+				IF Capping_Rotate<>0 THEN
+					Capping_Rotate:=Capping_Rotate-12;
+				END_IF;
+				IF ManualShuttleReset=NUM_SIM_SHUTTLES AND Capping_Position=400 AND Pouring_Top_Position=400 AND Pouring_Down_Position=400 THEN
 					CntShuttle:=1;
 					Step := READY;
 					Pouring_Top_Comming:=FALSE;
@@ -559,7 +586,35 @@ PROGRAM _CYCLIC
 					TON_Pouring_Top.IN:=FALSE;
 					
 				END_IF;
-			ELSE
+			ELSE 		// MANUAL TURNED ON
+				IF VisCappingRotate THEN
+					Capping_Rotate:=Capping_Rotate+12;
+					IF Capping_Rotate=360 THEN
+						Capping_Rotate:=0;
+					END_IF;
+				END_IF;
+				IF VisCappingAdd AND Capping_Position<500 THEN
+					Capping_Position:= Capping_Position+5;
+				END_IF;
+				IF VisCappingSub AND Capping_Position>200 THEN
+					Capping_Position:= Capping_Position-5;
+				END_IF;
+				IF VisPouringNumber =0 THEN
+					IF VisPouringAdd AND Pouring_Top_Position<450 THEN
+						Pouring_Top_Position:=Pouring_Top_Position+5;
+					END_IF;
+					IF VisPouringSub AND Pouring_Top_Position>200 THEN
+						Pouring_Top_Position:=Pouring_Top_Position-5;
+					END_IF;
+				ELSIF VisPouringNumber = 1 THEN
+					IF VisPouringAdd AND Pouring_Down_Position<450 THEN
+						Pouring_Down_Position:=Pouring_Down_Position+5;
+					END_IF;
+					IF VisPouringSub AND Pouring_Down_Position>200 THEN
+						Pouring_Down_Position:=Pouring_Down_Position-5;
+					END_IF;
+				END_IF;
+				
 				MC_BR_RoutedMoveVel_AcpTrak_0.Execute		:=FALSE;
 				MC_BR_RoutedMoveVel_AcpTrak_0();
 				MC_BR_RoutedMoveVel_AcpTrak_0.Axis			:=ADR(ShuttleAxis[VisShuttle+1]);
@@ -668,7 +723,7 @@ PROGRAM _CYCLIC
 			ELSE
 				Step := READY;	
 			END_IF;
-       
+
 			// Reset due to error
 		RESET:
 			IF EDGEPOS(MC_BR_AsmReset_AcpTrak_0.Done) THEN

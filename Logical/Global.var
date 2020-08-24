@@ -56,8 +56,6 @@ VAR
 	gBgColor : ARRAY[0..2] OF REAL;
 	gDeltaVelocity : USINT := 100;
 	gdiInstantStop : BOOL;
-END_VAR
-VAR
 	VisDeltaVelocity : REAL := 0.0;
 	VisDeltaInJogXAdd : BOOL;
 	VisDeltaInJogXSub : BOOL;
@@ -65,5 +63,6 @@ VAR
 	VisDeltaInJogYSub : BOOL;
 	VisDeltaInJogZAdd : BOOL;
 	VisDeltaInJogZSub : BOOL;
+	Bottle : INT;
 	VisDeltaNumber : USINT;
 END_VAR

@@ -10,5 +10,5 @@ Size[bytes] : 10812
 
 Then Connect PVI and OPCUA.
 
-After starting simulation in Automation Studio You can open this link in Your browser (Google Chrome recomended)
+After starting simulation in Automation Studio You can open this link from Your browser (Google Chrome recomended)
 http://127.0.0.1:81/index.html?visuId=trakVis

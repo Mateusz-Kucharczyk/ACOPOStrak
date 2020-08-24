@@ -1,3 +1,4 @@
+
 VAR CONSTANT      
    P1 : McPointType := (Pos:=(X:=0, Y:=-200, Z:=-600));
    P2 : McPointType := (Pos:=(X:=0, Y:=-200, Z:=-700));

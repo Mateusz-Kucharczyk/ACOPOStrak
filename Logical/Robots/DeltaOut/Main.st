@@ -6,21 +6,24 @@ PROGRAM _INIT
 
 	MpDelta3Axis_0.Override := 100.0; 
 
-	
+	DeltaParameters.ProgramName:='RoboticOut.st';
 	DeltaParameters.Velocity := 5.0;
 	DeltaParameters.Acceleration := 50.0;
 
 END_PROGRAM
 
 PROGRAM _CYCLIC
-		MpDelta3Axis_0.Override:=gDeltaVelocity;
+	MpDelta3Axis_0.Override:=gDeltaVelocity;
 	//DeltaParameters.ProgramName := PName;
 	MpDelta3Axis_0.ErrorReset := diErrorReset;
 	
 	IF EDGEPOS(MpDelta3Axis_0.Error) THEN
-	  Step := ERROR;
+		Step := ERROR;
 	END_IF;
-	
+	IF VisManual THEN
+		Step:=MANUAL;
+	END_IF
+
 	CASE Step OF
 		INIT:
 			MpDelta3Axis_0.Power := FALSE;
@@ -28,21 +31,24 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.MoveProgram := FALSE;
 			
 			IF gVisPower THEN
-	  			Step := POWER;
+				Step := POWER;
 			END_IF;
 		POWER:
 			MpDelta3Axis_0.Power := TRUE;
 			VisDeltaOutState:=1;
 			IF MpDelta3Axis_0.PowerOn THEN
-	  			Step := HOME;
+				Step := HOME;
 			END_IF;
 		HOME:
 			MpDelta3Axis_0.Home := TRUE;
 			
 			IF MpDelta3Axis_0.IsHomed THEN
-	  			Step := WAIT_SHUTTLE;
+				Step := WAIT_SHUTTLE;
 			END_IF;
 		WAIT_SHUTTLE:
+			IF MpDelta3Axis_0.Home=FALSE  THEN
+				MpDelta3Axis_0.Home:=TRUE;
+			END_IF;
 			VisDeltaOutState:=2;
 			IF ProgressBar > 99 AND diStart THEN
 				gBottlesDone := 0;
@@ -59,36 +65,37 @@ PROGRAM _CYCLIC
 			VisDeltaOutState:=3;
 			IF gVisOutput_Broken THEN
 				IF gOrder.bottlesPerPackage = 4 THEN
-						CASE BottlesPerPack OF
+					CASE BottlesPerPack OF
 						
-							1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
+						1:	Bottle:=1;
 							
-							2:	DeltaParameters.ProgramName := 'RoboticOut2.st';
+						2:	Bottle:=2;
 						
-							3:	DeltaParameters.ProgramName := 'RoboticOut5.st';
+						3:	Bottle:=5;
 						
-							4:	DeltaParameters.ProgramName := 'RoboticOut4.st';
+						4:	Bottle:=4;
 						
-						END_CASE;
-					ELSE
-						CASE BottlesPerPack OF
+					END_CASE;
+				ELSE
+					CASE BottlesPerPack OF
 						
-							1:	DeltaParameters.ProgramName := 'RoboticOut1.st';
+						1:	Bottle:=1;
 								
-							2:	DeltaParameters.ProgramName := 'RoboticOut2.st';
+						2:	Bottle:=2;
 							
-							3:	DeltaParameters.ProgramName := 'RoboticOut3.st';
+						3:	Bottle:=3;
 							
-							4:	DeltaParameters.ProgramName := 'RoboticOut4.st';
+						4:	Bottle:=4;
 							
-							5:	DeltaParameters.ProgramName := 'RoboticOut5.st';
+						5:	Bottle:=5;
 							
-							6:	DeltaParameters.ProgramName := 'RoboticOut6.st';
+						6:	Bottle:=6;
 						
-						END_CASE;
+					END_CASE;
 				END_IF;
 				MpDelta3Axis_0.MoveProgram := TRUE;			
 				IF MpDelta3Axis_0.MoveDone THEN
+					BottlesPerPack:=BottlesPerPack+1;
 					MpDelta3Axis_0.MoveProgram := FALSE;
 					Step := WAIT_SHUTTLE;
 					gBottleInPlace_Output:=TRUE;
@@ -97,9 +104,9 @@ PROGRAM _CYCLIC
 					END_IF;
 					
 				END_IF;
-				ELSE
-					Step := INTERRUPT;
-					MpDelta3Axis_0.Continue := FALSE;
+			ELSE
+				Step := INTERRUPT;
+				MpDelta3Axis_0.Continue := FALSE;
 			END_IF;
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
@@ -135,7 +142,7 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.Override:=100;
 			gDeltaVelocity:=100;
 			MpDelta3Axis_0.Jog:=TRUE;
-			IF VisDeltaNumber = 2 THEN
+			IF VisDeltaNumber = 1 THEN
 				IF VisDeltaInJogXAdd THEN
 					DeltaParameters.Jog.Velocity[0]:=VisDeltaVelocity;
 				END_IF;
@@ -175,7 +182,15 @@ PROGRAM _CYCLIC
 			END_IF;
 		
 	END_CASE;
-    
+	IF Step=MANUAL AND VisManual=FALSE THEN
+		MpDelta3Axis_0.Jog:=FALSE;
+		IF MpDelta3Axis_0.Home=FALSE THEN
+			//MpDelta3Axis_0.Home:=TRUE;
+			Step:=WAIT_SHUTTLE;
+		ELSE
+			MpDelta3Axis_0.Home:=FALSE;
+		END_IF;
+	END_IF;
 		
 	MpDelta3Axis_0();
      

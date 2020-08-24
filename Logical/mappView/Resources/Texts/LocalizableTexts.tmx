@@ -1398,5 +1398,70 @@
         <seg>Delta velocity</seg>
       </tuv>
     </tu>
+    <tu tuid="msgManual">
+      <tuv xml:lang="pl">
+        <seg>Nie masz wystarczających uprawnień lub zamówienie jest aktywne
+</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>You don't have permission or order is active</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnPouringAdd">
+      <tuv xml:lang="pl">
+        <seg>Nalewanie +</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Pouring +</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnPouringSub">
+      <tuv xml:lang="pl">
+        <seg>Nalewanie -</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Pouring -</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnCappingAdd">
+      <tuv xml:lang="pl">
+        <seg>Zakręcanie +</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Capping +</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnCappingRotate">
+      <tuv xml:lang="pl">
+        <seg>Zakrecanie Rotacja</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Capping Rotate</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnCappingSub">
+      <tuv xml:lang="pl">
+        <seg>Zakręcanie -</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Capping -</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SelDown">
+      <tuv xml:lang="pl">
+        <seg>Dół</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Down</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SelUp">
+      <tuv xml:lang="pl">
+        <seg>Góra</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Up</seg>
+      </tuv>
+    </tu>
   </body>
 </tmx>

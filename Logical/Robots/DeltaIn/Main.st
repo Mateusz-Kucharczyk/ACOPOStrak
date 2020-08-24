@@ -8,11 +8,11 @@ PROGRAM _INIT
 	DeltaParameters.Velocity := 5.0;
 	DeltaParameters.Acceleration := 50.0;
 	Step := INIT;
+	VisManual:=FALSE;
 END_PROGRAM
 
 PROGRAM _CYCLIC
     
-	MpDelta3Axis_0();
 	MpDelta3Axis_0.Override:=gDeltaVelocity;
 	
 	IF gdiInstantStop THEN
@@ -22,7 +22,9 @@ PROGRAM _CYCLIC
 	IF EDGEPOS(MpDelta3Axis_0.Error) THEN
 		Step := ERROR;
 	END_IF;
-	
+	IF VisManual THEN
+		Step:=MANUAL;
+		END_IF
 	CASE Step OF
 		INIT:
 			MpDelta3Axis_0.Power := FALSE;
@@ -45,6 +47,9 @@ PROGRAM _CYCLIC
 
 			END_IF;
 		WAIT_SHUTTLE:	
+			IF MpDelta3Axis_0.Home=FALSE  THEN
+				MpDelta3Axis_0.Home:=TRUE;
+			END_IF;
 			VisDeltaInState:=2;
 			MpDelta3Axis_0.MoveProgram := 0;
 			IF gShuttleInPlace_Input AND NOT gdiStop  THEN
@@ -108,7 +113,7 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.Override:=100;
 			gDeltaVelocity:=100;
 			MpDelta3Axis_0.Jog:=TRUE;
-			IF VisDeltaNumber = 1 THEN
+			IF VisDeltaNumber = 0 THEN
 				IF VisDeltaInJogXAdd THEN
 					DeltaParameters.Jog.Velocity[0]:=VisDeltaVelocity;
 				END_IF;
@@ -152,7 +157,16 @@ PROGRAM _CYCLIC
 		
 		
 	END_CASE;
-	
+	IF Step=MANUAL AND VisManual=FALSE THEN
+		MpDelta3Axis_0.Jog:=FALSE;
+		IF MpDelta3Axis_0.Home=FALSE THEN
+			//MpDelta3Axis_0.Home:=TRUE;
+			Step:=WAIT_SHUTTLE;
+		ELSE
+			MpDelta3Axis_0.Home:=FALSE;
+		END_IF;
+	END_IF;
+		MpDelta3Axis_0();
 	END_PROGRAM
 
 PROGRAM _EXIT

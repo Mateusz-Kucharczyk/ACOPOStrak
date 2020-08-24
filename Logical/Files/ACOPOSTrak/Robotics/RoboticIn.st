@@ -1,8 +1,9 @@
+
 VAR CONSTANT      
-   P1 : McPointType := (Pos:=(X:=0, Y:=200, Z:=-600));
-   P2 : McPointType := (Pos:=(X:=0, Y:=200, Z:=-700));
-   P3 : McPointType := (Pos:=(X:=0, Y:=-150, Z:=-600));
-   P4 : McPointType := (Pos:=(X:=0, Y:=-150, Z:=-700));
+   P1 : McPointType := (Pos:=(X:=0, Y:=-200, Z:=-600));
+   P2 : McPointType := (Pos:=(X:=0, Y:=-200, Z:=-700));
+   P3 : McPointType := (Pos:=(X:=0, Y:=200, Z:=-600));
+   P4 : McPointType := (Pos:=(X:=0, Y:=200, Z:=-700));
 END_VAR
 
 PROGRAM _MAIN          
