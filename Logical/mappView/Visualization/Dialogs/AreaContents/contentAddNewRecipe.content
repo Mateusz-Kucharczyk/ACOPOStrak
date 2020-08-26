@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="contentAddNewRecipe" height="800" width="600" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.TextInput" id="newRecipeNameTextInput" top="70" left="50" width="500" height="50" zIndex="0" placeholder="Enter recipe name" textAlign="left" fontSize="16px" padding="0px 15px 0px 15px" />
-    <Widget xsi:type="widgets.brease.Label" id="newRecipeLabel" top="10" left="10" width="500" height="60" zIndex="1" text="New recipe" fontSize="32px" />
+    <Widget xsi:type="widgets.brease.TextInput" id="newRecipeNameTextInput" top="70" left="50" width="500" height="50" zIndex="0" placeholder="$IAT/orderRecipename" textAlign="left" fontSize="16px" padding="0px 15px 0px 15px" />
+    <Widget xsi:type="widgets.brease.Label" id="newRecipeLabel" top="10" left="10" width="500" height="60" zIndex="1" text="$IAT/orderNewReciepe" textColor="rgba(255, 128, 0, 1)" fontSize="32px" />
     <Widget xsi:type="widgets.brease.NumericInput" id="NumOfPckgsNumericInput" top="170" left="50" width="500" height="60" zIndex="2" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" textAlign="left" />
     <Widget xsi:type="widgets.brease.NumericInput" id="BottlesPerPckgNumericInput" top="280" left="50" width="500" height="60" zIndex="3" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" textAlign="left" />
-    <Widget xsi:type="widgets.brease.DropDownBox" id="BottleSizeDropDownBox" top="390" left="50" width="500" height="60" zIndex="4" dataProvider="[{'value':'0','text':'Large'},{'value':'1','text':'Small'}]" selectedValue="0" textAlign="left" style="ListLeft" />
-    <Widget xsi:type="widgets.brease.DropDownBox" id="DrinkColorDropDownBox" top="500" left="50" width="500" height="60" zIndex="5" dataProvider="[{'value':'0','text':'Red'},{'value':'1','text':'Green'},{'value':'2','text':'Blue'}]" selectedValue="0" textAlign="left" style="ListLeft" />
-    <Widget xsi:type="widgets.brease.Label" id="numOfPckgsLabel" top="140" left="50" width="500" zIndex="6" text="Number of packages" fontSize="18px" />
-    <Widget xsi:type="widgets.brease.Label" id="bottlesPerPackageLabel" top="250" left="50" width="500" zIndex="7" text="Bottles per package" fontSize="18px" />
-    <Widget xsi:type="widgets.brease.Label" id="bottleSizeLabel" top="360" left="50" width="500" zIndex="8" text="Bottle size" fontSize="18px" />
-    <Widget xsi:type="widgets.brease.Label" id="drinkColorLabel" top="470" left="50" width="500" zIndex="9" text="Drink color" fontSize="18px" />
-    <Widget xsi:type="widgets.brease.Button" id="AddButton" top="640" left="100" width="150" height="60" zIndex="10" text="Add" borderWidth="0px" backColor="rgba(100, 200, 100, 1)" style="Command1" />
-    <Widget xsi:type="widgets.brease.Button" id="CancelButton" top="640" left="350" width="150" height="60" zIndex="11" text="Cancel" borderWidth="0px" backColor="rgba(200, 100, 100, 1)" style="Command1" />
+    <Widget xsi:type="widgets.brease.DropDownBox" id="BottleSizeDropDownBox" top="390" left="50" width="500" height="60" zIndex="4" dataProvider="[{'value':'0','text':'$IAT/orderLarge'},{'value':'1','text':'$IAT/orderSmall'}]" selectedValue="0" textAlign="left" style="ListLeft" />
+    <Widget xsi:type="widgets.brease.DropDownBox" id="DrinkColorDropDownBox" top="500" left="50" width="500" height="60" zIndex="5" dataProvider="[{'value':'0','text':'$IAT/btnPourRed'},{'value':'1','text':'$IAT/btnPourGreen'},{'value':'2','text':'$IAT/btnPourBlue'}]" selectedValue="0" textAlign="left" style="ListLeft" />
+    <Widget xsi:type="widgets.brease.Label" id="numOfPckgsLabel" top="140" left="50" width="500" zIndex="6" text="$IAT/orderPcgNo" textColor="rgba(255, 128, 0, 1)" fontSize="18px" />
+    <Widget xsi:type="widgets.brease.Label" id="bottlesPerPackageLabel" top="250" left="50" width="500" zIndex="7" text="$IAT/orderBtlInPckNo" textColor="rgba(255, 128, 0, 1)" fontSize="18px" />
+    <Widget xsi:type="widgets.brease.Label" id="bottleSizeLabel" top="360" left="50" width="500" zIndex="8" text="$IAT/orderBottleSize" textColor="rgba(255, 128, 0, 1)" fontSize="18px" />
+    <Widget xsi:type="widgets.brease.Label" id="drinkColorLabel" top="470" left="50" width="500" zIndex="9" text="$IAT/orderDrinkColor" textColor="rgba(255, 128, 0, 1)" fontSize="18px" />
+    <Widget xsi:type="widgets.brease.Button" id="AddButton" top="640" left="100" width="150" height="60" zIndex="10" text="$IAT/orderAdd" borderWidth="0px" backColor="rgba(100, 200, 100, 1)" style="Command1" />
+    <Widget xsi:type="widgets.brease.Button" id="CancelButton" top="640" left="350" width="150" height="60" zIndex="11" text="$IAT/orderCancel" borderWidth="0px" backColor="rgba(200, 100, 100, 1)" style="Command1" />
   </Widgets>
 </Content>

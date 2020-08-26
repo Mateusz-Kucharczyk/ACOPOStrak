@@ -1449,18 +1449,58 @@
     </tu>
     <tu tuid="SelDown">
       <tuv xml:lang="pl">
-        <seg>Dół</seg>
+        <seg>Główny</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Down</seg>
+        <seg>Main</seg>
       </tuv>
     </tu>
     <tu tuid="SelUp">
       <tuv xml:lang="pl">
-        <seg>Góra</seg>
+        <seg>Poboczny</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Up</seg>
+        <seg>Secondary</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnDelete">
+      <tuv xml:lang="pl">
+        <seg>Czy na pewno chcesz usunąć ten plik?</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Do You really want to delete this file?</seg>
+      </tuv>
+    </tu>
+    <tu tuid="msgWarning">
+      <tuv xml:lang="pl">
+        <seg>Uwaga!</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Warning!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderNewReciepe">
+      <tuv xml:lang="pl">
+        <seg>Nowa receptura</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>New recipe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderCancel">
+      <tuv xml:lang="pl">
+        <seg>Anuluj</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Cancel</seg>
+      </tuv>
+    </tu>
+    <tu tuid="orderRecipename">
+      <tuv xml:lang="pl">
+        <seg>Wprowadź nazwę receptury</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Enter recipe name</seg>
       </tuv>
     </tu>
   </body>

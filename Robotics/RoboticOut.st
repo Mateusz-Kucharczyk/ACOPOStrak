@@ -1,5 +1,6 @@
 VAR {AT PLC}
  Bottle : INT ;
+ BottleInStage : USINT ;
 END_VAR
 
 VAR CONSTANT      
@@ -24,6 +25,7 @@ PROGRAM _MAIN
  PathAcceleration(600000);
  MoveJ(P1);        //move system to point P1
  MoveJ(P2);        //move system to point P2
+ BottleInStage:=1;
  WaitTime(1);        //wait for 1 second
  MoveJ(P1);
  CASE Bottle OF
@@ -47,6 +49,7 @@ PROGRAM _MAIN
  		MoveJ(P14);
  END_CASE 
  WaitTime(1);
+ BottleInStage:=0;
  CASE Bottle OF
 	1:
  		MoveJ(P3);        //move back to origin position

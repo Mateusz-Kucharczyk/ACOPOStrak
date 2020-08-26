@@ -153,6 +153,9 @@ PROGRAM _CYCLIC
 				Step:=DELTA_TURN;
 				ManualShuttleReset:=0;
 			END_IF;
+			IF gTrakAsm.Command.Power=FALSE THEN
+				Step:=STOPPING;
+			END_IF;
 			// Main Step, where Shattles run
 		PROCESS:   
 
@@ -269,6 +272,7 @@ PROGRAM _CYCLIC
 					// bottle in place for delivery waiting for signal and then sending shuttle to sector input
 					IF gBottleInPlace_Output=TRUE THEN
 						BottleVisibility[ActiveShuttle-1]:=FALSE;
+						BottleMaterial[ActiveShuttle-1]:=13;
 						Step_Sector:=Bottle_Input;
 						gBottleInPlace_Output:=FALSE;
 						gShuttleInPlace_Output:=FALSE;
@@ -341,12 +345,15 @@ PROGRAM _CYCLIC
 							IF NOT (gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle]) THEN
 								CASE gOrder.drinkColor OF
 									DRINK_COLOR_RED:
+										BottleMaterial[ActiveShuttle-1]:=1;
 										gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 2;
 										gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 									DRINK_COLOR_GREEN:
+										BottleMaterial[ActiveShuttle-1]:=5;
 										gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 1;
 										gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 									DRINK_COLOR_BLUE:
+										BottleMaterial[ActiveShuttle-1]:=2;
 										gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 3;
 										gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 								END_CASE;
@@ -371,12 +378,15 @@ PROGRAM _CYCLIC
 							IF NOT (gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle]) THEN
 								CASE gOrder.drinkColor OF
 									DRINK_COLOR_RED:
+										BottleMaterial[ActiveShuttle-1]:=1;
 										gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 2;
 										gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 									DRINK_COLOR_GREEN:
+										BottleMaterial[ActiveShuttle-1]:=5;
 										gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 1;
 										gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 									DRINK_COLOR_BLUE:
+										BottleMaterial[ActiveShuttle-1]:=2;
 										gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 3;
 										gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 								END_CASE;
@@ -510,7 +520,9 @@ PROGRAM _CYCLIC
 				ManualShuttleReset:=0;
 			END_IF;
 			// Machine States
-	
+			IF gTrakAsm.Command.Power=FALSE THEN
+				Step:=STOPPING;
+			END_IF;
 	
 
 		MANUAL:
@@ -650,6 +662,9 @@ PROGRAM _CYCLIC
 				Step:=DELTA_TURN;
 				ManualShuttleReset:=0;
 			END_IF;
+			IF gTrakAsm.Command.Power=FALSE THEN
+	  			Step:=STOPPING;
+			END_IF;
 
 		STOPPING:
 			VisTrakStates:=4;
@@ -723,7 +738,9 @@ PROGRAM _CYCLIC
 			ELSE
 				Step := READY;	
 			END_IF;
-
+			IF gTrakAsm.Command.Power=FALSE THEN
+				Step:=STOPPING;
+			END_IF;
 			// Reset due to error
 		RESET:
 			IF EDGEPOS(MC_BR_AsmReset_AcpTrak_0.Done) THEN
@@ -935,6 +952,11 @@ PROGRAM _CYCLIC
 		SvgTranform[1]:=2;	
 	END_IF;
 	
+	IF gVisPower AND gProcessFinished THEN
+		ManualEnable:=TRUE;
+	ELSE
+		ManualEnable:=FALSE;
+	END_IF;
 					END_PROGRAM
  
 PROGRAM _EXIT

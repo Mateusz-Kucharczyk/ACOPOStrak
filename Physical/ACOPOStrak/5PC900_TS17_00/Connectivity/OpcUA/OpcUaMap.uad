@@ -145,6 +145,8 @@
         <Variable Name="VisPouringAdd" />
         <Variable Name="VisPouringNumber" />
         <Variable Name="VisPouringSub" />
+        <Variable Name="BottleMaterial" EnableArrayElements="True" />
+        <Variable Name="ManualEnable" />
       </Task>
       <Task Name="SI">
         <Variable Name="MpDelta3Axis_0">

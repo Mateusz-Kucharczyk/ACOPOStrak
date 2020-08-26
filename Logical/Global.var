@@ -63,6 +63,8 @@ VAR
 	VisDeltaInJogYSub : BOOL;
 	VisDeltaInJogZAdd : BOOL;
 	VisDeltaInJogZSub : BOOL;
+	BottleOutStage : USINT;
+	BottleInStage : USINT;
 	Bottle : INT;
 	VisDeltaNumber : USINT;
 END_VAR

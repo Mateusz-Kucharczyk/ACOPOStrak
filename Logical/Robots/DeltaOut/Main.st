@@ -9,7 +9,7 @@ PROGRAM _INIT
 	DeltaParameters.ProgramName:='RoboticOut.st';
 	DeltaParameters.Velocity := 5.0;
 	DeltaParameters.Acceleration := 50.0;
-
+	BottleOutStage:=0;
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -46,6 +46,7 @@ PROGRAM _CYCLIC
 				Step := WAIT_SHUTTLE;
 			END_IF;
 		WAIT_SHUTTLE:
+			BottleOutStage:=0;
 			IF MpDelta3Axis_0.Home=FALSE  THEN
 				MpDelta3Axis_0.Home:=TRUE;
 			END_IF;
@@ -60,7 +61,16 @@ PROGRAM _CYCLIC
 				gBottlesDone := gBottlesDone+1;
 				ProgressBar := 100*gBottlesDone/gOrder.bottlesPerPackage/gOrder.numberOfPackages;
 			END_IF;
+			IF gTrakAsm.Command.Power=FALSE THEN
+				Step:=STOP;
+			END_IF;
 		MOVE_PROGRAM:
+			IF MpDelta3Axis_0.Z=-700 AND MpDelta3Axis_0.Y=200 THEN
+				BottleOutStage:=1;
+			END_IF;
+			IF NOT(MpDelta3Axis_0.Z=-700 AND MpDelta3Axis_0.Y=200) AND MpDelta3Axis_0.PathVelocity=0 AND BottleOutStage=1 THEN
+				BottleOutStage:=2;
+			END_IF;
 			diStart := FALSE;
 			VisDeltaOutState:=3;
 			IF gVisOutput_Broken THEN
@@ -99,6 +109,7 @@ PROGRAM _CYCLIC
 					MpDelta3Axis_0.MoveProgram := FALSE;
 					Step := WAIT_SHUTTLE;
 					gBottleInPlace_Output:=TRUE;
+					BottleOutStage:=0;
 					IF BottlesPerPack>gOrder.bottlesPerPackage THEN
 						BottlesPerPack:=1;
 					END_IF;
@@ -107,6 +118,9 @@ PROGRAM _CYCLIC
 			ELSE
 				Step := INTERRUPT;
 				MpDelta3Axis_0.Continue := FALSE;
+			END_IF;
+			IF gTrakAsm.Command.Power=FALSE THEN
+				Step:=STOP;
 			END_IF;
 		INTERRUPT:
 			MpDelta3Axis_0.Interrupt := TRUE;
@@ -179,6 +193,9 @@ PROGRAM _CYCLIC
 				IF EDGENEG(VisDeltaInJogZSub) THEN
 					DeltaParameters.Jog.Velocity[2]:=0.0;
 				END_IF;
+			END_IF;
+			IF gTrakAsm.Command.Power=FALSE THEN
+				Step:=STOP;
 			END_IF;
 		
 	END_CASE;

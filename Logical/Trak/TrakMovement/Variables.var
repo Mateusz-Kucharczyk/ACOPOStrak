@@ -73,6 +73,7 @@ VAR
 END_VAR
 (*Visualization Bottle controll*)
 VAR
+	BottleMaterial : ARRAY[0..9] OF USINT;
 	BottleVisibility : ARRAY[0..9] OF BOOL := [10(0)];
 	Capping_Position : REAL := 450;
 	Capping_Rotate : REAL := 0;
@@ -84,4 +85,5 @@ VAR
 	VisPouringNumber : INT;
 	VisPouringAdd : BOOL;
 	VisPouringSub : BOOL;
+	ManualEnable : BOOL;
 END_VAR

@@ -9,6 +9,7 @@ PROGRAM _INIT
 	DeltaParameters.Acceleration := 50.0;
 	Step := INIT;
 	VisManual:=FALSE;
+	BottleInStage:=0;
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -30,7 +31,6 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.Power := FALSE;
 			MpDelta3Axis_0.Home := FALSE;
 			MpDelta3Axis_0.MoveProgram := FALSE;
-
 			IF gVisPower THEN
 				Step := POWER;
 			END_IF;
@@ -47,6 +47,7 @@ PROGRAM _CYCLIC
 
 			END_IF;
 		WAIT_SHUTTLE:	
+			BottleInStage:=0;
 			IF MpDelta3Axis_0.Home=FALSE  THEN
 				MpDelta3Axis_0.Home:=TRUE;
 			END_IF;
@@ -58,6 +59,12 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		MOVE_PROGRAM:
+			IF MpDelta3Axis_0.Z=-700 AND MpDelta3Axis_0.Y=-200 THEN
+	  			BottleInStage:=1;
+			END_IF;
+			IF MpDelta3Axis_0.Z=-700 AND MpDelta3Axis_0.Y=200 THEN
+				BottleInStage:=2;
+			END_IF;
 			VisDeltaInState:=3;
 			IF gVisInput_Broken THEN
 				IF gColorSum >0 THEN
@@ -66,6 +73,7 @@ PROGRAM _CYCLIC
 						gColorSum := gColorSum - 1;
 						Step:= WAIT_SHUTTLE;
 						gBottleInPlace_Input:=TRUE;
+
 					END_IF;
 					IF diInterrupt THEN
 						Step := INTERRUPT;
@@ -77,7 +85,9 @@ PROGRAM _CYCLIC
 				MpDelta3Axis_0.Continue := FALSE;
 
 			END_IF;
-			
+			IF gTrakAsm.Command.Power=FALSE THEN
+				Step:=STOP;
+			END_IF;
 
 		INTERRUPT:
 			VisDeltaInState:=4;
@@ -91,13 +101,11 @@ PROGRAM _CYCLIC
 		STOP:
 			MpDelta3Axis_0.Stop := TRUE;
 			IF (NOT gdiInstantStop) AND MpDelta3Axis_0.Stopped THEN
-				
 				MpDelta3Axis_0.Home := FALSE;
 				MpDelta3Axis_0.Interrupt := FALSE;
 				MpDelta3Axis_0.Continue := FALSE;
 				MpDelta3Axis_0.MoveProgram := FALSE;
 				MpDelta3Axis_0.Stop := FALSE;
-				
 				Step := INIT;
 			END_IF;
 		ERROR:
@@ -152,7 +160,9 @@ PROGRAM _CYCLIC
 				END_IF;
 			END_IF;
 			
-		
+			IF gTrakAsm.Command.Power=FALSE THEN
+				Step:=STOP;
+			END_IF;
 		
 		
 		
