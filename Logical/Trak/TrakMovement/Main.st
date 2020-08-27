@@ -573,7 +573,7 @@ PROGRAM _CYCLIC
 					IF Pouring_Top_Position<530 THEN
 						Pouring_Top_Position:=Pouring_Top_Position+5;
 					END_IF;
-					IF Pouring_Down_Position>530 THEN
+					IF Pouring_Top_Position>530 THEN
 						Pouring_Top_Position:=Pouring_Top_Position-5;
 					END_IF;
 				END_IF;
