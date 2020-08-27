@@ -13,7 +13,7 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-    
+	ZOffset:=MpDelta3Axis_0.Info.JointAxisPosition[2] - 160;
 	MpDelta3Axis_0.Override:=gDeltaVelocity;
 	
 	IF gdiInstantStop THEN
@@ -44,7 +44,6 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.Home := TRUE;
 			IF MpDelta3Axis_0.IsHomed THEN
 				Step := WAIT_SHUTTLE;
-
 			END_IF;
 		WAIT_SHUTTLE:	
 			BottleInStage:=0;
@@ -166,6 +165,13 @@ PROGRAM _CYCLIC
 		
 		
 		
+	END_CASE;
+	CASE BottleInStage OF
+		0:DeltaInBottleVisibility:=FALSE;
+		DeltaInBottleShutVis:=FALSE;
+		1:DeltaInBottleVisibility:=TRUE;
+		2:DeltaInBottleVisibility:=FALSE;
+		  DeltaInBottleShutVis:=TRUE;
 	END_CASE;
 	IF Step=MANUAL AND VisManual=FALSE THEN
 		MpDelta3Axis_0.Jog:=FALSE;

@@ -4,4 +4,7 @@ VAR
 	DeltaParameters : MpDelta3AxisParType;
 	Step : StepType;
 	diInterrupt : BOOL := FALSE;
+	ZOffset : LREAL;
+	DeltaInBottleVisibility : BOOL;
+	DeltaInBottleShutVis : BOOL;
 END_VAR

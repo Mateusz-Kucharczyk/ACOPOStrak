@@ -15,4 +15,10 @@ VAR
 	gBottlesDone : INT;
 	diStart : BOOL;
 	VisDeltaOutState : USINT;
+	DeltaOutBottleVisibility : BOOL;
+	StashBottleVis : ARRAY[0..5] OF BOOL;
+	i : INT;
+	DeltaOutBottleShutVis : BOOL;
+	ZOffset : LREAL;
+	BottleInvisible : BOOL;
 END_VAR

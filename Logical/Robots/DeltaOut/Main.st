@@ -58,6 +58,7 @@ PROGRAM _CYCLIC
 			
 			IF gShuttleInPlace_Output THEN
 				Step := MOVE_PROGRAM;
+				BottleOutStage:=1;
 				gBottlesDone := gBottlesDone+1;
 				ProgressBar := 100*gBottlesDone/gOrder.bottlesPerPackage/gOrder.numberOfPackages;
 			END_IF;
@@ -65,11 +66,14 @@ PROGRAM _CYCLIC
 				Step:=STOP;
 			END_IF;
 		MOVE_PROGRAM:
-			IF MpDelta3Axis_0.Z=-700 AND MpDelta3Axis_0.Y=200 THEN
-				BottleOutStage:=1;
-			END_IF;
-			IF NOT(MpDelta3Axis_0.Z=-700 AND MpDelta3Axis_0.Y=200) AND MpDelta3Axis_0.PathVelocity=0 AND BottleOutStage=1 THEN
+			IF MpDelta3Axis_0.Z=-700 AND MpDelta3Axis_0.Y=200 AND BottleOutStage=1 THEN
 				BottleOutStage:=2;
+			END_IF;
+			IF NOT(MpDelta3Axis_0.Z=-700 AND MpDelta3Axis_0.Y=200) AND MpDelta3Axis_0.PathVelocity=0 AND BottleOutStage=2 THEN
+				BottleOutStage:=3;
+			END_IF;
+			IF Bottle=gOrder.bottlesPerPackage THEN
+	  BottleInvisible:=TRUE;
 			END_IF;
 			diStart := FALSE;
 			VisDeltaOutState:=3;
@@ -110,10 +114,14 @@ PROGRAM _CYCLIC
 					Step := WAIT_SHUTTLE;
 					gBottleInPlace_Output:=TRUE;
 					BottleOutStage:=0;
-					IF BottlesPerPack>gOrder.bottlesPerPackage THEN
+					IF BottleInvisible THEN
+						BottleInvisible:=FALSE;
 						BottlesPerPack:=1;
+						Bottle:=1;
+						FOR i:=5 TO 0 BY -1 DO
+							StashBottleVis[i]:=FALSE;
+						END_FOR;
 					END_IF;
-					
 				END_IF;
 			ELSE
 				Step := INTERRUPT;
@@ -199,6 +207,20 @@ PROGRAM _CYCLIC
 			END_IF;
 		
 	END_CASE;
+	IF MpDelta3Axis_0.PathVelocity>0 AND BottleOutStage=3 THEN
+		BottleOutStage:=0;
+	END_IF;
+	CASE BottleOutStage OF
+		0:DeltaOutBottleVisibility:=FALSE;
+			DeltaOutBottleShutVis:=FALSE;
+		1:DeltaOutBottleVisibility:=FALSE;
+			DeltaOutBottleShutVis:=TRUE;
+		2:DeltaOutBottleVisibility:=TRUE;
+			DeltaOutBottleShutVis:=FALSE;			
+		3:DeltaOutBottleVisibility:=FALSE;
+			StashBottleVis[Bottle-1]:=TRUE;				
+
+	END_CASE;
 	IF Step=MANUAL AND VisManual=FALSE THEN
 		MpDelta3Axis_0.Jog:=FALSE;
 		IF MpDelta3Axis_0.Home=FALSE THEN
@@ -208,9 +230,9 @@ PROGRAM _CYCLIC
 			MpDelta3Axis_0.Home:=FALSE;
 		END_IF;
 	END_IF;
-		
+	ZOffset:=MpDelta3Axis_0.Info.JointAxisPosition[2] -160;		
 	MpDelta3Axis_0();
-     
+
 END_PROGRAM
 
 PROGRAM _EXIT

@@ -260,6 +260,7 @@ PROGRAM _CYCLIC
                
 					// After capping sendig to delivery
 					IF  TON_Capping.Q THEN
+						CapVisibility[ActiveShuttle-1]:=TRUE;
 						Capping_Busy := FALSE;	
 						Step_Sector:=Bottle_Output;
 						TON_Capping.IN:=FALSE;
@@ -268,10 +269,10 @@ PROGRAM _CYCLIC
 				ELSIF   MC_BR_ShReadInfo_AcpTrak_0.ShuttleInfo.CurrentValues.SectorName = 'SectorBottleOutput' THEN
 					Step_Sector:=Bottle_Output;
 					gShuttleInPlace_Output:=TRUE;
-               
+					BottleVisibility[ActiveShuttle-1]:=FALSE;
+					CapVisibility[ActiveShuttle-1]:=FALSE;
 					// bottle in place for delivery waiting for signal and then sending shuttle to sector input
 					IF gBottleInPlace_Output=TRUE THEN
-						BottleVisibility[ActiveShuttle-1]:=FALSE;
 						BottleMaterial[ActiveShuttle-1]:=13;
 						Step_Sector:=Bottle_Input;
 						gBottleInPlace_Output:=FALSE;
@@ -346,13 +347,16 @@ PROGRAM _CYCLIC
 								CASE gOrder.drinkColor OF
 									DRINK_COLOR_RED:
 										BottleMaterial[ActiveShuttle-1]:=1;
+										BottleOutMaterial:=1;
 										gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 2;
 										gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 									DRINK_COLOR_GREEN:
+										BottleOutMaterial:=5;
 										BottleMaterial[ActiveShuttle-1]:=5;
 										gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 1;
 										gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
 									DRINK_COLOR_BLUE:
+										BottleOutMaterial:=2;
 										BottleMaterial[ActiveShuttle-1]:=2;
 										gShuttleColor[NUM_SIM_SHUTTLES-ActiveShuttle] := 3;
 										gShuttleColored[NUM_SIM_SHUTTLES-ActiveShuttle] := TRUE;
@@ -448,34 +452,35 @@ PROGRAM _CYCLIC
 			END_FOR;
 			
 			IF Capping_Busy THEN
-				IF Capping_Position=350 THEN
-					Capping_Rotate:=Capping_Rotate+24;
+				IF Capping_Position=480 THEN
 					IF Capping_Rotate=360 THEN
 						Capping_Rotate:=0;
+					ELSE
+						Capping_Rotate:=Capping_Rotate+24;
 					END_IF;
 				ELSE
 					Capping_Position:=Capping_Position-5;	
 				END_IF;
 			ELSE
-				IF NOT(Capping_Position=450) THEN
+				IF NOT(Capping_Position=530) THEN
 					Capping_Position:=Capping_Position+5;
 				END_IF;
 			END_IF;
 			IF Pouring_Top_Busy THEN
-				IF NOT (Pouring_Top_Position=350) THEN
+				IF NOT (Pouring_Top_Position=480) THEN
 					Pouring_Top_Position:=Pouring_Top_Position-5;
 				END_IF;
 			ELSE
-				IF NOT (Pouring_Top_Position=400) THEN
+				IF NOT (Pouring_Top_Position=530) THEN
 					Pouring_Top_Position:=Pouring_Top_Position+5;
 				END_IF;
 			END_IF;
 			IF Pouring_Down_Busy THEN
-				IF NOT (Pouring_Down_Position=350) THEN
+				IF NOT (Pouring_Down_Position=480) THEN
 					Pouring_Down_Position:=Pouring_Down_Position-5;
 				END_IF;
 			ELSE
-				IF NOT (Pouring_Down_Position=400) THEN
+				IF NOT (Pouring_Down_Position=530) THEN
 					Pouring_Down_Position:=Pouring_Down_Position+5;
 				END_IF;
 			END_IF;
@@ -556,34 +561,34 @@ PROGRAM _CYCLIC
 						ManualShuttleReset:= ManualShuttleReset +1;
 					END_IF;
 				END_FOR;
-				IF Pouring_Down_Position<>400 THEN
-					IF Pouring_Down_Position<400 THEN
+				IF Pouring_Down_Position<>530 THEN
+					IF Pouring_Down_Position<530 THEN
 						Pouring_Down_Position:=Pouring_Down_Position+5;
 					END_IF;
-					IF Pouring_Down_Position>400 THEN
+					IF Pouring_Down_Position>530 THEN
 						Pouring_Down_Position:=Pouring_Down_Position-5;
 					END_IF;
 				END_IF;
-				IF Pouring_Top_Position<>400 THEN
-					IF Pouring_Top_Position<400 THEN
+				IF Pouring_Top_Position<>530 THEN
+					IF Pouring_Top_Position<530 THEN
 						Pouring_Top_Position:=Pouring_Top_Position+5;
 					END_IF;
-					IF Pouring_Down_Position>400 THEN
+					IF Pouring_Down_Position>530 THEN
 						Pouring_Top_Position:=Pouring_Top_Position-5;
 					END_IF;
 				END_IF;
-				IF Capping_Position<>400 THEN
-					IF Capping_Position<400 THEN
+				IF Capping_Position<>530 THEN
+					IF Capping_Position<530 THEN
 						Capping_Position:=Capping_Position+5;
 					END_IF;
-					IF Capping_Position>400 THEN
+					IF Capping_Position>530 THEN
 						Capping_Position:=Capping_Position-5;
 					END_IF;
 				END_IF;
 				IF Capping_Rotate<>0 THEN
 					Capping_Rotate:=Capping_Rotate-12;
 				END_IF;
-				IF ManualShuttleReset=NUM_SIM_SHUTTLES AND Capping_Position=400 AND Pouring_Top_Position=400 AND Pouring_Down_Position=400 THEN
+				IF ManualShuttleReset=NUM_SIM_SHUTTLES AND Capping_Position=530 AND Pouring_Top_Position=530 AND Pouring_Down_Position=530 THEN
 					CntShuttle:=1;
 					Step := READY;
 					Pouring_Top_Comming:=FALSE;
@@ -605,24 +610,24 @@ PROGRAM _CYCLIC
 						Capping_Rotate:=0;
 					END_IF;
 				END_IF;
-				IF VisCappingAdd AND Capping_Position<500 THEN
+				IF VisCappingAdd AND Capping_Position<800 THEN
 					Capping_Position:= Capping_Position+5;
 				END_IF;
-				IF VisCappingSub AND Capping_Position>200 THEN
+				IF VisCappingSub AND Capping_Position>400 THEN
 					Capping_Position:= Capping_Position-5;
 				END_IF;
 				IF VisPouringNumber =0 THEN
-					IF VisPouringAdd AND Pouring_Top_Position<450 THEN
+					IF VisPouringAdd AND Pouring_Top_Position<700 THEN
 						Pouring_Top_Position:=Pouring_Top_Position+5;
 					END_IF;
-					IF VisPouringSub AND Pouring_Top_Position>200 THEN
+					IF VisPouringSub AND Pouring_Top_Position>400 THEN
 						Pouring_Top_Position:=Pouring_Top_Position-5;
 					END_IF;
 				ELSIF VisPouringNumber = 1 THEN
-					IF VisPouringAdd AND Pouring_Down_Position<450 THEN
+					IF VisPouringAdd AND Pouring_Down_Position<700 THEN
 						Pouring_Down_Position:=Pouring_Down_Position+5;
 					END_IF;
-					IF VisPouringSub AND Pouring_Down_Position>200 THEN
+					IF VisPouringSub AND Pouring_Down_Position>400 THEN
 						Pouring_Down_Position:=Pouring_Down_Position-5;
 					END_IF;
 				END_IF;
@@ -663,7 +668,7 @@ PROGRAM _CYCLIC
 				ManualShuttleReset:=0;
 			END_IF;
 			IF gTrakAsm.Command.Power=FALSE THEN
-	  			Step:=STOPPING;
+				Step:=STOPPING;
 			END_IF;
 
 		STOPPING:

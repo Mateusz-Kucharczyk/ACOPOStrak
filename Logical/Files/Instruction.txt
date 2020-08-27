@@ -1,7 +1,7 @@
 To run simulaton ACOPOSTrak You need to have Scene Viever 4 and Automation Studio 4.7.3 or higher
 
 Place all of this files (ACOPOSTrak package) at C (path C://ACOPOSTrak)
-Then in Robotics package run the gAssembly_1_GuideSystem file, Scene Viewer should open. 
+Then in Robotics package run the Symulation file, Scene Viewer should open. 
 
 In Scene Viewer 4:
 Online-->PVI-->Options
@@ -14,3 +14,8 @@ Then Connect PVI and OPCUA.
 After activating simulation in Automation Studio You can open this link from Your browser 
 (Google Chrome recomended)
 http://127.0.0.1:81/index.html?visuId=trakVis
+
+
+WARNING!
+Transfering or Opening this project with automation studio can overwrite Trak Files with 
+Scene Viewer scene.

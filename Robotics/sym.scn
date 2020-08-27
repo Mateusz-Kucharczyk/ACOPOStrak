@@ -4,15 +4,15 @@
 	<ParID parid="81" val="60"/>
 	<ParID parid="82" val="1.2537"/>
 	<ParID parid="90" val="0"/>
-	<ParID parid="100" val="3305.35"/>
-	<ParID parid="101" val="-28808.7"/>
-	<ParID parid="102" val="10999.4"/>
-	<ParID parid="103" val="-0.0272229"/>
-	<ParID parid="104" val="0.934048"/>
-	<ParID parid="105" val="-0.356024"/>
+	<ParID parid="100" val="2600"/>
+	<ParID parid="101" val="-33636.4"/>
+	<ParID parid="102" val="10292.3"/>
+	<ParID parid="103" val="0"/>
+	<ParID parid="104" val="0.955705"/>
+	<ParID parid="105" val="-0.294326"/>
 	<ParID parid="106" val="0"/>
-	<ParID parid="107" val="0.3"/>
-	<ParID parid="108" val="0.8"/>
+	<ParID parid="107" val="0"/>
+	<ParID parid="108" val="1"/>
 	<ParID parid="110" val="0.25"/>
 	<ParID parid="120" val="1,1,1"/>
 	<ParID parid="140" val="0.5,0.5,0.5"/>
@@ -351,126 +351,126 @@
 			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 			<ParID parid="200" val="gAssembly_1"/>
-			<ParID parid="210" val="Ü—Àvºu"/>
+			<ParID parid="210" val="¤vºu"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:0#100:4#101:8#103:12#130:16#140:48#120:60#121:64#122:68" binding="" jointoparent="0">
-			<ParID parid="100" val="0"/>
-			<ParID parid="101" val="0"/>
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:0#100:4#101:8#103:12#130:16#140:48#120:60#121:64#122:68" binding="" jointoparent="0">
+			<ParID parid="100" val="698.265"/>
+			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
-			<ParID parid="103" val="0"/>
+			<ParID parid="103" val="180"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val=""/>
-			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="130" val="10"/>
+			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:72#100:76#101:80#103:84#130:88#140:120#120:132#121:136#122:140" binding="" jointoparent="0">
-			<ParID parid="100" val="0"/>
-			<ParID parid="101" val="0"/>
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:72#100:76#101:80#103:84#130:88#140:120#120:132#121:136#122:140" binding="" jointoparent="0">
+			<ParID parid="100" val="767.318"/>
+			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
-			<ParID parid="103" val="0"/>
+			<ParID parid="103" val="180"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val=""/>
-			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="130" val="9"/>
+			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:144#100:148#101:152#103:156#130:160#140:192#120:204#121:208#122:212" binding="" jointoparent="0">
-			<ParID parid="100" val="0"/>
-			<ParID parid="101" val="0"/>
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:144#100:148#101:152#103:156#130:160#140:192#120:204#121:208#122:212" binding="" jointoparent="0">
+			<ParID parid="100" val="836.372"/>
+			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
-			<ParID parid="103" val="0"/>
+			<ParID parid="103" val="180"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val=""/>
-			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="130" val="8"/>
+			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:216#100:220#101:224#103:228#130:232#140:264#120:276#121:280#122:284" binding="" jointoparent="0">
-			<ParID parid="100" val="0"/>
-			<ParID parid="101" val="0"/>
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:216#100:220#101:224#103:228#130:232#140:264#120:276#121:280#122:284" binding="" jointoparent="0">
+			<ParID parid="100" val="905.425"/>
+			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
-			<ParID parid="103" val="0"/>
+			<ParID parid="103" val="180"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val=""/>
-			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="130" val="7"/>
+			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:288#100:292#101:296#103:300#130:304#140:336#120:348#121:352#122:356" binding="" jointoparent="0">
-			<ParID parid="100" val="0"/>
-			<ParID parid="101" val="0"/>
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:288#100:292#101:296#103:300#130:304#140:336#120:348#121:352#122:356" binding="" jointoparent="0">
+			<ParID parid="100" val="974.478"/>
+			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
-			<ParID parid="103" val="0"/>
+			<ParID parid="103" val="180"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val=""/>
-			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="130" val="6"/>
+			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:360#100:364#101:368#103:372#130:376#140:408#120:420#121:424#122:428" binding="" jointoparent="0">
-			<ParID parid="100" val="0"/>
-			<ParID parid="101" val="0"/>
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:360#100:364#101:368#103:372#130:376#140:408#120:420#121:424#122:428" binding="" jointoparent="0">
+			<ParID parid="100" val="353"/>
+			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0.12858"/>
-			<ParID parid="103" val="0"/>
+			<ParID parid="103" val="180"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val=""/>
-			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="130" val="5"/>
+			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:432#100:436#101:440#103:444#130:448#140:480#120:492#121:496#122:500" binding="" jointoparent="0">
-			<ParID parid="100" val="0"/>
-			<ParID parid="101" val="0"/>
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:432#100:436#101:440#103:444#130:448#140:480#120:492#121:496#122:500" binding="" jointoparent="0">
+			<ParID parid="100" val="422.053"/>
+			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
-			<ParID parid="103" val="0"/>
+			<ParID parid="103" val="180"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val=""/>
-			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="130" val="4"/>
+			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:504#100:508#101:512#103:516#130:520#140:552#120:564#121:568#122:572" binding="" jointoparent="0">
-			<ParID parid="100" val="0"/>
-			<ParID parid="101" val="0"/>
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:504#100:508#101:512#103:516#130:520#140:552#120:564#121:568#122:572" binding="" jointoparent="0">
+			<ParID parid="100" val="491.106"/>
+			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
-			<ParID parid="103" val="0"/>
+			<ParID parid="103" val="180"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val=""/>
-			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="130" val="3"/>
+			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:576#100:580#101:584#103:588#130:592#140:624#120:636#121:640#122:644" binding="" jointoparent="0">
-			<ParID parid="100" val="0"/>
-			<ParID parid="101" val="0"/>
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:576#100:580#101:584#103:588#130:592#140:624#120:636#121:640#122:644" binding="" jointoparent="0">
+			<ParID parid="100" val="560.159"/>
+			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
-			<ParID parid="103" val="0"/>
+			<ParID parid="103" val="180"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val=""/>
-			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="130" val="2"/>
+			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
-		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:648#100:652#101:656#103:660#130:664#140:696#120:708#121:712#122:716" binding="" jointoparent="0">
-			<ParID parid="100" val="0"/>
-			<ParID parid="101" val="0"/>
+		<Object objecttypeid="560" name="Shuttle" visible="1" mask="#14:648#100:652#101:656#103:660#130:664#140:696#120:708#121:712#122:716" binding="" jointoparent="0">
+			<ParID parid="100" val="629.212"/>
+			<ParID parid="101" val="-645"/>
 			<ParID parid="102" val="0"/>
-			<ParID parid="103" val="0"/>
+			<ParID parid="103" val="180"/>
 			<ParID parid="104" val="0"/>
 			<ParID parid="105" val="0"/>
 			<ParID parid="123" val="1"/>
-			<ParID parid="130" val=""/>
-			<ParID parid="140" val="0,0,0"/>
+			<ParID parid="130" val="1"/>
+			<ParID parid="140" val="1,1,1"/>
 			<ParID parid="150" val="13: Black Metal Shine"/>
 		</Object>
 		<Object objecttypeid="560" name="Shuttle" visible="0" mask="#14:720#100:724#101:728#103:732#130:736#140:768#120:780#121:784#122:788" binding="" jointoparent="0">
@@ -2193,12 +2193,12 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-150"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="3.9301e-05"/>
-		<ParID parid="211" val="3.9301e-05"/>
-		<ParID parid="212" val="3.9301e-05"/>
-		<ParID parid="220" val="-1.38778e-13"/>
-		<ParID parid="221" val="0"/>
-		<ParID parid="222" val="-562.311"/>
+		<ParID parid="210" val="7.49622"/>
+		<ParID parid="211" val="-22.5502"/>
+		<ParID parid="212" val="31.6225"/>
+		<ParID parid="220" val="3.66616e-06"/>
+		<ParID parid="221" val="200"/>
+		<ParID parid="222" val="-600"/>
 	</Object>
 	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="1" mask="" binding="#210*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::DeltaIn:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="350"/>
@@ -2239,12 +2239,12 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-150"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="3.9301e-05"/>
-		<ParID parid="211" val="3.9301e-05"/>
-		<ParID parid="212" val="3.9301e-05"/>
-		<ParID parid="220" val="-1.38778e-13"/>
-		<ParID parid="221" val="0"/>
-		<ParID parid="222" val="-562.311"/>
+		<ParID parid="210" val="7.49622"/>
+		<ParID parid="211" val="31.6225"/>
+		<ParID parid="212" val="-22.5502"/>
+		<ParID parid="220" val="3.66616e-06"/>
+		<ParID parid="221" val="-200"/>
+		<ParID parid="222" val="-600"/>
 	</Object>
 	<Object objecttypeid="760" name="3-Axes Delta (A)" visible="0" mask="" binding="#14*::AsGlobalPV:gPartyOn#103*::SI:x#104*::SI:y#105*::SI:z#210*::SI:MpDelta3Axis_0.Info.JointAxisPosition[0]#211*::SI:MpDelta3Axis_0.Info.JointAxisPosition[1]#212*::SI:MpDelta3Axis_0.Info.JointAxisPosition[2]" jointoparent="0">
 		<ParID parid="100" val="1000"/>
@@ -2285,9 +2285,9 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="8.11948e-05"/>
-		<ParID parid="211" val="8.11948e-05"/>
-		<ParID parid="212" val="8.11948e-05"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
 		<ParID parid="220" val="-4.16334e-14"/>
 		<ParID parid="221" val="-4.16334e-14"/>
 		<ParID parid="222" val="-430.562"/>
@@ -2331,9 +2331,9 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="8.11948e-05"/>
-		<ParID parid="211" val="8.11948e-05"/>
-		<ParID parid="212" val="8.11948e-05"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
 		<ParID parid="220" val="-4.16334e-14"/>
 		<ParID parid="221" val="-4.16334e-14"/>
 		<ParID parid="222" val="-430.562"/>
@@ -2377,9 +2377,9 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="8.11948e-05"/>
-		<ParID parid="211" val="8.11948e-05"/>
-		<ParID parid="212" val="8.11948e-05"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
 		<ParID parid="220" val="-4.16334e-14"/>
 		<ParID parid="221" val="-4.16334e-14"/>
 		<ParID parid="222" val="-430.562"/>
@@ -2423,9 +2423,9 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="8.11948e-05"/>
-		<ParID parid="211" val="8.11948e-05"/>
-		<ParID parid="212" val="8.11948e-05"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
 		<ParID parid="220" val="-4.16334e-14"/>
 		<ParID parid="221" val="-4.16334e-14"/>
 		<ParID parid="222" val="-430.562"/>
@@ -2469,9 +2469,9 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="8.11948e-05"/>
-		<ParID parid="211" val="8.11948e-05"/>
-		<ParID parid="212" val="8.11948e-05"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
 		<ParID parid="220" val="-4.16334e-14"/>
 		<ParID parid="221" val="-4.16334e-14"/>
 		<ParID parid="222" val="-430.562"/>
@@ -2515,9 +2515,9 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="8.11948e-05"/>
-		<ParID parid="211" val="8.11948e-05"/>
-		<ParID parid="212" val="8.11948e-05"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
 		<ParID parid="220" val="-4.16334e-14"/>
 		<ParID parid="221" val="-4.16334e-14"/>
 		<ParID parid="222" val="-430.562"/>
@@ -2561,9 +2561,9 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="8.11948e-05"/>
-		<ParID parid="211" val="8.11948e-05"/>
-		<ParID parid="212" val="8.11948e-05"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
 		<ParID parid="220" val="-4.16334e-14"/>
 		<ParID parid="221" val="-4.16334e-14"/>
 		<ParID parid="222" val="-430.562"/>
@@ -2607,18 +2607,18 @@
 		<ParID parid="165" val="0"/>
 		<ParID parid="166" val="-100"/>
 		<ParID parid="180" val="FALSE"/>
-		<ParID parid="210" val="8.11948e-05"/>
-		<ParID parid="211" val="8.11948e-05"/>
-		<ParID parid="212" val="8.11948e-05"/>
+		<ParID parid="210" val="0"/>
+		<ParID parid="211" val="0"/>
+		<ParID parid="212" val="0"/>
 		<ParID parid="220" val="-4.16334e-14"/>
 		<ParID parid="221" val="-4.16334e-14"/>
 		<ParID parid="222" val="-430.562"/>
 	</Object>
 	<Object objecttypeid="110" name="bottle.stl" visible="0" mask="#100:4#101:8#103:12" binding="#14*::TrakMoveme:BottleVisibility[9]" jointoparent="0">
-		<ParID parid="100" val="0"/>
-		<ParID parid="101" val="0"/>
+		<ParID parid="100" val="698.265"/>
+		<ParID parid="101" val="-645"/>
 		<ParID parid="102" val="0"/>
-		<ParID parid="103" val="0"/>
+		<ParID parid="103" val="180"/>
 		<ParID parid="104" val="0"/>
 		<ParID parid="105" val="0"/>
 		<ParID parid="106" val="1"/>
@@ -2740,7 +2740,7 @@
 		<ParID parid="100" val="4928.93"/>
 		<ParID parid="101" val="14.094"/>
 		<ParID parid="102" val="450"/>
-		<ParID parid="103" val="0"/>
+		<ParID parid="103" val="96"/>
 		<ParID parid="104" val="0"/>
 		<ParID parid="105" val="0"/>
 		<ParID parid="106" val="1"/>
@@ -2769,6 +2769,286 @@
 			<ParID parid="140" val="80"/>
 			<ParID parid="141" val="80"/>
 			<ParID parid="142" val="20"/>
+		</Object>
+	</Object>
+	<Object objecttypeid="110" name="Bottle.stl" visible="0" mask="#100:4#101:8#103:12" binding="#14*::TrakMoveme:BottleVisibility[9]#121*::TrakMoveme:BottleMaterial[9]" jointoparent="0">
+		<ParID parid="100" val="698.265"/>
+		<ParID parid="101" val="-645"/>
+		<ParID parid="102" val="300"/>
+		<ParID parid="103" val="180"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1.5"/>
+		<ParID parid="107" val="1.5"/>
+		<ParID parid="108" val="3"/>
+		<ParID parid="120" val="..\..\FreeCAD\Bottle.stl"/>
+		<ParID parid="121" val="13: Black Metal Shine"/>
+		<ParID parid="130" val="1"/>
+		<Object objecttypeid="110" name="Cap.stl" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="300"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="2"/>
+			<ParID parid="107" val="2"/>
+			<ParID parid="108" val="4"/>
+			<ParID parid="120" val="..\..\FreeCAD\Cap.stl"/>
+			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="130" val="1"/>
+		</Object>
+	</Object>
+	<Object objecttypeid="110" name="Bottle.stl" visible="0" mask="#100:76#101:80#103:84" binding="#14*::TrakMoveme:BottleVisibility[8]#121*::TrakMoveme:BottleMaterial[8]" jointoparent="0">
+		<ParID parid="100" val="767.318"/>
+		<ParID parid="101" val="-645"/>
+		<ParID parid="102" val="300"/>
+		<ParID parid="103" val="180"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1.5"/>
+		<ParID parid="107" val="1.5"/>
+		<ParID parid="108" val="3"/>
+		<ParID parid="120" val="..\..\FreeCAD\Bottle.stl"/>
+		<ParID parid="121" val="13: Black Metal Shine"/>
+		<ParID parid="130" val="1"/>
+		<Object objecttypeid="110" name="Cap.stl" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="300"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="2"/>
+			<ParID parid="107" val="2"/>
+			<ParID parid="108" val="4"/>
+			<ParID parid="120" val="..\..\FreeCAD\Cap.stl"/>
+			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="130" val="1"/>
+		</Object>
+	</Object>
+	<Object objecttypeid="110" name="Bottle.stl" visible="0" mask="#100:148#101:152#103:156" binding="#14*::TrakMoveme:BottleVisibility[7]#121*::TrakMoveme:BottleMaterial[7]" jointoparent="0">
+		<ParID parid="100" val="836.372"/>
+		<ParID parid="101" val="-645"/>
+		<ParID parid="102" val="300"/>
+		<ParID parid="103" val="180"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1.5"/>
+		<ParID parid="107" val="1.5"/>
+		<ParID parid="108" val="3"/>
+		<ParID parid="120" val="..\..\FreeCAD\Bottle.stl"/>
+		<ParID parid="121" val="13: Black Metal Shine"/>
+		<ParID parid="130" val="1"/>
+		<Object objecttypeid="110" name="Cap.stl" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="300"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="2"/>
+			<ParID parid="107" val="2"/>
+			<ParID parid="108" val="4"/>
+			<ParID parid="120" val="..\..\FreeCAD\Cap.stl"/>
+			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="130" val="1"/>
+		</Object>
+	</Object>
+	<Object objecttypeid="110" name="Bottle.stl" visible="0" mask="#100:220#101:224#103:228" binding="#14*::TrakMoveme:BottleVisibility[6]#121*::TrakMoveme:BottleMaterial[6]" jointoparent="0">
+		<ParID parid="100" val="905.425"/>
+		<ParID parid="101" val="-645"/>
+		<ParID parid="102" val="300"/>
+		<ParID parid="103" val="180"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1.5"/>
+		<ParID parid="107" val="1.5"/>
+		<ParID parid="108" val="3"/>
+		<ParID parid="120" val="..\..\FreeCAD\Bottle.stl"/>
+		<ParID parid="121" val="13: Black Metal Shine"/>
+		<ParID parid="130" val="1"/>
+		<Object objecttypeid="110" name="Cap.stl" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="300"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="2"/>
+			<ParID parid="107" val="2"/>
+			<ParID parid="108" val="4"/>
+			<ParID parid="120" val="..\..\FreeCAD\Cap.stl"/>
+			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="130" val="1"/>
+		</Object>
+	</Object>
+	<Object objecttypeid="110" name="Bottle.stl" visible="0" mask="#100:292#101:296#103:300" binding="#14*::TrakMoveme:BottleVisibility[5]#121*::TrakMoveme:BottleMaterial[5]" jointoparent="0">
+		<ParID parid="100" val="974.478"/>
+		<ParID parid="101" val="-645"/>
+		<ParID parid="102" val="300"/>
+		<ParID parid="103" val="180"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1.5"/>
+		<ParID parid="107" val="1.5"/>
+		<ParID parid="108" val="3"/>
+		<ParID parid="120" val="..\..\FreeCAD\Bottle.stl"/>
+		<ParID parid="121" val="13: Black Metal Shine"/>
+		<ParID parid="130" val="1"/>
+		<Object objecttypeid="110" name="Cap.stl" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="300"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="2"/>
+			<ParID parid="107" val="2"/>
+			<ParID parid="108" val="4"/>
+			<ParID parid="120" val="..\..\FreeCAD\Cap.stl"/>
+			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="130" val="1"/>
+		</Object>
+	</Object>
+	<Object objecttypeid="110" name="Bottle.stl" visible="0" mask="#100:364#101:368#103:372" binding="#14*::TrakMoveme:BottleVisibility[4]#121*::TrakMoveme:BottleMaterial[4]" jointoparent="0">
+		<ParID parid="100" val="353"/>
+		<ParID parid="101" val="-645"/>
+		<ParID parid="102" val="300"/>
+		<ParID parid="103" val="180"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1.5"/>
+		<ParID parid="107" val="1.5"/>
+		<ParID parid="108" val="3"/>
+		<ParID parid="120" val="..\..\FreeCAD\Bottle.stl"/>
+		<ParID parid="121" val="13: Black Metal Shine"/>
+		<ParID parid="130" val="1"/>
+		<Object objecttypeid="110" name="Cap.stl" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="300"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="2"/>
+			<ParID parid="107" val="2"/>
+			<ParID parid="108" val="4"/>
+			<ParID parid="120" val="..\..\FreeCAD\Cap.stl"/>
+			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="130" val="1"/>
+		</Object>
+	</Object>
+	<Object objecttypeid="110" name="Bottle.stl" visible="0" mask="#100:436#101:440#103:444" binding="#14*::TrakMoveme:BottleVisibility[3]#121*::TrakMoveme:BottleMaterial[3]" jointoparent="0">
+		<ParID parid="100" val="422.053"/>
+		<ParID parid="101" val="-645"/>
+		<ParID parid="102" val="300"/>
+		<ParID parid="103" val="180"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1.5"/>
+		<ParID parid="107" val="1.5"/>
+		<ParID parid="108" val="3"/>
+		<ParID parid="120" val="..\..\FreeCAD\Bottle.stl"/>
+		<ParID parid="121" val="13: Black Metal Shine"/>
+		<ParID parid="130" val="1"/>
+		<Object objecttypeid="110" name="Cap.stl" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="300"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="2"/>
+			<ParID parid="107" val="2"/>
+			<ParID parid="108" val="4"/>
+			<ParID parid="120" val="..\..\FreeCAD\Cap.stl"/>
+			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="130" val="1"/>
+		</Object>
+	</Object>
+	<Object objecttypeid="110" name="Bottle.stl" visible="0" mask="#100:508#101:512#103:516" binding="#14*::TrakMoveme:BottleVisibility[2]#121*::TrakMoveme:BottleMaterial[2]" jointoparent="0">
+		<ParID parid="100" val="491.106"/>
+		<ParID parid="101" val="-645"/>
+		<ParID parid="102" val="300"/>
+		<ParID parid="103" val="180"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1.5"/>
+		<ParID parid="107" val="1.5"/>
+		<ParID parid="108" val="3"/>
+		<ParID parid="120" val="..\..\FreeCAD\Bottle.stl"/>
+		<ParID parid="121" val="13: Black Metal Shine"/>
+		<ParID parid="130" val="1"/>
+		<Object objecttypeid="110" name="Cap.stl" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="300"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="2"/>
+			<ParID parid="107" val="2"/>
+			<ParID parid="108" val="4"/>
+			<ParID parid="120" val="..\..\FreeCAD\Cap.stl"/>
+			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="130" val="1"/>
+		</Object>
+	</Object>
+	<Object objecttypeid="110" name="Bottle.stl" visible="0" mask="#100:580#101:584#103:588" binding="#14*::TrakMoveme:BottleVisibility[1]#121*::TrakMoveme:BottleMaterial[1]" jointoparent="0">
+		<ParID parid="100" val="560.159"/>
+		<ParID parid="101" val="-645"/>
+		<ParID parid="102" val="300"/>
+		<ParID parid="103" val="180"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1.5"/>
+		<ParID parid="107" val="1.5"/>
+		<ParID parid="108" val="3"/>
+		<ParID parid="120" val="..\..\FreeCAD\Bottle.stl"/>
+		<ParID parid="121" val="13: Black Metal Shine"/>
+		<ParID parid="130" val="1"/>
+		<Object objecttypeid="110" name="Cap.stl" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="300"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="2"/>
+			<ParID parid="107" val="2"/>
+			<ParID parid="108" val="4"/>
+			<ParID parid="120" val="..\..\FreeCAD\Cap.stl"/>
+			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="130" val="1"/>
+		</Object>
+	</Object>
+	<Object objecttypeid="110" name="Bottle.stl" visible="0" mask="#100:652#101:656#103:660" binding="#14*::TrakMoveme:BottleVisibility[0]#121*::TrakMoveme:BottleMaterial[0]" jointoparent="0">
+		<ParID parid="100" val="629.212"/>
+		<ParID parid="101" val="-645"/>
+		<ParID parid="102" val="300"/>
+		<ParID parid="103" val="180"/>
+		<ParID parid="104" val="0"/>
+		<ParID parid="105" val="0"/>
+		<ParID parid="106" val="1.5"/>
+		<ParID parid="107" val="1.5"/>
+		<ParID parid="108" val="3"/>
+		<ParID parid="120" val="..\..\FreeCAD\Bottle.stl"/>
+		<ParID parid="121" val="13: Black Metal Shine"/>
+		<ParID parid="130" val="1"/>
+		<Object objecttypeid="110" name="Cap.stl" visible="1" mask="" binding="" jointoparent="0">
+			<ParID parid="100" val="0"/>
+			<ParID parid="101" val="0"/>
+			<ParID parid="102" val="300"/>
+			<ParID parid="103" val="0"/>
+			<ParID parid="104" val="0"/>
+			<ParID parid="105" val="0"/>
+			<ParID parid="106" val="2"/>
+			<ParID parid="107" val="2"/>
+			<ParID parid="108" val="4"/>
+			<ParID parid="120" val="..\..\FreeCAD\Cap.stl"/>
+			<ParID parid="121" val="7: White Matte"/>
+			<ParID parid="130" val="1"/>
 		</Object>
 	</Object>
 </Object>
