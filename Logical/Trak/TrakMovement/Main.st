@@ -601,9 +601,25 @@ PROGRAM _CYCLIC
 					gShuttleInPlace_Output:=FALSE;
 					TON_Pouring_Down.IN:=FALSE;
 					TON_Pouring_Top.IN:=FALSE;
-					
+					Bottle:=1;
+					FOR i:=10 TO 0 BY -1 DO
+						BottleVisibility[i]:=FALSE;
+						CapVisibility[i]:=FALSE;
+					END_FOR;
 				END_IF;
 			ELSE 		// MANUAL TURNED ON
+				IF VisBottleVisibility THEN
+					BottleVisibility[VisShuttle]:=TRUE;
+				END_IF;
+				IF EDGENEG(VisBottleVisibility) THEN
+					BottleVisibility[VisShuttle]:=FALSE;
+				END_IF;
+				IF VisCapVisibility THEN
+					CapVisibility[VisShuttle]:=TRUE;
+				END_IF;
+				IF EDGENEG(VisCapVisibility) THEN
+					CapVisibility[VisShuttle]:=FALSE;
+				END_IF;
 				IF VisCappingRotate THEN
 					Capping_Rotate:=Capping_Rotate+12;
 					IF Capping_Rotate=360 THEN
@@ -725,6 +741,7 @@ PROGRAM _CYCLIC
 				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
 				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
 				MC_BR_RoutedMoveVel_AcpTrak_0();
+				
 			END_FOR;
 			VisShuttleStop:=FALSE;
 			VisShuttleStart:=FALSE;
@@ -738,6 +755,8 @@ PROGRAM _CYCLIC
 			gShuttleInPlace_Output			:=FALSE;
 			TON_Pouring_Down.IN				:=FALSE;
 			TON_Pouring_Top.IN				:=FALSE;
+			Bottle:=1;
+			
 			IF VisManual=TRUE THEN
 				Step:=MANUAL;
 			ELSE

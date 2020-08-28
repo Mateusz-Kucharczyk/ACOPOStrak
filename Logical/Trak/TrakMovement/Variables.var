@@ -88,4 +88,6 @@ VAR
 	ManualEnable : BOOL;
 	CapVisibility : ARRAY[0..9] OF BOOL;
 	BottleOutMaterial : USINT;
+	VisBottleVisibility : BOOL;
+	VisCapVisibility : BOOL;
 END_VAR

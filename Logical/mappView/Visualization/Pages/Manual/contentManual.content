@@ -5,10 +5,10 @@
     <Widget xsi:type="widgets.brease.Label" id="Label14" top="40" left="380" width="160" zIndex="1" text="$IAT/lblControlMode" textColor="rgba(0, 0, 0, 1)" style="Caption" />
     <Widget xsi:type="widgets.brease.Line" id="Line3" zIndex="2" x1="100" x2="1040" y1="120" y2="121" />
     <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox1" top="160" left="420" width="70" zIndex="3" dataProvider="[{'value':'0','text':'1'},{'value':'1','text':'2'},{'value':'2','text':'3'},{'value':'3','text':'4'},{'value':'4','text':'5'},{'value':'5','text':'6'},{'value':'6','text':'7'},{'value':'7','text':'8'},{'value':'8','text':'9'},{'value':'9','text':'10'}]" listPosition="top" selectedValue="0" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton9" top="220" left="360" height="50" zIndex="4" text="$IAT/btnBackward" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton9" top="220" left="280" height="50" zIndex="4" text="$IAT/btnBackward" />
     <Widget xsi:type="widgets.brease.Label" id="Label19" top="155" left="160" width="140" height="40" zIndex="5" multiLine="true" text="$IAT/lblShuttle" wordWrap="true" textColor="rgba(0, 0, 0, 1)" textAlign="center" bold="false" style="Caption" />
-    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton2" top="280" left="280" height="50" zIndex="6" breakWord="true" mouseDownText="$IAT/lblStationNozzleUp" multiLine="true" text="$IAT/lblStationNozzleUp" wordWrap="true" mouseDownBackColor="rgba(0, 255, 0, 1)" checkedBackColor="rgba(0, 255, 0, 1)" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton8" top="220" left="200" height="50" zIndex="7" text="$IAT/btnForward" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton2" top="220" left="420" height="50" zIndex="6" breakWord="true" mouseDownText="$IAT/lblStationNozzleUp" multiLine="true" text="$IAT/lblStationNozzleUp" wordWrap="true" mouseDownBackColor="rgba(0, 255, 0, 1)" checkedBackColor="rgba(0, 255, 0, 1)" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton8" top="220" left="120" height="50" zIndex="7" text="$IAT/btnForward" />
     <Widget xsi:type="widgets.brease.Line" id="Line4" zIndex="8" x1="570" x2="570" y1="120" y2="600" />
     <Widget xsi:type="widgets.brease.Line" id="Line5" zIndex="9" x1="100" x2="1040" y1="600" y2="600" />
     <Widget xsi:type="widgets.brease.Label" id="Label18" top="159" left="700" width="140" height="40" zIndex="10" multiLine="true" text="Delta" wordWrap="true" textColor="rgba(0, 0, 0, 1)" textAlign="center" bold="false" style="Caption" />
@@ -31,5 +31,7 @@
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton14" top="515" left="380" width="180" height="50" zIndex="27" text="$IAT/btnCappingRotate" />
     <Widget xsi:type="widgets.brease.Line" id="Line6" zIndex="28" x1="100" x2="570" y1="480" y2="480" />
     <Widget xsi:type="widgets.brease.Line" id="Line7" zIndex="29" x1="100" x2="570" y1="360" y2="360" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton1" top="300" left="160" zIndex="30" text="$IAT/btnBottleVis" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton3" top="300" left="360" zIndex="31" text="$IAT/btnCapVis" />
   </Widgets>
 </Content>

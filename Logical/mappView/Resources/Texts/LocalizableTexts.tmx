@@ -1503,5 +1503,21 @@
         <seg>Enter recipe name</seg>
       </tuv>
     </tu>
+    <tu tuid="btnCapVis">
+      <tuv xml:lang="pl">
+        <seg>Zakrętka</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Cap</seg>
+      </tuv>
+    </tu>
+    <tu tuid="btnBottleVis">
+      <tuv xml:lang="pl">
+        <seg>Butelka</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Bottle</seg>
+      </tuv>
+    </tu>
   </body>
 </tmx>

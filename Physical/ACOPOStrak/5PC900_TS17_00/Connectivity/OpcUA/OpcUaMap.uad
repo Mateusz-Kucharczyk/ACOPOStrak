@@ -162,6 +162,8 @@
         <Variable Name="ManualEnable" />
         <Variable Name="CapVisibility" EnableArrayElements="True" />
         <Variable Name="BottleOutMaterial" />
+        <Variable Name="VisCapVisibility" />
+        <Variable Name="VisBottleVisibility" />
       </Task>
       <Task Name="SI">
         <Variable Name="MpDelta3Axis_0">

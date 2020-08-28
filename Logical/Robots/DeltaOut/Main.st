@@ -13,6 +13,13 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
+	IF gProcessFinished THEN
+		FOR i:=5 TO 0 BY -1 DO
+			StashBottleVis[i]:=FALSE;
+		END_FOR;
+		Bottle:=1;
+		BottlesPerPack:=1;
+	END_IF;
 	MpDelta3Axis_0.Override:=gDeltaVelocity;
 	//DeltaParameters.ProgramName := PName;
 	MpDelta3Axis_0.ErrorReset := diErrorReset;
@@ -73,7 +80,7 @@ PROGRAM _CYCLIC
 				BottleOutStage:=3;
 			END_IF;
 			IF Bottle=gOrder.bottlesPerPackage THEN
-	  BottleInvisible:=TRUE;
+				BottleInvisible:=TRUE;
 			END_IF;
 			diStart := FALSE;
 			VisDeltaOutState:=3;
